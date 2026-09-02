@@ -4,234 +4,360 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>サービス｜Arpeda（アルペダ）</title>
-<meta name="description" content="Arpeda（アルペダ）のサービス。LP制作・ホームページ制作・Webライティング。AIを活用し、構成設計から公開まで一貫してお引き受けします。料金は内容に応じてお見積りします。">
+<meta name="description" content="Arpeda（アルペダ）のサービス。LP制作・ホームページ制作・Webライティング・AI活用支援（準備中）。料金は内容に応じて都度お見積り。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=M+PLUS+1+Code:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{--paper:#fbfaf7;--paper-2:#f2f0ea;--line:#e6e2d8;--ink:#141310;--graphite:#45413a;--smoke:#726c62;--ash:#a49e93;--coral:#cf5238;--coral-d:#ab4029}
+  :root{
+    --parchment:#f6f3f1;--periwinkle:#cfdaf5;--sky:#a0b5eb;--mint:#a7fccd;
+    --coral:#ff9473;--gold:#ecda98;--crimson:#f37a0a;
+    --off-black:#242424;--ink:#000;--graphite:#4e4d4d;--smoke:#797776;--ash:#cecac8;
+    --blue:#2b59d1;--blue-d:#1f47b0;
+    --serif:"Newsreader","Noto Serif JP",Georgia,"Times New Roman",serif;
+    --mono:"IBM Plex Mono","M PLUS 1 Code",ui-monospace,Menlo,monospace;
+  }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:"Noto Sans JP",system-ui,sans-serif;font-weight:400;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.45;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")}
-  main,header,footer{position:relative;z-index:2}
+  body{background:var(--parchment);color:var(--off-black);font-family:var(--mono);font-size:16px;line-height:1.75;letter-spacing:-.01em;-webkit-font-smoothing:antialiased;overflow-x:hidden}
   img{max-width:100%;display:block}
   a{color:inherit}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
-  .narrow{max-width:880px}
-  .en{font-family:"Fraunces",serif;font-weight:500;letter-spacing:.005em;color:var(--ash);font-size:.9rem}
-  .mono{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke)}
-  .lead{color:var(--smoke);font-size:.98rem}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;line-height:1.24}
 
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:500;font-size:.9rem;padding:14px 28px;border-radius:999px;text-decoration:none;border:1px solid var(--ink);background:var(--ink);color:var(--paper);transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease}
-  .btn:hover{transform:translateY(-2px)}
-  .btn.coral{background:var(--coral);border-color:var(--coral)}
-  .btn.coral:hover{background:var(--coral-d);border-color:var(--coral-d)}
-  .btn.ghost{background:transparent;color:var(--ink)}
-  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
-  .btn .arw{transition:transform .2s ease}.btn:hover .arw{transform:translateX(4px)}
-  .txtlink{text-decoration:none;font-weight:500;font-size:.9rem;border-bottom:1px solid var(--coral);padding-bottom:3px;display:inline-flex;gap:7px;align-items:center}
-  .txtlink .arw{color:var(--coral);transition:transform .2s ease}.txtlink:hover .arw{transform:translateX(4px)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke)}
 
-  .mk{display:inline-flex;align-items:flex-end;gap:3px;height:20px}
-  .mk span{width:3.5px;background:var(--coral);border-radius:1px}
-  .mk span:nth-child(1){height:35%}.mk span:nth-child(2){height:62%}.mk span:nth-child(3){height:100%}.mk span:nth-child(4){height:48%}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:15px 30px;border-radius:100px;text-decoration:none;border:1px solid transparent;transition:transform .18s ease,background .18s ease,color .18s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-blue{background:var(--blue);color:#fff;border-color:var(--blue)}
+  .btn-blue:hover{background:var(--blue-d);border-color:var(--blue-d)}
+  .btn-ghost{background:transparent;color:var(--off-black);border-color:var(--off-black)}
+  .btn-ghost:hover{background:var(--off-black);color:var(--parchment)}
+  .arrow-link{font-family:var(--mono);font-size:13px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;display:inline-flex;gap:8px;align-items:center;color:var(--off-black);border-bottom:1px solid var(--ash);padding-bottom:4px}
+  .arrow-link:hover{border-color:var(--off-black)}
 
-  header{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .bar{display:flex;align-items:center;justify-content:space-between;height:74px}
-  .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
-  .logo .wm{font-family:"Fraunces",serif;font-weight:500;font-size:1.4rem;letter-spacing:-.005em}
-  nav.nav{display:flex;gap:30px;font-size:.85rem}
-  nav.nav a{text-decoration:none;color:var(--smoke);position:relative}
-  nav.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:1px;background:var(--ink);transition:right .25s ease}
-  nav.nav a:hover,nav.nav a[aria-current]{color:var(--ink)}
-  nav.nav a:hover::after,nav.nav a[aria-current]::after{right:0}
-  .bar .right{display:flex;align-items:center;gap:20px}
-  .bar .line-lnk{font-size:.82rem;color:var(--smoke);text-decoration:none}.bar .line-lnk:hover{color:var(--ink)}
-  .bar .btn{padding:9px 20px;font-size:.8rem}
-  @media(max-width:900px){nav.nav,.bar .line-lnk{display:none}}
+  .anno{background:var(--ink);color:var(--parchment);font-family:var(--mono);font-size:13px;letter-spacing:.02em}
+  .anno .wrap{display:flex;align-items:center;justify-content:center;gap:16px;min-height:40px;padding-top:8px;padding-bottom:8px;text-align:center}
+  .anno .pill{border:1px solid rgba(255,255,255,.5);border-radius:9999px;padding:5px 14px;font-size:11px;text-transform:uppercase;letter-spacing:.1em;text-decoration:none;color:#fff;white-space:nowrap}
+  .anno .x{background:none;border:0;color:#fff;cursor:pointer;font-size:15px;line-height:1;opacity:.7}
+  .anno.hide{display:none}
 
-  .phero{padding:64px 0 56px;border-bottom:1px solid var(--line)}
-  .crumb{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.12em;color:var(--ash);margin-bottom:20px}
-  .crumb a{text-decoration:none;color:var(--ash)}.crumb a:hover{color:var(--ink)}
-  .phero h1{font-family:"Noto Sans JP";font-weight:300;letter-spacing:-.025em;font-size:clamp(2rem,5vw,3rem);line-height:1.25}
-  .phero p{color:var(--graphite);margin-top:20px;max-width:560px}
+  header{position:sticky;top:0;z-index:40;background:rgba(246,243,241,.85);backdrop-filter:blur(8px)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none}
+  .brand .bars{display:inline-flex;align-items:flex-end;gap:2.5px;height:18px}
+  .brand .bars i{width:3px;background:var(--off-black);border-radius:1px}
+  .brand .bars i:nth-child(1){height:32%}.brand .bars i:nth-child(2){height:58%}.brand .bars i:nth-child(3){height:100%;background:var(--blue)}.brand .bars i:nth-child(4){height:44%}
+  .brand .wm{font-family:var(--serif);font-size:22px;letter-spacing:-.01em}
+  .nav-links{display:flex;gap:26px;font-family:var(--mono);font-size:13px;letter-spacing:.02em}
+  .nav-links a{text-decoration:none;color:var(--graphite)}
+  .nav-links a:hover,.nav-links a[aria-current]{color:var(--off-black)}
+  .nav-right{display:flex;align-items:center;gap:16px}
+  .nav-right .line{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--graphite)}
+  .nav-right .btn{padding:11px 22px;font-size:12px}
+  @media(max-width:860px){.nav-links,.nav-right .line{display:none}}
 
-  .svc-block{padding:84px 0;border-bottom:1px solid var(--line);scroll-margin-top:100px}
-  .svc-block .top{display:flex;align-items:baseline;gap:18px;margin-bottom:8px}
-  .svc-block .no{font-family:"Space Mono",monospace;font-size:.78rem;color:var(--ash)}
-  .svc-block h2{font-family:"Noto Sans JP";font-weight:300;letter-spacing:-.02em;font-size:clamp(1.5rem,3.2vw,2.1rem)}
-  .svc-block > .wrap > p{color:var(--smoke);max-width:640px;margin-top:14px}
-  .svc-block .cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:38px}
-  .svc-block .cols h3{font-size:.82rem;font-weight:500;margin-bottom:14px;display:flex;align-items:center;gap:9px;color:var(--graphite);font-family:"Space Mono",monospace;letter-spacing:.06em;text-transform:uppercase}
-  .svc-block .cols h3::before{content:"";width:14px;height:1px;background:var(--coral)}
-  .svc-block ul{list-style:none}
-  .svc-block li{font-size:.92rem;color:var(--graphite);padding-left:20px;position:relative;margin-bottom:8px}
-  .svc-block li::before{content:"\2013";position:absolute;left:0;color:var(--ash)}
-  .svc-block .badge{font-family:"Space Mono",monospace;font-size:.58rem;letter-spacing:.12em;border:1px solid var(--ash);color:var(--ash);border-radius:999px;padding:1px 8px;margin-left:10px;vertical-align:middle}
+  .hero{position:relative;text-align:center;padding:104px 0 92px;overflow:hidden}
+  .hero .wash{position:absolute;border-radius:50%;filter:blur(72px);opacity:.5;pointer-events:none;z-index:0}
+  .hero .w1{width:520px;height:420px;background:linear-gradient(120deg,var(--coral),var(--sky));left:-150px;top:-50px}
+  .hero .w2{width:460px;height:380px;background:linear-gradient(120deg,var(--sky),var(--mint));right:-130px;top:110px}
+  .hero .inner{position:relative;z-index:1;max-width:860px;margin:0 auto}
+  .hero h1{font-size:clamp(2.6rem,6.6vw,5rem);line-height:1.16}
+  .hero p.sub{font-family:var(--mono);font-size:clamp(15px,1.5vw,19px);line-height:1.7;color:var(--graphite);margin:30px auto 36px;max-width:600px}
+  .hero .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 
-  .flow{padding:84px 0;border-bottom:1px solid var(--line)}
-  .flow .sec-title{margin-bottom:16px}
-  .flow .en{display:block;margin-bottom:10px}
-  .flow h2{font-family:"Noto Sans JP";font-weight:300;letter-spacing:-.02em;font-size:clamp(1.5rem,3.2vw,2.1rem)}
-  .steps{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:34px}
-  .step{padding:28px 22px;border-right:1px solid var(--line)}
-  .step:last-child{border-right:0}
-  .step .n{font-family:"Space Mono",monospace;color:var(--ash);font-size:.76rem}
-  .step h3{font-family:"Noto Sans JP";font-weight:500;font-size:.95rem;margin:10px 0 6px}
-  .step p{font-size:.82rem;color:var(--smoke)}
-  @media(max-width:900px){.steps{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--line)}}
-  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+  .strip{border-top:1px solid var(--ash);border-bottom:1px solid var(--ash)}
+  .strip .row{display:flex;flex-wrap:wrap;gap:10px 34px;justify-content:center;max-width:1180px;margin:0 auto;padding:20px 28px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--smoke)}
+  .strip span{display:flex;align-items:center;gap:12px}
+  .strip span+span::before{content:"/";color:var(--ash)}
 
-  .price{padding:84px 0;border-bottom:1px solid var(--line)}
-  .price .en{display:block;margin-bottom:10px}
-  .price h2{font-family:"Noto Sans JP";font-weight:300;letter-spacing:-.02em;font-size:clamp(1.5rem,3.2vw,2.1rem)}
-  .price .box{border:1px solid var(--line);border-radius:16px;background:var(--paper-2);padding:36px 40px;margin-top:26px;max-width:760px}
-  .price .box p{color:var(--graphite);font-size:.96rem}
-  .price .box p + p{margin-top:14px}
-  .price .box .small{font-size:.82rem;color:var(--smoke);margin-top:20px;padding-left:14px;border-left:1px solid var(--coral)}
+  section{padding:96px 0}
+  .sec-head{margin-bottom:48px}
+  .sec-head .eyebrow{display:block;margin-bottom:14px}
+  .sec-head h2{font-size:clamp(2rem,4vw,3rem)}
+  .sec-head p{font-family:var(--mono);font-size:15px;color:var(--graphite);margin-top:16px;max-width:560px}
 
-  .cta-band{padding:110px 0;background:var(--paper-2);text-align:center}
-  .cta-band h2{font-family:"Noto Sans JP";font-weight:300;font-size:clamp(1.6rem,3.4vw,2.3rem);letter-spacing:-.015em;margin:20px 0 16px}
-  .cta-band p{color:var(--smoke);max-width:440px;margin:0 auto 32px;font-size:.94rem}
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .card{border:1px solid var(--ash);border-radius:40px;padding:40px;background:var(--parchment);display:flex;flex-direction:column}
+  .card .idx{font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--smoke);margin-bottom:20px}
+  .card h3{font-size:24px;margin-bottom:12px}
+  .card p{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--graphite);flex:1}
+  .card .arrow-link{margin-top:24px;align-self:flex-start}
+  .card.soon{opacity:.72}
+  .card .tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ash);border-radius:9999px;padding:3px 10px;margin-left:10px;vertical-align:middle}
+  @media(max-width:760px){.cards{grid-template-columns:1fr}}
 
-  @media(max-width:760px){.svc-block .cols{grid-template-columns:1fr;gap:26px}}
+  .invert{background:var(--off-black);color:var(--parchment);position:relative;overflow:hidden}
+  .invert .wash{position:absolute;width:440px;height:360px;border-radius:50%;filter:blur(84px);opacity:.26;background:linear-gradient(120deg,var(--coral),var(--gold));right:-140px;bottom:-120px}
+  .invert .inner{position:relative}
+  .invert .eyebrow{color:#9a9896}
+  .invert h2{color:var(--parchment)}
+  .invert .grid3{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.16);margin-top:44px}
+  .invert .grid3 > div{padding:36px 26px 36px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+  .invert .grid3 .n{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:#9a9896}
+  .invert .grid3 h3{font-size:22px;margin:14px 0 10px;color:var(--parchment)}
+  .invert .grid3 p{font-family:var(--mono);font-size:14px;line-height:1.7;color:#b7b5b3}
+  @media(max-width:760px){.invert .grid3{grid-template-columns:1fr}.invert .grid3>div{padding-right:0}}
 
-  footer{padding:64px 0 44px;border-top:1px solid var(--line)}
-  footer .cols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px}
-  footer .wm{font-family:"Fraunces",serif;font-weight:500;font-size:1.5rem;margin-bottom:10px}
-  footer .fdesc{font-size:.82rem;color:var(--smoke);max-width:260px}
-  footer .fnav{display:flex;gap:22px;flex-wrap:wrap;font-size:.83rem}
-  footer .fnav a{text-decoration:none;color:var(--smoke)}footer .fnav a:hover{color:var(--ink)}
-  footer dl{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;font-size:.79rem;margin-top:18px}
-  footer dt{color:var(--graphite);font-weight:500}footer dd{color:var(--smoke)}
-  footer .cp{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.12em;color:var(--ash);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .wcard{text-decoration:none;display:block}
+  .wcard .shot{border:1px solid var(--ash);border-radius:24px;overflow:hidden;aspect-ratio:16/11;background:var(--periwinkle)}
+  .wcard .shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s ease}
+  .wcard:hover .shot img{transform:scale(1.03)}
+  .wcard .cat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--smoke);margin-top:16px;display:block}
+  .wcard h3{font-size:19px;margin-top:6px}
+  @media(max-width:760px){.wgrid{grid-template-columns:1fr;max-width:420px;margin:0 auto}}
 
-  html.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
-  html.js .reveal.in{opacity:1;transform:none}
-  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html.js .reveal{opacity:1;transform:none}}
+  .steps{border-top:1px solid var(--ash);margin-top:8px}
+  .steps .r{display:grid;grid-template-columns:60px 190px 1fr;gap:24px;padding:26px 0;border-bottom:1px solid var(--ash);align-items:baseline}
+  .steps .r .n{font-family:var(--mono);font-size:13px;color:var(--blue)}
+  .steps .r h3{font-size:19px}
+  .steps .r p{font-family:var(--mono);font-size:14px;color:var(--graphite)}
+  @media(max-width:680px){.steps .r{grid-template-columns:1fr;gap:6px}}
+
+  .ctaband .box{background:var(--periwinkle);border-radius:40px;padding:80px 40px;text-align:center}
+  .ctaband h2{font-size:clamp(1.8rem,3.6vw,2.6rem);margin-bottom:16px}
+  .ctaband p{font-family:var(--mono);font-size:15px;color:var(--graphite);max-width:460px;margin:0 auto 32px}
+
+  footer{border-top:1px solid var(--ash);padding:64px 0 40px}
+  footer .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px}
+  footer .wm{font-family:var(--serif);font-size:24px;margin-bottom:10px}
+  footer .fdesc{font-family:var(--mono);font-size:13px;color:var(--smoke);max-width:280px;line-height:1.7}
+  footer .fnav{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:13px}
+  footer .fnav a{text-decoration:none;color:var(--graphite)}
+  footer .fnav a:hover{color:var(--off-black)}
+  footer dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;font-family:var(--mono);font-size:12px;margin-top:16px}
+  footer dt{color:var(--off-black)}footer dd{color:var(--smoke)}
+  footer .cp{margin-top:44px;padding-top:22px;border-top:1px solid var(--ash);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--smoke);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  /* ---- subpages ---- */
+  .phero{position:relative;overflow:hidden;padding:84px 0 60px;border-bottom:1px solid var(--ash)}
+  .phero .wash{position:absolute;border-radius:50%;filter:blur(72px);opacity:.42;pointer-events:none;width:440px;height:360px;background:linear-gradient(120deg,var(--coral),var(--sky));right:-150px;top:-80px}
+  .phero .inner{position:relative;z-index:1}
+  .phero .crumb{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--smoke);margin-bottom:22px}
+  .phero .crumb a{text-decoration:none;color:var(--smoke)}
+  .phero h1{font-size:clamp(2.2rem,5.2vw,3.6rem)}
+  .phero p{font-family:var(--mono);font-size:15px;line-height:1.7;color:var(--graphite);margin-top:20px;max-width:600px}
+
+  .svc{border-top:1px solid var(--ash);padding:64px 0;display:grid;grid-template-columns:120px 1fr;gap:32px}
+  .svc .no{font-family:var(--mono);font-size:13px;letter-spacing:.1em;color:var(--blue)}
+  .svc h2{font-size:clamp(1.6rem,3.2vw,2.2rem);margin-bottom:14px}
+  .svc .desc{font-family:var(--mono);font-size:15px;line-height:1.75;color:var(--graphite);max-width:620px}
+  .svc .tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ash);border-radius:9999px;padding:3px 10px;margin-left:12px;vertical-align:middle;color:var(--smoke)}
+  .svc .cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}
+  .svc .cols h3{font-size:15px;font-family:var(--mono);font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--smoke);margin-bottom:12px}
+  .svc .cols ul{list-style:none;font-family:var(--mono);font-size:14px;line-height:1.5}
+  .svc .cols li{padding:8px 0 8px 20px;position:relative;border-bottom:1px solid var(--ash);color:var(--graphite)}
+  .svc .cols li::before{content:"—";position:absolute;left:0;color:var(--ash)}
+  @media(max-width:760px){.svc{grid-template-columns:1fr;gap:12px}.svc .cols{grid-template-columns:1fr}}
+
+  .price-note{font-family:var(--mono);font-size:15px;line-height:1.8;color:var(--graphite);max-width:640px}
+  .price-note+.price-note{margin-top:20px}
+
+  .methods{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
+  .method{border:1px solid var(--ash);border-radius:40px;padding:40px;display:flex;flex-direction:column}
+  .method .ic{width:40px;height:40px;border:1px solid var(--ash);border-radius:9999px;display:grid;place-items:center;color:var(--blue);margin-bottom:18px}
+  .method h3{font-size:22px;margin-bottom:8px}
+  .method p{font-family:var(--mono);font-size:14px;color:var(--graphite);flex:1;margin-bottom:22px}
+  @media(max-width:640px){.methods{grid-template-columns:1fr}}
+
+  .tips ul{list-style:none;margin-top:36px;max-width:660px;border-top:1px solid var(--ash)}
+  .tips li{font-family:var(--mono);font-size:14px;line-height:1.6;color:var(--graphite);padding:14px 0 14px 22px;position:relative;border-bottom:1px solid var(--ash)}
+  .tips li::before{content:"—";position:absolute;left:0;color:var(--ash)}
+  .tips .note{font-family:var(--mono);font-size:13px;color:var(--smoke);margin-top:20px}
+
+  .datalist{display:grid;grid-template-columns:150px 1fr;margin-top:36px;max-width:640px;font-family:var(--mono);font-size:14px}
+  .datalist dt{color:var(--off-black);padding:14px 0;border-bottom:1px solid var(--ash)}
+  .datalist dd{color:var(--graphite);padding:14px 0;border-bottom:1px solid var(--ash)}
+
+  .statement{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;font-size:clamp(1.5rem,3.4vw,2.3rem);line-height:1.6;max-width:820px}
+  .statement .hl{color:var(--blue)}
+  .body-copy{font-family:var(--mono);font-size:15px;line-height:1.85;color:var(--graphite);max-width:620px;margin-top:28px}
+
+  .values{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:44px}
+  .value{border:1px solid var(--ash);border-radius:40px;padding:36px 40px}
+  .value h3{font-size:20px;margin-bottom:8px}
+  .value .vn{font-family:var(--mono);font-size:12px;color:var(--smoke);margin-right:10px}
+  .value p{font-family:var(--mono);font-size:14px;color:var(--graphite)}
+  @media(max-width:640px){.values{grid-template-columns:1fr}}
+
+  .faq{margin-top:20px;border-top:1px solid var(--ash)}
+  .faq details{border-bottom:1px solid var(--ash)}
+  .faq summary{list-style:none;cursor:pointer;font-family:var(--serif);font-weight:400;font-size:20px;letter-spacing:-.02em;padding:28px 0;display:flex;justify-content:space-between;gap:20px;align-items:baseline}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"\2193";font-family:var(--mono);color:var(--off-black);font-size:16px;transition:transform .2s}
+  .faq details[open] summary::after{transform:rotate(180deg)}
+  .faq p{font-family:var(--mono);font-size:14px;line-height:1.75;color:var(--graphite);padding:0 0 28px;max-width:720px}
+
+  .wlist{display:flex;flex-direction:column;gap:56px;margin-top:12px}
+  .wrow{text-decoration:none;display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+  .wrow:nth-child(even){grid-template-columns:1fr 1fr}
+  .wrow:nth-child(even) .shot{order:2}
+  .wrow .shot{border:1px solid var(--ash);border-radius:24px;overflow:hidden;aspect-ratio:16/11;background:var(--periwinkle)}
+  .wrow .shot img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .6s ease}
+  .wrow:hover .shot img{transform:scale(1.03)}
+  .wrow .cat{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--smoke)}
+  .wrow h2{font-size:clamp(1.5rem,3vw,2rem);margin:12px 0 12px}
+  .wrow p{font-family:var(--mono);font-size:14px;line-height:1.7;color:var(--graphite)}
+  .wrow .tags{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}
+  .wrow .tags span{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--graphite);border:1px solid var(--ash);border-radius:9999px;padding:4px 12px}
+  @media(max-width:760px){.wrow,.wrow:nth-child(even){grid-template-columns:1fr;gap:20px}.wrow:nth-child(even) .shot{order:0}}
+  .disclaimer{margin-top:56px;padding-top:24px;border-top:1px solid var(--ash);font-family:var(--mono);font-size:12px;line-height:1.7;color:var(--smoke);max-width:720px}
+
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<script>document.documentElement.classList.add('js')</script>
+
+<div class="anno" id="anno">
+  <div class="wrap">
+    <span>お見積り・ご相談は無料です。まずはお気軽にどうぞ。</span>
+    <a href="/contact/" class="pill">相談する</a>
+    <button class="x" id="annoX" aria-label="閉じる">&times;</button>
+  </div>
+</div>
 
 <header>
-  <div class="wrap bar">
-    <a href="/" class="logo"><span class="mk"><span></span><span></span><span></span><span></span></span><span class="wm">Arpeda</span></a>
-    <nav class="nav">
+  <div class="wrap nav">
+    <a href="/" class="brand"><span class="bars"><i></i><i></i><i></i><i></i></span><span class="wm">Arpeda</span></a>
+    <nav class="nav-links">
       <a href="/services/" aria-current="page">サービス</a>
       <a href="/works/">実績</a>
       <a href="/about/">Arpedaについて</a>
       <a href="/contact/">お問い合わせ</a>
     </nav>
-    <div class="right"><a href="〔LINE URL〕" class="line-lnk">LINE</a><a href="/contact/" class="btn coral">相談する</a></div>
+    <div class="nav-right">
+      <a href="〔LINE URL〕" class="line">LINE</a>
+      <a href="/contact/" class="btn btn-blue">相談する</a>
+    </div>
   </div>
 </header>
 
 <main>
 <section class="phero">
-  <div class="wrap">
-    <p class="crumb"><a href="/">HOME</a> / SERVICES</p>
+  <div class="wash"></div>
+  <div class="wrap inner">
+    <p class="crumb"><a href="/">Home</a> / Services</p>
     <h1>サービス</h1>
-    <p>AIを制作プロセスに取り入れ、構成設計から公開まで一貫してお引き受けします。<br>料金は内容・ボリュームによって変わるため、都度お見積りします。</p>
+    <p>AIを制作プロセスに取り入れ、構成設計から公開まで一貫してお引き受けします。料金は内容・ボリュームによって変わるため、都度お見積りします。</p>
   </div>
 </section>
 
-<section class="svc-block" id="lp">
+<section style="padding-top:0">
   <div class="wrap">
-    <div class="top"><span class="no">01</span><h2>LP制作</h2></div>
-    <p>予約・購入・問い合わせなど、1つの行動につなげるためのランディングページ。新規制作も、既存LPの改善もお引き受けします。「誰に・何を・どの順番で見せるか」を先に固めてから、コピーとデザインを一体で作ります。</p>
-    <div class="cols">
-      <div><h3>含まれるもの</h3><ul><li>目的・ターゲットのヒアリング</li><li>構成設計（ワイヤーフレーム）</li><li>コピーライティング</li><li>デザイン</li><li>コーディング（レスポンシブ）</li><li>フォーム設置・公開作業（ご希望に応じて）</li></ul></div>
-      <div><h3>こんな方に</h3><ul><li>新商品・キャンペーンの受け皿がほしい</li><li>広告を出すが飛び先のページがない</li><li>今のLPで問い合わせが増えない</li><li>とにかく早く形にしたい</li></ul></div>
+    <div class="svc">
+      <div class="no">01</div>
+      <div>
+        <h2>LP制作</h2>
+        <p class="desc">予約・購入・問い合わせなど、1つの行動につなげるためのランディングページ。新規制作も、既存LPの改善もお引き受けします。「誰に・何を・どの順番で見せるか」を先に固めてから、コピーとデザインを一体で作ります。</p>
+        <div class="cols">
+          <div><h3>含まれるもの</h3><ul><li>目的・ターゲットのヒアリング</li><li>構成設計（ワイヤーフレーム）</li><li>コピーライティング</li><li>デザイン</li><li>コーディング（レスポンシブ）</li><li>フォーム設置・公開作業（ご希望に応じて）</li></ul></div>
+          <div><h3>こんな方に</h3><ul><li>新商品・キャンペーンの受け皿がほしい</li><li>広告を出すが飛び先のページがない</li><li>今のLPで問い合わせが増えない</li><li>とにかく早く形にしたい</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc">
+      <div class="no">02</div>
+      <div>
+        <h2>ホームページ制作</h2>
+        <p class="desc">店舗・個人事業・小規模の企業向けのコーポレートサイト（5〜10ページ程度）。スマホ最適化、お問い合わせフォーム、地図の埋め込みなど、必要なものをまとめてご用意します。公開後にご自身で更新しやすい構成にもできます。</p>
+        <div class="cols">
+          <div><h3>含まれるもの</h3><ul><li>サイト構成（サイトマップ）の設計</li><li>各ページのデザイン・制作</li><li>スマートフォン対応</li><li>お問い合わせフォーム</li><li>Googleマップ・SNS連携</li><li>ドメイン・サーバーのご案内、公開作業</li></ul></div>
+          <div><h3>こんな方に</h3><ul><li>ホームページがない、または古い</li><li>スマホで見づらいと言われる</li><li>名刺代わりに使えるサイトがほしい</li><li>自分でも少し更新できるようにしたい</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc">
+      <div class="no">03</div>
+      <div>
+        <h2>Webライティング</h2>
+        <p class="desc">セールスコピー、LP原稿、SEOを意識した記事、キャッチコピーなど。読者の検索意図や心理を分解し、「読みやすさ」と「読み終えた後の行動」の両方を意識して書きます。構成案を先にご確認いただいてから本文に入ります。</p>
+        <div class="cols">
+          <div><h3>対応できるもの</h3><ul><li>LP・セールスページの原稿</li><li>SEO記事・ブログ記事</li><li>サービス紹介文・会社概要</li><li>キャッチコピー・見出し</li><li>既存文章のリライト</li></ul></div>
+          <div><h3>進め方</h3><ul><li>キーワード・読者像・レギュレーションの確認</li><li>構成案（見出し）のご提示</li><li>本文の執筆</li><li>コピーチェック・修正対応</li></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="svc">
+      <div class="no">04</div>
+      <div>
+        <h2>AI活用支援<span class="tag">準備中</span></h2>
+        <p class="desc">制作の現場でAIを使い倒してきた知見をもとに、業務へのAI導入・内製化のご支援も準備しています。ご興味のある方は、お問い合わせよりご連絡ください。準備が整い次第ご案内します。</p>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="svc-block" id="hp">
-  <div class="wrap">
-    <div class="top"><span class="no">02</span><h2>ホームページ制作</h2></div>
-    <p>店舗・個人事業・小規模の企業向けのコーポレートサイト（5〜10ページ程度）。スマホ最適化、お問い合わせフォーム、地図の埋め込みなど、必要なものをまとめてご用意します。公開後にご自身で更新しやすい構成にもできます。</p>
-    <div class="cols">
-      <div><h3>含まれるもの</h3><ul><li>サイト構成（サイトマップ）の設計</li><li>各ページのデザイン・制作</li><li>スマートフォン対応</li><li>お問い合わせフォーム</li><li>Googleマップ・SNS連携</li><li>ドメイン・サーバーのご案内、公開作業</li></ul></div>
-      <div><h3>こんな方に</h3><ul><li>ホームページがない、または古い</li><li>スマホで見づらいと言われる</li><li>名刺代わりに使えるサイトがほしい</li><li>自分でも少し更新できるようにしたい</li></ul></div>
+<section class="invert">
+  <div class="wash"></div>
+  <div class="wrap inner">
+    <div class="sec-head"><span class="eyebrow">Process</span><h2>制作の流れ</h2></div>
+    <div class="grid3" style="grid-template-columns:repeat(5,1fr)">
+      <div><span class="n">01</span><h3>ヒアリング</h3><p>目的・ターゲット・参考サイト・掲載素材を確認します。</p></div>
+      <div><span class="n">02</span><h3>構成のご提案</h3><p>「何を・どの順番で見せるか」を先に固めます。</p></div>
+      <div><span class="n">03</span><h3>初稿の制作</h3><p>コピーとデザインを一体で作成し、ご確認いただきます。</p></div>
+      <div><span class="n">04</span><h3>修正</h3><p>無料修正2回＋納品後1週間の軽微な調整に対応。</p></div>
+      <div><span class="n">05</span><h3>納品</h3><p>データ一式のお渡し、または公開作業まで。</p></div>
     </div>
   </div>
 </section>
 
-<section class="svc-block" id="writing">
+<section>
   <div class="wrap">
-    <div class="top"><span class="no">03</span><h2>Webライティング</h2></div>
-    <p>セールスコピー、LP原稿、SEOを意識した記事、キャッチコピーなど。読者の検索意図や心理を分解し、「読みやすさ」と「読み終えた後の行動」の両方を意識して書きます。構成案を先にご確認いただいてから本文に入ります。</p>
-    <div class="cols">
-      <div><h3>対応できるもの</h3><ul><li>LP・セールスページの原稿</li><li>SEO記事・ブログ記事</li><li>サービス紹介文・会社概要</li><li>キャッチコピー・見出し</li><li>既存文章のリライト</li></ul></div>
-      <div><h3>進め方</h3><ul><li>キーワード・読者像・レギュレーションの確認</li><li>構成案（見出し）のご提示</li><li>本文の執筆</li><li>コピーチェック・修正対応</li></ul></div>
-    </div>
+    <div class="sec-head"><span class="eyebrow">Price</span><h2>料金について</h2></div>
+    <p class="price-note">ページ数、デザインの作り込み、機能、掲載素材の有無などによって変わるため、内容をうかがったうえで都度お見積りいたします。</p>
+    <p class="price-note">お見積り・ご相談は無料です。ご予算をお伝えいただければ、その範囲でできることをご提案します。「まず概算だけ知りたい」というご相談も歓迎します。</p>
+    <p class="price-note">無料修正は2回まで。加えて納品後1週間は軽微な調整（誤字・文言・色・画像差し替え）を無料で対応します。構成・デザインの作り直し、ページ追加は別途お見積りとなります。</p>
   </div>
 </section>
 
-<section class="svc-block" id="ai">
+<section class="ctaband">
   <div class="wrap">
-    <div class="top"><span class="no">04</span><h2>AI活用支援 <span class="badge">準備中</span></h2></div>
-    <p>制作の現場でAIを使い倒してきた知見をもとに、業務へのAI導入・内製化のご支援も準備しています。ご興味のある方は、お問い合わせよりご連絡ください。準備が整い次第ご案内します。</p>
-  </div>
-</section>
-
-<section class="flow">
-  <div class="wrap">
-    <span class="en">Flow</span>
-    <h2>制作の流れ</h2>
-    <p class="lead" style="margin-top:14px">LP1本で初稿2〜4営業日、完成まで1〜2週間が目安です。</p>
-    <div class="steps">
-      <div class="step"><span class="n">01</span><h3>ヒアリング</h3><p>目的・ターゲット・参考サイト・掲載素材を確認します。</p></div>
-      <div class="step"><span class="n">02</span><h3>構成のご提案</h3><p>「何を・どの順番で見せるか」を先に固めます。</p></div>
-      <div class="step"><span class="n">03</span><h3>初稿の制作</h3><p>コピーとデザインを一体で作成し、ご確認いただきます。</p></div>
-      <div class="step"><span class="n">04</span><h3>修正</h3><p>無料修正2回＋納品後1週間の軽微な調整に対応。</p></div>
-      <div class="step"><span class="n">05</span><h3>納品</h3><p>データ一式のお渡し、または公開作業まで。</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="price">
-  <div class="wrap">
-    <span class="en">Price</span>
-    <h2>料金について</h2>
     <div class="box">
-      <p>ページ数、デザインの作り込み、機能、掲載素材の有無などによって変わるため、<strong>内容をうかがったうえで都度お見積り</strong>いたします。</p>
-      <p>お見積り・ご相談は無料です。ご予算をお伝えいただければ、その範囲でできることをご提案します。「まず概算だけ知りたい」というご相談も歓迎します。</p>
-      <p class="small">無料修正は2回まで。加えて納品後1週間は軽微な調整（誤字・文言・色・画像差し替え）を無料で対応します。構成・デザインの作り直し、ページ追加は別途お見積りとなります。</p>
+      <h2>まずは、お気軽にご相談ください。</h2>
+      <p>お見積り・ご相談は無料です。「こんなことできますか？」だけでも歓迎します。通常その日のうちにご返信します。</p>
+      <a href="/contact/" class="btn btn-blue">お問い合わせ&nbsp;&nbsp;&#9656;</a>
     </div>
-  </div>
-</section>
-
-<section class="cta-band">
-  <div class="wrap">
-    <span class="mk"><span></span><span></span><span></span><span></span></span>
-    <h2>やりたいことを、聞かせてください。</h2>
-    <p>「こんなことできますか？」だけでも歓迎します。通常その日のうちにご返信します。</p>
-    <p><a href="/contact/" class="btn coral">お問い合わせ<span class="arw">&rarr;</span></a></p>
   </div>
 </section>
 </main>
 
+
 <footer>
   <div class="wrap">
-    <div class="cols">
-      <div><div class="wm">Arpeda</div><p class="fdesc">AIを活用した、速いWeb制作。<br>LP・ホームページ・ライティング。</p></div>
+    <div class="top">
       <div>
-        <div class="fnav"><a href="/services/">サービス</a><a href="/works/">実績</a><a href="/about/">Arpedaについて</a><a href="/contact/">お問い合わせ</a></div>
-        <dl><dt>屋号</dt><dd>Arpeda（アルペダ）</dd><dt>事業者</dt><dd>〔氏名〕</dd><dt>連絡先</dt><dd>〔メールアドレス〕</dd></dl>
+        <div class="wm">Arpeda</div>
+        <p class="fdesc">AIを活用した、速いWeb制作。<br>LP・ホームページ・ライティング。</p>
+      </div>
+      <div>
+        <div class="fnav">
+          <a href="/services/">サービス</a>
+          <a href="/works/">実績</a>
+          <a href="/about/">Arpedaについて</a>
+          <a href="/contact/">お問い合わせ</a>
+        </div>
+        <dl>
+          <dt>屋号</dt><dd>Arpeda（アルペダ）</dd>
+          <dt>事業者</dt><dd>〔氏名〕</dd>
+          <dt>連絡先</dt><dd>〔メールアドレス〕</dd>
+        </dl>
       </div>
     </div>
-    <div class="cp"><span>&copy; <span id="y"></span> ARPEDA</span><span>WEB制作 / AI活用支援</span></div>
+    <div class="cp"><span>&copy; <span id="y"></span> Arpeda</span><span>Web制作 / AI活用支援</span></div>
   </div>
 </footer>
 
 <script>
   document.getElementById('y').textContent=new Date().getFullYear();
-  const rv=document.querySelectorAll('.reveal');
-  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
-  rv.forEach(el=>io.observe(el));setTimeout(()=>rv.forEach(el=>el.classList.add('in')),2500);
+  (function(){
+    var a=document.getElementById('anno'),x=document.getElementById('annoX');
+    try{if(localStorage.getItem('arpeda_anno')==='0')a.classList.add('hide');}catch(e){}
+    x.addEventListener('click',function(){a.classList.add('hide');try{localStorage.setItem('arpeda_anno','0');}catch(e){}});
+  })();
 </script>
 </body>
 </html>
