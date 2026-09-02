@@ -343,7 +343,7 @@
         <dl>
           <dt>屋号</dt><dd>Arpeda（アルペダ）</dd>
           <dt>事業者</dt><dd>〔氏名〕</dd>
-          <dt>連絡先</dt><dd>〔メールアドレス〕</dd>
+          <dt>連絡先</dt><dd><span class="mailslot" data-u="hello" data-d="arpeda.jp">hello&#8203;(at)&#8203;arpeda.jp</span></dd>
         </dl>
       </div>
     </div>
@@ -357,6 +357,20 @@
     var a=document.getElementById('anno'),x=document.getElementById('annoX');
     try{if(localStorage.getItem('arpeda_anno')==='0')a.classList.add('hide');}catch(e){}
     x.addEventListener('click',function(){a.classList.add('hide');try{localStorage.setItem('arpeda_anno','0');}catch(e){}});
+  })();
+  // bot対策: メールアドレスはJSで組み立てる（HTMLに平文で置かない）
+  (function(){
+    document.querySelectorAll('.maillink').forEach(function(el){
+      var e=el.dataset.u+String.fromCharCode(64)+el.dataset.d;
+      el.setAttribute('href','mailto:'+e);
+      if(!el.textContent.trim())el.textContent=e;
+    });
+    document.querySelectorAll('.mailslot').forEach(function(el){
+      var e=el.dataset.u+String.fromCharCode(64)+el.dataset.d;
+      var link=document.createElement('a');
+      link.href='mailto:'+e;link.textContent=e;link.style.color='inherit';
+      el.textContent='';el.appendChild(link);
+    });
   })();
 </script>
 </body>
