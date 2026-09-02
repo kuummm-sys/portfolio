@@ -7,101 +7,109 @@
 <meta name="description" content="Arpeda（アルペダ）のサービス。LP制作・ホームページ制作・Webライティング。AIを活用し、構成設計から公開まで一貫してお引き受けします。料金は内容に応じてお見積りします。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Noto+Sans+JP:wght@400;500;700&family=Space+Mono:wght@400;700&family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Noto+Sans+JP:wght@300;400;500;700&family=Space+Mono&display=swap" rel="stylesheet">
 <style>
-  :root{--paper:#f4f1ea;--paper-2:#ece7db;--ink:#171512;--ink-soft:#3a362f;--muted:#6f6a60;--line:#ddd6c7;--coral:#cf5238;--coral-d:#af3f27}
+  :root{--paper:#fbfaf7;--paper-2:#f2f0ea;--line:#e6e2d8;--ink:#141310;--graphite:#45413a;--smoke:#726c62;--ash:#a49e93;--coral:#cf5238;--coral-d:#ab4029}
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
-  body{font-family:"Noto Sans JP",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-  body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.5;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E")}
+  body{font-family:"Noto Sans JP",system-ui,sans-serif;font-weight:400;color:var(--ink);background:var(--paper);line-height:1.95;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.45;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E")}
   main,header,footer{position:relative;z-index:2}
-  h1,h2,h3{font-family:"Zen Kaku Gothic New","Noto Sans JP",sans-serif;line-height:1.35;letter-spacing:.01em}
   img{max-width:100%;display:block}
   a{color:inherit}
-  .wrap{max-width:1120px;margin:0 auto;padding:0 28px}
-  .narrow{max-width:860px}
-  .kick{font-family:"Space Mono",monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--coral)}
-  .h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:900;letter-spacing:-.01em}
-  .lead{color:var(--muted)}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 32px}
+  .narrow{max-width:880px}
+  .en{font-family:"Fraunces",serif;font-weight:500;letter-spacing:.005em;color:var(--ash);font-size:.9rem}
+  .mono{font-family:"Space Mono",monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke)}
+  .lead{color:var(--smoke);font-size:.98rem}
 
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:"Zen Kaku Gothic New","Noto Sans JP";font-weight:700;font-size:.92rem;padding:15px 28px;border-radius:2px;text-decoration:none;background:var(--ink);color:var(--paper);border:1px solid var(--ink);transition:transform .18s ease,background .18s ease,color .18s ease}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:500;font-size:.9rem;padding:14px 28px;border-radius:999px;text-decoration:none;border:1px solid var(--ink);background:var(--ink);color:var(--paper);transition:transform .2s ease,background .2s ease,color .2s ease,border-color .2s ease}
   .btn:hover{transform:translateY(-2px)}
   .btn.coral{background:var(--coral);border-color:var(--coral)}
   .btn.coral:hover{background:var(--coral-d);border-color:var(--coral-d)}
-  .btn.line{background:transparent;color:var(--ink)}
-  .btn.line:hover{background:var(--ink);color:var(--paper)}
-  .btn .arw{transition:transform .18s ease}
-  .btn:hover .arw{transform:translateX(4px)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+  .btn .arw{transition:transform .2s ease}.btn:hover .arw{transform:translateX(4px)}
+  .txtlink{text-decoration:none;font-weight:500;font-size:.9rem;border-bottom:1px solid var(--coral);padding-bottom:3px;display:inline-flex;gap:7px;align-items:center}
+  .txtlink .arw{color:var(--coral);transition:transform .2s ease}.txtlink:hover .arw{transform:translateX(4px)}
 
-  .mark{display:inline-flex;align-items:flex-end;gap:3px;height:22px}
-  .mark span{width:4px;background:var(--coral);border-radius:1px}
-  .mark span:nth-child(1){height:35%}.mark span:nth-child(2){height:62%}.mark span:nth-child(3){height:100%}.mark span:nth-child(4){height:48%}
+  .mk{display:inline-flex;align-items:flex-end;gap:3px;height:20px}
+  .mk span{width:3.5px;background:var(--coral);border-radius:1px}
+  .mk span:nth-child(1){height:35%}.mk span:nth-child(2){height:62%}.mk span:nth-child(3){height:100%}.mk span:nth-child(4){height:48%}
 
-  header{position:sticky;top:0;z-index:50;background:rgba(244,241,234,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  .bar{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .logo{display:flex;align-items:center;gap:12px;text-decoration:none}
-  .logo .wm{font-family:"Fraunces",serif;font-weight:600;font-size:1.45rem;letter-spacing:-.01em}
-  .nav{display:flex;gap:28px;font-size:.86rem;font-weight:500}
-  .nav a{text-decoration:none;color:var(--muted);position:relative}
-  .nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:var(--ink);transition:right .25s ease}
-  .nav a:hover,.nav a[aria-current]{color:var(--ink)}
-  .nav a:hover::after,.nav a[aria-current]::after{right:0}
-  .bar .btn{padding:10px 20px;font-size:.82rem}
-  @media(max-width:880px){.nav{display:none}}
+  header{position:sticky;top:0;z-index:50;background:rgba(251,250,247,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .bar{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{display:flex;align-items:center;gap:11px;text-decoration:none}
+  .logo .wm{font-family:"Fraunces",serif;font-weight:500;font-size:1.4rem;letter-spacing:-.005em}
+  nav.nav{display:flex;gap:30px;font-size:.85rem}
+  nav.nav a{text-decoration:none;color:var(--smoke);position:relative}
+  nav.nav a::after{content:"";position:absolute;left:0;right:100%;bottom:-5px;height:1px;background:var(--ink);transition:right .25s ease}
+  nav.nav a:hover,nav.nav a[aria-current]{color:var(--ink)}
+  nav.nav a:hover::after,nav.nav a[aria-current]::after{right:0}
+  .bar .right{display:flex;align-items:center;gap:20px}
+  .bar .line-lnk{font-size:.82rem;color:var(--smoke);text-decoration:none}.bar .line-lnk:hover{color:var(--ink)}
+  .bar .btn{padding:9px 20px;font-size:.8rem}
+  @media(max-width:900px){nav.nav,.bar .line-lnk{display:none}}
 
-  .phero{padding:56px 0 48px;border-bottom:1px solid var(--line)}
-  .crumb{font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.12em;color:var(--muted);margin-bottom:18px}
-  .crumb a{text-decoration:none;color:var(--muted)}
-  .crumb a:hover{color:var(--ink)}
-  .phero h1{font-size:clamp(2rem,5vw,3rem);font-weight:900;letter-spacing:-.02em}
-  .phero p{color:var(--ink-soft);margin-top:18px;max-width:560px}
+  .phero{padding:64px 0 56px;border-bottom:1px solid var(--line)}
+  .crumb{font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.12em;color:var(--ash);margin-bottom:20px}
+  .crumb a{text-decoration:none;color:var(--ash)}.crumb a:hover{color:var(--ink)}
+  .phero h1{font-family:"Noto Sans JP";font-weight:300;letter-spacing:-.025em;font-size:clamp(2rem,5vw,3rem);line-height:1.25}
+  .phero p{color:var(--graphite);margin-top:20px;max-width:560px}
 
-  .svc-block{padding:78px 0;border-bottom:1px solid var(--line);scroll-margin-top:90px}
-  .svc-block .top{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
-  .svc-block .no{font-family:"Space Mono",monospace;font-size:.78rem;color:var(--coral)}
-  .svc-block h2{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:900}
-  .svc-block > .wrap > p{color:var(--muted);max-width:620px;margin-top:12px}
-  .svc-block .cols{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:34px}
-  .svc-block .cols h3{font-size:.9rem;font-weight:900;margin-bottom:12px;font-family:"Zen Kaku Gothic New";display:flex;align-items:center;gap:8px}
-  .svc-block .cols h3::before{content:"";width:14px;height:2px;background:var(--coral)}
+  .svc-block{padding:84px 0;border-bottom:1px solid var(--line);scroll-margin-top:100px}
+  .svc-block .top{display:flex;align-items:baseline;gap:18px;margin-bottom:8px}
+  .svc-block .no{font-family:"Space Mono",monospace;font-size:.78rem;color:var(--ash)}
+  .svc-block h2{font-family:"Noto Sans JP";font-weight:300;letter-spacing:-.02em;font-size:clamp(1.5rem,3.2vw,2.1rem)}
+  .svc-block > .wrap > p{color:var(--smoke);max-width:640px;margin-top:14px}
+  .svc-block .cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:38px}
+  .svc-block .cols h3{font-size:.82rem;font-weight:500;margin-bottom:14px;display:flex;align-items:center;gap:9px;color:var(--graphite);font-family:"Space Mono",monospace;letter-spacing:.06em;text-transform:uppercase}
+  .svc-block .cols h3::before{content:"";width:14px;height:1px;background:var(--coral)}
   .svc-block ul{list-style:none}
-  .svc-block li{font-size:.9rem;color:var(--ink-soft);padding-left:20px;position:relative;margin-bottom:7px}
-  .svc-block li::before{content:"–";position:absolute;left:0;color:var(--coral)}
-  .svc-block.soon{opacity:.9}
-  .svc-block .badge{display:inline-block;font-family:"Space Mono",monospace;font-size:.62rem;letter-spacing:.14em;border:1px solid var(--coral);color:var(--coral);padding:1px 8px;margin-left:10px;vertical-align:middle}
-  @media(max-width:760px){.svc-block .cols{grid-template-columns:1fr;gap:24px}}
+  .svc-block li{font-size:.92rem;color:var(--graphite);padding-left:20px;position:relative;margin-bottom:8px}
+  .svc-block li::before{content:"\2013";position:absolute;left:0;color:var(--ash)}
+  .svc-block .badge{font-family:"Space Mono",monospace;font-size:.58rem;letter-spacing:.12em;border:1px solid var(--ash);color:var(--ash);border-radius:999px;padding:1px 8px;margin-left:10px;vertical-align:middle}
 
-  .flow{padding:78px 0;border-bottom:1px solid var(--line)}
-  .steps{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);margin-top:34px}
-  .step{padding:26px 20px;border-right:1px solid var(--line)}
+  .flow{padding:84px 0;border-bottom:1px solid var(--line)}
+  .flow .sec-title{margin-bottom:16px}
+  .flow .en{display:block;margin-bottom:10px}
+  .flow h2{font-family:"Noto Sans JP";font-weight:300;letter-spacing:-.02em;font-size:clamp(1.5rem,3.2vw,2.1rem)}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:34px}
+  .step{padding:28px 22px;border-right:1px solid var(--line)}
   .step:last-child{border-right:0}
-  .step .n{font-family:"Space Mono",monospace;color:var(--coral);font-size:.78rem}
-  .step h3{font-size:.95rem;font-weight:900;margin:8px 0 6px}
-  .step p{font-size:.8rem;color:var(--muted)}
+  .step .n{font-family:"Space Mono",monospace;color:var(--ash);font-size:.76rem}
+  .step h3{font-family:"Noto Sans JP";font-weight:500;font-size:.95rem;margin:10px 0 6px}
+  .step p{font-size:.82rem;color:var(--smoke)}
   @media(max-width:900px){.steps{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid var(--line)}}
   @media(max-width:520px){.steps{grid-template-columns:1fr}}
 
-  .price{padding:78px 0;border-bottom:1px solid var(--line)}
-  .price .box{border:1px solid var(--line);background:var(--paper);padding:34px 36px;margin-top:26px;max-width:720px}
-  .price .box p{color:var(--ink-soft);font-size:.95rem}
-  .price .box p + p{margin-top:12px}
-  .price .box .small{font-size:.82rem;color:var(--muted);margin-top:18px;padding-left:14px;border-left:2px solid var(--coral)}
+  .price{padding:84px 0;border-bottom:1px solid var(--line)}
+  .price .en{display:block;margin-bottom:10px}
+  .price h2{font-family:"Noto Sans JP";font-weight:300;letter-spacing:-.02em;font-size:clamp(1.5rem,3.2vw,2.1rem)}
+  .price .box{border:1px solid var(--line);border-radius:16px;background:var(--paper-2);padding:36px 40px;margin-top:26px;max-width:760px}
+  .price .box p{color:var(--graphite);font-size:.96rem}
+  .price .box p + p{margin-top:14px}
+  .price .box .small{font-size:.82rem;color:var(--smoke);margin-top:20px;padding-left:14px;border-left:1px solid var(--coral)}
 
-  .cta-band{padding:96px 0;background:var(--paper-2);text-align:center}
-  .cta-band .h2{margin:18px 0 14px}
-  .cta-band p{color:var(--muted);max-width:460px;margin:0 auto 30px}
+  .cta-band{padding:110px 0;background:var(--paper-2);text-align:center}
+  .cta-band h2{font-family:"Noto Sans JP";font-weight:300;font-size:clamp(1.6rem,3.4vw,2.3rem);letter-spacing:-.015em;margin:20px 0 16px}
+  .cta-band p{color:var(--smoke);max-width:440px;margin:0 auto 32px;font-size:.94rem}
 
-  footer{padding:56px 0 40px;border-top:1px solid var(--line)}
-  footer .cols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px}
-  footer .wm{font-family:"Fraunces",serif;font-weight:600;font-size:1.6rem;margin-bottom:8px}
-  footer .fnav{display:flex;gap:22px;flex-wrap:wrap;font-size:.84rem}
-  footer .fnav a{text-decoration:none;color:var(--muted)}footer .fnav a:hover{color:var(--ink)}
-  footer dl{display:grid;grid-template-columns:auto 1fr;gap:5px 18px;font-size:.8rem;margin-top:18px}
-  footer dt{color:var(--ink);font-weight:700}footer dd{color:var(--muted)}
-  footer .cp{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);font-family:"Space Mono",monospace;font-size:.7rem;letter-spacing:.1em;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  @media(max-width:760px){.svc-block .cols{grid-template-columns:1fr;gap:26px}}
 
-  html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+  footer{padding:64px 0 44px;border-top:1px solid var(--line)}
+  footer .cols{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px}
+  footer .wm{font-family:"Fraunces",serif;font-weight:500;font-size:1.5rem;margin-bottom:10px}
+  footer .fdesc{font-size:.82rem;color:var(--smoke);max-width:260px}
+  footer .fnav{display:flex;gap:22px;flex-wrap:wrap;font-size:.83rem}
+  footer .fnav a{text-decoration:none;color:var(--smoke)}footer .fnav a:hover{color:var(--ink)}
+  footer dl{display:grid;grid-template-columns:auto 1fr;gap:6px 20px;font-size:.79rem;margin-top:18px}
+  footer dt{color:var(--graphite);font-weight:500}footer dd{color:var(--smoke)}
+  footer .cp{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);font-family:"Space Mono",monospace;font-size:.66rem;letter-spacing:.12em;color:var(--ash);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+
+  html.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
   html.js .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html.js .reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -109,14 +117,14 @@
 
 <header>
   <div class="wrap bar">
-    <a href="/" class="logo"><span class="mark"><span></span><span></span><span></span><span></span></span><span class="wm">Arpeda</span></a>
+    <a href="/" class="logo"><span class="mk"><span></span><span></span><span></span><span></span></span><span class="wm">Arpeda</span></a>
     <nav class="nav">
       <a href="/services/" aria-current="page">サービス</a>
       <a href="/works/">実績</a>
       <a href="/about/">Arpedaについて</a>
       <a href="/contact/">お問い合わせ</a>
     </nav>
-    <a href="/contact/" class="btn coral">相談する</a>
+    <div class="right"><a href="〔LINE URL〕" class="line-lnk">LINE</a><a href="/contact/" class="btn coral">相談する</a></div>
   </div>
 </header>
 
@@ -134,26 +142,8 @@
     <div class="top"><span class="no">01</span><h2>LP制作</h2></div>
     <p>予約・購入・問い合わせなど、1つの行動につなげるためのランディングページ。新規制作も、既存LPの改善もお引き受けします。「誰に・何を・どの順番で見せるか」を先に固めてから、コピーとデザインを一体で作ります。</p>
     <div class="cols">
-      <div>
-        <h3>含まれるもの</h3>
-        <ul>
-          <li>目的・ターゲットのヒアリング</li>
-          <li>構成設計（ワイヤーフレーム）</li>
-          <li>コピーライティング</li>
-          <li>デザイン</li>
-          <li>コーディング（レスポンシブ）</li>
-          <li>フォーム設置・公開作業（ご希望に応じて）</li>
-        </ul>
-      </div>
-      <div>
-        <h3>こんな方に</h3>
-        <ul>
-          <li>新商品・キャンペーンの受け皿がほしい</li>
-          <li>広告を出すが飛び先のページがない</li>
-          <li>今のLPで問い合わせが増えない</li>
-          <li>とにかく早く形にしたい</li>
-        </ul>
-      </div>
+      <div><h3>含まれるもの</h3><ul><li>目的・ターゲットのヒアリング</li><li>構成設計（ワイヤーフレーム）</li><li>コピーライティング</li><li>デザイン</li><li>コーディング（レスポンシブ）</li><li>フォーム設置・公開作業（ご希望に応じて）</li></ul></div>
+      <div><h3>こんな方に</h3><ul><li>新商品・キャンペーンの受け皿がほしい</li><li>広告を出すが飛び先のページがない</li><li>今のLPで問い合わせが増えない</li><li>とにかく早く形にしたい</li></ul></div>
     </div>
   </div>
 </section>
@@ -163,26 +153,8 @@
     <div class="top"><span class="no">02</span><h2>ホームページ制作</h2></div>
     <p>店舗・個人事業・小規模の企業向けのコーポレートサイト（5〜10ページ程度）。スマホ最適化、お問い合わせフォーム、地図の埋め込みなど、必要なものをまとめてご用意します。公開後にご自身で更新しやすい構成にもできます。</p>
     <div class="cols">
-      <div>
-        <h3>含まれるもの</h3>
-        <ul>
-          <li>サイト構成（サイトマップ）の設計</li>
-          <li>各ページのデザイン・制作</li>
-          <li>スマートフォン対応</li>
-          <li>お問い合わせフォーム</li>
-          <li>Googleマップ・SNS連携</li>
-          <li>ドメイン・サーバーのご案内、公開作業</li>
-        </ul>
-      </div>
-      <div>
-        <h3>こんな方に</h3>
-        <ul>
-          <li>ホームページがない、または古い</li>
-          <li>スマホで見づらいと言われる</li>
-          <li>名刺代わりに使えるサイトがほしい</li>
-          <li>自分でも少し更新できるようにしたい</li>
-        </ul>
-      </div>
+      <div><h3>含まれるもの</h3><ul><li>サイト構成（サイトマップ）の設計</li><li>各ページのデザイン・制作</li><li>スマートフォン対応</li><li>お問い合わせフォーム</li><li>Googleマップ・SNS連携</li><li>ドメイン・サーバーのご案内、公開作業</li></ul></div>
+      <div><h3>こんな方に</h3><ul><li>ホームページがない、または古い</li><li>スマホで見づらいと言われる</li><li>名刺代わりに使えるサイトがほしい</li><li>自分でも少し更新できるようにしたい</li></ul></div>
     </div>
   </div>
 </section>
@@ -192,30 +164,13 @@
     <div class="top"><span class="no">03</span><h2>Webライティング</h2></div>
     <p>セールスコピー、LP原稿、SEOを意識した記事、キャッチコピーなど。読者の検索意図や心理を分解し、「読みやすさ」と「読み終えた後の行動」の両方を意識して書きます。構成案を先にご確認いただいてから本文に入ります。</p>
     <div class="cols">
-      <div>
-        <h3>対応できるもの</h3>
-        <ul>
-          <li>LP・セールスページの原稿</li>
-          <li>SEO記事・ブログ記事</li>
-          <li>サービス紹介文・会社概要</li>
-          <li>キャッチコピー・見出し</li>
-          <li>既存文章のリライト</li>
-        </ul>
-      </div>
-      <div>
-        <h3>進め方</h3>
-        <ul>
-          <li>キーワード・読者像・レギュレーションの確認</li>
-          <li>構成案（見出し）のご提示</li>
-          <li>本文の執筆</li>
-          <li>コピーチェック・修正対応</li>
-        </ul>
-      </div>
+      <div><h3>対応できるもの</h3><ul><li>LP・セールスページの原稿</li><li>SEO記事・ブログ記事</li><li>サービス紹介文・会社概要</li><li>キャッチコピー・見出し</li><li>既存文章のリライト</li></ul></div>
+      <div><h3>進め方</h3><ul><li>キーワード・読者像・レギュレーションの確認</li><li>構成案（見出し）のご提示</li><li>本文の執筆</li><li>コピーチェック・修正対応</li></ul></div>
     </div>
   </div>
 </section>
 
-<section class="svc-block soon" id="ai">
+<section class="svc-block" id="ai">
   <div class="wrap">
     <div class="top"><span class="no">04</span><h2>AI活用支援 <span class="badge">準備中</span></h2></div>
     <p>制作の現場でAIを使い倒してきた知見をもとに、業務へのAI導入・内製化のご支援も準備しています。ご興味のある方は、お問い合わせよりご連絡ください。準備が整い次第ご案内します。</p>
@@ -224,24 +179,24 @@
 
 <section class="flow">
   <div class="wrap">
-    <span class="kick">Flow</span>
-    <h2 class="h2 reveal" style="margin-top:12px">制作の流れ</h2>
-    <p class="lead reveal" style="margin-top:12px">LP1本で初稿2〜4営業日、完成まで1〜2週間が目安です。</p>
+    <span class="en">Flow</span>
+    <h2>制作の流れ</h2>
+    <p class="lead" style="margin-top:14px">LP1本で初稿2〜4営業日、完成まで1〜2週間が目安です。</p>
     <div class="steps">
-      <div class="step reveal"><span class="n">01</span><h3>ヒアリング</h3><p>目的・ターゲット・参考サイト・掲載素材を確認します。</p></div>
-      <div class="step reveal"><span class="n">02</span><h3>構成のご提案</h3><p>「何を・どの順番で見せるか」を先に固めます。</p></div>
-      <div class="step reveal"><span class="n">03</span><h3>初稿の制作</h3><p>コピーとデザインを一体で作成し、ご確認いただきます。</p></div>
-      <div class="step reveal"><span class="n">04</span><h3>修正</h3><p>無料修正2回＋納品後1週間の軽微な調整に対応。</p></div>
-      <div class="step reveal"><span class="n">05</span><h3>納品</h3><p>データ一式のお渡し、または公開作業まで。</p></div>
+      <div class="step"><span class="n">01</span><h3>ヒアリング</h3><p>目的・ターゲット・参考サイト・掲載素材を確認します。</p></div>
+      <div class="step"><span class="n">02</span><h3>構成のご提案</h3><p>「何を・どの順番で見せるか」を先に固めます。</p></div>
+      <div class="step"><span class="n">03</span><h3>初稿の制作</h3><p>コピーとデザインを一体で作成し、ご確認いただきます。</p></div>
+      <div class="step"><span class="n">04</span><h3>修正</h3><p>無料修正2回＋納品後1週間の軽微な調整に対応。</p></div>
+      <div class="step"><span class="n">05</span><h3>納品</h3><p>データ一式のお渡し、または公開作業まで。</p></div>
     </div>
   </div>
 </section>
 
 <section class="price">
   <div class="wrap">
-    <span class="kick">Price</span>
-    <h2 class="h2 reveal" style="margin-top:12px">料金について</h2>
-    <div class="box reveal">
+    <span class="en">Price</span>
+    <h2>料金について</h2>
+    <div class="box">
       <p>ページ数、デザインの作り込み、機能、掲載素材の有無などによって変わるため、<strong>内容をうかがったうえで都度お見積り</strong>いたします。</p>
       <p>お見積り・ご相談は無料です。ご予算をお伝えいただければ、その範囲でできることをご提案します。「まず概算だけ知りたい」というご相談も歓迎します。</p>
       <p class="small">無料修正は2回まで。加えて納品後1週間は軽微な調整（誤字・文言・色・画像差し替え）を無料で対応します。構成・デザインの作り直し、ページ追加は別途お見積りとなります。</p>
@@ -251,8 +206,8 @@
 
 <section class="cta-band">
   <div class="wrap">
-    <span class="mark"><span></span><span></span><span></span><span></span></span>
-    <h2 class="h2">やりたいことを、聞かせてください。</h2>
+    <span class="mk"><span></span><span></span><span></span><span></span></span>
+    <h2>やりたいことを、聞かせてください。</h2>
     <p>「こんなことできますか？」だけでも歓迎します。通常その日のうちにご返信します。</p>
     <p><a href="/contact/" class="btn coral">お問い合わせ<span class="arw">&rarr;</span></a></p>
   </div>
@@ -262,10 +217,7 @@
 <footer>
   <div class="wrap">
     <div class="cols">
-      <div>
-        <div class="wm">Arpeda</div>
-        <p style="font-size:.84rem;color:var(--muted);max-width:280px">AIを活用した、速いWeb制作。<br>LP・ホームページ・ライティング。</p>
-      </div>
+      <div><div class="wm">Arpeda</div><p class="fdesc">AIを活用した、速いWeb制作。<br>LP・ホームページ・ライティング。</p></div>
       <div>
         <div class="fnav"><a href="/services/">サービス</a><a href="/works/">実績</a><a href="/about/">Arpedaについて</a><a href="/contact/">お問い合わせ</a></div>
         <dl><dt>屋号</dt><dd>Arpeda（アルペダ）</dd><dt>事業者</dt><dd>〔氏名〕</dd><dt>連絡先</dt><dd>〔メールアドレス〕</dd></dl>
