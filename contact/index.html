@@ -45,11 +45,10 @@
 
   header{position:sticky;top:0;z-index:40;background:rgba(246,243,241,.85);backdrop-filter:blur(8px)}
   .nav{display:flex;align-items:center;justify-content:space-between;height:80px}
-  .brand{display:flex;align-items:center;gap:11px;text-decoration:none}
-  .brand .bars{display:inline-flex;align-items:flex-end;gap:2.5px;height:18px}
-  .brand .bars i{width:3px;background:var(--off-black);border-radius:1px}
-  .brand .bars i:nth-child(1){height:32%}.brand .bars i:nth-child(2){height:58%}.brand .bars i:nth-child(3){height:100%;background:var(--blue)}.brand .bars i:nth-child(4){height:44%}
-  .brand .wm{font-family:var(--serif);font-size:22px;letter-spacing:-.01em}
+  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+  .brand .mk{width:23px;height:21px;flex:none;color:var(--off-black)}
+  .brand .mk svg{width:100%;height:100%;display:block;overflow:visible}
+  .brand .wm{font-family:var(--serif);font-weight:500;font-size:22px;letter-spacing:-.02em}
   .nav-links{display:flex;gap:26px;font-family:var(--mono);font-size:13px;letter-spacing:.02em}
   .nav-links a{text-decoration:none;color:var(--graphite)}
   .nav-links a:hover,.nav-links a[aria-current]{color:var(--off-black)}
@@ -122,7 +121,9 @@
 
   footer{border-top:1px solid var(--ash);padding:64px 0 40px}
   footer .top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:36px}
-  footer .wm{font-family:var(--serif);font-size:24px;margin-bottom:10px}
+  footer .wm{display:flex;align-items:center;gap:9px;font-family:var(--serif);font-weight:500;font-size:24px;letter-spacing:-.02em;margin-bottom:10px}
+  footer .wm .mk{width:20px;height:18px;flex:none;color:var(--off-black)}
+  footer .wm .mk svg{width:100%;height:100%;display:block;overflow:visible}
   footer .fdesc{font-family:var(--mono);font-size:13px;color:var(--smoke);max-width:280px;line-height:1.7}
   footer .fnav{display:flex;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:13px}
   footer .fnav a{text-decoration:none;color:var(--graphite)}
@@ -220,7 +221,7 @@
 
 <header>
   <div class="wrap nav">
-    <a href="/" class="brand"><span class="bars"><i></i><i></i><i></i><i></i></span><span class="wm">Arpeda</span></a>
+    <a href="/" class="brand" aria-label="Arpeda ホーム"><span class="mk"><svg viewBox="4 4 100 92" aria-hidden="true"><path d="M49 12 L10 90 L31 90 Z" fill="currentColor"/><path d="M53 12 L96 90 L74 90 Z" fill="#2b59d1"/><rect x="30" y="60" width="42" height="11" fill="currentColor"/></svg></span><span class="wm">Arpeda</span></a>
     <nav class="nav-links">
       <a href="/services/">サービス</a>
       <a href="/works/">実績</a>
@@ -311,7 +312,7 @@
   <div class="wrap">
     <div class="top">
       <div>
-        <div class="wm">Arpeda</div>
+        <div class="wm"><span class="mk"><svg viewBox="4 4 100 92" aria-hidden="true"><path d="M49 12 L10 90 L31 90 Z" fill="currentColor"/><path d="M53 12 L96 90 L74 90 Z" fill="#2b59d1"/><rect x="30" y="60" width="42" height="11" fill="currentColor"/></svg></span>Arpeda</div>
         <p class="fdesc">AIを活用した、速いWeb制作。<br>LP・ホームページ・ライティング。</p>
       </div>
       <div>
