@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>東洋整体コンディショニングサロン｜大和市桜ヶ丘の足技整体（デザイン提案サンプル）</title>
+<meta name="description" content="大和市桜ヶ丘の足技整体。手よりやさしい足裏の施術で、肩・腰のこわばりや慢性的な疲れとゆっくり向き合います。瀬谷区・綾瀬市からもアクセス良好。初見料なし・回数券の押し売りなし。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2b2924; --muted:#6f685c; --bg:#f6f2e9; --card:#fffdf8; --line:#e7decb;
+    --accent:#2f6b4f; --accent-dark:#234e3b; --accent-soft:#e4ede4; --gold:#b08a3e;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Zen Kaku Gothic New",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.9;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1020px;margin:0 auto;padding:0 22px}
+  .sec{padding:82px 0}
+  h2.t{font-family:"Shippori Mincho",serif;font-size:clamp(1.6rem,4.4vw,2.3rem);line-height:1.5;font-weight:700}
+  h2.t .en{display:block;font-family:"Zen Kaku Gothic New";font-size:.72rem;letter-spacing:.32em;color:var(--accent);font-weight:700;margin-bottom:10px}
+  .lead{color:var(--muted);margin-top:16px;font-size:1.02rem}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:900;padding:16px 30px;border-radius:999px;text-decoration:none;background:var(--accent);color:#fff;box-shadow:0 10px 24px -12px rgba(47,107,79,.7);transition:transform .2s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.line{background:#06c755;box-shadow:0 10px 24px -12px rgba(6,199,85,.7)}
+  .btn.ghost{background:transparent;color:var(--accent-dark);border:1.5px solid var(--accent)}
+  .btn.sm{padding:12px 20px;font-size:.9rem}
+
+  /* header */
+  header{position:sticky;top:0;z-index:50;background:rgba(246,242,233,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .hbar{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:"Shippori Mincho",serif;font-weight:700;font-size:1.05rem;letter-spacing:.04em}
+  .logo small{display:block;font-family:"Zen Kaku Gothic New";font-weight:500;font-size:.62rem;letter-spacing:.22em;color:var(--muted)}
+  .hnav{display:flex;gap:22px;align-items:center;font-size:.9rem;font-weight:500}
+  .hnav a{text-decoration:none;color:var(--muted)}
+  .hnav a:hover{color:var(--ink)}
+  @media(max-width:860px){.hnav a:not(.btn){display:none}}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;background:
+     radial-gradient(120% 80% at 85% 0%, #eef4ec 0%, rgba(238,244,236,0) 55%),
+     linear-gradient(180deg,#f6f2e9 0%, #f1ece0 100%)}
+  .hero .wrap{position:relative;z-index:2;padding-top:70px;padding-bottom:78px}
+  .hero .ksub{display:inline-block;font-size:.78rem;letter-spacing:.18em;font-weight:700;color:var(--accent-dark);background:var(--accent-soft);padding:7px 15px;border-radius:999px}
+  .hero h1{font-family:"Shippori Mincho",serif;font-weight:700;font-size:clamp(2rem,6.4vw,3.35rem);line-height:1.42;margin:22px 0 8px;letter-spacing:.02em}
+  .hero h1 .hl{background:linear-gradient(transparent 68%, #d7e7d6 68%)}
+  .hero p.desc{color:var(--muted);max-width:34em;font-size:1.05rem}
+  .hero .cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .trust{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:30px;font-size:.86rem;color:var(--muted)}
+  .trust span{display:inline-flex;align-items:center;gap:7px}
+  .trust svg{width:16px;height:16px;flex:none;color:var(--accent)}
+  .hero-art{position:absolute;right:-60px;top:0;bottom:0;width:44%;z-index:1;opacity:.5}
+  @media(max-width:860px){.hero-art{display:none}}
+
+  .chip{display:inline-flex;gap:8px;align-items:center;font-size:.8rem;font-weight:700;color:var(--accent-dark);background:#fff;border:1px solid var(--line);padding:8px 14px;border-radius:999px}
+
+  /* cards / grids */
+  .grid{display:grid;gap:18px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:860px){.g3,.g2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .card h3{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+  .card p{font-size:.94rem;color:var(--muted)}
+
+  .worry{background:var(--accent-soft)}
+  .worry ul{list-style:none;display:grid;gap:12px;grid-template-columns:repeat(2,1fr);margin-top:26px}
+  .worry li{background:#fff;border-radius:14px;padding:16px 18px;font-weight:500;display:flex;gap:10px}
+  .worry li::before{content:"";flex:none;width:8px;height:8px;border-radius:999px;background:var(--gold);margin-top:12px}
+  @media(max-width:640px){.worry ul{grid-template-columns:1fr}}
+
+  /* reasons */
+  .reason{display:flex;gap:20px;align-items:flex-start;padding:24px 0;border-bottom:1px dashed var(--line)}
+  .reason:last-child{border-bottom:0}
+  .reason .no{font-family:"Shippori Mincho",serif;font-size:1.5rem;color:var(--accent);flex:none;width:44px}
+  .reason h3{font-size:1.12rem;margin-bottom:6px}
+  .reason p{color:var(--muted);font-size:.95rem}
+
+  /* voice */
+  .voice{background:linear-gradient(180deg,#f1ece0,#f6f2e9)}
+  .vcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
+  .vcard .stars{color:var(--gold);letter-spacing:2px;font-size:.9rem}
+  .vcard p.body{margin:10px 0 14px;font-size:.96rem}
+  .vcard .who{font-size:.82rem;color:var(--muted)}
+  .disc{font-size:.76rem;color:var(--muted);margin-top:18px}
+
+  /* flow */
+  .flow{counter-reset:step;display:grid;gap:14px}
+  .flow li{list-style:none;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 22px 20px 60px;position:relative}
+  .flow li::before{counter-increment:step;content:counter(step);position:absolute;left:18px;top:18px;width:30px;height:30px;border-radius:999px;background:var(--accent);color:#fff;font-weight:900;display:grid;place-items:center;font-size:.9rem}
+  .flow li b{display:block;margin-bottom:2px}
+  .flow li span{font-size:.9rem;color:var(--muted)}
+
+  /* price */
+  .price-main{display:grid;gap:14px;grid-template-columns:repeat(3,1fr);margin-top:8px}
+  @media(max-width:860px){.price-main{grid-template-columns:1fr}}
+  .pcard{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;text-align:center;position:relative}
+  .pcard.best{border-color:var(--accent);box-shadow:0 16px 36px -20px rgba(47,107,79,.55)}
+  .pcard .tag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--accent);color:#fff;font-size:.72rem;font-weight:900;padding:4px 14px;border-radius:999px;white-space:nowrap}
+  .pcard .time{font-weight:700;color:var(--muted);font-size:.9rem}
+  .pcard .yen{font-family:"Shippori Mincho",serif;font-size:1.9rem;font-weight:700;margin:4px 0}
+  .pcard .note{font-size:.85rem;color:var(--muted)}
+  .price-sub{margin-top:16px;background:var(--accent-soft);border-radius:16px;padding:20px 22px;font-size:.92rem}
+  .price-sub b{color:var(--accent-dark)}
+  .opt-list{display:grid;gap:8px;grid-template-columns:repeat(2,1fr);margin-top:12px;font-size:.88rem;color:var(--muted)}
+  @media(max-width:640px){.opt-list{grid-template-columns:1fr}}
+
+  /* access + form */
+  .access-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+  @media(max-width:860px){.access-grid{grid-template-columns:1fr}}
+  .info-row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+  .info-row:last-child{border-bottom:0}
+  .info-row b{flex:none;width:88px;color:var(--muted);font-weight:700}
+  .mapbox{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#eef1ea;aspect-ratio:16/11;display:grid;place-items:center;color:var(--muted);font-size:.85rem;text-align:center;padding:20px}
+
+  form.contact{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+  form.contact label{display:block;font-size:.85rem;font-weight:700;margin:14px 0 6px}
+  form.contact label:first-of-type{margin-top:0}
+  form.contact input,form.contact textarea,form.contact select{width:100%;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font:inherit;background:#fff;color:var(--ink)}
+  form.contact textarea{min-height:110px;resize:vertical}
+  form.contact .req{color:#c0603a;font-size:.75rem;margin-left:4px}
+  form.contact .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:640px){form.contact .row{grid-template-columns:1fr}}
+  form.contact button{margin-top:18px;width:100%;border:0;cursor:pointer}
+  .altcontact{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+  .altcontact a{flex:1;min-width:150px;text-align:center;border:1px solid var(--line);border-radius:12px;padding:12px;text-decoration:none;font-weight:700;font-size:.9rem;background:#fff}
+  .note-sample{font-size:.78rem;color:var(--muted);margin-top:12px;line-height:1.7}
+
+  /* faq */
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px 20px;margin-bottom:10px}
+  .faq summary{cursor:pointer;list-style:none;font-weight:700;padding:16px 30px 16px 0;position:relative}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"＋";position:absolute;right:2px;top:14px;color:var(--accent);font-weight:900}
+  .faq details[open] summary::after{content:"−"}
+  .faq p{padding:0 0 16px;color:var(--muted);font-size:.93rem}
+
+  /* final cta */
+  .final{background:linear-gradient(160deg,var(--accent) 0%,var(--accent-dark) 100%);color:#fff;text-align:center}
+  .final h2{font-family:"Shippori Mincho",serif;font-size:clamp(1.6rem,5vw,2.2rem);line-height:1.5}
+  .final p{opacity:.9;margin:14px 0 26px}
+  .final .btn{background:#fff;color:var(--accent-dark)}
+  .final .btn.line{background:#06c755;color:#fff}
+
+  footer{background:#26241f;color:#cfcabd;font-size:.86rem;padding:44px 0}
+  footer .cols{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  footer b{color:#fff;display:block;margin-bottom:8px;font-size:.95rem}
+  footer a{color:#cfcabd}
+  .copyright{margin-top:26px;padding-top:18px;border-top:1px solid #3c3930;font-size:.78rem;color:#8f8a7d}
+
+  .sample-ribbon{background:#26241f;color:#f6f2e9;text-align:center;font-size:.76rem;letter-spacing:.06em;padding:8px 14px}
+
+  /* sticky mobile cta */
+  .sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:8px;padding:9px 12px;background:rgba(38,36,31,.94);backdrop-filter:blur(6px)}
+  .sticky a{flex:1;text-align:center;padding:13px 6px;border-radius:12px;font-weight:900;font-size:.82rem;text-decoration:none;background:var(--accent);color:#fff}
+  .sticky a.line{background:#06c755}
+  .sticky a.tel{background:#4a4638}
+  @media(max-width:860px){.sticky{display:flex}body{padding-bottom:70px}}
+
+  html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  html.js .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<div class="sample-ribbon">これは Arpeda（アルペダ）が制作したデザイン提案サンプルです。文章・料金は公開情報をもとにした仮のものです。</div>
+
+<header>
+  <div class="wrap hbar">
+    <div class="logo">東洋整体コンディショニングサロン<small>大和市桜ヶ丘・足技整体</small></div>
+    <nav class="hnav">
+      <a href="#worry">お悩み</a>
+      <a href="#reason">選ばれる理由</a>
+      <a href="#price">料金</a>
+      <a href="#access">アクセス</a>
+      <a href="#contact" class="btn sm">ご予約・ご相談</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="hero-art" viewBox="0 0 400 600" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M200 40c40 60 120 90 120 200S240 520 200 560c-40-40-120-120-120-320S160 100 200 40z" stroke="#2f6b4f" stroke-width="2"/>
+    <path d="M200 90c26 50 84 74 84 168s-58 176-84 210c-26-34-84-116-84-210S174 140 200 90z" stroke="#b08a3e" stroke-width="1.5"/>
+    <line x1="200" y1="70" x2="200" y2="540" stroke="#2f6b4f" stroke-width="1.5"/>
+  </svg>
+  <div class="wrap">
+    <span class="ksub">瀬谷区・大和市・綾瀬市／初めての方も歓迎</span>
+    <h1>手よりやさしい<span class="hl">足技整体</span>で、<br>こわばった毎日を、ゆっくりゆるめる。</h1>
+    <p class="desc">足裏で広く筋肉を捉え、圧を細かく調整しながら、表面から奥へ段階的にほぐしていきます。強い刺激が苦手な方や、整体がはじめての方にも受けていただきやすい施術です。</p>
+    <div class="cta">
+      <a href="https://lin.ee/38frfFB" class="btn line">LINEで相談・予約する</a>
+      <a href="#contact" class="btn ghost">フォームで問い合わせる</a>
+    </div>
+    <div class="trust">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>初見料はいただきません</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>回数券の押し売りはしません</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>強い矯正・無理な施術は行いません</span>
+    </div>
+  </div>
+</section>
+
+<section class="sec worry" id="worry">
+  <div class="wrap">
+    <h2 class="t"><span class="en">FOR YOU</span>こんなお悩みで来院される方が多いです</h2>
+    <ul class="reveal">
+      <li>デスクワークで、首や肩のつらさが続いている</li>
+      <li>腰の違和感が、なかなか取れない</li>
+      <li>病院では「異常なし」と言われたが、不調が残っている</li>
+      <li>強い施術が苦手で、どこに行けばいいか迷っている</li>
+    </ul>
+    <p class="lead">「自分の症状でも相談していいのかな？」という段階でも大丈夫です。まずはLINEで、お身体の状態やご不安な点をお聞かせください。</p>
+  </div>
+</section>
+
+<section class="sec" id="about">
+  <div class="wrap">
+    <h2 class="t"><span class="en">ASHIGI SEITAI</span>足技（あしぎ）整体とは</h2>
+    <p class="lead">当院の基本施術です。足裏は手に比べて接地面が広く、筋肉をしっかり捉えながら心地よく揺らせます。圧の強さも自在に調整できるため、「痛いのは苦手」という方にも合わせやすいのが特徴です。</p>
+    <div class="grid g3" style="margin-top:26px">
+      <div class="card reveal"><h3>広く、深く</h3><p>足裏で広い面積を捉え、表面の緊張から奥のこわばりまで段階的にゆるめていきます。</p></div>
+      <div class="card reveal"><h3>圧は自在に調整</h3><p>その日の体調やご希望に合わせて強さを変えられます。強い刺激が苦手な方も安心です。</p></div>
+      <div class="card reveal"><h3>必要に応じて骨盤バランス調整</h3><p>姿勢の崩れや産後の不調が気になる方には、骨盤まわりのバランス調整を組み合わせます。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="reason" style="background:var(--card)">
+  <div class="wrap">
+    <h2 class="t"><span class="en">WHY US</span>当院が選ばれている理由</h2>
+    <div style="margin-top:20px">
+      <div class="reason reveal">
+        <div class="no">一</div>
+        <div><h3>足裏の施術という選択肢</h3><p>手技とは捉え方が違うため、「これまでの整体では物足りなかった」「強い施術で疲れてしまった」という方にも試していただきやすい方法です。</p></div>
+      </div>
+      <div class="reason reveal">
+        <div class="no">二</div>
+        <div><h3>初回はカウンセリングを大切に</h3><p>いきなり施術に入らず、これまでの経緯やお困りごとをじっくり伺います。電話が苦手な方は、LINEのトークで事前にご相談いただけます。</p></div>
+      </div>
+      <div class="reason reveal">
+        <div class="no">三</div>
+        <div><h3>初見料なし・回数券の押し売りなし</h3><p>初回に別途の初見料はいただきません。回数券の販売も行っていません。お身体の状態に合わせて、その都度ご提案します。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec voice" id="voice">
+  <div class="wrap">
+    <h2 class="t"><span class="en">VOICE</span>通われている方の声</h2>
+    <div class="grid g3" style="margin-top:24px">
+      <div class="vcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="body">いつも悪くなってからしか来ないのに、だいぶ体が楽になったと感じます。</p>
+        <div class="who">N.Aさん／40代・伊勢原市／立ち作業と慢性的な腰の不調</div>
+      </div>
+      <div class="vcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="body">ほぐすだけでなく、その後のセルフケアのアドバイスまで、こちらの身になって考えて伝えてくれるのがありがたいです。</p>
+        <div class="who">N.Gさん／40代・藤沢市／設計業務による肩まわりの不調</div>
+      </div>
+      <div class="vcard reveal">
+        <div class="stars">★★★★★</div>
+        <p class="body">その時の体調に合わせて施術してもらえるので、終わったあとはいつも体が軽くなった気がします。</p>
+        <div class="who">M.Uさん／50代・大和市／立ち仕事による腰・肩のこり</div>
+      </div>
+    </div>
+    <p class="disc">※ 掲載しているのは、定期的に通われている方から個別にいただいた感想です。感じ方には個人差があり、同じ体感を保証するものではありません。</p>
+  </div>
+</section>
+
+<section class="sec" id="flow">
+  <div class="wrap">
+    <h2 class="t"><span class="en">FLOW</span>ご来院の流れ</h2>
+    <ol class="flow" style="margin-top:24px">
+      <li class="reveal"><b>LINEまたはお電話でご予約</b><span>「整体で対応できる症状か」「施術の流れ」だけのご相談でも大丈夫です。空き状況をご案内します。</span></li>
+      <li class="reveal"><b>ご来院・カウンセリング</b><span>これまでの経緯やお困りごと、お身体の状態を伺います。気になることは遠慮なくお伝えください。</span></li>
+      <li class="reveal"><b>足技整体</b><span>足裏の施術で全身のバランスを整えます。必要に応じて骨盤バランス調整や、コンディションを整える機器をご提案します（無理にはお勧めしません）。</span></li>
+      <li class="reveal"><b>お身体の状態と、ご自宅でのケアのご案内</b><span>その日の状態をお伝えし、日常で気をつけるとよい点をお話しします。次回の目安はご希望に合わせて。</span></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec" id="price" style="background:var(--accent-soft)">
+  <div class="wrap">
+    <h2 class="t"><span class="en">PRICE</span>メニュー・料金</h2>
+    <p class="lead">初見料はいただいておらず、無理な回数券の販売も行っていません。お身体の状態に合わせて、最適な内容をご提案します。</p>
+    <div class="price-main">
+      <div class="pcard reveal">
+        <div class="time">足技整体 40分</div>
+        <div class="yen">4,400<small style="font-size:.9rem">円</small></div>
+        <div class="note">気になる部分を中心に。定期的なメンテナンスにも。</div>
+      </div>
+      <div class="pcard best reveal">
+        <div class="tag">いちばん選ばれています</div>
+        <div class="time">足技整体 60分</div>
+        <div class="yen">6,600<small style="font-size:.9rem">円</small></div>
+        <div class="note">初めての方・全身をしっかり整えたい方へのスタンダード。</div>
+      </div>
+      <div class="pcard reveal">
+        <div class="time">足技整体 90分</div>
+        <div class="yen">9,900<small style="font-size:.9rem">円</small></div>
+        <div class="note">慢性的なお悩み・じっくり受けたい方へ。</div>
+      </div>
+    </div>
+    <div class="price-sub">
+      <b>骨盤バランス調整（オプション）</b> ＋1,100円　※足技整体60分以上に追加できます<br>
+      <b>リフレッシュ体験コース</b>（酸素カプセル＋選べる機器）<b>LINE登録の方 1,100円</b>
+      <div class="opt-list">
+        <span>・酸素カプセル（疲れが抜けにくい方に）</span>
+        <span>・アクアチタン浴egg（冷えが気になる方に）</span>
+        <span>・電気の機器（深部のこわばりに）</span>
+        <span>・フットケア（立ち仕事・長時間運転の方に）</span>
+        <span>・Vプレート（全身のバランス・可動域）</span>
+      </div>
+      <p style="font-size:.82rem;color:var(--muted);margin-top:10px">※ 機器は主役ではありません。足技整体を軸に、その日の状態をみて必要なものだけをご案内します。</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="access">
+  <div class="wrap">
+    <h2 class="t"><span class="en">ACCESS</span>アクセス・営業時間</h2>
+    <div class="access-grid" style="margin-top:24px">
+      <div>
+        <div class="info-row"><b>住所</b><span>〒242-0025 神奈川県大和市代官1-1-9<br>県道45号線（中原街道）・代官二丁目交差点そば</span></div>
+        <div class="info-row"><b>駐車場</b><span>店舗前に3台分あり（一番左はオートバイ用）</span></div>
+        <div class="info-row"><b>営業時間</b><span>土日 9:00〜20:00／月〜木 10:00〜19:00<br>（最終受付 19:00）</span></div>
+        <div class="info-row"><b>定休日</b><span>金曜日</span></div>
+        <div class="info-row"><b>対応エリア</b><span>大和市・瀬谷区・綾瀬市・旭区ほか、藤沢市・海老名市・相模原方面からも</span></div>
+        <div class="info-row"><b>電話</b><span><a href="tel:0462794955">046-279-4955</a></span></div>
+      </div>
+      <div class="mapbox">地図（Google マップ）をこの位置に表示します<br><span style="font-size:.78rem">※サンプルのため画像は省略しています</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="contact" style="background:var(--card)">
+  <div class="wrap">
+    <h2 class="t"><span class="en">CONTACT</span>ご予約・ご相談</h2>
+    <p class="lead">下のフォーム、LINE、お電話のうち、ご都合のよい方法でどうぞ。フォームは24時間受け付け、確認しだいご返信します。「相談だけ」でもかまいません。</p>
+    <div class="access-grid" style="margin-top:22px">
+      <form class="contact" onsubmit="event.preventDefault();this.querySelector('.sent').hidden=false;">
+        <label>お名前<span class="req">必須</span></label>
+        <input type="text" required placeholder="山田 太郎">
+        <div class="row">
+          <div>
+            <label>電話番号</label>
+            <input type="tel" placeholder="090-0000-0000">
+          </div>
+          <div>
+            <label>メールアドレス<span class="req">必須</span></label>
+            <input type="email" required placeholder="you@example.com">
+          </div>
+        </div>
+        <label>ご希望の連絡方法</label>
+        <select>
+          <option>メールで連絡してほしい</option>
+          <option>電話で連絡してほしい</option>
+          <option>どちらでもよい</option>
+        </select>
+        <label>ご希望の日時（第1〜第2希望）</label>
+        <input type="text" placeholder="例：土曜午前、平日18時以降 など">
+        <label>ご相談内容<span class="req">必須</span></label>
+        <textarea required placeholder="気になっている症状、これまでの経緯、ご不安な点など。決まっていなければ「相談したい」だけでも大丈夫です。"></textarea>
+        <button type="submit" class="btn">この内容で送信する</button>
+        <p class="sent" hidden style="color:var(--accent-dark);font-weight:700;margin-top:12px">※サンプルのため送信は行われません。実際のサイトでは、この内容がサロンのメールに届きます。</p>
+        <p class="note-sample">このフォームは Arpeda が新しく追加した部分です。いまのサイトには問い合わせフォームがなく、LINEかメールアドレスへの連絡のみです。フォームがあると、電話やLINEをためらう方でも「日時・症状」をまとめて送っておけます。</p>
+      </form>
+      <div>
+        <div class="altcontact">
+          <a href="https://lin.ee/38frfFB" class="line" style="background:#06c755;color:#fff;border:0">LINEで相談・予約</a>
+          <a href="tel:0462794955">電話：046-279-4955</a>
+          <a href="mailto:toyoseitaisakura@gmail.com">メールで送る</a>
+        </div>
+        <div class="faq" style="margin-top:24px">
+          <details><summary>整体は初めてで、少し不安です。</summary><p>初めての方が多く来院されています。初回はカウンセリングの時間を取り、施術の進め方をご説明してから始めます。強さの希望も遠慮なくお伝えください。</p></details>
+          <details><summary>強い施術が苦手です。対応できますか。</summary><p>足技整体は圧の強さを細かく調整できます。「痛いのは苦手」という方にも合わせやすい施術です。</p></details>
+          <details><summary>どのくらいのペースで通えばいいですか。</summary><p>お身体の状態やご希望によります。回数券の販売はしていないので、その都度ご相談のうえで決めていただけます。</p></details>
+          <details><summary>予約なしでも受けられますか。</summary><p>できるだけご予約をお願いしています。当日でも空きがあればご案内できますので、まずはLINEかお電話でお問い合わせください。</p></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec final">
+  <div class="wrap">
+    <h2>「自分の症状でも大丈夫かな」と思ったら、<br>まずはお話を聞かせてください。</h2>
+    <p>いきなり予約しなくても大丈夫です。LINEで無料相談を受け付けています。</p>
+    <div class="cta" style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="https://lin.ee/38frfFB" class="btn line">LINEで相談する</a>
+      <a href="#contact" class="btn">フォームで問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <b>東洋整体コンディショニングサロン</b>
+        〒242-0025 神奈川県大和市代官1-1-9<br>
+        TEL 046-279-4955／E-mail toyoseitaisakura@gmail.com
+      </div>
+      <div>
+        <b>営業時間</b>
+        土日 9:00〜20:00／月〜木 10:00〜19:00<br>
+        最終受付 19:00・定休日 金曜
+      </div>
+      <div>
+        <b>メニュー</b>
+        <a href="#about">足技整体とは</a>／<a href="#price">料金</a>／<a href="#access">アクセス</a>／<a href="#contact">ご予約・ご相談</a>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-size:.8rem;line-height:1.7">当サロンは、身体のコンディションを整えることを目的としたリラクゼーション・整体サービスです。医療行為・診断・治療は行いません。体調に不安がある場合は、あらかじめ医療機関にご相談ください。</p>
+    <p class="copyright">このページは Arpeda（アルペダ）が制作したデザイン提案サンプルです。掲載内容は東洋整体コンディショニングサロンの公開情報をもとにした仮のもので、実際の内容と異なる場合があります。</p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a href="tel:0462794955" class="tel">電話</a>
+  <a href="https://lin.ee/38frfFB" class="line">LINE</a>
+  <a href="#contact">フォーム</a>
+</div>
+
+<script>
+  const rv=document.querySelectorAll('.reveal');
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+  rv.forEach(el=>io.observe(el));
+  setTimeout(()=>rv.forEach(el=>el.classList.add('in')),2500);
+</script>
+</body>
+</html>
