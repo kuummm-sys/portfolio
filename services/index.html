@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <title>サービス｜Arpeda（アルペダ）</title>
-<meta name="description" content="Arpeda（アルペダ）のサービス。LP制作・ホームページ制作・Webライティング・AI活用支援（準備中）。料金は内容に応じて都度お見積り。">
+<meta name="description" content="Arpeda（アルペダ）のサービス。まず試せる入口：ホームページ ワンポイント診断 ¥5,000／Googleビジネスプロフィール整備／LPの構成＋文章。LP制作・ホームページ制作・Webライティングも。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=M+PLUS+1+Code:wght@400;500&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
@@ -156,6 +156,19 @@
   .price-note{font-family:var(--mono);font-size:15px;line-height:1.8;color:var(--graphite);max-width:640px}
   .price-note+.price-note{margin-top:20px}
 
+  .entry-head{max-width:640px;margin-bottom:36px}
+  .entry-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:14px}
+  .entry-head p{font-family:var(--mono);font-size:14px;line-height:1.75;color:var(--graphite)}
+  .entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .entry{border:1px solid var(--ash);border-radius:28px;padding:32px 28px;background:var(--parchment);display:flex;flex-direction:column}
+  .entry .price{font-family:var(--serif);font-size:26px;letter-spacing:-.02em}
+  .entry .price small{font-family:var(--mono);font-size:12px;color:var(--smoke);letter-spacing:.04em}
+  .entry h3{font-size:17px;margin:6px 0 10px}
+  .entry p{font-family:var(--mono);font-size:13px;line-height:1.65;color:var(--graphite);flex:1}
+  .entry .arrow-link{margin-top:22px;align-self:flex-start;font-size:12px}
+  .entry-foot{font-family:var(--mono);font-size:13px;color:var(--graphite);margin-top:26px;max-width:640px}
+  @media(max-width:860px){.entry-grid{grid-template-columns:1fr}}
+
   .methods{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:44px}
   .method{border:1px solid var(--ash);border-radius:40px;padding:40px;display:flex;flex-direction:column}
   .method .ic{width:40px;height:40px;border:1px solid var(--ash);border-radius:9999px;display:grid;place-items:center;color:var(--blue);margin-bottom:18px}
@@ -244,6 +257,37 @@
   </div>
 </section>
 
+<section>
+  <div class="wrap">
+    <div class="entry-head">
+      <span class="eyebrow">First step</span>
+      <h2 style="margin-top:14px">まず試せる、3つの入口</h2>
+      <p>「いきなり作り直しは大げさ」という方へ。低価格で、今のサイトの課題や方向性がはっきりする3つのメニューです。続けて制作をご依頼いただいた場合は、代金を制作費から全額お値引きします。</p>
+    </div>
+    <div class="entry-grid">
+      <div class="entry">
+        <div class="price">¥5,000<small>／税込</small></div>
+        <h3>ホームページ ワンポイント診断</h3>
+        <p>今のサイトを見て、気になる点の上位3つ・スマホ表示のチェック・具体的な改善案・直す場合の概算を、PDF 1〜2枚にまとめてお渡しします。</p>
+        <a href="/contact/" class="arrow-link">申し込む&nbsp;&#9656;</a>
+      </div>
+      <div class="entry">
+        <div class="price">¥5,000〜<small>／税込</small></div>
+        <h3>Googleビジネスプロフィール整備</h3>
+        <p>営業時間・写真の並べ替え・説明文・カテゴリ・予約リンクなどを整えます。編集者としてご招待いただくだけ（パスワードの共有は不要です）。</p>
+        <a href="/contact/" class="arrow-link">申し込む&nbsp;&#9656;</a>
+      </div>
+      <div class="entry">
+        <div class="price">¥15,000<small>／税込</small></div>
+        <h3>LPの構成＋文章</h3>
+        <p>1枚もののランディングページの構成案と、全セクションの文章をお作りします（コーディングは別途）。まず文章から固めたい方へ。</p>
+        <a href="/contact/" class="arrow-link">申し込む&nbsp;&#9656;</a>
+      </div>
+    </div>
+    <p class="entry-foot">お申し込みは <a href="/contact/" style="color:var(--blue)">お問い合わせフォーム</a> から。内容を確認してご連絡し、お振込の確認後に着手します。ご不明な点は「まず質問だけ」でも歓迎です。</p>
+  </div>
+</section>
+
 <section style="padding-top:0">
   <div class="wrap">
     <div class="svc">
@@ -309,7 +353,8 @@
 <section>
   <div class="wrap">
     <div class="sec-head"><span class="eyebrow">Price</span><h2>料金について</h2></div>
-    <p class="price-note">ページ数、デザインの作り込み、機能、掲載素材の有無などによって変わるため、内容をうかがったうえで都度お見積りいたします。</p>
+    <p class="price-note"><b>まず試せる入口</b>：ワンポイント診断 ¥5,000／Googleビジネスプロフィール整備 ¥5,000〜／LPの構成＋文章 ¥15,000（すべて税込）。続けて制作をご依頼の場合は制作費から全額お値引きします。</p>
+    <p class="price-note"><b>LP・ホームページの制作</b>は、ページ数、デザインの作り込み、機能、掲載素材の有無などによって変わるため、内容をうかがったうえで都度お見積りいたします。目安は LP 5〜10万円台／ホームページ 10〜25万円ほどです。</p>
     <p class="price-note">お見積り・ご相談は無料です。ご予算をお伝えいただければ、その範囲でできることをご提案します。「まず概算だけ知りたい」というご相談も歓迎します。</p>
     <p class="price-note">無料修正は2回まで。加えて納品後1週間は軽微な調整（誤字・文言・色・画像差し替え）を無料で対応します。構成・デザインの作り直し、ページ追加は別途お見積りとなります。</p>
   </div>
