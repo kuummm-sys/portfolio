@@ -223,6 +223,14 @@
   @media(max-width:760px){.wrow,.wrow:nth-child(even){grid-template-columns:1fr;gap:20px}.wrow:nth-child(even) .shot{order:0}}
   .disclaimer{margin-top:56px;padding-top:24px;border-top:1px solid var(--ash);font-family:var(--mono);font-size:12px;line-height:1.7;color:var(--smoke);max-width:720px}
 
+  .blogcards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .blogcards a{text-decoration:none;border:1px solid var(--ash);border-radius:24px;padding:28px 26px;background:var(--parchment);display:flex;flex-direction:column;transition:border-color .15s ease,transform .15s ease}
+  .blogcards a:hover{border-color:var(--off-black);transform:translateY(-2px)}
+  .blogcards .c{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--smoke)}
+  .blogcards h3{font-size:1.05rem;line-height:1.44;margin:10px 0 10px}
+  .blogcards p{font-family:var(--mono);font-size:13px;line-height:1.7;color:var(--graphite);flex:1}
+  @media(max-width:760px){.blogcards{grid-template-columns:1fr;max-width:460px;margin:0 auto}}
+
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -409,13 +417,13 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Blog</span>
-      <h2>読みもの</h2>
+      <h2>ブログ</h2>
       <p>小規模な会社・個人事業のホームページづくりに役立つことを書いています。</p>
     </div>
-    <div class="postlist" style="padding-left:0;padding-right:0">
-      <a class="post" href="/blog/hp-no-hiyou/"><span class="c">ホームページの基本</span><h2>小さな会社・個人事業のホームページ、いくらかかる？費用の内訳と考え方</h2><p>初期費用と月額の分け方、作り方ごとの目安、安くするときに削られやすいもの。</p></a>
-      <a class="post" href="/blog/toiawase-ga-konai-hp/"><span class="c">集客と導線</span><h2>問い合わせが来ないホームページ、まず見直したい3か所</h2><p>作り直しの前に確認したい、連絡導線・最初の画面・判断材料の3つ。</p></a>
-      <a class="post" href="/blog/kensaku-ni-denai/"><span class="c">集客と導線</span><h2>「ホームページが検索に出てこない」よくある原因と、順番に確認すること</h2><p>店名で出ない場合とキーワードで出ない場合の切り分け、上から順のチェック。</p></a>
+    <div class="blogcards">
+      <a href="/blog/hp-no-hiyou/"><span class="c">ホームページの基本</span><h3>小さな会社・個人事業のホームページ、いくらかかる？</h3><p>初期費用と月額の分け方、作り方ごとの目安、安くするときに削られやすいもの。</p></a>
+      <a href="/blog/toiawase-ga-konai-hp/"><span class="c">集客と導線</span><h3>問い合わせが来ないホームページ、まず見直したい3か所</h3><p>作り直しの前に確認したい、連絡導線・最初の画面・判断材料の3つ。</p></a>
+      <a href="/blog/kensaku-ni-denai/"><span class="c">集客と導線</span><h3>ホームページが検索に出てこない原因と、確認の順番</h3><p>店名で出ない場合とキーワードで出ない場合の切り分け、上から順のチェック。</p></a>
     </div>
     <p style="margin-top:28px"><a href="/blog/" class="arrow-link">ブログをすべて見る&nbsp;&#9656;</a></p>
   </div>
