@@ -104,6 +104,19 @@
   .card .tag{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--ash);border-radius:9999px;padding:3px 10px;margin-left:10px;vertical-align:middle}
   @media(max-width:760px){.cards{grid-template-columns:1fr}}
 
+  .entry-head{max-width:640px;margin-bottom:36px}
+  .entry-head h2{font-size:clamp(1.7rem,3.4vw,2.3rem);margin-bottom:14px}
+  .entry-head p{font-family:var(--mono);font-size:14px;line-height:1.75;color:var(--graphite)}
+  .entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .entry{border:1px solid var(--ash);border-radius:28px;padding:32px 28px;background:var(--parchment);display:flex;flex-direction:column}
+  .entry .price{font-family:var(--serif);font-size:26px;letter-spacing:-.02em}
+  .entry .price small{font-family:var(--mono);font-size:12px;color:var(--smoke);letter-spacing:.04em}
+  .entry h3{font-size:17px;margin:6px 0 10px}
+  .entry p{font-family:var(--mono);font-size:13px;line-height:1.65;color:var(--graphite);flex:1}
+  .entry .arrow-link{margin-top:22px;align-self:flex-start;font-size:12px}
+  .entry-foot{font-family:var(--mono);font-size:13px;color:var(--graphite);margin-top:26px;max-width:640px}
+  @media(max-width:860px){.entry-grid{grid-template-columns:1fr}}
+
   .invert{background:var(--off-black);color:var(--parchment);position:relative;overflow:hidden}
   .invert .wash{position:absolute;width:440px;height:360px;border-radius:50%;filter:blur(84px);opacity:.26;background:linear-gradient(120deg,var(--coral),var(--gold));right:-140px;bottom:-120px}
   .invert .inner{position:relative}
@@ -318,6 +331,37 @@
         <a href="/services/" class="arrow-link">詳しく&nbsp;&rarr;</a>
       </div>
     </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="entry-head">
+      <span class="eyebrow">First step</span>
+      <h2 style="margin-top:14px">まず試せる、3つの入口</h2>
+      <p>「いきなり作り直しは大げさ」という方へ。低価格で、今のサイトの課題や方向性がはっきりする3つのメニューです。続けて制作をご依頼いただいた場合は、代金を制作費から全額お値引きします。</p>
+    </div>
+    <div class="entry-grid">
+      <div class="entry">
+        <div class="price">¥5,000<small>／税込</small></div>
+        <h3>ホームページ ワンポイント診断</h3>
+        <p>今のサイトを見て、気になる点の上位3つ・スマホ表示のチェック・具体的な改善案・直す場合の概算を、PDF 1〜2枚にまとめてお渡しします。</p>
+        <a href="/contact/" class="arrow-link">申し込む&nbsp;&#9656;</a>
+      </div>
+      <div class="entry">
+        <div class="price">¥5,000〜<small>／税込</small></div>
+        <h3>Googleビジネスプロフィール整備</h3>
+        <p>営業時間・写真の並べ替え・説明文・カテゴリ・予約リンクなどを整えます。編集者としてご招待いただくだけ（パスワードの共有は不要です）。</p>
+        <a href="/contact/" class="arrow-link">申し込む&nbsp;&#9656;</a>
+      </div>
+      <div class="entry">
+        <div class="price">¥15,000<small>／税込</small></div>
+        <h3>LPの構成＋文章</h3>
+        <p>1枚もののランディングページの構成案と、全セクションの文章をお作りします（コーディングは別途）。まず文章から固めたい方へ。</p>
+        <a href="/contact/" class="arrow-link">申し込む&nbsp;&#9656;</a>
+      </div>
+    </div>
+    <p class="entry-foot">お申し込みは <a href="/contact/" style="color:var(--blue)">お問い合わせフォーム</a> から。内容を確認してご連絡し、お振込の確認後に着手します。ご不明な点は「まず質問だけ」でも歓迎です。</p>
   </div>
 </section>
 
