@@ -55,4 +55,8 @@
   <url><loc>https://arpeda.jp/lp/shokunin/</loc><lastmod>2026-09-11</lastmod><priority>0.7</priority></url>
   <url><loc>https://arpeda.jp/blog/gbp-denwa-hikoukai/</loc><lastmod>2026-09-11</lastmod><priority>0.6</priority></url>
   <url><loc>https://arpeda.jp/blog/hp-no-meigi-domain-server/</loc><lastmod>2026-09-24</lastmod><priority>0.6</priority></url>
+  <url><loc>https://arpeda.jp/services/lp/</loc><lastmod>2026-10-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://arpeda.jp/services/hp/</loc><lastmod>2026-10-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://arpeda.jp/services/writing/</loc><lastmod>2026-10-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://arpeda.jp/services/ai/</loc><lastmod>2026-10-02</lastmod><priority>0.8</priority></url>
 </urlset>
