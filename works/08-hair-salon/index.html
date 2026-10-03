@@ -240,6 +240,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 /* booking:start */
+/* ボタンの角丸はページ側の --bk-pill で変えられる（既定は丸） */
 /* Arpeda 予約ウィジェット。色・書体はページ側の変数を使う（無ければ下の既定値） */
 .bkw{--bk-acc:var(--acc,#2f5d5a);--bk-ink:var(--ink,#222);--bk-mut:var(--mut,#666);--bk-line:var(--line,#ddd);--bk-card:var(--card,#fff);
   width:min(600px,100%);max-width:100%;max-height:min(860px,100dvh);height:auto;margin:auto;padding:0;border:0;border-radius:20px;background:var(--bk-card);color:var(--bk-ink);font-family:var(--sans,system-ui,sans-serif);box-shadow:0 40px 80px -30px rgba(0,0,0,.55)}
@@ -311,8 +312,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
 .bkw-sum{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--bk-mut);margin-bottom:10px}
 .bkw-sum b{color:var(--bk-ink);font-weight:500;font-size:15px}
 .bkw-nav{display:flex;justify-content:space-between;gap:10px}
-.bkw-back{min-height:48px;padding:0 18px;border:1px solid var(--bk-line);border-radius:999px;background:#fff;font:inherit;color:inherit;cursor:pointer}
-.bkw-next{flex:1;max-width:280px;margin-left:auto;min-height:48px;padding:0 22px;border:0;border-radius:999px;background:var(--bk-acc);color:#fff;font:inherit;font-weight:500;cursor:pointer}
+.bkw-back{min-height:48px;padding:0 18px;border:1px solid var(--bk-line);border-radius:var(--bk-pill,999px);background:#fff;font:inherit;color:inherit;cursor:pointer}
+.bkw-next{flex:1;max-width:280px;margin-left:auto;min-height:48px;padding:0 22px;border:0;border-radius:var(--bk-pill,999px);background:var(--bk-acc);color:#fff;font:inherit;font-weight:500;cursor:pointer}
 .bkw-next:disabled{opacity:.4;cursor:default}
 .bkw button:focus-visible{outline:2px solid var(--bk-acc);outline-offset:2px}
 @media (max-width:620px){
@@ -320,6 +321,21 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
   .bkw-body{padding:16px}
   .bkw-ft{padding-bottom:max(16px,env(safe-area-inset-bottom))}
 }
+/* レッスン（教室向け） */
+.bkw-sl{display:grid;gap:6px}
+.bkw-s{display:grid;grid-template-columns:1fr auto auto;gap:12px;align-items:center;width:100%;min-height:52px;padding:10px 14px;border:1px solid var(--bk-line);border-radius:12px;background:#fff;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.bkw-s b{font-weight:500}
+.bkw-s span{font-size:13px}
+.bkw-s .seat{font-size:12px;padding:0 10px;border-radius:999px;background:#eef0ea;white-space:nowrap}
+.bkw-s .seat.few{background:#f7e4a8}
+.bkw-s:hover{border-color:var(--bk-acc)}
+.bkw-s[aria-checked=true]{border-color:var(--bk-acc);background:color-mix(in srgb,var(--bk-acc) 9%,#fff);box-shadow:inset 0 0 0 1px var(--bk-acc)}
+.bkw-s.full{cursor:default;color:#aaa;background:#f6f6f4}
+.bkw-step{display:flex;align-items:center;gap:16px}
+.bkw-step button{width:44px;height:44px;border:1px solid var(--bk-line);border-radius:50%;background:#fff;font-size:20px;color:inherit;cursor:pointer}
+.bkw-step button:disabled{opacity:.35;cursor:default}
+.bkw-step output{min-width:4em;text-align:center;font-size:18px;font-weight:500}
+.bkw-sum span:last-child{white-space:nowrap}
 /* booking:end */
 </style>
 <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')}catch(e){}</script>
@@ -563,6 +579,8 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
  * - endpoint が空ならデモ（見本の空き状況で動き、どこにも送信しない）。
  *   endpoint に Google Apps Script のウェブアプリURL（booking/Code.gs）を入れると本番として動く。
  * - [data-booking-open] の付いたボタン・リンクで開く。data-booking-open="cut" のようにメニューIDを渡すと選んだ状態で開く。
+ * - mode が "lesson" のときは「決まった日時のレッスンに、席が残っていれば申し込む」教室向けの形になる
+ *   （レッスン → 日程・人数 → お客さま情報 → 確認）。ページ内の [data-lesson-dates="ID"] [data-lesson-next="ID"] に日程と残り席を書き出す。
  * - 色や書体はページ側の CSS 変数（--acc / --ink / --mut / --line / --card / --serif / --sans）を使う。
  */
 (function () {
@@ -571,6 +589,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
   var C = JSON.parse(el.textContent);
   var LIVE = !!C.endpoint;
   var WD = ['日', '月', '火', '水', '木', '金', '土'];
+  var LESSON = C.mode === 'lesson';
 
   // ---------- 日付まわり ----------
   function pad(n) { return (n < 10 ? '0' : '') + n; }
@@ -629,12 +648,14 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
   }
 
   // ---------- 状態 ----------
-  var S = { step: 1, main: null, opts: [], date: null, time: null, view: null, info: {} };
-  function menu(id) { return C.menus.concat(C.options || []).filter(function (x) { return x.id === id; })[0]; }
+  var S = { step: 1, main: null, opts: [], date: null, time: null, view: null, info: {}, lesson: null, count: 1 };
+  function menu(id) { return (C.menus || []).concat(C.options || []).filter(function (x) { return x.id === id; })[0]; }
   function minutes() { var m = S.main ? menu(S.main).min : 0; S.opts.forEach(function (o) { m += menu(o).min; }); return m; }
   function price() { var p = S.main ? menu(S.main).price : 0; S.opts.forEach(function (o) { p += menu(o).price; }); return p; }
   function yen(n) { return '¥' + n.toLocaleString('ja-JP') + (S.main && menu(S.main).from ? '〜' : ''); }
   function dur(m) { var h = Math.floor(m / 60), r = m % 60; return '約' + (h ? h + '時間' : '') + (r ? r + '分' : ''); }
+  function lessonOf(id) { return (C.lessons || []).filter(function (x) { return x.id === id; })[0]; }
+  function label() { return LESSON ? lessonOf(S.lesson).name + '（' + S.count + lessonOf(S.lesson).unit + '）' : menuLabel(); }
   function menuLabel() { return [menu(S.main).name].concat(S.opts.map(function (o) { return menu(o).name; })).join('＋'); }
   function esc(s) { return String(s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
 
@@ -644,7 +665,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
   dlg.setAttribute('aria-labelledby', 'bkw-title');
   dlg.innerHTML = '<div class="bkw-in"><header class="bkw-hd"><p id="bkw-title">' + esc(C.title || 'ネット予約') + (LIVE ? '' : '<span class="bkw-demo">デモ</span>') + '</p>'
     + '<button type="button" class="bkw-x" aria-label="閉じる">×</button></header>'
-    + '<ol class="bkw-steps" aria-label="予約の手順"><li>メニュー</li><li>日時</li><li>お客さま情報</li><li>確認</li></ol>'
+    + '<ol class="bkw-steps" aria-label="予約の手順">' + (LESSON ? '<li>レッスン</li><li>日程・人数</li>' : '<li>メニュー</li><li>日時</li>') + '<li>お客さま情報</li><li>確認</li></ol>'
     + '<div class="bkw-body" tabindex="-1"></div><footer class="bkw-ft"></footer></div>';
   document.body.appendChild(dlg);
   var body = dlg.querySelector('.bkw-body'), foot = dlg.querySelector('.bkw-ft');
@@ -658,6 +679,11 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
     });
   }
   function summary() {
+    if (LESSON) {
+      if (!S.lesson) return '<p class="bkw-sum">レッスンを選んでください</p>';
+      var L = lessonOf(S.lesson);
+      return '<p class="bkw-sum"><span>' + esc(L.name) + '</span><span>' + S.count + L.unit + '　<b>¥' + (L.price * S.count).toLocaleString('ja-JP') + '</b></span></p>';
+    }
     if (!S.main) return '<p class="bkw-sum">メニューを選んでください</p>';
     return '<p class="bkw-sum"><span>' + esc(menuLabel()) + '</span><span>' + dur(minutes()) + '　<b>' + yen(price()) + '</b></span></p>';
   }
@@ -667,7 +693,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
     if (backTo) foot.querySelector('.bkw-back').onclick = function () { go(backTo); };
     foot.querySelector('.bkw-next').onclick = onNext;
   }
-  function go(n) { S.step = n; setSteps(); [null, stepMenu, stepDate, stepInfo, stepConfirm][n](); body.scrollTop = 0; body.focus({ preventScroll: true }); }
+  function go(n) { S.step = n; setSteps(); (LESSON ? [null, stepLesson, stepSession, stepInfo, stepConfirm] : [null, stepMenu, stepDate, stepInfo, stepConfirm])[n](); body.scrollTop = 0; body.focus({ preventScroll: true }); }
 
   // 1. メニュー
   function stepMenu() {
@@ -736,14 +762,103 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
     t.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
+  // ---------- レッスン（教室向け） ----------
+  // デモ：設定の schedule（曜日・時刻・何週おき）から、これから数週間の日程を作り、残り席は日付から決まる見本の数にする
+  var lessonCache = null;
+  function sessions() {
+    if (lessonCache) return Promise.resolve(lessonCache);
+    var from = new Date(today); from.setDate(from.getDate() + 1);
+    var to = new Date(today); to.setDate(to.getDate() + (C.daysAhead || 42));
+    if (!LIVE) {
+      var out = {};
+      C.lessons.forEach(function (L, li) {
+        out[L.id] = [];
+        for (var d = new Date(from); d <= to; d.setDate(d.getDate() + 1)) {
+          L.schedule.forEach(function (sc) {
+            if (d.getDay() !== sc.weekday) return;
+            if (sc.every === 2 && Math.floor(d.getTime() / 6048e5) % 2 !== (sc.parity || 0)) return;
+            var k = ymd(d), r = seeded(L.id + k)(), cap = L.capacity;
+            var left = out[L.id].length === 0 && li === 0 ? 2 : r < .18 ? 0 : Math.max(1, Math.round(r * cap));
+            out[L.id].push({ date: k, time: sc.time, left: Math.min(left, cap) });
+          });
+        }
+        out[L.id].sort(function (a, b) { return (a.date + a.time) < (b.date + b.time) ? -1 : 1; });
+      });
+      lessonCache = out;
+      return Promise.resolve(out);
+    }
+    return fetch(C.endpoint + '?action=sessions&from=' + ymd(from) + '&to=' + ymd(to)).then(function (r) { return r.json(); }).then(function (j) {
+      if (!j.ok) throw new Error(j.error || 'sessions');
+      lessonCache = j.sessions; return j.sessions;
+    });
+  }
+  function seat(L, left) {
+    if (!left) return '<span class="seat full">満席</span>';
+    return '<span class="seat' + (left <= 2 ? ' few' : '') + '">残り' + left + (L.unit === '人' ? '席' : L.unit) + '</span>';
+  }
+  // ページ側の一覧（レッスンの日程・ファーストビューのカード）に、同じ日程と残り席を書き出す
+  function fillPage() {
+    if (!LESSON) return;
+    sessions().then(function (all) {
+      [].forEach.call(document.querySelectorAll('[data-lesson-dates]'), function (ul) {
+        var L = lessonOf(ul.getAttribute('data-lesson-dates')), list = (all[L.id] || []).slice(0, +(ul.getAttribute('data-count') || 2));
+        ul.innerHTML = list.map(function (x) { return '<li>' + jp(x.date) + ' ' + x.time + seat(L, x.left) + '</li>'; }).join('');
+      });
+      [].forEach.call(document.querySelectorAll('[data-lesson-next]'), function (el) {
+        var L = lessonOf(el.getAttribute('data-lesson-next')), x = (all[L.id] || []).filter(function (y) { return y.left; })[0];
+        if (x) el.innerHTML = jp(x.date) + ' ' + x.time + '〜 ' + seat(L, x.left);
+      });
+    }).catch(function () {});
+  }
+
+  // 1. レッスン
+  function stepLesson() {
+    var h = '<h2 class="bkw-h">レッスンを選んでください</h2><div class="bkw-menus" role="radiogroup" aria-label="レッスン">';
+    C.lessons.forEach(function (L) {
+      h += '<button type="button" role="radio" class="bkw-menu" data-l="' + L.id + '" aria-checked="' + (S.lesson === L.id) + '"><b>' + esc(L.name) + '</b><span>' + dur(L.min) + '</span><em>¥' + L.price.toLocaleString('ja-JP') + '/' + L.unit + '</em>' + (L.note ? '<small>' + esc(L.note) + '</small>' : '') + '</button>';
+    });
+    body.innerHTML = h + '</div>';
+    [].forEach.call(body.querySelectorAll('[data-l]'), function (b) { b.onclick = function () { if (S.lesson !== b.dataset.l) { S.date = null; S.time = null; S.count = 1; } S.lesson = b.dataset.l; stepLesson(); }; });
+    footer(null, '日程を選ぶ', !!S.lesson, function () { go(2); });
+  }
+  // 2. 日程と人数
+  function stepSession() {
+    var L = lessonOf(S.lesson);
+    body.innerHTML = '<h2 class="bkw-h">日程を選んでください</h2><div class="bkw-ses" aria-busy="true"><p class="bkw-loading">日程と残り席を読み込んでいます…</p></div><div class="bkw-cnt"></div>';
+    footer(1, 'お客さま情報へ', !!(S.date && S.time), function () { go(3); });
+    sessions().then(function (all) {
+      var list = all[L.id] || [], box = body.querySelector('.bkw-ses');
+      if (!list.length) { box.innerHTML = '<p class="bkw-note">いま受付中の日程はありません。</p>'; return; }
+      box.removeAttribute('aria-busy');
+      box.innerHTML = '<div class="bkw-sl" role="radiogroup" aria-label="日程">' + list.map(function (x) {
+        var on = S.date === x.date && S.time === x.time;
+        return '<button type="button" role="radio" class="bkw-s' + (x.left ? '' : ' full') + '" data-d="' + x.date + '" data-t="' + x.time + '" data-left="' + x.left + '" aria-checked="' + on + '"' + (x.left ? '' : ' disabled') + '><b>' + jp(x.date) + '</b><span>' + x.time + '〜</span>' + seat(L, x.left) + '</button>';
+      }).join('') + '</div>';
+      [].forEach.call(box.querySelectorAll('.bkw-s:not(.full)'), function (b) {
+        b.onclick = function () { S.date = b.dataset.d; S.time = b.dataset.t; S.left = +b.dataset.left; S.count = Math.min(S.count, S.left); S.pick = 1; stepSession(); };
+      });
+      if (S.date) { drawCount(L); if (S.pick) { S.pick = 0; body.querySelector('.bkw-cnt').scrollIntoView({ behavior: 'smooth', block: 'nearest' }); } }
+    }).catch(function () {
+      body.querySelector('.bkw-ses').innerHTML = '<p class="bkw-err">日程を読み込めませんでした。時間をおいてもう一度開くか、LINEでお問い合わせください。</p>';
+    });
+  }
+  function drawCount(L) {
+    var max = Math.min(S.left || 1, L.maxPer || 4), c = body.querySelector('.bkw-cnt');
+    c.innerHTML = '<h3 class="bkw-h3">' + (L.unit === '組' ? '組数' : '人数') + '</h3><div class="bkw-step"><button type="button" class="bkw-m" aria-label="減らす"' + (S.count <= 1 ? ' disabled' : '') + '>−</button><output aria-live="polite">' + S.count + L.unit + '</output><button type="button" class="bkw-p" aria-label="増やす"' + (S.count >= max ? ' disabled' : '') + '>＋</button></div>'
+      + '<p class="bkw-note">' + (L.unit === '組' ? '1組は、保護者1名とお子さま1名です。' : '') + '1回のお申し込みで' + max + L.unit + 'まで</p>';
+    var again = function () { drawCount(L); footer(1, 'お客さま情報へ', true, function () { go(3); }); };
+    c.querySelector('.bkw-m').onclick = function () { S.count = Math.max(1, S.count - 1); again(); };
+    c.querySelector('.bkw-p').onclick = function () { S.count = Math.min(max, S.count + 1); again(); };
+  }
+
   // 3. お客さま情報
   function stepInfo() {
     var I = S.info;
     body.innerHTML = '<h2 class="bkw-h">お客さま情報</h2><form class="bkw-form" novalidate>'
       + field('name', 'お名前', 'text', true, 'name') + field('tel', '電話番号', 'tel', true, 'tel')
       + field('email', 'メールアドレス（確認メールが届きます）', 'email', true, 'email')
-      + '<fieldset class="bkw-f"><legend>ご来店は</legend><label class="bkw-r"><input type="radio" name="first" value="はじめて"' + (I.first !== '2回目以降' ? ' checked' : '') + '>はじめて</label><label class="bkw-r"><input type="radio" name="first" value="2回目以降"' + (I.first === '2回目以降' ? ' checked' : '') + '>2回目以降</label></fieldset>'
-      + '<div class="bkw-f"><label for="bkw-note">ご要望（あれば）</label><textarea id="bkw-note" name="note" rows="3" placeholder="例）前髪は長めに残したいです">' + esc(I.note || '') + '</textarea></div>'
+      + '<fieldset class="bkw-f"><legend>' + (LESSON ? 'ご参加は' : 'ご来店は') + '</legend><label class="bkw-r"><input type="radio" name="first" value="はじめて"' + (I.first !== '2回目以降' ? ' checked' : '') + '>はじめて</label><label class="bkw-r"><input type="radio" name="first" value="2回目以降"' + (I.first === '2回目以降' ? ' checked' : '') + '>2回目以降</label></fieldset>'
+      + '<div class="bkw-f"><label for="bkw-note">' + (LESSON ? 'アレルギー・ご要望（あれば）' : 'ご要望（あれば）') + '</label><textarea id="bkw-note" name="note" rows="3" placeholder="' + (LESSON ? '例）卵アレルギーがあります' : '例）前髪は長めに残したいです') + '">' + esc(I.note || '') + '</textarea></div>'
       + '<input class="bkw-hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"></form>';
     function field(n, l, t, req, ac) {
       return '<div class="bkw-f"><label for="bkw-' + n + '">' + l + (req ? '<b>必須</b>' : '') + '</label><input id="bkw-' + n + '" name="' + n + '" type="' + t + '" autocomplete="' + ac + '"' + (req ? ' required' : '') + ' value="' + esc(I[n] || '') + '"><p class="bkw-fe" id="bkw-' + n + '-e"></p></div>';
@@ -769,9 +884,11 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
   function stepConfirm() {
     var I = S.info;
     body.innerHTML = '<h2 class="bkw-h">この内容で予約しますか？</h2><dl class="bkw-dl">'
-      + '<dt>日時</dt><dd>' + jp(S.date) + ' ' + S.time + '〜</dd><dt>メニュー</dt><dd>' + esc(menuLabel()) + '<br><small>' + dur(minutes()) + '・' + yen(price()) + '（税込）</small></dd>'
-      + '<dt>お名前</dt><dd>' + esc(I.name) + '</dd><dt>電話番号</dt><dd>' + esc(I.tel) + '</dd><dt>メール</dt><dd>' + esc(I.email) + '</dd><dt>ご来店</dt><dd>' + esc(I.first) + '</dd>'
-      + (I.note ? '<dt>ご要望</dt><dd>' + esc(I.note) + '</dd>' : '') + '</dl>'
+      + '<dt>日時</dt><dd>' + jp(S.date) + ' ' + S.time + '〜</dd>'
+      + (LESSON ? '<dt>レッスン</dt><dd>' + esc(lessonOf(S.lesson).name) + '<br><small>' + S.count + lessonOf(S.lesson).unit + '・¥' + (lessonOf(S.lesson).price * S.count).toLocaleString('ja-JP') + '（税込）</small></dd>'
+                : '<dt>メニュー</dt><dd>' + esc(menuLabel()) + '<br><small>' + dur(minutes()) + '・' + yen(price()) + '（税込）</small></dd>')
+      + '<dt>お名前</dt><dd>' + esc(I.name) + '</dd><dt>電話番号</dt><dd>' + esc(I.tel) + '</dd><dt>メール</dt><dd>' + esc(I.email) + '</dd><dt>' + (LESSON ? 'ご参加' : 'ご来店') + '</dt><dd>' + esc(I.first) + '</dd>'
+      + (I.note ? '<dt>' + (LESSON ? 'アレルギー・ご要望' : 'ご要望') + '</dt><dd>' + esc(I.note) + '</dd>' : '') + '</dl>'
       + (C.policy ? '<p class="bkw-note">' + esc(C.policy) + '</p>' : '') + '<p class="bkw-err" role="alert"></p>';
     footer(3, '予約を確定する', true, submit);
   }
@@ -783,35 +900,42 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
       S.step = 5; setSteps();
       [].forEach.call(dlg.querySelectorAll('.bkw-steps li'), function (li) { li.className = 'done'; });
       body.innerHTML = '<div class="bkw-done"><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 25l7 7 13-15" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>'
-        + '<h2 class="bkw-h">ご予約を受け付けました</h2><p>' + jp(S.date) + ' ' + S.time + '〜<br>' + esc(menuLabel()) + '</p>'
+        + '<h2 class="bkw-h">' + (LESSON ? 'お申し込みを受け付けました' : 'ご予約を受け付けました') + '</h2><p>' + jp(S.date) + ' ' + S.time + '〜<br>' + esc(label()) + '</p>'
         + (LIVE ? '<p class="bkw-note">予約番号 ' + esc(id) + '<br>確認のメールを ' + esc(S.info.email) + ' にお送りしました。変更・キャンセルはメールのリンクからできます。</p>'
-                : '<p class="bkw-note">これはデモです。実際の予約は入っていません。<br>本番では、お客さまとお店の両方に確認メールが届き、お店のGoogleカレンダーに予定が入ります。</p>')
+                : '<p class="bkw-note">これはデモです。実際の予約は入っていません。<br>' + (LESSON ? '本番では、お客さまと教室の両方に確認メールが届き、残り席が自動で減ります。' : '本番では、お客さまとお店の両方に確認メールが届き、お店のGoogleカレンダーに予定が入ります。') + '</p>')
         + '</div>';
       foot.innerHTML = '<div class="bkw-nav"><span></span><button type="button" class="bkw-next">閉じる</button></div>';
       foot.querySelector('.bkw-next').onclick = function () { dlg.close(); reset(); };
     };
-    if (!LIVE) { setTimeout(function () { done('DEMO-' + Date.now().toString(36).toUpperCase().slice(-6)); }, 700); return; }
-    var p = new URLSearchParams({ action: 'book', menu: S.main, options: S.opts.join(','), date: S.date, time: S.time, name: S.info.name, tel: S.info.tel, email: S.info.email, first: S.info.first, note: S.info.note, _gotcha: S.info._gotcha, ts: String(opened) });
+    if (!LIVE) {
+      // デモでも、申し込んだ分だけ残り席を減らして見せる（ページを開き直すと元に戻る）
+      if (LESSON && lessonCache) (lessonCache[S.lesson] || []).forEach(function (x) { if (x.date === S.date && x.time === S.time) x.left = Math.max(0, x.left - S.count); });
+      setTimeout(function () { done('DEMO-' + Date.now().toString(36).toUpperCase().slice(-6)); fillPage(); }, 700);
+      return;
+    }
+    var p = new URLSearchParams({ action: 'book', menu: LESSON ? S.lesson : S.main, options: LESSON ? '' : S.opts.join(','), count: String(S.count), date: S.date, time: S.time, name: S.info.name, tel: S.info.tel, email: S.info.email, first: S.info.first, note: S.info.note, _gotcha: S.info._gotcha, ts: String(opened) });
     fetch(C.endpoint, { method: 'POST', body: p }).then(function (r) { return r.json(); }).then(function (j) {
-      if (j.ok) return done(j.id);
-      if (j.error === 'taken') { cache = {}; S.time = null; err.textContent = 'ちょうどその時間が埋まってしまいました。別の時間を選んでください。'; setTimeout(function () { go(2); }, 1600); return; }
+      if (j.ok) { lessonCache = null; done(j.id); fillPage(); return; }
+      if (j.error === 'taken') { cache = {}; lessonCache = null; S.time = null; S.date = null; err.textContent = LESSON ? 'ちょうど満席になってしまいました。別の日程を選んでください。' : 'ちょうどその時間が埋まってしまいました。別の時間を選んでください。'; setTimeout(function () { go(2); }, 1600); return; }
       throw new Error(j.error);
     }).catch(function () {
       btn.disabled = false; btn.textContent = '予約を確定する';
       err.textContent = '送信できませんでした。通信状態を確かめてもう一度押すか、お電話でご予約ください。';
     });
   }
-  function reset() { S = { step: 1, main: null, opts: [], date: null, time: null, view: null, info: {} }; }
+  function reset() { S = { step: 1, main: null, opts: [], date: null, time: null, view: null, info: {}, lesson: null, count: 1 }; }
 
   function open(pre) {
     if (S.step === 5) reset();
-    if (pre && menu(pre) && C.menus.some(function (m) { return m.id === pre; })) S.main = pre;
+    if (LESSON) { if (pre && lessonOf(pre)) { if (S.lesson !== pre) { S.lesson = pre; S.date = null; S.time = null; S.count = 1; } if (S.step < 2) S.step = 2; } }
+    else if (pre && menu(pre) && C.menus.some(function (m) { return m.id === pre; })) S.main = pre;
     opened = Date.now();
     // 本番では、開いた時点で今月の空き状況を先読みして待ち時間を減らす（Apps Script の起動と一時保存のため）
-    if (LIVE && !cache['warm']) { cache['warm'] = 1; monthSlots(today.getFullYear(), today.getMonth(), 60).catch(function () {}); }
+    if (LIVE && !LESSON && !cache['warm']) { cache['warm'] = 1; monthSlots(today.getFullYear(), today.getMonth(), 60).catch(function () {}); }
     go(S.step > 4 ? 1 : S.step);
     if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', '');
   }
+  fillPage();
   document.addEventListener('click', function (e) {
     var t = e.target.closest && e.target.closest('[data-booking-open]');
     if (!t) return;
