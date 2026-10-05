@@ -654,6 +654,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
   function price() { var p = S.main ? menu(S.main).price : 0; S.opts.forEach(function (o) { p += menu(o).price; }); return p; }
   function yen(n) { return '¥' + n.toLocaleString('ja-JP') + (S.main && menu(S.main).from ? '〜' : ''); }
   function dur(m) { var h = Math.floor(m / 60), r = m % 60; return '約' + (h ? h + '時間' : '') + (r ? r + '分' : ''); }
+  function fee(L, n) { return L.price ? '¥' + (L.price * n).toLocaleString('ja-JP') : '無料'; }
   function lessonOf(id) { return (C.lessons || []).filter(function (x) { return x.id === id; })[0]; }
   function label() { return LESSON ? lessonOf(S.lesson).name + '（' + S.count + lessonOf(S.lesson).unit + '）' : menuLabel(); }
   function menuLabel() { return [menu(S.main).name].concat(S.opts.map(function (o) { return menu(o).name; })).join('＋'); }
@@ -682,7 +683,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
     if (LESSON) {
       if (!S.lesson) return '<p class="bkw-sum">レッスンを選んでください</p>';
       var L = lessonOf(S.lesson);
-      return '<p class="bkw-sum"><span>' + esc(L.name) + '</span><span>' + S.count + L.unit + '　<b>¥' + (L.price * S.count).toLocaleString('ja-JP') + '</b></span></p>';
+      return '<p class="bkw-sum"><span>' + esc(L.name) + '</span><span>' + S.count + L.unit + '　<b>' + fee(L, S.count) + '</b></span></p>';
     }
     if (!S.main) return '<p class="bkw-sum">メニューを選んでください</p>';
     return '<p class="bkw-sum"><span>' + esc(menuLabel()) + '</span><span>' + dur(minutes()) + '　<b>' + yen(price()) + '</b></span></p>';
@@ -815,7 +816,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
   function stepLesson() {
     var h = '<h2 class="bkw-h">レッスンを選んでください</h2><div class="bkw-menus" role="radiogroup" aria-label="レッスン">';
     C.lessons.forEach(function (L) {
-      h += '<button type="button" role="radio" class="bkw-menu" data-l="' + L.id + '" aria-checked="' + (S.lesson === L.id) + '"><b>' + esc(L.name) + '</b><span>' + dur(L.min) + '</span><em>¥' + L.price.toLocaleString('ja-JP') + '/' + L.unit + '</em>' + (L.note ? '<small>' + esc(L.note) + '</small>' : '') + '</button>';
+      h += '<button type="button" role="radio" class="bkw-menu" data-l="' + L.id + '" aria-checked="' + (S.lesson === L.id) + '"><b>' + esc(L.name) + '</b><span>' + dur(L.min) + '</span><em>' + (L.price ? fee(L, 1) + '/' + L.unit : '無料') + '</em>' + (L.note ? '<small>' + esc(L.note) + '</small>' : '') + '</button>';
     });
     body.innerHTML = h + '</div>';
     [].forEach.call(body.querySelectorAll('[data-l]'), function (b) { b.onclick = function () { if (S.lesson !== b.dataset.l) { S.date = null; S.time = null; S.count = 1; } S.lesson = b.dataset.l; stepLesson(); }; });
@@ -885,7 +886,7 @@ h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.5;word-break:kee
     var I = S.info;
     body.innerHTML = '<h2 class="bkw-h">この内容で予約しますか？</h2><dl class="bkw-dl">'
       + '<dt>日時</dt><dd>' + jp(S.date) + ' ' + S.time + '〜</dd>'
-      + (LESSON ? '<dt>レッスン</dt><dd>' + esc(lessonOf(S.lesson).name) + '<br><small>' + S.count + lessonOf(S.lesson).unit + '・¥' + (lessonOf(S.lesson).price * S.count).toLocaleString('ja-JP') + '（税込）</small></dd>'
+      + (LESSON ? '<dt>レッスン</dt><dd>' + esc(lessonOf(S.lesson).name) + '<br><small>' + S.count + lessonOf(S.lesson).unit + '・' + fee(lessonOf(S.lesson), S.count) + (lessonOf(S.lesson).price ? '（税込）' : '') + '</small></dd>'
                 : '<dt>メニュー</dt><dd>' + esc(menuLabel()) + '<br><small>' + dur(minutes()) + '・' + yen(price()) + '（税込）</small></dd>')
       + '<dt>お名前</dt><dd>' + esc(I.name) + '</dd><dt>電話番号</dt><dd>' + esc(I.tel) + '</dd><dt>メール</dt><dd>' + esc(I.email) + '</dd><dt>' + (LESSON ? 'ご参加' : 'ご来店') + '</dt><dd>' + esc(I.first) + '</dd>'
       + (I.note ? '<dt>' + (LESSON ? 'アレルギー・ご要望' : 'ご要望') + '</dt><dd>' + esc(I.note) + '</dd>' : '') + '</dl>'
