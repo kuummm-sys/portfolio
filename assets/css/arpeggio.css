@@ -542,3 +542,5 @@ h1,h2,h3,p,figure,dl,dd{margin:0}
 .postlist a.post:hover h2{color:var(--blue)}
 .postlist a.post p{margin-top:6px;font-size:14.5px;color:var(--graphite)}
 @media (max-width:760px){.postlist{grid-template-columns:1fr}.postlist .catgroup,.postlist a.post{grid-column:1;position:static}.postlist .catgroup + a.post{margin-top:12px}}
+.foot-ind{margin-top:14px;font-size:13px}
+.foot-ind span{flex-basis:100%;color:var(--muted)}
