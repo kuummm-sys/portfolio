@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>【制作サンプル】カフェの1枚ページ｜Arpeda（アルペダ）</title>
+<meta name="description" content="住宅街の小さなカフェの1枚ページを想定した制作サンプルです（架空のお店「珈琲と焼き菓子 こもれび」）。今日の営業時間・今週の焼き菓子・取り置きの方法がすぐわかる見せ方の例。">
+<link rel="canonical" href="https://arpeda.jp/works/15-cafe/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Arpeda（アルペダ）">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="【制作サンプル】カフェの1枚ページ｜Arpeda（アルペダ）">
+<meta property="og:description" content="住宅街の小さなカフェの1枚ページを想定した制作サンプルです（架空のお店「珈琲と焼き菓子 こもれび」）。今日の営業時間・今週の焼き菓子・取り置きの方法がすぐわかる見せ方の例。">
+<meta property="og:url" content="https://arpeda.jp/works/15-cafe/">
+<meta property="og:image" content="https://arpeda.jp/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f4efe6">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://arpeda.jp/"}, {"@type": "ListItem", "position": 2, "name": "サンプル", "item": "https://arpeda.jp/works/"}, {"@type": "ListItem", "position": 3, "name": "【制作サンプル】カフェの1枚ページ", "item": "https://arpeda.jp/works/15-cafe/"}]}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Zen+Old+Mincho:wght@600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero.jpg" fetchpriority="high">
+<style>
+:root{--out:#e9e1d3;--bg:#f7f2e9;--card:#efe6d6;--ink:#3a2a20;--mut:#6b5a4c;--line:#dccfbb;--acc:#3a2a20;--acc-text:#5d4630;--on-acc:#f7f2e9;--ok:#5d6b4c;--r:10px;--sans:'Noto Sans JP','Hiragino Sans',system-ui,sans-serif;--name-font:600 30px/1.3 'Zen Old Mincho','Hiragino Mincho ProN',serif;--h-font:600 19px/1.4 'Zen Old Mincho','Hiragino Mincho ProN',serif}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--out);color:var(--ink);font:400 16px/1.8 var(--sans);letter-spacing:.02em}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.page{max-width:520px;margin:0 auto;background:var(--bg);min-height:100vh;box-shadow:0 0 0 1px var(--line)}
+.hero{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--line)}
+.hero img{width:100%;height:100%;object-fit:cover}
+.top{padding:22px 22px 8px}
+.name{font:var(--name-font);line-height:1.35;letter-spacing:.04em}
+.name small{display:block;font:500 13px/1.6 var(--sans);color:var(--mut);letter-spacing:.08em;margin-bottom:2px}
+.lead{margin-top:8px;color:var(--mut)}
+.today{margin-top:14px;display:flex;align-items:center;gap:10px;font-weight:500;font-size:15px}
+.today .dot{width:9px;height:9px;border-radius:50%;background:var(--ok);flex:none}
+.today.off .dot{background:var(--mut)}
+.btns{display:grid;gap:10px;padding:16px 22px 6px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:10px 16px;border-radius:var(--r);border:1.5px solid var(--acc);background:var(--acc);color:var(--on-acc);font:500 16px/1.4 var(--sans);cursor:pointer;width:100%}
+.btn.sub{background:transparent;color:var(--acc-text)}
+.btn svg{width:20px;height:20px;flex:none}
+.btn:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.memo{padding:4px 22px 0;font-size:13px;color:var(--mut)}
+section{padding:30px 22px 6px}
+h2{font:var(--h-font);font-size:19px;letter-spacing:.06em;display:flex;align-items:center;gap:10px;margin-bottom:12px}
+h2::after{content:"";flex:1;height:1px;background:var(--line)}
+.rows{display:grid;gap:0}
+.row{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px dashed var(--line)}
+.row b{font-weight:500}
+.row span{white-space:nowrap}
+.cat{margin-top:16px;font-size:13px;font-weight:500;color:var(--acc-text);letter-spacing:.1em}
+.note{margin-top:10px;font-size:14px;color:var(--mut)}
+.box{background:var(--card);border-radius:var(--r);padding:16px 18px}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.gallery figure{position:relative}
+.gallery img{aspect-ratio:1/1;object-fit:cover;width:100%;border-radius:calc(var(--r)/2)}
+.gallery figcaption{font-size:13px;color:var(--mut);margin-top:4px;line-height:1.5}
+.map{position:relative;border-radius:var(--r);overflow:hidden;background:var(--card);aspect-ratio:16/10}
+.map svg{width:100%;height:100%}
+.steps{counter-reset:s;display:grid;gap:10px}
+.steps li{list-style:none;display:flex;gap:12px;align-items:flex-start}
+.steps li::before{counter-increment:s;content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;background:var(--acc);color:var(--on-acc);font:500 14px/28px var(--sans);text-align:center;margin-top:1px}
+.credit{margin-top:36px;padding:14px 22px 0;font-size:12px;color:var(--mut);text-align:center;letter-spacing:.08em}
+.ft{padding:14px 22px 40px;font-size:13px;color:var(--mut);line-height:1.7}
+.sample-note{border-top:1px solid var(--line);padding-top:16px}
+.sample-note a{color:var(--acc-text)}
+.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);font-size:14px;padding:10px 16px;border-radius:8px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;max-width:calc(100% - 32px)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+
+
+</style>
+</head>
+<body>
+<div class="page">
+<main>
+<div class="hero"><img src="img/hero.jpg" alt="木のテーブルに置かれたカフェオレと焼き菓子" width="1200" height="900" fetchpriority="high"></div>
+<div class="top">
+  <h1 class="name"><small>珈琲と焼き菓子</small>こもれび</h1>
+  <p class="lead">木の下の、10席だけの喫茶です。</p>
+  <p class="today" id="today"><span class="dot" aria-hidden="true"></span><span>営業 11:00〜18:00（L.O. 17:30）／月曜・第3火曜休み</span></p>
+</div>
+<div class="btns">
+  <button type="button" class="btn" data-demo><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3C6.5 3 2 6.6 2 11c0 3.9 3.5 7.2 8.3 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.5s6-3.5 8.2-6C21.4 14.2 22 12.7 22 11c0-4.4-4.5-8-10-8z"/></svg>焼き菓子の取り置き（LINE）</button>
+  <button type="button" class="btn sub" data-demo><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram</button>
+</div>
+<section aria-labelledby="h-hours">
+  <h2 id="h-hours">営業時間</h2>
+  <div class="rows"><div class="row"><b>営業時間</b><span>11:00〜18:00（L.O. 17:30）</span></div><div class="row"><b>定休日</b><span>月曜・第3火曜</span></div></div>
+  <p class="note">焼き菓子がなくなりしだい、早めに閉めることがあります。</p>
+</section>
+<section aria-labelledby="h-week">
+  <h2 id="h-week">今週の焼き菓子</h2>
+  <div class="box"><p>栗とほうじ茶のパウンド、りんごのスコーン。</p><p class="note" style="margin-top:4px">取り置きは前日18時までにLINEで。</p></div>
+</section>
+<section aria-labelledby="h-menu">
+  <h2 id="h-menu">メニュー</h2>
+  <p class="cat">ドリンク</p>
+  <div class="rows"><div class="row"><b>こもれびブレンド</b><span>550円</span></div><div class="row"><b>カフェオレ</b><span>600円</span></div><div class="row"><b>ほうじ茶ラテ</b><span>600円</span></div><div class="row"><b>自家製レモネード</b><span>580円</span></div></div>
+  <p class="cat">焼き菓子</p>
+  <div class="rows"><div class="row"><b>スコーン（プレーン・季節）</b><span>320円〜</span></div><div class="row"><b>バスクチーズケーキ</b><span>480円</span></div><div class="row"><b>今週のパウンドケーキ</b><span>380円</span></div></div>
+  <p class="cat">セット</p>
+  <div class="rows"><div class="row"><b>お好きな焼き菓子＋ドリンク</b><span>50円引き</span></div></div>
+  <p class="note">価格はすべて税込です。</p>
+</section>
+<section aria-labelledby="h-photo">
+  <h2 id="h-photo">お店のようす</h2>
+  <div class="gallery"><figure><img src="img/latte.jpg" alt="ラテアートのカフェオレ" width="700" height="700" loading="lazy" decoding="async"></figure><figure><img src="img/cake.jpg" alt="皿にのったパウンドケーキ" width="700" height="700" loading="lazy" decoding="async"></figure><figure><img src="img/biscotti.jpg" alt="コーヒーと焼き菓子" width="700" height="700" loading="lazy" decoding="async"></figure><figure><img src="img/room.jpg" alt="木の家具が並ぶ店内" width="700" height="700" loading="lazy" decoding="async"></figure></div>
+</section>
+<section aria-labelledby="h-access">
+  <h2 id="h-access">場所</h2>
+  <div class="map" role="img" aria-label="〇〇駅から歩いて7分の場所を示す簡単な地図"><svg viewBox="0 0 320 200" aria-hidden="true">
+<rect width="320" height="200" fill="#e6dccb"/>
+<path d="M0 132H320M196 0V200M0 58L320 92" stroke="#fff" stroke-width="14" fill="none"/>
+<path d="M0 132H320M196 0V200" stroke="#8a7a66" stroke-width="1" stroke-dasharray="4 6" fill="none"/>
+<rect x="24" y="148" width="78" height="34" rx="4" fill="#8a7a66" opacity=".35"/><text x="63" y="170" text-anchor="middle" font-size="12" fill="#5d6b4c">〇〇駅</text>
+<path d="M226 64c-9 0-16 7-16 16 0 12 16 28 16 28s16-16 16-28c0-9-7-16-16-16z" fill="#5d6b4c"/><circle cx="226" cy="80" r="6" fill="#e6dccb"/>
+<path d="M90 150 Q150 140 198 132 L226 108" stroke="#5d6b4c" stroke-width="2.5" stroke-dasharray="2 6" stroke-linecap="round" fill="none"/>
+</svg></div>
+  <p style="margin-top:12px">〇〇市こもれび町3-1-8<br><span class="note">（サンプルのため架空の住所です）</span></p>
+  <p class="note">〇〇駅から歩いて7分。駐車場はありません。近くのコインパーキングをご利用ください。</p>
+  <div class="btns" style="padding:14px 0 0"><button type="button" class="btn sub" data-demo><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>地図アプリで開く</button></div>
+</section>
+</main>
+<p class="credit">制作：Arpeda</p>
+<footer class="ft">
+  <p class="sample-note">このページは <a href="https://arpeda.jp/">Arpeda（アルペダ）</a> が作った制作サンプルです。お店・住所・メニュー・料金はすべて架空で、写真はイメージです。ボタンはデモで、押しても外のサイトには移りません。<br><a href="https://arpeda.jp/works/">ほかのサンプルを見る</a>　<a href="https://arpeda.jp/contact/?menu=onepage">このような1枚ページの相談をする</a></p>
+</footer>
+</div>
+<div class="toast" role="status" aria-live="polite"></div>
+<script>
+(function(){
+  var t=document.querySelector('.toast'),h;
+  document.querySelectorAll('[data-demo]').forEach(function(b){
+    b.addEventListener('click',function(){
+      t.textContent='サンプルのため、実際にはつながりません';
+      t.classList.add('show');clearTimeout(h);h=setTimeout(function(){t.classList.remove('show')},2400);
+    });
+  });
+
+  var d=new Date(),w=d.getDay(),n=Math.ceil(d.getDate()/7),el=document.getElementById('today');
+  if(el){var off=(w===1)||(w===2&&n===3);
+    el.lastElementChild.textContent=off?'本日はお休みです（定休日：月曜・第3火曜）':'本日 11:00〜18:00（L.O. 17:30）';
+    if(off)el.classList.add('off');}
+})();
+</script>
+</body>
+</html>
