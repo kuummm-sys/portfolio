@@ -139,6 +139,8 @@
     if (f.elements.ts) f.elements.ts.value = String(Date.now());
     var m = (location.search.match(/[?&]menu=([a-z]+)/) || [])[1];
     if (m) { var r = f.querySelector('input[data-key="' + m + '"]'); if (r) r.checked = true; }
+    var note = new URLSearchParams(location.search).get('note');
+    if (note && f.elements.message) f.elements.message.value = note;
     function val(n) { var el = f.elements[n]; return el ? (el.value || '').trim() : ''; }
     f.addEventListener('submit', function (e) {
       e.preventDefault();
