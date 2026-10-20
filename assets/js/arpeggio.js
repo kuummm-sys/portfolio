@@ -53,61 +53,64 @@
 
   // ---------- サンプルのカルーセル（動きを減らす設定でも操作はできる） ----------
   (function () {
-    var track = document.querySelector('.car-track');
-    if (!track) return;
-    var slides = Array.prototype.slice.call(track.children);
-    var bar = document.querySelector('.car-bar i');
-    var num = document.querySelector('.car-count b');
-    var btns = document.querySelectorAll('.car-btn');
-    var cur = -1, n = slides.length;
-    if (bar) bar.style.setProperty('--w', (100 / n) + '%');
-    function active() {
-      var left = track.getBoundingClientRect().left + parseFloat(getComputedStyle(track).scrollPaddingLeft || 0);
-      var best = 0, d = Infinity;
-      slides.forEach(function (s, i) { var x = Math.abs(s.getBoundingClientRect().left - left); if (x < d) { d = x; best = i; } });
-      // 右端まで送ったら最後を選ぶ
-      if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 4) best = n - 1;
-      return best;
-    }
-    function update() {
-      var i = active(); if (i === cur) return; cur = i;
-      slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); s.setAttribute('aria-current', k === i ? 'true' : 'false'); });
-      if (num) num.textContent = i + 1;
-      if (bar) bar.style.setProperty('--x', i * 100);
-      if (btns[0]) btns[0].disabled = i === 0;
-      if (btns[1]) btns[1].disabled = i === n - 1;
-    }
-    function go(i) {
-      i = Math.max(0, Math.min(n - 1, i));
-      var pad = parseFloat(getComputedStyle(track).scrollPaddingLeft || 0);
-      track.scrollTo({ left: slides[i].offsetLeft - pad, behavior: motion ? 'smooth' : 'auto' });
-    }
-    btns.forEach(function (b) { b.addEventListener('click', function () { go(cur + (+b.dataset.dir)); }); });
-    track.addEventListener('keydown', function (e) {
-      if (e.key === 'ArrowRight') { e.preventDefault(); go(cur + 1); }
-      if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur - 1); }
+    document.querySelectorAll('.car').forEach(function (carousel) {
+      var track = carousel.querySelector('.car-track');
+      if (!track) return;
+      var slides = Array.prototype.slice.call(track.children);
+      var bar = carousel.querySelector('.car-bar i');
+      var num = carousel.querySelector('.car-count b');
+      var btns = carousel.querySelectorAll('.car-btn');
+      var cur = -1, n = slides.length;
+      if (bar) bar.style.setProperty('--w', (100 / n) + '%');
+      function active() {
+        if (track.scrollWidth <= track.clientWidth + 4) return 0;
+        var left = track.getBoundingClientRect().left + parseFloat(getComputedStyle(track).scrollPaddingLeft || 0);
+        var best = 0, d = Infinity;
+        slides.forEach(function (s, i) { var x = Math.abs(s.getBoundingClientRect().left - left); if (x < d) { d = x; best = i; } });
+        // 右端まで送ったら最後を選ぶ
+        if (track.scrollLeft + track.clientWidth >= track.scrollWidth - 4) best = n - 1;
+        return best;
+      }
+      function update() {
+        var i = active(); if (i === cur) return; cur = i;
+        slides.forEach(function (s, k) { s.classList.toggle('is-active', k === i); s.setAttribute('aria-current', k === i ? 'true' : 'false'); });
+        if (num) num.textContent = i + 1;
+        if (bar) bar.style.setProperty('--x', i * 100);
+        if (btns[0]) btns[0].disabled = i === 0;
+        if (btns[1]) btns[1].disabled = i === n - 1 || track.scrollWidth <= track.clientWidth + 4;
+      }
+      function go(i) {
+        i = Math.max(0, Math.min(n - 1, i));
+        var pad = parseFloat(getComputedStyle(track).scrollPaddingLeft || 0);
+        track.scrollTo({ left: slides[i].offsetLeft - pad, behavior: motion ? 'smooth' : 'auto' });
+      }
+      btns.forEach(function (b) { b.addEventListener('click', function () { go(cur + (+b.dataset.dir)); }); });
+      track.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') { e.preventDefault(); go(cur + 1); }
+        if (e.key === 'ArrowLeft') { e.preventDefault(); go(cur - 1); }
+      });
+      var raf = 0;
+      track.addEventListener('scroll', function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(update); }, { passive: true });
+      window.addEventListener('resize', function () { cur = -1; update(); });
+      // マウスでのドラッグ（タッチは標準のスワイプに任せる）
+      var down = false, sx = 0, sl = 0, moved = false;
+      track.addEventListener('pointerdown', function (e) {
+        if (e.pointerType !== 'mouse' || e.button !== 0) return;
+        down = true; moved = false; sx = e.clientX; sl = track.scrollLeft;
+      });
+      window.addEventListener('pointermove', function (e) {
+        if (!down) return;
+        var dx = e.clientX - sx;
+        if (!moved && Math.abs(dx) > 6) { moved = true; track.classList.add('is-drag'); }
+        if (moved) track.scrollLeft = sl - dx;
+      });
+      window.addEventListener('pointerup', function () {
+        if (!down) return; down = false;
+        if (moved) { track.classList.remove('is-drag'); update(); go(cur); }
+      });
+      track.addEventListener('click', function (e) { if (moved) { e.preventDefault(); moved = false; } }, true);
+      update();
     });
-    var raf = 0;
-    track.addEventListener('scroll', function () { cancelAnimationFrame(raf); raf = requestAnimationFrame(update); }, { passive: true });
-    window.addEventListener('resize', function () { cur = -1; update(); });
-    // マウスでのドラッグ（タッチは標準のスワイプに任せる）
-    var down = false, sx = 0, sl = 0, moved = false;
-    track.addEventListener('pointerdown', function (e) {
-      if (e.pointerType !== 'mouse' || e.button !== 0) return;
-      down = true; moved = false; sx = e.clientX; sl = track.scrollLeft;
-    });
-    window.addEventListener('pointermove', function (e) {
-      if (!down) return;
-      var dx = e.clientX - sx;
-      if (!moved && Math.abs(dx) > 6) { moved = true; track.classList.add('is-drag'); }
-      if (moved) track.scrollLeft = sl - dx;
-    });
-    window.addEventListener('pointerup', function () {
-      if (!down) return; down = false;
-      if (moved) { track.classList.remove('is-drag'); update(); go(cur); }
-    });
-    track.addEventListener('click', function (e) { if (moved) { e.preventDefault(); moved = false; } }, true);
-    update();
   })();
 
 
