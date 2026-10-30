@@ -1,0 +1,127 @@
+/* 両サイト共通の動き。html.ink-on（ink.js が動いたとき）だけ効く。動きを減らす設定では止める。
+   動かすのは transform・opacity・clip-path・SVG の線だけ。 */
+
+/* ---------- 最初の画面 ---------- */
+.ink-on .ink-kenburns img{animation:ink-kenburns 22s ease-in-out infinite alternate;transform-origin:60% 40%}
+@keyframes ink-kenburns{from{transform:scale(1)}to{transform:scale(1.08)}}
+
+.ink-motes{position:absolute;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.ink-mote{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:50% 46% 54% 48%;background:var(--ink);opacity:.08;animation:ink-drift var(--t) ease-in-out var(--d) infinite alternate}
+@keyframes ink-drift{from{transform:translate3d(0,0,0) rotate(0)}to{transform:translate3d(var(--dx),var(--dy),0) rotate(40deg)}}
+
+.ink-scroll-cue{position:absolute;left:50%;bottom:22px;width:2px;height:54px;margin-left:-1px;overflow:hidden;pointer-events:none}
+.ink-scroll-cue:before{content:"";position:absolute;inset:0;background:var(--red);border-radius:2px;animation:ink-cue 1.8s cubic-bezier(.6,0,.3,1) infinite}
+@keyframes ink-cue{0%{transform:translateY(-100%)}55%{transform:translateY(0)}100%{transform:translateY(100%)}}
+
+/* ---------- セクションの境目の筆の線 ---------- */
+.ink-divider{display:block;width:min(1120px,calc(100% - 40px));height:14px;margin:-7px auto 0;overflow:visible;position:relative;z-index:1}
+.ink-divider path{fill:none;stroke:var(--red);stroke-width:2.4;stroke-linecap:round;opacity:.55;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.3s cubic-bezier(.6,.05,.25,1)}
+.ink-divider .thin{stroke:var(--line-strong);stroke-width:1;opacity:.6;transition-delay:.25s}
+.ink-divider.on path{stroke-dashoffset:0}
+
+/* ---------- 見出しの番号 ---------- */
+.ink-on .section-no{display:inline-block;transform:translateY(60%) rotate(-18deg);opacity:0;transition:transform .9s cubic-bezier(.2,.8,.2,1),opacity .6s}
+.ink-on .section-head.ink-head-on .section-no{transform:none;opacity:1}
+
+/* ---------- カード：傾いた状態から起き上がる ---------- */
+.ink-on .ink-card{opacity:0;transform:perspective(900px) rotateX(14deg) translateY(36px);transform-origin:50% 100%;transition:transform .9s cubic-bezier(.2,.8,.2,1) var(--ink-delay,0s),opacity .7s ease var(--ink-delay,0s)}
+.ink-on .ink-card.on{opacity:1;transform:none}
+@media (hover:hover){.ink-on .ink-card.on:hover{transform:translateY(-6px)}}
+
+/* ---------- 写真：墨がにじむように広がる ---------- */
+.ink-on .ink-photo{clip-path:circle(16% at 50% 55%);transition:clip-path .95s cubic-bezier(.45,.05,.2,1)}
+.ink-on .ink-photo img{transform:scale(1.18);transition:transform 1.6s cubic-bezier(.2,.8,.2,1)}
+.ink-on .ink-photo.on{clip-path:circle(78% at 50% 50%)}
+.ink-on .ink-photo.on img{transform:scale(1)}
+
+/* ---------- 横送り ---------- */
+.ink-on .carousel-controls.ink-none{display:none!important}
+.ink-dots{display:flex;gap:8px;align-items:center}
+.ink-dots i{width:7px;height:7px;border-radius:50%;background:var(--line-strong);opacity:.45;transition:transform .3s,opacity .3s,background .3s}
+.ink-dots i.on{background:var(--red);opacity:1;transform:scale(1.5)}
+.carousel-controls button:disabled{opacity:.3;cursor:default}
+.ink-controls-left{display:flex;align-items:center;gap:14px}
+
+/* ---------- ボタンを押すと墨が広がる ---------- */
+.ink-ripple-host{position:relative;overflow:hidden}
+.ink-ripple{position:absolute;left:var(--rx);top:var(--ry);width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:currentColor;opacity:.28;pointer-events:none;animation:ink-ripple .7s ease-out forwards}
+@keyframes ink-ripple{to{transform:scale(28);opacity:0}}
+
+/* ---------- 金額 ---------- */
+.ink-count{font-variant-numeric:tabular-nums}
+
+/* ---------- フッターの署名 ---------- */
+.ink-sign{display:block;width:min(520px,100%);height:auto;margin:0 0 26px;overflow:visible}
+.ink-sign text{font-family:var(--serif),serif;font-size:64px;fill:transparent;stroke:var(--ink);stroke-width:.9;stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 2.6s cubic-bezier(.5,0,.3,1),fill .9s ease 1.9s}
+.ink-sign.on text{stroke-dashoffset:0;fill:var(--ink)}
+.ink-sign .seal-dot{fill:var(--red);transform-origin:center;transform-box:fill-box;transform:scale(0);transition:transform .45s cubic-bezier(.3,1.6,.5,1) 2.4s}
+.ink-sign.on .seal-dot{transform:scale(1)}
+
+/* ---------- 読んだ量の線（筆の太さが変わる形） ---------- */
+.ink-on .read-progress{height:4px!important;background:linear-gradient(90deg,var(--red) 0%,var(--red) 70%,transparent 100%)!important;border-radius:0 4px 4px 0;clip-path:polygon(0 30%,100% 0,100% 100%,0 70%)}
+
+/* ---------- 印をぽんと押す ---------- */
+@keyframes ink-stamp{0%{transform:scale(1.9) rotate(-14deg);opacity:0}60%{transform:scale(.92) rotate(3deg);opacity:1}100%{transform:scale(1) rotate(-4deg);opacity:1}}
+
+/* ---------- 申し込み完了の墨の粒 ---------- */
+.ink-burst{position:fixed;left:0;top:0;width:10px;height:10px;border-radius:50% 40% 55% 45%;background:var(--ink);pointer-events:none;z-index:90}
+
+/* ---------- 大きな筆の線が横切る（個人サイトのパフォーマンス） ---------- */
+.ink-sweep{position:absolute;left:-4%;right:-4%;top:12%;width:108%;height:70%;pointer-events:none;z-index:2;overflow:visible}
+.ink-sweep path{fill:none;stroke:var(--red);stroke-width:22;stroke-linecap:round;opacity:.82;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s cubic-bezier(.65,0,.25,1)}
+.ink-sweep.on path{stroke-dashoffset:0}
+
+@media (prefers-reduced-motion:reduce){
+  .ink-on .ink-card,.ink-on .ink-photo,.ink-on .ink-photo img,.ink-on .section-no{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}
+  .ink-mote,.ink-scroll-cue,.ink-kenburns img{animation:none!important}
+  .ink-divider path,.ink-sweep path{stroke-dashoffset:0!important;transition:none!important}
+  .ink-sign text{stroke-dashoffset:0!important;fill:var(--ink)!important;transition:none!important}
+  .ink-sign .seal-dot{transform:none!important}
+}
+
+/* ---------- 余白を詰める（2026-10-30 Owner「両方余白が多すぎる」） ---------- */
+.section-head{margin-bottom:26px}
+.audience{padding:44px 0}
+.jobs{padding-block:52px}
+@media (min-width:641px){
+  main>.section{padding-top:64px;padding-bottom:64px}
+  .school-hero{padding-top:110px;padding-bottom:36px}
+  .artist-hero{padding-top:118px;padding-bottom:52px;min-height:min(100svh,820px)}
+  .features-grid{gap:32px}
+  .faq-layout{gap:40px}
+  .contact-grid{gap:48px}
+  .profile-grid{gap:56px}
+  .shop-grid{grid-template-columns:repeat(3,1fr);gap:28px}
+  .footer{padding:44px 0 32px}
+  .work-card{margin-bottom:26px}
+}
+@media (max-width:640px){
+  .section-head{margin-bottom:18px}
+}
+
+/* ---------- 横送りをやめ、格子に並べる（2026-10-30 Owner「横に送って見るはいらない」） ---------- */
+.audience-grid,.features-grid,.flow-grid,.commission-grid,.shop-grid{display:grid!important;overflow:visible!important;scroll-snap-type:none!important;padding:0!important}
+.audience-grid>*,.features-grid>*,.flow-grid>*,.commission-grid>*,.shop-grid>*{min-width:0!important;width:auto!important;flex:none!important;scroll-snap-align:none!important}
+@media (max-width:640px){
+  .audience-grid{grid-template-columns:1fr 1fr!important;gap:22px 14px!important}
+  .features-grid{grid-template-columns:1fr!important;gap:26px!important}
+  .flow-grid{grid-template-columns:1fr!important;gap:12px!important}
+  .flow-card h3{margin-bottom:2px}
+  .audience-grid>*,.flow-grid>*,.commission-grid>*,.shop-grid>*,.features-grid>*{min-height:0!important;height:auto!important}
+  .commission-grid{grid-template-columns:1fr 1fr!important;gap:18px 14px!important}
+  .shop-grid{grid-template-columns:1fr!important;gap:16px!important}
+}
+
+/* ---------- 書体の比較（デモ用） ---------- */
+html[data-font] body{font-family:var(--ink-sans),"Hiragino Kaku Gothic ProN",sans-serif!important}
+.ink-font-switch{position:fixed;left:12px;bottom:12px;z-index:80;display:flex;align-items:center;gap:6px;padding:6px 8px;background:#fffdf8f2;border:1px solid var(--line-strong);border-radius:999px;font:13px/1 "Hiragino Kaku Gothic ProN",sans-serif;color:#333;box-shadow:0 6px 18px -10px #0006}
+.ink-font-switch span{padding:0 4px}
+.ink-font-switch button{min-width:34px;min-height:34px;border-radius:50%;border:1px solid var(--line-strong);background:#fff;color:#333;font:600 13px/1 "Hiragino Kaku Gothic ProN",sans-serif;cursor:pointer}
+.ink-font-switch button[aria-pressed=true]{background:var(--red);border-color:var(--red);color:#fff}
+@media (max-width:640px){.ink-font-switch{bottom:84px}}
+
+/* 書体E（すべて筆文字）は字面が小さく見えるので、ひと回り大きくする */
+html[data-font=e] body{font-size:17.5px}
+html[data-font=e] .performance-body .original-text,html[data-font=e] .performance-body p{font-size:clamp(20px,1.8vw,25px)!important}
+html[data-font=e] .commission-card h3{font-size:clamp(20px,1.6vw,24px)!important}
+html[data-font=e] .commission-card .original-text{font-size:18px!important}
