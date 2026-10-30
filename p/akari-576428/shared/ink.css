@@ -1,0 +1,80 @@
+/* 両サイト共通の動き。html.ink-on（ink.js が動いたとき）だけ効く。動きを減らす設定では止める。
+   動かすのは transform・opacity・clip-path・SVG の線だけ。 */
+
+/* ---------- 最初の画面 ---------- */
+.ink-on .ink-kenburns img{animation:ink-kenburns 22s ease-in-out infinite alternate;transform-origin:60% 40%}
+@keyframes ink-kenburns{from{transform:scale(1)}to{transform:scale(1.08)}}
+
+.ink-motes{position:absolute;inset:0;pointer-events:none;z-index:-1;overflow:hidden}
+.ink-mote{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:50% 46% 54% 48%;background:var(--ink);opacity:.08;animation:ink-drift var(--t) ease-in-out var(--d) infinite alternate}
+@keyframes ink-drift{from{transform:translate3d(0,0,0) rotate(0)}to{transform:translate3d(var(--dx),var(--dy),0) rotate(40deg)}}
+
+.ink-scroll-cue{position:absolute;left:50%;bottom:22px;width:2px;height:54px;margin-left:-1px;overflow:hidden;pointer-events:none}
+.ink-scroll-cue:before{content:"";position:absolute;inset:0;background:var(--red);border-radius:2px;animation:ink-cue 1.8s cubic-bezier(.6,0,.3,1) infinite}
+@keyframes ink-cue{0%{transform:translateY(-100%)}55%{transform:translateY(0)}100%{transform:translateY(100%)}}
+
+/* ---------- セクションの境目の筆の線 ---------- */
+.ink-divider{display:block;width:min(1120px,calc(100% - 40px));height:14px;margin:-7px auto 0;overflow:visible;position:relative;z-index:1}
+.ink-divider path{fill:none;stroke:var(--red);stroke-width:2.4;stroke-linecap:round;opacity:.55;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.3s cubic-bezier(.6,.05,.25,1)}
+.ink-divider .thin{stroke:var(--line-strong);stroke-width:1;opacity:.6;transition-delay:.25s}
+.ink-divider.on path{stroke-dashoffset:0}
+
+/* ---------- 見出しの番号 ---------- */
+.ink-on .section-no{display:inline-block;transform:translateY(60%) rotate(-18deg);opacity:0;transition:transform .9s cubic-bezier(.2,.8,.2,1),opacity .6s}
+.ink-on .section-head.ink-head-on .section-no{transform:none;opacity:1}
+
+/* ---------- カード：傾いた状態から起き上がる ---------- */
+.ink-on .ink-card{opacity:0;transform:perspective(900px) rotateX(14deg) translateY(36px);transform-origin:50% 100%;transition:transform .9s cubic-bezier(.2,.8,.2,1) var(--ink-delay,0s),opacity .7s ease var(--ink-delay,0s)}
+.ink-on .ink-card.on{opacity:1;transform:none}
+@media (hover:hover){.ink-on .ink-card.on:hover{transform:translateY(-6px)}}
+
+/* ---------- 写真：墨がにじむように広がる ---------- */
+.ink-on .ink-photo{clip-path:circle(2% at 50% 55%);transition:clip-path 1.25s cubic-bezier(.55,.05,.2,1)}
+.ink-on .ink-photo img{transform:scale(1.18);transition:transform 1.6s cubic-bezier(.2,.8,.2,1)}
+.ink-on .ink-photo.on{clip-path:circle(78% at 50% 50%)}
+.ink-on .ink-photo.on img{transform:scale(1)}
+
+/* ---------- 横送り ---------- */
+.ink-on .carousel-controls.ink-none{display:none!important}
+.ink-dots{display:flex;gap:8px;align-items:center}
+.ink-dots i{width:7px;height:7px;border-radius:50%;background:var(--line-strong);opacity:.45;transition:transform .3s,opacity .3s,background .3s}
+.ink-dots i.on{background:var(--red);opacity:1;transform:scale(1.5)}
+.carousel-controls button:disabled{opacity:.3;cursor:default}
+.ink-controls-left{display:flex;align-items:center;gap:14px}
+
+/* ---------- ボタンを押すと墨が広がる ---------- */
+.ink-ripple-host{position:relative;overflow:hidden}
+.ink-ripple{position:absolute;left:var(--rx);top:var(--ry);width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;background:currentColor;opacity:.28;pointer-events:none;animation:ink-ripple .7s ease-out forwards}
+@keyframes ink-ripple{to{transform:scale(28);opacity:0}}
+
+/* ---------- 金額 ---------- */
+.ink-count{font-variant-numeric:tabular-nums}
+
+/* ---------- フッターの署名 ---------- */
+.ink-sign{display:block;width:min(520px,100%);height:auto;margin:0 0 26px;overflow:visible}
+.ink-sign text{font-family:var(--serif),serif;font-size:64px;fill:transparent;stroke:var(--ink);stroke-width:.9;stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 2.6s cubic-bezier(.5,0,.3,1),fill .9s ease 1.9s}
+.ink-sign.on text{stroke-dashoffset:0;fill:var(--ink)}
+.ink-sign .seal-dot{fill:var(--red);transform-origin:center;transform-box:fill-box;transform:scale(0);transition:transform .45s cubic-bezier(.3,1.6,.5,1) 2.4s}
+.ink-sign.on .seal-dot{transform:scale(1)}
+
+/* ---------- 読んだ量の線（筆の太さが変わる形） ---------- */
+.ink-on .read-progress{height:4px!important;background:linear-gradient(90deg,var(--red) 0%,var(--red) 70%,transparent 100%)!important;border-radius:0 4px 4px 0;clip-path:polygon(0 30%,100% 0,100% 100%,0 70%)}
+
+/* ---------- 印をぽんと押す ---------- */
+@keyframes ink-stamp{0%{transform:scale(1.9) rotate(-14deg);opacity:0}60%{transform:scale(.92) rotate(3deg);opacity:1}100%{transform:scale(1) rotate(-4deg);opacity:1}}
+
+/* ---------- 申し込み完了の墨の粒 ---------- */
+.ink-burst{position:fixed;left:0;top:0;width:10px;height:10px;border-radius:50% 40% 55% 45%;background:var(--ink);pointer-events:none;z-index:90}
+
+/* ---------- 大きな筆の線が横切る（個人サイトのパフォーマンス） ---------- */
+.ink-sweep{position:absolute;left:-4%;right:-4%;top:12%;width:108%;height:70%;pointer-events:none;z-index:2;overflow:visible}
+.ink-sweep path{fill:none;stroke:var(--red);stroke-width:22;stroke-linecap:round;opacity:.82;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.6s cubic-bezier(.65,0,.25,1)}
+.ink-sweep.on path{stroke-dashoffset:0}
+
+@media (prefers-reduced-motion:reduce){
+  .ink-on .ink-card,.ink-on .ink-photo,.ink-on .ink-photo img,.ink-on .section-no{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}
+  .ink-mote,.ink-scroll-cue,.ink-kenburns img{animation:none!important}
+  .ink-divider path,.ink-sweep path{stroke-dashoffset:0!important;transition:none!important}
+  .ink-sign text{stroke-dashoffset:0!important;fill:var(--ink)!important;transition:none!important}
+  .ink-sign .seal-dot{transform:none!important}
+}
