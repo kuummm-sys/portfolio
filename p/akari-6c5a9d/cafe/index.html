@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>占いカフェ fortune｜三軒茶屋の占いカフェ</title>
+<meta name="description" content="三軒茶屋の占いカフェ fortune。鑑定7分1,000円〜、1ドリンクオーダー制。土日16:00〜20:00（詳しくはカレンダー）。飛び込み歓迎。三軒茶屋駅から徒歩3分。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#f9b4c6;--pink-soft:#fde0e8;--pink-pale:#fff5f7;--rose:#e6467c;--teal:#22aeb0;--teal-deep:#0f7c80;--teal-soft:#d9f3f1;--plum:#54283c;--plum-soft:#7b5163;--gold:#f5c95f;--white:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;scroll-padding-top:76px}
+body{margin:0;background:var(--pink-pale);color:var(--plum);font:500 17px/1.85 "Zen Maru Gothic","Hiragino Maru Gothic ProN",sans-serif;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ul,dl,dd,figure{margin:0;padding:0}
+ul{list-style:none}
+:focus-visible{outline:3px solid var(--teal-deep);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.wrap{width:min(1080px,calc(100% - 40px));margin-inline:auto}
+
+/* ---------- 上の帯 ---------- */
+.top{position:fixed;inset:0 0 auto;z-index:30;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 20px;background:#fff5f7ee;backdrop-filter:blur(6px);box-shadow:0 1px 0 #f9b4c688}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 21px/1 Pacifico,cursive;color:var(--rose);white-space:nowrap}
+.brand svg{width:42px;height:42px}
+.top nav{display:flex;align-items:center;gap:22px;font-weight:700;font-size:15px}
+.top nav a{text-decoration:none}
+.top nav a:not(.line):hover{color:var(--rose)}
+.line{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 20px;border-radius:999px;background:var(--teal-deep);color:#fff!important;font-weight:700;text-decoration:none;transition:transform .2s}
+.line:hover{transform:scale(1.05)}
+@media(max-width:760px){.top nav a:not(.line){display:none}.top .line{min-height:40px;padding:6px 16px;font-size:14px}}
+
+/* ---------- 最初の画面 ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(180deg,var(--pink) 0%,#fbc8d6 62%,var(--pink-soft) 100%);padding:84px 0 92px;text-align:center}
+.hang{position:absolute;top:0;transform-origin:50% 0;animation:swing var(--t,5s) ease-in-out var(--d,0s) infinite alternate;pointer-events:none}
+.hang i{display:block;width:2px;height:var(--h,80px);margin:auto;background-image:linear-gradient(#fff 50%,transparent 0);background-size:2px 8px}
+.hang svg{width:var(--s,34px);height:var(--s,34px);margin:auto;fill:#fff}
+@keyframes swing{from{transform:rotate(-5deg)}to{transform:rotate(5deg)}}
+.twk{position:absolute;fill:#fff;pointer-events:none;animation:twk var(--t,2.4s) ease-in-out var(--d,0s) infinite}
+@keyframes twk{0%,100%{transform:scale(.45);opacity:.35}50%{transform:scale(1);opacity:1}}
+.logo-wrap{position:relative;width:min(220px,40vw);margin:0 auto 6px}
+.rays{position:absolute;inset:-26%;animation:spin 40s linear infinite}
+.rays line{stroke:#fff;stroke-width:2;stroke-linecap:round;opacity:.75}
+@keyframes spin{to{transform:rotate(360deg)}}
+.logo-mark{position:relative;animation:pop .8s cubic-bezier(.3,1.6,.5,1) both}
+.logo-mark .ht{transform-box:fill-box;transform-origin:center;animation:beat 1.6s ease-in-out infinite}
+.logo-mark .ht2{animation-delay:.25s}
+@keyframes beat{0%,100%{transform:scale(1)}40%{transform:scale(1.18)}}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.hero h1{font-weight:400;color:#fff;text-shadow:0 2px 0 #e88aa7}
+.hero h1 .en{display:block;font:400 clamp(50px,9.4vw,92px)/1.25 Pacifico,cursive}
+.hero h1 .fo{display:flex;align-items:center;justify-content:center;gap:16px;font:700 clamp(20px,3vw,27px)/1.3 "Zen Maru Gothic",sans-serif;letter-spacing:.34em;text-shadow:none}
+.hero h1 .fo:before,.hero h1 .fo:after{content:"";width:60px;height:2px;background:#fff}
+@media(min-width:761px) and (max-height:900px){.hero{padding-top:72px}.logo-wrap{width:150px}.hero h1 .en{font-size:66px}.lead{margin-top:10px!important;font-size:22px!important}.lead br{display:none}.spread{margin:18px auto 22px!important}.tarot{width:150px!important}}
+.lead{margin:20px auto 0;font-size:clamp(20px,3.4vw,27px);font-weight:900;line-height:1.6;color:var(--plum)}
+
+/* 3枚のカードが順にめくれる（いちばんの見せ場） */
+.spread{display:flex;justify-content:center;gap:clamp(10px,2.5vw,26px);margin:30px auto 34px;perspective:1100px}
+.tarot{position:relative;width:clamp(100px,27vw,196px);aspect-ratio:3/4.5;background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;animation:bob 4s ease-in-out infinite alternate}
+.tarot:nth-child(1){--r:-5deg;animation-delay:.2s}.tarot:nth-child(2){--r:0deg;margin-top:-10px}.tarot:nth-child(3){--r:5deg;animation-delay:.5s}
+@keyframes bob{from{transform:rotate(var(--r)) translateY(0)}to{transform:rotate(var(--r)) translateY(-9px)}}
+.inner{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.4,1.4,.5,1)}
+.tarot.open .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;box-shadow:0 12px 22px -10px #a0345a88;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.back{background:var(--teal);border:5px solid #fff}
+.back svg{width:62%;fill:#fff}
+.back:before{content:"";position:absolute;inset:5px;border:2px solid #ffffffb0;border-radius:8px}
+.front{transform:rotateY(180deg);background:#fff;border:5px solid var(--gold);padding:8px 6px;line-height:1.35;font-weight:900}
+.front small{font-size:clamp(13px,2.5vw,17px);color:var(--plum-soft);font-weight:700}
+.front b{display:block;font-size:clamp(26px,6vw,40px);color:var(--rose);line-height:1.2;margin:2px 0;white-space:nowrap}.front b.sm{font-size:clamp(17px,4.6vw,31px)}
+.front svg{width:30%;fill:var(--rose);margin-bottom:6px}
+.hint{font-size:15px;color:var(--plum);font-weight:700}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:14px}
+.btn{position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;min-height:56px;padding:10px 30px;border-radius:999px;font-weight:900;font-size:18px;text-decoration:none;background:var(--rose);color:#fff;box-shadow:0 5px 0 #b12c5a;transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translateY(2px);box-shadow:0 3px 0 #b12c5a}
+.btn.teal{background:var(--teal-deep);box-shadow:0 5px 0 #0a5d60}.btn.teal:hover{box-shadow:0 3px 0 #0a5d60}
+.btn.white{background:#fff;color:var(--rose);box-shadow:0 5px 0 #f09ab4}.btn.white:hover{box-shadow:0 3px 0 #f09ab4}
+.scallop{position:absolute;left:0;right:0;bottom:-1px;height:44px;width:100%;fill:var(--pink-pale)}
+
+/* ---------- 流れる帯 ---------- */
+.ribbon{overflow:hidden;background:var(--teal-deep);color:#fff;font-weight:700;font-size:16px;line-height:1;padding:12px 0}
+.ribbon div{display:flex;width:max-content;animation:flow 34s linear infinite}
+.ribbon span{padding-inline:22px;white-space:nowrap}
+@keyframes flow{to{transform:translateX(-50%)}}
+
+/* ---------- セクション共通 ---------- */
+section.s{padding:60px 0}@media(max-width:760px){section.s{padding:44px 0}.readers{gap:40px}.ttl{margin-bottom:20px}}
+.ttl{display:flex;align-items:center;justify-content:center;gap:14px;font-size:clamp(27px,4.6vw,38px);font-weight:900;line-height:1.4;text-align:center;margin-bottom:30px}
+.ttl svg{width:26px;height:26px;fill:var(--rose);flex:none;animation:beat 1.6s ease-in-out infinite}
+.note{text-align:center;color:var(--plum-soft);font-size:16px}
+.js .rv{opacity:0;transform:translateY(26px) scale(.97);transition:opacity .6s,transform .7s cubic-bezier(.3,1.4,.5,1);transition-delay:var(--dl,0s)}
+.js .rv.in{opacity:1;transform:none}
+
+/* はじめての方へ：カードにせず、丸い吹き出し */
+.first{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.bubble{background:#fff;border-radius:40px 40px 40px 8px;padding:28px 26px;border:3px solid var(--pink)}
+.bubble:nth-child(2){border-radius:40px 40px 8px 40px;border-color:var(--teal);margin-top:26px}
+.bubble:nth-child(3){border-color:var(--gold)}
+.bubble h3{font-size:22px;line-height:1.45;font-weight:900;color:var(--rose);margin-bottom:8px}
+.bubble:nth-child(2) h3{color:var(--teal-deep)}
+@media(max-width:760px){.first{grid-template-columns:1fr}.bubble:nth-child(2){margin-top:0}}
+
+/* カレンダー */
+.cal-sec{background:var(--pink-soft)}
+.next{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;gap:4px 12px;width:fit-content;max-width:100%;margin:0 auto 22px;padding:10px 26px;background:#fff;border-radius:999px;font-weight:900;font-size:19px;line-height:1.5;text-align:center}
+.next b{color:var(--rose);font-size:23px}
+.calendar{position:relative;max-width:760px;margin:auto;background:#fff;border-radius:30px;padding:clamp(12px,3vw,26px);box-shadow:0 14px 30px -18px #b1496f}
+.calendar h3{text-align:center;font-size:24px;font-weight:900;color:var(--teal-deep);margin-bottom:12px}
+.days,.cells{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:clamp(3px,1vw,7px)}
+.days span{text-align:center;font-weight:700;font-size:clamp(13px,2.4vw,15px);line-height:1;padding:9px 0;border-radius:999px;background:var(--teal-deep);color:#fff}
+.days span:first-child,.days span:last-child{background:var(--rose)}
+.cells{margin-top:7px}
+.cell{min-height:clamp(56px,12vw,84px);border-radius:14px;padding:6px 2px;text-align:center;line-height:1.2;background:#faf6f7;font-weight:700;color:var(--plum-soft);font-size:clamp(16px,3vw,20px)}
+.cell.blank{background:none}
+.cell small{display:block;margin-top:5px;font-size:clamp(12px,2.3vw,13px);line-height:1.2;white-space:nowrap}.cell .sh{display:none}@media(max-width:560px){.cell .lg{display:none}.cell .sh{display:inline}}
+.cell.on{background:var(--pink);color:var(--plum)}
+.cell.on small{font-weight:900}
+.cell.off{background:var(--teal-soft);color:var(--teal-deep)}
+.cell.nx{outline:3px solid var(--rose);outline-offset:1px;animation:nx 1.4s ease-in-out infinite}
+@keyframes nx{50%{transform:scale(1.07)}}
+.js .cal-in .cell{animation:cellin .45s cubic-bezier(.3,1.5,.5,1) both;animation-delay:calc(var(--i)*22ms)}
+.js .cal-in .cell.nx{animation:cellin .45s cubic-bezier(.3,1.5,.5,1) both calc(var(--i)*22ms),nx 1.4s ease-in-out 1.2s infinite}
+@keyframes cellin{from{transform:scale(.4);opacity:0}}
+.cat{position:absolute;right:clamp(12px,3vw,26px);bottom:clamp(14px,3vw,28px);width:clamp(52px,12vw,88px);fill:var(--teal)}
+.cat .tail{transform-box:fill-box;transform-origin:0% 100%;animation:tail 1.6s ease-in-out infinite alternate}
+@keyframes tail{from{transform:rotate(-10deg)}to{transform:rotate(14deg)}}
+.cal-note{margin-top:18px}
+
+/* 占い師：カードをめくる */
+.readers{display:grid;gap:56px}
+.reader{display:grid;grid-template-columns:minmax(0,330px) minmax(0,1fr);gap:clamp(24px,5vw,56px);align-items:center}
+.reader:nth-child(even){grid-template-columns:minmax(0,1fr) minmax(0,330px)}
+.reader:nth-child(even) .rcard{order:2}
+.rcard{position:relative;width:100%;max-width:330px;margin:auto;aspect-ratio:3/4.3;background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer;perspective:1200px;display:block}
+.rcard .inner{transition-duration:.9s}
+.rcard.open .inner{transform:rotateY(180deg)}
+.rcard .face{border:6px solid #fff;border-radius:50% 50% 24px 24px/36% 36% 24px 24px;overflow:hidden;justify-content:flex-start;box-shadow:0 18px 30px -16px #a0345a}
+.rcard .pic{background:var(--pink)}
+.rcard .pic img{width:100%;height:100%;object-fit:cover;object-position:50% 12%}
+.rcard .tap{position:absolute;right:12px;bottom:12px;padding:6px 14px;background:var(--rose);color:#fff;border-radius:999px;font-size:14px;font-weight:700;line-height:1.4;animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateY(-5px)}}
+.rcard .msg{transform:rotateY(180deg);background:var(--teal-deep);color:#fff;padding:64px 22px 22px;text-align:left;font-size:16px;line-height:1.75;justify-content:center}
+.rcard .msg b{display:block;font-size:17px;color:var(--gold);margin-bottom:8px}
+.rinfo h3{font-size:clamp(27px,4vw,34px);font-weight:900;line-height:1.4}
+.rinfo h3 small{font-size:.6em;margin-left:6px}
+.rinfo .sub{color:var(--plum-soft);margin-bottom:14px}
+.lbl{display:inline-block;margin:12px 0 8px;padding:2px 16px;border-radius:999px;background:var(--rose);color:#fff;font-weight:700;font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:7px}
+.chips li{padding:3px 13px;border-radius:999px;background:var(--pink-soft);font-size:15px;font-weight:700;line-height:1.7;transition:transform .2s}
+.chips.t li{background:var(--teal-soft);color:var(--teal-deep)}
+.chips li:hover{transform:scale(1.1) rotate(-2deg)}
+@media(max-width:760px){.reader,.reader:nth-child(even){grid-template-columns:1fr}.reader:nth-child(even) .rcard{order:0}.rcard{max-width:270px}.rcard .msg{font-size:14.5px;line-height:1.65;padding:48px 16px 14px}.rcard .msg b{font-size:15px;margin-bottom:4px}}
+.more{text-align:center;margin-top:40px;font-weight:700}
+
+/* メニュー */
+.menu-sec{background:linear-gradient(180deg,var(--pink-soft),#fff)}
+.sweets{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,4vw,40px);max-width:820px;margin:0 auto 18px;text-align:center}
+.sweet img{width:min(300px,100%);height:auto;aspect-ratio:1;object-fit:cover;border-radius:50%;margin:0 auto 14px;border:7px solid #fff;box-shadow:0 12px 26px -14px #a0345a;transition:transform .5s cubic-bezier(.3,1.6,.5,1)}
+.sweet:hover img{transform:rotate(-6deg) scale(1.05)}
+.sweet h3{font-size:clamp(19px,3.4vw,24px);line-height:1.4;font-weight:900;color:var(--rose);margin-bottom:6px}
+.sweet p{font-size:16px;line-height:1.7}
+.by{text-align:center;margin-bottom:40px;color:var(--plum-soft);font-size:15px}
+.price{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:0 auto 26px}
+.price span{padding:8px 26px;border-radius:999px;background:var(--rose);color:#fff;font-weight:900;font-size:19px;line-height:1.4}
+.drinks{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:820px;margin:auto}
+.drink{position:relative;background:#fff;border-radius:26px;padding:24px;border:3px dashed var(--teal)}
+.drink h3{font-size:21px;font-weight:900;color:var(--teal-deep);margin-bottom:8px}
+.drink ul{columns:2;column-gap:12px;font-size:16px;line-height:1.9}
+.foods{max-width:820px;margin:18px auto 0;text-align:center;font-weight:700}
+.cup{width:62px;margin:0 auto 6px;fill:var(--rose)}
+.cup .st{fill:none;stroke:var(--rose);stroke-width:3;stroke-linecap:round;animation:steam 2.2s ease-in-out infinite}
+.cup .st2{animation-delay:.5s}
+@keyframes steam{0%{opacity:0;transform:translateY(5px)}40%{opacity:1}100%{opacity:0;transform:translateY(-6px)}}
+@media(max-width:560px){.drinks{grid-template-columns:1fr}}
+
+/* 1日の流れ */
+.day{display:grid;grid-template-columns:repeat(3,1fr);max-width:900px;margin:auto;border-radius:30px;overflow:hidden;box-shadow:0 14px 30px -20px #54283c}
+.slot{padding:26px 14px;text-align:center;line-height:1.5}
+.slot svg{width:44px;height:44px;margin:0 auto 8px}
+.slot b{display:block;font-size:clamp(16px,2.6vw,20px);font-weight:900}
+.slot .tm{font-size:clamp(16px,2.6vw,19px);font-weight:700}
+.s1{background:#fff3c9}.s1 svg{fill:#e9a91f;animation:spin 14s linear infinite}
+.s2{background:var(--pink);transform:scale(1.04);position:relative;z-index:1;border-radius:18px;box-shadow:0 8px 24px -12px #a0345a}.s2 svg{fill:#fff;animation:beat 1.6s ease-in-out infinite}
+.s3{background:var(--plum);color:#fff}.s3 svg{fill:var(--gold);animation:bobm 3s ease-in-out infinite alternate}
+@keyframes bobm{to{transform:translateY(-6px) rotate(-10deg)}}
+@media(max-width:560px){.day{grid-template-columns:1fr}.s2{transform:none;border-radius:0}.slot{padding:18px 14px}}
+
+/* 予約・アクセス */
+.visit{background:var(--teal-deep);color:#fff;position:relative;overflow:hidden}
+.visit .ttl svg{fill:#fff}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(26px,5vw,60px);align-items:start}
+.visit h3{font-size:23px;font-weight:900;margin-bottom:6px;color:var(--gold)}
+.visit .btns{justify-content:flex-start;margin-top:16px}
+.visit dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px}
+.visit dt{font-weight:900}
+.visit a.txt{font-weight:700}
+@media(max-width:760px){.visit-grid{grid-template-columns:1fr}}
+footer{background:var(--plum);color:#fff;text-align:center;padding:26px 20px 100px;font-size:14px;line-height:1.8}
+footer .f{font:400 26px/1.4 Pacifico,cursive;color:var(--pink)}
+.fixed{display:none}
+@media(max-width:760px){.fixed{position:fixed;inset:auto 0 0;z-index:30;display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:#fff5f7f2;box-shadow:0 -2px 10px #a0345a33}.fixed a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;font-weight:900;font-size:16px;text-decoration:none;color:#fff;background:var(--rose)}.fixed a+a{background:var(--teal-deep)}}
+/* タップしたときの小さな星 */
+.spark{position:fixed;width:18px;height:18px;fill:var(--gold);pointer-events:none;z-index:60}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="heart" viewBox="0 0 32 30"><path d="M16 29C6 21 1 16 1 9.5 1 4.6 4.8 1 9.3 1c2.8 0 5.2 1.4 6.700 3.700C17.500 2.400 19.900 1 22.700 1 27.200 1 31 4.600 31 9.500 31 16 26 21 16 29z"/></symbol>
+<symbol id="star" viewBox="0 0 24 24"><path d="M12 0c1 7 4 11 12 12-8 1-11 5-12 12-1-7-4-11-12-12 8-1 11-5 12-12z"/></symbol>
+<symbol id="moon" viewBox="0 0 24 24"><path d="M15 1A11.5 11.5 0 1 0 23 19 10 10 0 0 1 15 1z"/></symbol>
+<symbol id="mark" viewBox="0 0 600 600"><circle cx="300" cy="300" r="296" fill="#fff"/><circle cx="300" cy="300" r="278" fill="#22aeb0"/><path fill="#fff" fill-rule="evenodd" d="M268 96h64v190h134v218h-54v-18H188v18h-54V286h134zM190 340v92h220v-92z"/><use class="ht" href="#heart" x="350" y="150" width="104" height="96" fill="#fff"/><use class="ht ht2" href="#heart" x="430" y="94" width="46" height="42" fill="#fff"/></symbol>
+</svg>
+
+<header class="top">
+<a class="brand" href="#top"><svg aria-hidden="true"><use href="#mark"/></svg>fortune</a>
+<nav aria-label="ページ内"><a href="#calendar">営業日</a><a href="#readers">占い師</a><a href="#menu">メニュー</a><a href="#visit">アクセス</a><a class="line" href="https://lin.ee/xM47LTK" target="_blank" rel="noopener">LINEで予約</a></nav>
+</header>
+
+<main id="top">
+<section class="hero" id="hero">
+<div class="hang" style="left:5%;--h:90px;--s:36px;--t:4.6s" aria-hidden="true"><i></i><svg><use href="#star"/></svg></div>
+<div class="hang" style="left:15%;--h:42px;--s:50px;--t:5.4s;--d:-1s" aria-hidden="true"><i></i><svg><use href="#moon"/></svg></div>
+<div class="hang" style="left:27%;--h:110px;--s:24px;--t:4s;--d:-2s" aria-hidden="true"><i></i><svg><use href="#star"/></svg></div>
+<div class="hang" style="right:26%;--h:96px;--s:26px;--t:4.3s;--d:-1.5s" aria-hidden="true"><i></i><svg><use href="#star"/></svg></div>
+<div class="hang" style="right:14%;--h:50px;--s:50px;--t:5.8s;--d:-3s" aria-hidden="true"><i></i><svg><use href="#moon"/></svg></div>
+<div class="hang" style="right:5%;--h:112px;--s:34px;--t:4.9s;--d:-.5s" aria-hidden="true"><i></i><svg><use href="#star"/></svg></div>
+<svg class="twk" style="left:12%;top:44%;width:34px;height:34px;--d:-.6s" aria-hidden="true"><use href="#star"/></svg>
+<svg class="twk" style="left:7%;top:62%;width:20px;height:20px;--d:-1.4s" aria-hidden="true"><use href="#star"/></svg>
+<svg class="twk" style="right:10%;top:48%;width:38px;height:38px;--d:-1s" aria-hidden="true"><use href="#star"/></svg>
+<svg class="twk" style="right:6%;top:70%;width:22px;height:22px;--d:-.2s" aria-hidden="true"><use href="#star"/></svg>
+
+<div class="wrap" style="position:relative">
+<div class="logo-wrap">
+<svg class="rays" viewBox="0 0 200 200" aria-hidden="true" id="rays"></svg>
+<svg class="logo-mark" viewBox="0 0 600 600" role="img" aria-label="占いカフェ fortune のロゴ"><use href="#mark"/></svg>
+</div>
+<h1><span class="en">Uranai Cafe</span><span class="fo">fortune</span></h1>
+<p class="lead">三軒茶屋に、占いカフェ fortune<br>オープンしました！</p>
+<div class="spread" id="spread">
+<button class="tarot" type="button" aria-label="カードをめくる：鑑定は7分1,000円から"><span class="inner"><span class="face back"><svg aria-hidden="true"><use href="#star"/></svg></span><span class="face front"><small>鑑定</small><b>7分</b><small>1,000円〜</small></span></span></button>
+<button class="tarot" type="button" aria-label="カードをめくる：1ドリンクオーダー制"><span class="inner"><span class="face back"><svg aria-hidden="true"><use href="#moon"/></svg></span><span class="face front"><small>カフェ</small><b class="sm">1ドリンク</b><small>オーダー制</small></span></span></button>
+<button class="tarot" type="button" aria-label="カードをめくる：土日16時から20時、ビルの2階"><span class="inner"><span class="face back"><svg aria-hidden="true"><use href="#heart"/></svg></span><span class="face front"><small>土日</small><b class="sm">16〜20時</b><small>ビルの2階</small></span></span></button>
+</div>
+<div class="btns"><a class="btn" href="#calendar">今月の営業日を見る</a><a class="btn white" href="#readers">占い師を見る</a></div>
+</div>
+<svg class="scallop" viewBox="0 0 1200 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0 44V22q50-30 100 0t100 0 100 0 100 0 100 0 100 0 100 0 100 0 100 0 100 0 100 0 100 0v22z"/></svg>
+</section>
+
+<div class="ribbon" aria-hidden="true"><div id="flow"><span>♡ 飛び込み歓迎</span><span>☆ 鑑定7分 1,000円〜</span><span>♡ お酒も飲めます</span><span>☆ 三軒茶屋 徒歩3分</span><span>♡ 米粉カヌレ</span><span>☆ グルテンフリーナッツタルト</span></div></div>
+
+<section class="s" id="first">
+<div class="wrap">
+<h2 class="ttl"><svg aria-hidden="true"><use href="#heart"/></svg>はじめての方へ</h2>
+<div class="first">
+<div class="bubble rv"><h3>鑑定7分 1,000円〜</h3><p>1ドリンクオーダー制です。ドリンク¥700〜、フード¥300〜。</p></div>
+<div class="bubble rv" style="--dl:.12s"><h3>飛び込み歓迎</h3><p>30分以上の鑑定は、公式LINEまたはDMで予約してください。</p></div>
+<div class="bubble rv" style="--dl:.24s"><h3>お酒も飲めます</h3><p>美味しいスィーツとドリンクを揃えてお待ちしております！ 気軽に遊びにきてね！</p></div>
+</div>
+</div>
+</section>
+
+<section class="s cal-sec" id="calendar">
+<div class="wrap">
+<h2 class="ttl"><svg aria-hidden="true"><use href="#star"/></svg>営業日カレンダー</h2>
+<p class="next" id="next" hidden></p>
+<div class="calendar" id="cal">
+<h3>2026年11月</h3>
+<div class="days" aria-hidden="true"><span>日</span><span>月</span><span>火</span><span>水</span><span>木</span><span>金</span><span>土</span></div>
+<div class="cells" id="cells"></div>
+<svg class="cat" viewBox="0 0 60 80" aria-hidden="true"><path class="tail" d="M40 74c10 2 16-4 15-12-1-5-6-6-7-2 2 1 3 3 2 6-1 3-5 4-10 3z"/><path d="M20 4l6 7c2-1 6-1 8 0l6-7 2 16c1 6-1 11-5 14 5 6 8 17 7 40H14c0-16 2-30 8-40-4-3-6-8-5-14z"/></svg>
+</div>
+<p class="note cal-note">16:00〜20:00頃。お笑いライブやイベントがある日はお休みになります。<br>カレンダーをみてお越し下さい。</p>
+</div>
+</section>
+
+<section class="s" id="readers">
+<div class="wrap">
+<h2 class="ttl"><svg aria-hidden="true"><use href="#moon"/></svg>占い師の紹介</h2>
+<div class="readers">
+<article class="reader">
+<button class="rcard" type="button" aria-label="カードをめくって、左馬あかりん先生のメッセージを読む"><span class="inner"><span class="face pic"><img src="img/akarin.webp" alt="左馬あかりん先生" width="448" height="560" loading="lazy"><span class="tap">タップでメッセージ</span></span><span class="face msg"><b>先生からの一言メッセージ</b>人生は何が起こるかわかりません。辛いとき、諦めそうになったとき、自分の運命や転機、適職を知ることでよりよい人生を歩むことができます。私は、私の鑑定を通して、皆さんに元気や勇気をお届けしたいと願っています。</span></span></button>
+<div class="rinfo rv">
+<h3>左馬あかりん<small>先生</small></h3>
+<p class="sub">鑑定歴5年。有名占いサロンにて3年程修行を積み、これまでに3,000人以上の方を鑑定。</p>
+<p class="lbl">得意な占術</p>
+<ul class="chips t"><li>タロットカード</li><li>西洋占星術</li><li>ルノルマンカード</li><li>数秘術</li><li>筆跡鑑定</li></ul>
+<p class="lbl">相談内容</p>
+<ul class="chips"><li>恋愛</li><li>結婚</li><li>縁結び</li><li>仕事</li><li>金運</li><li>人間関係</li><li>家庭</li><li>ペットの気持ち</li><li>適職・才能</li><li>事業・独立・開業</li></ul>
+</div>
+</article>
+<article class="reader">
+<button class="rcard" type="button" aria-label="カードをめくって、ギブ↑大久保先生のメッセージを読む"><span class="inner"><span class="face pic"><img src="img/give.webp" alt="ギブ↑大久保先生" width="452" height="565" loading="lazy"><span class="tap">タップでメッセージ</span></span><span class="face msg"><b>先生からのメッセージ</b>はじめまして。占い芸人のギブ↑（ぎぶあっぷ）大久保です。幼いころから占いに興味があり、芸人活動の傍ら原宿の母に弟子入りしました。鑑定はテレビとは違いますのでご安心ください（笑）</span></span></button>
+<div class="rinfo rv">
+<h3>ギブ↑大久保<small>先生</small></h3>
+<p class="sub">占い師芸人。鑑定歴15年。</p>
+<p class="lbl">得意な占術</p>
+<ul class="chips t"><li>霊感タロット</li><li>ソウルナンバーリーディング</li><li>姓名判断</li></ul>
+<p class="lbl">相談内容</p>
+<ul class="chips"><li>恋愛</li><li>結婚</li><li>復縁</li><li>縁結び</li><li>金運</li><li>仕事運</li><li>人間関係</li><li>家庭</li><li>子育て</li><li>片思い</li><li>LGBT</li></ul>
+</div>
+</article>
+</div>
+<p class="more">ほかの占い師さんも、また紹介します。お楽しみに！</p>
+</div>
+</section>
+
+<section class="s menu-sec" id="menu">
+<div class="wrap">
+<h2 class="ttl"><svg aria-hidden="true"><use href="#heart"/></svg>メニュー</h2>
+<div class="sweets">
+<div class="sweet rv"><img src="img/canele.webp" alt="米粉カヌレ" width="470" height="470" loading="lazy"><h3>米粉カヌレ</h3><p>外はカリッと、中はもっちり。米粉で作った、やさしい甘さのカヌレです。</p></div>
+<div class="sweet rv" style="--dl:.12s"><img src="img/tart.webp" alt="グルテンフリーナッツタルト" width="470" height="470" loading="lazy"><h3>グルテンフリー<br>ナッツタルト</h3><p>小麦粉不使用。香ばしいナッツがたっぷりのタルトです。</p></div>
+</div>
+<p class="by">スィーツ担当は、あんじぇらさんです。</p>
+<div class="price"><span>ドリンク ¥700〜</span><span>フード ¥300〜</span></div>
+<svg class="cup" viewBox="0 0 60 56" aria-hidden="true"><path class="st" d="M20 14c-3-4 3-6 0-11"/><path class="st st2" d="M32 14c-3-4 3-6 0-11"/><path d="M6 20h40v14c0 10-8 18-20 18S6 44 6 34zM46 24h3c6 0 8 4 8 7 0 5-4 9-11 9l1-5c4 0 6-2 6-4 0-1-1-3-4-3h-3z"/></svg>
+<div class="drinks">
+<div class="drink rv"><h3>ソフトドリンク</h3><ul><li>コーラ</li><li>オレンジジュース</li><li>アイスティー</li><li>緑茶</li><li>ウーロン茶</li><li>ジャスミン茶</li></ul></div>
+<div class="drink rv" style="--dl:.12s"><h3>アルコール</h3><ul><li>ハイボール</li><li>氷結レモンサワー</li><li>オレンジハイ</li><li>紅茶ハイ</li><li>緑茶ハイ</li><li>ウーロンハイ</li><li>ジャスミンハイ</li></ul></div>
+</div>
+<p class="foods">フード：米粉カヌレ、グルテンフリーナッツタルト、スナック菓子</p>
+</div>
+</section>
+
+<section class="s" id="day">
+<div class="wrap">
+<h2 class="ttl"><svg aria-hidden="true"><use href="#star"/></svg>このお店の1日</h2>
+<div class="day rv">
+<div class="slot s1"><svg aria-hidden="true"><use href="#star"/></svg><b>昼はマキオカリー</b><span class="tm">11〜14時</span></div>
+<div class="slot s2"><svg aria-hidden="true"><use href="#heart"/></svg><b>夕方は占いカフェ</b><span class="tm">16〜20時</span></div>
+<div class="slot s3"><svg aria-hidden="true"><use href="#moon"/></svg><b>夜は芸人BARパンチライン</b><span class="tm">21〜5時</span></div>
+</div>
+<p class="note" style="margin-top:18px">芸人さんが1日中いる店内です。</p>
+</div>
+</section>
+
+<section class="s visit" id="visit">
+<div class="wrap">
+<h2 class="ttl"><svg aria-hidden="true"><use href="#heart"/></svg>ご予約・アクセス</h2>
+<div class="visit-grid">
+<div class="rv">
+<h3>ご予約</h3>
+<p>飛び込み歓迎です。30分以上の鑑定は、公式LINEまたはDMで予約してください。</p>
+<div class="btns"><a class="btn white" href="https://lin.ee/xM47LTK" target="_blank" rel="noopener">LINEで予約する</a><a class="btn" href="https://www.instagram.com/fortunecafe.bypunch/" target="_blank" rel="noopener">InstagramのDMで予約する</a></div>
+</div>
+<div class="rv" style="--dl:.12s">
+<h3>アクセス</h3>
+<dl><dt>場所</dt><dd>〒154-0024 東京都世田谷区三軒茶屋1-32-12 西沢ビル2階</dd><dt>駅から</dt><dd>三軒茶屋駅から徒歩3分</dd><dt>営業日</dt><dd>土日 16:00〜20:00（詳しくはカレンダー）</dd></dl>
+<div class="btns"><a class="btn teal" style="background:#fff;color:var(--teal-deep);box-shadow:0 5px 0 #0a5d60" href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E4%BA%AC%E9%83%BD%E4%B8%96%E7%94%B0%E8%B0%B7%E5%8C%BA%E4%B8%89%E8%BB%92%E8%8C%B6%E5%B1%8B1-32-12" target="_blank" rel="noopener">地図アプリで開く</a></div>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<p class="f">Uranai Cafe fortune</p>
+<p>デモ版：掲載内容は確認中です。</p>
+</footer>
+<div class="fixed"><a href="#calendar">営業日を見る</a><a href="https://lin.ee/xM47LTK" target="_blank" rel="noopener">LINEで予約</a></div>
+
+<script>
+(function(){
+var reduced=matchMedia('(prefers-reduced-motion:reduce)').matches;
+// 光の線
+var rays=document.getElementById('rays'),s='';
+for(var i=0;i<28;i++){var a=i/28*Math.PI*2,r0=i%2?88:84,r1=i%2?94:98;s+='<line x1="'+(100+r0*Math.cos(a)).toFixed(1)+'" y1="'+(100+r0*Math.sin(a)).toFixed(1)+'" x2="'+(100+r1*Math.cos(a)).toFixed(1)+'" y2="'+(100+r1*Math.sin(a)).toFixed(1)+'"/>'}
+rays.innerHTML=s;
+// 帯をつなげる
+var flow=document.getElementById('flow');flow.innerHTML+=flow.innerHTML+flow.innerHTML+flow.innerHTML;
+// 3枚のカードは順に自動でめくれ、押すと裏表が変わる
+var tarots=[].slice.call(document.querySelectorAll('.tarot'));
+tarots.forEach(function(c,i){
+  if(reduced){c.classList.add('open')}else{setTimeout(function(){c.classList.add('open')},900+i*480)}
+  c.addEventListener('click',function(e){c.classList.toggle('open');spark(e.clientX,e.clientY)});
+});
+// 占い師のカード
+[].forEach.call(document.querySelectorAll('.rcard'),function(c){c.addEventListener('click',function(e){c.classList.toggle('open');spark(e.clientX,e.clientY)})});
+// カレンダー（投稿の11月のカレンダーより）
+var open=[1,8,21,22,29],off=[7,14,15,28],cells=document.getElementById('cells'),h='',start=new Date(2026,10,1).getDay();
+for(var b=0;b<start;b++)h+='<div class="cell blank"></div>';
+var now=new Date(),nextDay=null;
+open.forEach(function(d){if(!nextDay&&new Date(2026,10,d,20)>=now)nextDay=d});
+for(var d=1;d<=30;d++){
+  var on=open.indexOf(d)>=0,of=off.indexOf(d)>=0;
+  h+='<div class="cell'+(on?' on':'')+(of?' off':'')+(d===nextDay?' nx':'')+'" style="--i:'+d+'">'+d+(on?'<small><span class="lg">占いカフェ</span><span class="sh">占い</span></small>':of?'<small><span class="lg">おやすみ</span><span class="sh">休み</span></small>':'')+'</div>';
+}
+cells.innerHTML=h;
+if(nextDay){var w='日月火水木金土'.charAt(new Date(2026,10,nextDay).getDay()),n=document.getElementById('next');n.innerHTML='つぎの占いカフェは <b>11月'+nextDay+'日（'+w+'）</b> 16:00〜';n.hidden=false}
+// 見えたら出す（動かなくても全文が読めるように2.5秒で出す）
+var rv=[].slice.call(document.querySelectorAll('.rv')),cal=document.getElementById('cal');
+if('IntersectionObserver' in window&&!reduced){
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add(e.target===cal?'cal-in':'in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
+  rv.forEach(function(e){io.observe(e)});io.observe(cal);
+}else{rv.forEach(function(e){e.classList.add('in')})}
+// 押したところに星がはじける
+function spark(x,y){
+  if(reduced||!x)return;
+  for(var i=0;i<7;i++)(function(i){
+    var el=document.createElementNS('http://www.w3.org/2000/svg','svg');el.setAttribute('class','spark');el.innerHTML='<use href="#star"/>';
+    el.style.left=(x-9)+'px';el.style.top=(y-9)+'px';document.body.appendChild(el);
+    var a=i/7*Math.PI*2,r=46+Math.random()*30;
+    var an=el.animate([{transform:'scale(.4)',opacity:1},{transform:'translate('+Math.cos(a)*r+'px,'+Math.sin(a)*r+'px) scale(1) rotate(120deg)',opacity:0}],{duration:620,easing:'cubic-bezier(.2,.8,.3,1)'});
+    an.onfinish=function(){el.remove()};
+  })(i);
+}
+})();
+</script>
+</body>
+</html>
