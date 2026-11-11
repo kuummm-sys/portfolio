@@ -326,6 +326,7 @@ if(contact){
   send.disabled=true;note.textContent='送信しています…';
   fetch(endpoint,{method:'POST',body}).then(r=>r.json()).then(j=>{
    if(j.ok){note.textContent='';return done();}
+   if(j.error==='required'||j.error==='choice'){send.disabled=false;note.textContent='入力内容をもう一度お確かめください（メールアドレスの形など）。';return;}
    if(j.error==='rate'){send.disabled=false;note.textContent='続けて何度も送られています。しばらくしてからお試しいただくか、メールでご連絡ください。';return;}
    throw new Error(j.error);
   }).catch(()=>{send.disabled=false;note.textContent='送信できませんでした。通信状態を確かめてもう一度押すか、メール（akari.shuji@gmail.com）でご連絡ください。';});
