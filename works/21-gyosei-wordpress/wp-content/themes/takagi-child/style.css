@@ -1,0 +1,107 @@
+/*
+Theme Name: Takagi Demo Child
+Template: cocoon
+Version: 1.2.0
+License: GNU General Public License v2 or later
+*/
+:root{--paper:#f7f2e7;--ink:#20382e;--line:#a6b0a2;--accent:#ac6b35;--surface:#fffdf6;--soft:#e6ebdf}
+*{box-sizing:border-box}
+body.takagi{margin:0;background:var(--paper);color:var(--ink);font:16px/1.85 "Noto Sans JP","Hiragino Sans",sans-serif}
+.takagi a{color:inherit}.takagi :focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.takagi .frame{width:min(1070px,calc(100% - 48px));margin-inline:auto}
+.takagi header{border-bottom:1px solid var(--line);padding:20px 0}
+.takagi header .frame{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.takagi .brand{font-family:serif;font-weight:700;font-size:1.15rem;text-decoration:none}.takagi small{display:block}
+.takagi nav ul{display:flex;flex-wrap:wrap;gap:8px 15px;margin:0;padding:0;list-style:none}.takagi nav li{margin:0}
+.takagi main{padding:32px 0 60px}.takagi h1,.takagi h2,.takagi h3{font-family:"Noto Serif JP","Hiragino Mincho ProN",serif;line-height:1.48;color:var(--ink);background:none;border:0;padding:0}
+.takagi h1{font-size:clamp(1.95rem,4.5vw,3.55rem);margin:0 0 20px}.takagi h2{font-size:clamp(1.35rem,3vw,2rem);margin:0 0 14px}.takagi p{margin:0 0 14px}
+.takagi .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:center;background:var(--soft);padding:clamp(18px,4vw,44px)}
+.takagi .hero h1{font-size:clamp(1.65rem,3.6vw,3rem)}
+.takagi .hero h1 span{display:inline-block;white-space:nowrap}
+.takagi .hero img,.takagi .content img{width:100%;height:auto;display:block;object-fit:cover}
+.takagi .hero img{aspect-ratio:4/3}
+.takagi section{padding:26px 0;border-bottom:1px solid var(--line)}
+.takagi .columns{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.takagi .columns>div{border-top:3px solid var(--accent);padding:15px;background:var(--surface)}
+.takagi .button{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:8px 15px;border:1px solid var(--ink);background:var(--ink);color:white;border-radius:4px;text-decoration:none;font:inherit;cursor:pointer}
+.takagi .button.secondary{background:transparent;color:var(--ink)}
+.takagi table{border-collapse:collapse;width:100%;table-layout:fixed}.takagi td,.takagi th{border:1px solid var(--line);padding:10px;text-align:left;vertical-align:top;overflow-wrap:anywhere}.takagi thead{background:var(--soft)}
+.takagi details{border-top:1px solid var(--line);padding:12px 0}.takagi summary{font-weight:700;cursor:pointer}
+.takagi label{display:block;font-weight:700}.takagi input:not([type=submit]),.takagi textarea,.takagi select{width:min(100%,630px);font:inherit;color:var(--ink);background:var(--surface);padding:9px;border:1px solid var(--line);border-radius:4px}
+.takagi footer{border-top:1px solid var(--line);padding:20px 0 45px}.takagi .sticky{display:none}
+@media(max-width:760px){.takagi .frame{width:calc(100% - 32px)}.takagi .hero,.takagi .columns{grid-template-columns:1fr}.takagi th,.takagi td{font-size:.83rem;padding:6px}.takagi .sticky{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;z-index:10;inset:auto 0 0;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:var(--paper);border-top:1px solid var(--line)}body.takagi{padding-bottom:66px}}
+
+body.takagi{font-size:18px;line-height:1.85}
+.takagi p{max-width:36em}.takagi small,.takagi figcaption{font-size:14px}
+.takagi h1,.takagi h2,.takagi h3{word-break:keep-all;overflow-wrap:anywhere}
+.takagi h1,.takagi .hero h1{font-size:clamp(48px,4vw,58px);line-height:1.3}
+.takagi h2{font-size:clamp(36px,3.4vw,44px);line-height:1.35}
+.takagi main>section{padding-block:clamp(72px,9vw,120px)}
+.takagi section:nth-of-type(even){background:var(--surface);padding-inline:clamp(14px,4vw,44px)}
+.takagi .hero{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);align-items:center}
+.takagi .hero h1 span{display:inline;white-space:normal;overflow-wrap:normal}.takagi .hero h1 span:not(:last-child)::after{content:"";display:block}
+.takagi .hero p{text-wrap:pretty}.takagi .hero figure{margin:0}.takagi .hero .button{margin-top:6px}
+.takagi table,.takagi th,.takagi td{font-size:16px;line-height:1.85}
+.takagi .stamps{display:flex;align-items:center;gap:clamp(10px,2vw,20px);padding:18px 16px;margin:0 0 20px;max-width:335px;border:1px solid #a6b0a2;background:repeating-linear-gradient(#fffdf6 0 24px,#d7ded3 25px,#fffdf6 26px)}
+.stamps span{display:grid;place-items:center;aspect-ratio:1;width:62px;border:2px double #9b3127;color:#9b3127;background:#fffdf6;font-family:"Hiragino Mincho ProN",serif;font-weight:700;transform:rotate(-5deg)}
+@media(prefers-reduced-motion:no-preference){
+ .stamps span{animation:takagi-stamp .32s both}.stamps span:nth-child(2){animation-delay:.12s}.stamps span:nth-child(3){animation-delay:.24s}
+ .procedure.is-enhanced .procedure-panel:not([hidden]) .procedure-step{animation:takagi-step .38s both}
+ .procedure.is-enhanced .procedure-step:nth-child(2){animation-delay:.04s}.procedure.is-enhanced .procedure-step:nth-child(3){animation-delay:.08s}.procedure.is-enhanced .procedure-step:nth-child(4){animation-delay:.12s}.procedure.is-enhanced .procedure-step:nth-child(5){animation-delay:.16s}
+}
+@keyframes takagi-stamp{from{opacity:0;transform:rotate(-11deg) scale(1.22)}to{opacity:1;transform:rotate(-5deg) scale(1)}}
+@keyframes takagi-step{from{opacity:.55;transform:translateY(-5px)}to{opacity:1;transform:none}}
+.takagi .procedure{background:#f5e9d9;padding-inline:clamp(14px,4vw,44px)}
+.procedure-controls:not([hidden]){display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
+.procedure-controls button{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--ink);border-radius:4px;padding:7px 14px;cursor:pointer}
+.procedure-controls button[aria-pressed=true]{color:white;background:var(--ink)}
+.procedure-panel{padding:22px 0;border-top:1px solid var(--line)}
+.procedure-panel[hidden]{display:none}
+.procedure-steps{padding-inline-start:18px;border-left:2px solid #9b3127;margin:18px 0 26px}
+.procedure-step{padding:14px 0;border-bottom:1px solid var(--line)}
+.procedure-step h4{font-size:1.15em;line-height:1.4;margin:0 0 6px}
+.takagi .procedure-step p{margin:0}
+@media(max-width:1000px){.takagi .hero{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:760px){
+ body.takagi{font-size:16px}.takagi h1,.takagi .hero h1{font-size:clamp(30px,5vw,36px)}.takagi h2{font-size:clamp(26px,4.8vw,28px)}
+ .takagi .hero{grid-template-columns:minmax(0,1fr)}
+ .takagi table,.takagi tbody,.takagi tr,.takagi th,.takagi td{display:block;width:100%}
+ .takagi thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .takagi tbody tr{margin-bottom:10px;background:var(--surface);border:1px solid var(--line)}
+ .takagi tbody th,.takagi tbody td{border:0;padding:8px 12px}.takagi tbody th{background:var(--soft)}
+ .takagi tbody td::before{display:block;font-weight:700;font-size:14px}.takagi tbody td:nth-child(2)::before{content:"報酬"}.takagi tbody td:nth-child(3)::before{content:"別途かかる費用の例"}
+}
+
+@media(prefers-reduced-motion:no-preference){
+ .takagi .price-seen{animation:takagi-price .42s ease-out}
+}
+@keyframes takagi-price{from{opacity:.65;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+.takagi .consult-flow{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;list-style:none;counter-reset:consult;margin:22px 0 0;padding:0}
+.consult-flow::before{content:"";position:absolute;top:35px;left:36px;right:36px;height:1px;background:#809784}
+.consult-flow li{position:relative;counter-increment:consult;background:var(--surface);padding:12px 14px 20px;border-top:1px solid var(--line)}
+.consult-icon{display:grid;place-items:center;width:48px;height:48px;border:1px solid #809784;border-radius:50%;background:var(--soft);margin-bottom:14px}
+.consult-icon svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.takagi .consult-flow h3{font-size:20px;line-height:1.4}.consult-flow h3::before{content:counter(consult) ". ";font-variant-numeric:tabular-nums}
+.office-band{margin:36px 0 0;background:#e7ece0;border-block:1px solid #a1b2a3}.office-band img{display:block;width:100%;height:auto}
+.news-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.news-card{padding:18px;background:var(--surface);border:1px solid var(--line);border-top:3px solid #9b3127}
+.news-meta{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;font-size:14px}
+.news-meta time{font-variant-numeric:tabular-nums;font-weight:700}.news-meta span{padding:2px 7px;background:#e5ecdf}
+.takagi .news-card h3{margin:0;font-size:20px}
+.takagi footer{background:#20382e;color:#fffdf6;padding-block:42px}
+.footer-columns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;padding-bottom:24px}
+.takagi .footer-columns ul{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px}.footer-columns p{margin-top:6px}
+.footer-note{display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:8px 24px;border-top:1px solid #91aa98;padding-top:14px;font-size:14px}
+.footer-note p{max-width:none;margin:0}
+.subpage-heading{background:var(--soft);padding:clamp(22px,5vw,58px);border-top:3px solid #809784;margin-bottom:24px}.takagi .subpage-heading h1{margin:0}
+.subpage-content>section{padding-block:clamp(28px,5vw,65px)}.subpage-content>section:first-child{border-top:1px solid var(--line)}
+.subpage-content .wp-block-table{margin:24px 0 38px}.subpage-content .wp-block-table table{background:var(--surface)}
+.takagi .subpage-content form{margin:20px 0 32px;padding:clamp(12px,3vw,36px);background:var(--surface);border:1px solid var(--line)}
+.subpage-content figure{max-width:720px;margin:22px 0}.subpage-content figure img,.subpage-content figure svg{display:block;width:100%;height:auto}
+@media(max-width:760px){
+ .takagi .consult-flow,.news-cards,.footer-columns{grid-template-columns:1fr}
+ .consult-flow::before{top:24px;bottom:24px;left:23px;right:auto;width:1px;height:auto}
+ .consult-flow li{margin-left:18px;padding-left:42px}.consult-icon{position:absolute;left:-18px;top:12px;width:42px;height:42px}
+ .takagi .footer-columns ul{grid-template-columns:1fr 1fr}.takagi footer{padding-bottom:46px}
+}

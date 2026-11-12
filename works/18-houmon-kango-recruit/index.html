@@ -1,0 +1,229 @@
+<!doctype html>
+<meta name="description" content="訪問看護師の募集要項、ある1日の流れとオンコール手当の目安を紹介する架空の制作見本です。"><meta property="og:image" content="https://arpeda.jp/works/18-houmon-kango-recruit/img/visit-960.webp"><link rel="icon" href="favicon.svg"><title>訪問看護師募集｜こはる訪問看護ステーション（制作見本）</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Noto+Serif+JP:wght@600;700&display=swap"></noscript><style>
+:root{--paper:#f9f5e8;--leaf:#dbe5ba;--sun:#f4df9d;--ink:#25362c;--line:#a4ae8e;--white:#fffcf4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.85 "Noto Sans JP","Hiragino Sans",sans-serif}
+a{color:inherit} a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #4d684a;outline-offset:4px}
+header,main,footer{width:min(1152px,calc(100% - 48px));margin:auto}
+header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:19px 0;border-bottom:1px solid var(--line)}
+header strong{font-size:1rem}header a{font-size:.9rem}header small{display:block}
+.hero{padding:55px 0 30px;display:grid;grid-template-columns:1fr .92fr;gap:clamp(24px,5vw,70px);align-items:center}
+.kicker{font-weight:700;font-size:.85rem}
+h1,h2,h3{line-height:1.45;font-family:"Noto Serif JP","Hiragino Mincho ProN",serif}
+h1{font-size:clamp(2rem,4vw,3.65rem);letter-spacing:.035em;margin:15px 0 22px;text-wrap:balance}
+h2{font-size:clamp(1.5rem,3vw,2.3rem);margin:0 0 22px}h3{font-size:1.23rem;margin:0 0 10px}
+p{margin:0 0 12px}p:last-child{margin-bottom:0}
+figure,blockquote{margin:0}img{display:block;width:100%;height:auto;object-fit:cover}figcaption{font-size:.81rem;padding-top:5px}
+.hero figure{background:var(--leaf);border-radius:45% 45% 12px 12px / 29% 29% 12px 12px;padding:12px;overflow:hidden}
+.hero img{aspect-ratio:4/3;border-radius:inherit;object-position:50% 34%}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);padding:0;margin:0 0 20px;list-style:none;background:var(--sun)}
+.facts li{padding:14px 10px;text-align:center;font-weight:700}.facts li+li{border-left:1px solid #9c8c53}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:23px}
+.button{display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--ink);border-radius:5px;background:var(--ink);color:var(--white);padding:10px 17px;min-height:48px;text-align:center;text-decoration:none;font:inherit;font-size:.94rem;font-weight:700;line-height:1.35;cursor:pointer}
+.secondary{background:transparent;color:var(--ink)}
+section{padding:clamp(28px,5vw,58px) 0;border-bottom:1px solid var(--line);scroll-margin-top:12px}
+.empathy{display:grid;grid-template-columns:1fr 1.5fr;gap:12px 35px}.empathy>p{grid-column:2}
+.check{margin:0;padding-left:1.3rem}.check li{margin-bottom:8px}
+.features,.voices,.timeline{display:grid;gap:clamp(12px,3vw,32px)}.features{grid-template-columns:repeat(3,minmax(0,1fr))}
+.features article,.voices figure{padding:clamp(16px,2.8vw,28px);background:var(--leaf)}.features+figure{max-width:430px;margin:20px auto 0}.features+figure img{aspect-ratio:16/8}
+.voices,.timeline{grid-template-columns:1fr 1fr}.timeline ol{list-style:none;margin:0;padding:0}.timeline li{display:grid;grid-template-columns:4.6em 1fr;gap:10px;padding:6px 0;border-bottom:1px solid var(--line)}time{font-variant-numeric:tabular-nums;font-weight:700}.timeline+p{margin-top:14px}
+table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:.94rem;margin-bottom:14px}th,td{border:1px solid var(--line);padding:10px;text-align:left;overflow-wrap:anywhere;vertical-align:top}thead,tbody th{background:var(--leaf)}th:first-child{width:22%}
+.steps{padding-left:1.6rem}.steps li{padding:7px}
+details{padding:12px 0;border-top:1px solid var(--line)}summary{font-weight:700;cursor:pointer}details p{margin:8px 0 0 1rem}
+.closing{background:var(--sun);padding-inline:clamp(16px,3vw,32px)}.closing .button{margin-top:10px}
+form{display:grid;gap:14px;max-width:620px;margin-top:18px}form label{display:grid;gap:4px;font-weight:700}input,select,textarea{font:inherit;min-width:0;width:100%;background:var(--white);border:1px solid #829176;border-radius:4px;padding:8px;color:var(--ink)}fieldset{margin:0;border:1px solid var(--line);min-width:0}fieldset label+label{margin-top:8px}form .button{justify-self:start}
+footer{padding:30px 0 45px;font-size:.85rem}
+.sticky{display:none}
+@media(max-width:760px){header,main,footer{width:calc(100% - 32px)}.hero,.empathy,.features,.timeline,.voices{grid-template-columns:1fr}.hero{padding:25px 0 18px}.empathy>p{grid-column:auto}.facts li{font-size:.78rem;padding:9px 3px}th,td{font-size:.78rem;padding:6px}.sticky{display:grid;grid-template-columns:1fr 1fr;gap:8px;background:var(--paper);padding:8px 12px calc(8px + env(safe-area-inset-bottom));position:fixed;inset:auto 0 0;z-index:2;border-top:1px solid var(--line)}body{padding-bottom:64px}header a{flex:none}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+:root{--paper:#fcfbf5;--leaf:#e8efdc;--sun:#f7e2a6;--ink:#224139;--line:#9aa996;--white:#fffdfa}
+body{font-size:18px;line-height:1.85}p{max-width:36em}small,figcaption,.kicker,header a,footer{font-size:14px}
+h1,h2,h3{word-break:keep-all;overflow-wrap:normal;line-break:strict}
+h1{font-size:clamp(48px,4.25vw,64px);text-wrap:initial;letter-spacing:.01em}
+h2{font-size:clamp(36px,3.3vw,44px)}h3{font-size:22px}
+.hero{padding:clamp(55px,7vw,104px) 0 36px}.hero .street{border-radius:22px;padding:16px;background:var(--leaf)}
+.street svg{display:block;width:100%;height:auto}.street figcaption{padding:12px 0 2px;font-weight:700}
+.map-labels{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0;padding:0;list-style:none;font-size:14px}
+.map-labels li{padding:3px 8px;border-radius:5px;background:var(--white)}.map-labels li.reached{animation:map-stop .36s ease-out}@keyframes map-stop{from{background:var(--sun);transform:translateY(3px)}to{background:var(--white);transform:none}}.route-drawn{stroke-dasharray:100;stroke-dashoffset:0}
+html.motion .hero-map .route-drawn{stroke-dashoffset:100}
+section{padding-block:clamp(72px,9vw,120px)}.empathy{display:block}.empathy .check{padding-block:12px}.empathy>p{margin-top:16px}
+.features article,.voices figure,.calculator{background:var(--white);border-top:3px solid #397159}.work-style,.closing{background:var(--leaf);padding-inline:clamp(16px,4vw,56px)}
+.features article p{margin:0}.features+figure{margin:36px 0 0;max-width:440px}
+.timeline{display:block}.timeline li{padding-block:14px}.journey-map,.journey-hint{display:none}
+html.motion .journey-hint{display:block;margin-bottom:24px}
+html.motion .timeline{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+html.motion .journey-map{display:block;position:sticky;top:30px;background:var(--leaf);padding:16px;border-radius:20px}
+html.motion .timeline li{min-height:clamp(110px,16vh,180px);align-content:center;padding:16px;border-left:3px solid transparent}
+html.motion .timeline li.current{background:var(--leaf);border-left-color:#397159}
+.journey-clock{display:flex;align-items:center;justify-content:flex-end;gap:7px;padding-top:4px}.journey-clock svg{width:36px;height:36px}.journey-time{margin:0;text-align:right;font-size:28px;font-variant-numeric:tabular-nums;font-weight:700}
+.photos{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:32px 0 20px}
+.photos img{aspect-ratio:3/2}
+.requirements-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 36px}
+.requirements-summary div{padding:clamp(12px,2.5vw,28px);background:var(--leaf);border-bottom:2px solid #9aa996}
+.requirements-summary dd{margin:4px 0 0}.requirements-summary strong,.requirements-summary small{display:block}
+.requirements-summary strong{font-size:clamp(20px,2.5vw,36px);line-height:1.4}
+.calculator{padding:clamp(16px,3vw,32px);background:#f5efdb;margin-bottom:50px}
+.calculator-inputs{display:grid;grid-template-columns:repeat(2,minmax(0,230px));gap:12px;margin:18px 0}
+.calculator label{font-weight:700}.calculator output{font-size:32px;font-weight:700}
+.all-requirements{margin-bottom:16px}table{font-size:16px;line-height:1.85}th,td{padding:15px;font-size:inherit}.mobile-label{display:none}
+.voices{margin-bottom:16px}.voices[aria-live]{display:flex;flex-wrap:wrap;align-items:start}.voices[aria-live] figure{order:-1;width:100%}.voices [hidden]{display:none}
+html.motion .voices figure:not([hidden]){animation:open-voice .35s ease-out}
+@keyframes open-voice{from{opacity:.5;transform:perspective(800px) rotateX(-8deg)}to{opacity:1;transform:none}}
+@media (min-width:761px) and (max-width:1000px){.hero{grid-template-columns:minmax(0,1fr)}.features{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){
+ body{font-size:16px}h1{font-size:clamp(30px,5.5vw,36px)}h2{font-size:clamp(26px,4.8vw,28px)}
+ h1,h2,h3{overflow-wrap:anywhere;word-break:keep-all}
+ .hero{padding:42px 0 28px}.facts li{font-size:14px;padding:9px 4px}
+ .timeline,.photos{grid-template-columns:1fr}html.motion .timeline{grid-template-columns:1fr;gap:0}
+ html.motion .journey-map{top:0;z-index:1;padding:8px 12px;border-radius:0;border-bottom:1px solid var(--line)}
+ .journey-map svg{max-height:145px}.journey-time{font-size:20px}.photos{gap:14px}
+ .requirements-summary{gap:8px}.requirements-summary strong{font-size:20px}
+ table,tbody,tr,th,td{display:block;width:100%}thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ tbody tr{margin-bottom:12px;border:1px solid var(--line);background:var(--white)}
+ tbody th:first-child{width:100%;border:0}tbody td{border:0;border-top:1px solid var(--line)}
+ .mobile-label{display:block;font-size:14px;font-weight:700}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+.work-layout{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(14px,3vw,36px);align-items:stretch}
+.work-layout .features{grid-template-columns:1fr;gap:10px}
+.work-layout .features article{background:var(--white);border:1px solid var(--line);border-left:3px solid #397159;padding:clamp(14px,2.4vw,26px)}
+.work-layout>figure{display:flex;flex-direction:column;min-width:0;background:var(--white);padding:10px;margin:0;max-width:none}
+.work-layout>figure img{flex:1;min-height:0;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.work-layout figcaption{padding:8px 6px 0}
+html.motion .timeline{gap:clamp(12px,3vw,28px)}
+.timeline ol{display:grid;gap:8px}
+.timeline li,html.motion .timeline li{min-height:0;padding:clamp(10px,1.5vw,18px);background:var(--white);border:1px solid var(--line);border-left:3px solid transparent;border-radius:5px}
+html.motion .timeline li.current{background:var(--leaf);border-left-color:#397159}
+.voices figure{padding:clamp(20px,4vw,48px);min-height:clamp(170px,21vw,275px)}
+.voices blockquote{max-width:36em;font-size:clamp(16px,2vw,21px);line-height:1.85}
+.voices figcaption{display:flex;align-items:center;gap:10px;margin-top:18px;font-weight:700}
+.voice-initial{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:var(--leaf);color:var(--ink);font-size:20px;flex:none}
+@media(max-width:850px){.work-layout{grid-template-columns:1fr}.work-layout>figure img{aspect-ratio:16/8}}
+</style></head>
+<body><header><div><strong>こはる訪問看護ステーション</strong><small>Arpeda 制作見本（架空）</small></div><a href="#requirements">募集要項</a></header><main><div class="hero"><div><p class="kicker">訪問看護師（正看護師）募集｜正職員・パート</p><h1>病棟の外で、<wbr>ひとりの暮らしに<wbr>長く寄りそう<wbr>看護を。</h1><p>こはる訪問看護ステーションは、看護師9名の小さなステーションです。オンコールは月4回まで。はじめての訪問看護でも、最初の1か月は先輩が同行します。</p><div class="actions"><a class="button" href="#visit">見学を申し込む（30分〜）</a><a class="button secondary phone" href="#phone">話を聞いてみる（電話）</a></div></div><figure class="street hero-map"><svg viewBox="0 0 480 302" role="img" aria-label="線で描いた街の地図。ステーションから自転車で4軒のお宅を回る道のり">
+<rect width="480" height="302" rx="24" fill="#edf1db"/><path d="M10 205Q122 165 197 221T480 232V302H10Z" fill="#d5e5cc"/>
+<g stroke="#fffdfa" stroke-width="19" fill="none"><path d="M0 79H480M0 169H480M0 246H480M75 0V302M170 0V302M305 0V302M413 0V302"/></g>
+<path class="route-base" d="M75 246V169H170V79H305V169H413V246H305V169H170V246H75" fill="none" stroke="#a7b5a1" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 9"/>
+<path class="route-drawn" d="M75 246V169H170V79H305V169H413V246H305V169H170V246H75" pathLength="100" fill="none" stroke="#397159" stroke-width="5" stroke-linecap="round"/>
+<g fill="#f7e2a6" stroke="#224139" stroke-width="3" stroke-linejoin="round"><path d="M32 216l19-16 19 16v21H32Z"/><path d="M94 144l19-16 19 16v21H94Z"/><path d="M187 62l19-16 19 16v21h-38Z"/><path d="M322 143l19-16 19 16v21h-38Z"/><path d="M424 223l19-16 19 16v21h-38Z"/></g>
+<g class="bike" transform="translate(75 246)"><circle r="18" fill="#224139"/><g fill="none" stroke="#fffdfa" stroke-width="1.6"><circle cx="-8" cy="5" r="5"/><circle cx="8" cy="5" r="5"/><path d="M-8 5l5-10 5 10H-8m10 0 6-1L5-8h4M-6-5h5"/></g></g></svg><ul class="map-labels"><li>ステーション</li><li>9:00 健康チェック</li><li>10:30 傷の処置</li><li>14:00 リハビリに同行</li><li>15:30 ご家族の相談</li></ul><figcaption>病棟の外の、街の中が仕事場です。</figcaption></figure></div><ul class="facts"><li>オンコール 月4回まで</li><li>年間休日 120日以上</li><li>同行訪問 最初の1か月</li></ul><section class="empathy"><h2>こんな気持ち、<wbr>ありませんか</h2><ul class="check"><li>夜勤が続く働き方を、そろそろ見直したい</li><li>退院したあとの患者さんが、どう暮らしているのか気になっていた</li><li>訪問看護に興味はあるけれど、ひとりで判断するのが不安</li></ul><p>訪問看護は、ひとりで背負う仕事ではありません。こはるでは、毎朝のミーティングとチャットで、いつでも相談できるようにしています。</p></section><section class="work-style"><h2>こはるの働き方</h2><div class="work-layout"><div class="features"><article><h3>オンコールは<wbr>月4回まで</h3><p>オンコールは、常勤の看護師で順番に担当します。1人あたり月4回までです。待機の手当に加えて、出動した日は手当を足します。翌日の訪問は、出動の時間に合わせて調整します。</p></article><article><h3>直行直帰が<wbr>できます</h3><p>その日の訪問の予定によって、自宅から利用者さんのお宅へ直行、最後のお宅から直帰できます。移動は電動自転車か社用車（軽自動車）です。</p></article><article><h3>最初の1か月は<wbr>同行訪問</h3><p>入職後の1か月は、先輩と一緒に訪問します。ひとりで訪問するのは、あなたと管理者が「大丈夫」と話し合ってからです。訪問看護がはじめての方も、半数以上が入職しています。</p></article></div><figure><img src="img/bicycle-960.webp" srcset="img/bicycle-480.webp 480w, img/bicycle-960.webp 960w" sizes="(max-width: 760px) 90vw, 480px" width="1000" height="667" loading="lazy" alt="訪問時の自転車移動のイメージ"><figcaption>掲載写真はイメージです</figcaption></figure></div></section><section class="day"><h2>ある1日（常勤・直行の日）</h2><p class="journey-hint">スクロールすると、1日が進みます。</p><div class="timeline"><div class="journey-map"><div class="street"><svg viewBox="0 0 480 302" role="img" aria-label="線で描いた街の地図。ステーションから自転車で4軒のお宅を回る道のり">
+<rect width="480" height="302" rx="24" fill="#edf1db"/><path d="M10 205Q122 165 197 221T480 232V302H10Z" fill="#d5e5cc"/>
+<g stroke="#fffdfa" stroke-width="19" fill="none"><path d="M0 79H480M0 169H480M0 246H480M75 0V302M170 0V302M305 0V302M413 0V302"/></g>
+<path class="route-base" d="M75 246V169H170V79H305V169H413V246H305V169H170V246H75" fill="none" stroke="#a7b5a1" stroke-width="5" stroke-linecap="round" stroke-dasharray="2 9"/>
+<path class="route-drawn" d="M75 246V169H170V79H305V169H413V246H305V169H170V246H75" pathLength="100" fill="none" stroke="#397159" stroke-width="5" stroke-linecap="round"/>
+<g fill="#f7e2a6" stroke="#224139" stroke-width="3" stroke-linejoin="round"><path d="M32 216l19-16 19 16v21H32Z"/><path d="M94 144l19-16 19 16v21H94Z"/><path d="M187 62l19-16 19 16v21h-38Z"/><path d="M322 143l19-16 19 16v21h-38Z"/><path d="M424 223l19-16 19 16v21h-38Z"/></g>
+<g class="bike" transform="translate(75 246)"><circle r="18" fill="#224139"/><g fill="none" stroke="#fffdfa" stroke-width="1.6"><circle cx="-8" cy="5" r="5"/><circle cx="8" cy="5" r="5"/><path d="M-8 5l5-10 5 10H-8m10 0 6-1L5-8h4M-6-5h5"/></g></g></svg><div class="journey-clock" aria-hidden="true"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="17" fill="#fffdfa" stroke="#224139" stroke-width="2"/><path class="clock-hour" d="M20 20v-9" stroke="#224139" stroke-width="2.5" stroke-linecap="round"/><path class="clock-minute" d="M20 20V7" stroke="#397159" stroke-width="2" stroke-linecap="round"/></svg><p class="journey-time">8:45</p></div></div></div><ol><li><time>8:45</time><span>自宅から1件目のお宅へ直行</span></li><li><time>9:00</time><span>1件目：90代の方の健康チェックと服薬の確認</span></li><li><time>10:30</time><span>2件目：退院したばかりの方の傷の処置</span></li><li><time>12:00</time><span>ステーションに戻ってお昼（休憩60分）</span></li><li><time>13:00</time><span>ミーティング：午前の様子を共有</span></li><li><time>14:00</time><span>3件目：リハビリの理学療法士と一緒に訪問</span></li><li><time>15:30</time><span>4件目：ご家族への介護の相談</span></li><li><time>17:00</time><span>記録（タブレットで入力）</span></li><li><time>18:00</time><span>終業</span></li></ol></div><div class="photos"><figure><img src="img/visit-960.webp" srcset="img/visit-480.webp 480w, img/visit-960.webp 960w" sizes="(max-width: 760px) 90vw, 480px" width="1100" height="733" loading="lazy" alt="利用者宅で血圧を測る手元のイメージ"><figcaption>掲載写真はイメージです</figcaption></figure><figure><img src="img/meeting-960.webp" srcset="img/meeting-480.webp 480w, img/meeting-960.webp 960w" sizes="(max-width: 760px) 90vw, 480px" width="1100" height="733" loading="lazy" alt="ミーティングでノートに書き込む手元のイメージ"><figcaption>掲載写真はイメージです</figcaption></figure></div><p>訪問は1日4件ほどです。記録はタブレットで、訪問先でも入力できます。</p></section><section class=""><h2>はたらく人の声</h2><div class="voices"><button class="button secondary voice-next" type="button" hidden>次へ</button><figure><blockquote>「病棟では、退院したあとのことは分かりませんでした。いまは、同じ方に月に何度も会い、少しずつ表情が変わっていくのを見られます。最初の1か月の同行で、判断に迷ったときの相談のしかたも覚えられました。」</blockquote><figcaption><span class="voice-initial" aria-hidden="true">A</span>Aさん（看護師歴12年・入職2年目）</figcaption></figure><figure><blockquote>「子どもの送り迎えがあるので、9時半から15時半で働いています。訪問の件数は、勤務時間に合わせて決めてもらえます。」</blockquote><figcaption><span class="voice-initial" aria-hidden="true">B</span>Bさん（看護師歴6年・入職1年目・パート）</figcaption></figure></div><p>個人の感想です。登場する人物は架空です。</p></section><section class="" id="requirements"><h2>募集要項</h2><dl class="requirements-summary"><div><dt>給与（正職員）</dt><dd><strong>月給 30万〜38万円</strong><small>経験により決めます</small></dd></div><div><dt>休日</dt><dd><strong>年間休日 120日以上</strong><small>土日祝・年末年始</small></dd></div><div><dt>勤務時間</dt><dd><strong>9:00〜18:00</strong><small>休憩60分・パートは週3日から</small></dd></div><div><dt>オンコール</dt><dd><strong>月4回まで</strong><small>待機 3,000円・出動 5,000円</small></dd></div></dl><div class="calculator">
+<h3>オンコール手当を計算してみる</h3><p>待機した回数と、そのうち出動した回数を選ぶと、その月の手当の目安が出ます。</p>
+<div class="calculator-inputs"><label>待機した回数（月）<select id="standby" disabled><option value="0">0回</option><option value="1">1回</option><option value="2">2回</option><option value="3">3回</option><option value="4">4回</option></select></label><label>そのうち出動した回数<select id="callout" disabled><option value="0">0回</option></select></label></div>
+<p><strong>この月のオンコール手当の目安</strong> <output id="allowance" for="standby callout">0円</output></p><p id="calculation">待機 0回 × 3,000円 ＋ 出動 0回 × 5,000円</p>
+<small>架空の条件による目安です。実際の条件は募集要項をご覧ください。</small></div><h3 class="all-requirements">募集要項（すべての項目）</h3><table><thead><tr><th scope="col">項目</th><th scope="col">正職員</th><th scope="col">パート</th></tr></thead><tbody><tr><th scope="row">職種</th><td><span class="mobile-label" aria-hidden="true">正職員</span>訪問看護師</td><td><span class="mobile-label" aria-hidden="true">パート</span>訪問看護師</td></tr><tr><th scope="row">仕事の内容</th><td><span class="mobile-label" aria-hidden="true">正職員</span>利用者さんのお宅を訪問し、健康状態の確認、医療的な処置、服薬の管理、ご家族への相談などを行います。</td><td><span class="mobile-label" aria-hidden="true">パート</span>同じ</td></tr><tr><th scope="row">雇用の期間</th><td><span class="mobile-label" aria-hidden="true">正職員</span>期間の定めなし</td><td><span class="mobile-label" aria-hidden="true">パート</span>期間の定めなし</td></tr><tr><th scope="row">試用期間</th><td><span class="mobile-label" aria-hidden="true">正職員</span>3か月（条件は本採用と同じ）</td><td><span class="mobile-label" aria-hidden="true">パート</span>3か月（条件は本採用と同じ）</td></tr><tr><th scope="row">給与</th><td><span class="mobile-label" aria-hidden="true">正職員</span>月給 30万円〜38万円（経験により決めます）。内訳：基本給 25万〜31万円、訪問手当 3万円、資格手当 2万〜4万円</td><td><span class="mobile-label" aria-hidden="true">パート</span>時給 1,900円〜2,300円</td></tr><tr><th scope="row">オンコール</th><td><span class="mobile-label" aria-hidden="true">正職員</span>待機 1回 3,000円、出動 1回 5,000円（月4回まで）</td><td><span class="mobile-label" aria-hidden="true">パート</span>なし（希望があれば相談）</td></tr><tr><th scope="row">賞与</th><td><span class="mobile-label" aria-hidden="true">正職員</span>年2回（業績により決めます）</td><td><span class="mobile-label" aria-hidden="true">パート</span>なし</td></tr><tr><th scope="row">勤務時間</th><td><span class="mobile-label" aria-hidden="true">正職員</span>9:00〜18:00（休憩60分）</td><td><span class="mobile-label" aria-hidden="true">パート</span>9:00〜18:00 の間で、週3日・1日4時間から</td></tr><tr><th scope="row">時間外の仕事</th><td><span class="mobile-label" aria-hidden="true">正職員</span>あり（月平均 8時間・架空の設定）</td><td><span class="mobile-label" aria-hidden="true">パート</span>原則なし</td></tr><tr><th scope="row">休日</th><td><span class="mobile-label" aria-hidden="true">正職員</span>土日祝、年末年始（年間休日 120日以上）</td><td><span class="mobile-label" aria-hidden="true">パート</span>希望の曜日</td></tr><tr><th scope="row">休暇</th><td><span class="mobile-label" aria-hidden="true">正職員</span>有給休暇（入職6か月後 10日）、夏季休暇 3日</td><td><span class="mobile-label" aria-hidden="true">パート</span>有給休暇（勤務日数による）</td></tr><tr><th scope="row">必要な資格</th><td><span class="mobile-label" aria-hidden="true">正職員</span>正看護師の免許、普通自動車の運転免許（AT可）</td><td><span class="mobile-label" aria-hidden="true">パート</span>同じ</td></tr><tr><th scope="row">保険</th><td><span class="mobile-label" aria-hidden="true">正職員</span>健康保険・厚生年金・雇用保険・労災保険</td><td><span class="mobile-label" aria-hidden="true">パート</span>勤務時間により加入</td></tr><tr><th scope="row">交通費</th><td><span class="mobile-label" aria-hidden="true">正職員</span>実費を支給（月3万円まで）</td><td><span class="mobile-label" aria-hidden="true">パート</span>同じ</td></tr><tr><th scope="row">勤務地</th><td><span class="mobile-label" aria-hidden="true">正職員</span>こはる訪問看護ステーション（東京都内・架空）。変更の範囲：会社の定める事業所（当面は本ステーションのみ）</td><td><span class="mobile-label" aria-hidden="true">パート</span>同じ</td></tr><tr><th scope="row">業務の変更の範囲</th><td><span class="mobile-label" aria-hidden="true">正職員</span>看護業務と、それに付随する業務</td><td><span class="mobile-label" aria-hidden="true">パート</span>同じ</td></tr><tr><th scope="row">受動喫煙の対策</th><td><span class="mobile-label" aria-hidden="true">正職員</span>屋内は禁煙</td><td><span class="mobile-label" aria-hidden="true">パート</span>同じ</td></tr><tr><th scope="row">募集する会社</th><td><span class="mobile-label" aria-hidden="true">正職員</span>株式会社こはるケア（架空）</td><td><span class="mobile-label" aria-hidden="true">パート</span>同じ</td></tr></tbody></table><p>このページの会社・人物・条件はすべて架空の見本です。</p></section><section class=""><h2>見学から入職まで</h2><ol class="steps"><li>見学（30分〜）：ステーションの様子と、1日の流れをお話しします。私服でどうぞ。</li><li>面接（1回）：管理者と話します。見学と同じ日にもできます。</li><li>結果のご連絡（1週間以内）</li><li>入職日の相談：今のお勤め先の退職の時期に合わせます。</li></ol></section><section class=""><h2>よくある質問</h2><details><summary>Q. 訪問看護がはじめてでも大丈夫ですか？</summary><p>A. はい。最初の1か月は先輩と同行し、その後も毎朝のミーティングで相談できます。</p></details><details><summary>Q. オンコールで呼ばれることは多いですか？</summary><p>A. 待機した日に出動するのは、平均で月1〜2回です（架空の設定）。電話での相談で済むことも多くあります。</p></details><details><summary>Q. 車の運転に自信がありません。</summary><p>A. 近いお宅は電動自転車で回ります。運転の練習が必要な方は、入職後に一緒に走ります。</p></details><details><summary>Q. ブランクがあっても応募できますか？</summary><p>A. できます。同行の期間を長めにとるなど、相談して決めます。</p></details></section><section class="closing"><h2>まずは、見学だけでも</h2><p>話を聞いてから決めて大丈夫です。見学のあとに、こちらから応募をすすめる連絡はしません。</p><a class="button" href="#visit">見学を申し込む</a></section><section class="" id="visit"><h2>見学の申し込みフォーム</h2><p>見本のため、送信はされません</p>
+<form id="visit-form" action="#visit" method="post">
+<label>お名前（必須）<input required autocomplete="name"></label>
+<label>電話番号（必須）<input required type="tel" autocomplete="tel"></label>
+<label>メールアドレス<input type="email" autocomplete="email"></label>
+<fieldset><legend>見学の希望日</legend><label>第1希望<input type="date"></label><label>第2希望<input type="date"></label></fieldset>
+<label>今の働き方<select><option value="">選択してください</option><option>病棟</option><option>クリニック</option><option>訪問看護</option><option>ブランク中</option><option>その他</option></select></label>
+<label>聞いてみたいこと<textarea rows="4"></textarea></label>
+<button class="button" type="submit" disabled>見学を申し込む</button>
+<p id="result" role="status" tabindex="-1" hidden>見本のため、送信はされません</p></form></section></main>
+<footer id="phone"><p>株式会社こはるケア（架空）／こはる訪問看護ステーション／東京都内（架空）／03-0000-0000（架空）</p><p>このページは Arpeda（アルペダ）の制作見本です。掲載の会社・人物・条件はすべて架空です。</p></footer>
+<nav class="sticky" aria-label="見学・電話"><a class="button" href="#visit">見学を申し込む</a><a class="button secondary phone" href="#phone">電話で聞く</a></nav>
+<script>
+const form = document.getElementById('visit-form');
+form.addEventListener('submit',event=>{
+  event.preventDefault();
+  const result=document.getElementById('result');
+  result.hidden=false;
+  result.focus();
+});
+form.querySelector('button[type=submit]').disabled=false;
+
+const standby = document.querySelector('#standby');
+const callout = document.querySelector('#callout');
+function allowance() {
+  const count = Number(standby.value);
+  const attended = Math.min(count, Number(callout.value));
+  if (callout.options.length !== count + 1) {
+    callout.replaceChildren(...Array.from({length: count + 1}, (_, i) => new Option(i + '回', i)));
+  }
+  callout.value = attended;
+  document.querySelector('#allowance').value = (count * 3000 + attended * 5000).toLocaleString('ja-JP') + '円';
+  document.querySelector('#calculation').textContent = '待機 ' + count + '回 × 3,000円 ＋ 出動 ' + attended + '回 × 5,000円';
+}
+standby.disabled = callout.disabled = false;
+standby.addEventListener('change', allowance);
+callout.addEventListener('change', allowance);
+
+const voices = document.querySelector('.voices');
+const quotes = [...voices.querySelectorAll('figure')];
+const nextVoice = voices.querySelector('button');
+let activeQuote = 0;
+function showQuote() {
+  quotes.forEach((quote, index) => { quote.hidden = index !== activeQuote; });
+}
+voices.setAttribute('aria-live','polite');
+nextVoice.hidden = false;
+nextVoice.addEventListener('click', () => { activeQuote = (activeQuote + 1) % quotes.length; showQuote(); });
+showQuote();
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+const steps = [...document.querySelectorAll('.timeline li')];
+const positions = [0, .10, .26, 0, 0, .45, .58, 0, 0];
+function drawMap(map, progress) {
+  const route = map.querySelector('.route-drawn');
+  const point = route.getPointAtLength(route.getTotalLength() * progress);
+  route.style.strokeDashoffset = 100 * (1 - progress);
+  map.querySelector('.bike').setAttribute('transform', 'translate(' + point.x + ' ' + point.y + ')');
+}
+const journey = document.querySelector('.journey-map');
+let queued = false;
+function drawJourney() {
+  queued = false;
+  if (reduce.matches) return;
+  const line = innerHeight * .65;
+  let current = 0;
+  for (const [index, step] of steps.entries()) if (step.getBoundingClientRect().top < line) current = index;
+  const next = Math.min(current + 1, steps.length - 1);
+  const currentTop = steps[current].getBoundingClientRect().top;
+  const distance = steps[next].getBoundingClientRect().top - currentTop;
+  const fraction = distance > 0 ? Math.max(0, Math.min(1, (line - currentTop) / distance)) : 0;
+  drawMap(journey, positions[current] + (positions[next] - positions[current]) * fraction);
+  const time = steps[current].querySelector('time').textContent;
+  journey.querySelector('.journey-time').textContent = time;
+  const [hours,minutes] = time.split(':').map(Number);
+  journey.querySelector('.clock-hour').setAttribute('transform', 'rotate(' + ((hours % 12) * 30 + minutes / 2) + ' 20 20)');
+  journey.querySelector('.clock-minute').setAttribute('transform', 'rotate(' + (minutes * 6) + ' 20 20)');
+  steps.forEach((step,index) => step.classList.toggle('current', index === current));
+}
+function requestJourney() {
+  if (queued || reduce.matches) return;
+  queued = true;
+  requestAnimationFrame(drawJourney);
+}
+const heroMap = document.querySelector('.hero-map');
+function applyMotion() {
+  document.documentElement.classList.toggle('motion', !reduce.matches);
+  if (reduce.matches) drawMap(heroMap, 1);
+  requestJourney();
+}
+reduce.addEventListener('change',applyMotion);
+addEventListener('scroll',requestJourney,{passive:true});
+addEventListener('resize',requestJourney);
+applyMotion();
+if (!reduce.matches) {
+  const started = performance.now();
+  const labels = [...heroMap.querySelectorAll('li')];
+  const stops = [0, .10, .26, .45, .58];
+  function animateMap(now) {
+    if (reduce.matches) return;
+    const progress = Math.min(1,(now-started)/2400);
+    drawMap(heroMap,progress);
+    labels.forEach((label,index) => { if (progress >= stops[index]) label.classList.add('reached'); });
+    if (progress < 1) requestAnimationFrame(animateMap);
+  }
+  requestAnimationFrame(animateMap);
+}
+</script></body></html>
