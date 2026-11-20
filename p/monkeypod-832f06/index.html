@@ -7,10 +7,10 @@
 <title>Yoga &amp; Pilates Studio Monkeypod｜久喜市のヨガ・ピラティススタジオ</title>
 <meta name="description" content="埼玉県久喜市のヨガ・ピラティススタジオ。定員5名の少人数ヨガと、マンツーマンのピラティス。初めての方も、体が硬い方も安心してご参加ください。専用駐車場あり。">
 <meta name="theme-color" content="#2f4a3a">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Cpath d=%27M3 20c0-8 6-13 12-13 2-3 8-5 12-1 5-1 10 3 10 9 0 4-4 7-9 7H12C7 22 3 22 3 20z%27 fill=%27%232f4a3a%27/%3E%3Cpath d=%27M19 21h3l1 15h-5z%27 fill=%27%236b4a35%27/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --leaf:#2f4a3a; --leaf2:#4a6c55; --bark:#6b4a35; --gold:#d9a441; --cream:#f6f1e7; --sage:#dfe5d6; --ink:#23271f;
@@ -537,19 +537,87 @@ details.learn li::before{content:"";position:absolute;left:0;top:1em;width:6px;h
 @media(min-width:861px){.about-text{position:relative}}
 
 @media(prefers-reduced-motion:reduce){.rip,.go .env{animation:none}}
+
+/* ===== §8 ロゴ・お店の色・ギャラリー ===== */
+:root{--pink:#feb0b1;--pink-d:#ac4f50;--pink-l:#fff0f1}
+.logo{min-width:0}
+.logo .lg-full{display:none;height:40px;width:auto}
+.logo .lg-m{display:flex;align-items:center;gap:8px}
+.logo .lg-m img{width:34px;height:34px}
+.logo .lg-m b{font-family:var(--serif);font-size:1.25rem;line-height:1.1;letter-spacing:.03em;color:var(--pink-d)}
+@media(min-width:861px){.logo .lg-full{display:block}.logo .lg-m{display:none}}
+.mo .logo.lg-go .lg-m img{animation:unfurl 1s cubic-bezier(.3,1.5,.5,1) .15s both}
+.mo .logo .lg-m b,.mo .logo .lg-full{opacity:0}
+.mo .logo.lg-go .lg-m b,.mo .logo.lg-go .lg-full{opacity:1;transition:opacity .8s ease .35s,transform .3s ease}
+@keyframes unfurl{from{transform:scale(0) rotate(-50deg)}to{transform:none}}
+@media(hover:hover){.logo:hover .lg-m img,.logo:hover .lg-full{transform:rotate(-4deg)}}
+.logo img{transition:transform .3s ease}
+.ft-logo{display:inline-flex;background:var(--pink-l);border-radius:14px;padding:9px 18px}
+.ft-logo img{height:32px;width:auto}
+.sroom{margin-top:26px;max-width:438px}
+.sroom img{width:100%;height:auto;border-radius:18px}
+
+/* 差し色のピンク */
+.badge-today{background:var(--pink-d);color:#fff}
+.day.today{border-color:var(--pink);box-shadow:0 0 0 4px rgba(254,176,177,.4)}
+.day.today .day-h h3{background:var(--pink);color:#4a1f25}
+@keyframes glow{0%,100%{box-shadow:0 0 0 4px rgba(254,176,177,.35)}50%{box-shadow:0 0 0 12px rgba(254,176,177,.8)}}
+.radios label::after{background:var(--pink);border:0}
+.rip{background:radial-gradient(circle,rgba(255,226,226,.95),rgba(254,176,177,.6) 45%,rgba(254,176,177,0) 70%)}
+.yen{color:var(--pink-d)}
+.price-note{border-left-color:var(--pink);background:var(--pink-l)}
+.sec .bgleaf{color:var(--pink);opacity:.22}
+.concept .bgleaf,.reserve .bgleaf{color:#fff;opacity:.07}
+.mo .leaves i{width:calc(var(--s,16px)*1.8);height:calc(var(--s,16px)*1.8);background:#feb0b1;-webkit-mask:url(data:image/png;base64,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) center/contain no-repeat;mask:url(data:image/png;base64,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) center/contain no-repeat}
+.mo .leaves i:nth-child(2){background:#4a6c55}
+.mo .leaves i:nth-child(3){background:#d9a441}
+.mo .leaves i:nth-child(4){background:#feb0b1}
+.mo .leaves i:nth-child(even){background-image:none}
+.mo .leaves i:nth-child(2){background-color:#4a6c55}
+.mo .leaves i:nth-child(4){background-color:#feb0b1}
+
+/* ギャラリー */
+.gfilters{margin:20px 0 6px}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:14px;perspective:1000px}
+@media(min-width:600px){.gallery{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:861px){.gallery{grid-template-columns:repeat(4,1fr);gap:12px}}
+.gi{list-style:none}
+.gi[hidden]{display:none}
+.gb{position:relative;display:block;width:100%;aspect-ratio:1/1;padding:0;border:0;border-radius:14px;overflow:hidden;cursor:zoom-in;background:var(--sage)}
+.gb img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.gb::after{content:"";position:absolute;inset:0;border-radius:14px;box-shadow:inset 0 0 0 0 var(--pink);transition:box-shadow .25s ease;pointer-events:none}
+@media(hover:hover){.gb:hover img{transform:scale(1.07)}.gb:hover::after{box-shadow:inset 0 0 0 4px var(--pink)}}
+.gb:focus-visible::after{box-shadow:inset 0 0 0 4px var(--pink)}
+.mo .gi{opacity:0;transform:scale(.86) translateY(18px) rotateX(8deg)}
+.mo .gi.in{opacity:1;transform:none;transition:opacity .6s ease calc(var(--i,0)*.07s),transform .75s cubic-bezier(.2,.75,.25,1) calc(var(--i,0)*.07s)}
+.gi.leaving{opacity:0!important;transform:scale(.55)!important;transition:opacity .28s ease,transform .28s ease!important}
+
+/* 拡大表示 */
+.lb{position:fixed;inset:0;z-index:500;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.lb[hidden]{display:none}
+.lb-bg{position:absolute;inset:0;background:rgba(20,28,22,.94);opacity:0;transition:opacity .45s ease}
+.lb.on .lb-bg{opacity:1}
+.lb-fig{position:relative;margin:0;display:flex;flex-direction:column;align-items:center;max-width:94vw}
+.lb-fig img{display:block;max-width:min(94vw,1100px);max-height:76vh;width:auto;height:auto;border-radius:12px;touch-action:pan-y;will-change:transform}
+.lb-count{margin-top:12px;color:#e7ebdc;font-size:.92rem;letter-spacing:.08em}
+.lb-btn{position:absolute;z-index:3;width:52px;height:52px;border-radius:50%;border:2px solid rgba(255,255,255,.75);background:rgba(20,28,22,.65);color:#fff;font:700 1.7rem/1 var(--sans);cursor:pointer;display:flex;align-items:center;justify-content:center;padding:0;transition:background .2s,border-color .2s}
+.lb-btn:hover{background:var(--pink-d);border-color:var(--pink)}
+.lb-close{top:14px;right:14px}
+.lb-prev{left:10px;top:50%;margin-top:-26px}
+.lb-next{right:10px;top:50%;margin-top:-26px}
+body.lb-open{overflow:hidden}
+@media(max-width:600px){.lb-prev,.lb-next{top:auto;bottom:18px;margin-top:0}.lb-prev{left:18px}.lb-next{right:18px}.lb-count{margin-bottom:0}}
 </style>
 </head>
 <body>
 <script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('mo')</script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><path id="mons" fill-rule="evenodd" d="M93.8 31.8 89.8 27.2 83.8 22.8 77.8 20.2 71.0 19.5 67.8 20.2 62.2 23.5 57.0 30.5 55.0 32.5 53.0 33.2 52.8 31.5 53.8 29.2 58.2 24.0 61.5 18.2 62.0 14.5 60.8 10.8 56.8 6.5 51.0 4.0 47.5 3.2 41.8 3.0 37.8 3.8 37.0 4.5 44.0 9.2 45.2 10.8 45.0 11.5 42.5 11.0 34.0 4.8 31.8 4.8 23.2 10.2 18.0 16.0 14.8 15.8 11.8 19.8 8.0 28.0 7.0 31.5 8.0 34.8 10.0 35.8 13.0 35.8 32.8 33.2 36.5 34.2 37.2 35.8 35.5 37.5 32.5 39.0 24.5 40.5 15.5 39.8 8.5 38.0 5.0 38.2 3.2 40.5 2.2 44.5 2.2 48.8 3.2 54.8 5.5 62.5 3.0 66.0 4.5 68.8 5.5 73.2 7.8 78.5 9.8 79.8 12.8 78.8 20.0 68.2 22.8 66.8 23.8 66.8 24.8 67.8 24.2 71.8 21.5 76.0 17.8 79.0 9.5 83.2 9.2 85.2 11.0 93.0 14.2 94.2 18.8 94.2 21.5 93.5 23.2 91.8 24.8 88.8 29.0 77.2 30.2 76.5 30.8 77.0 30.8 79.2 29.8 83.2 27.2 88.5 24.2 93.0 24.0 94.8 26.8 96.5 31.5 97.2 35.0 97.0 37.2 96.0 39.2 93.2 41.0 85.2 40.2 67.2 41.0 65.0 42.5 63.5 43.8 63.5 45.2 65.2 46.2 69.2 46.2 73.0 45.2 78.2 40.5 93.8 41.2 95.8 42.5 96.2 51.0 95.8 55.8 94.2 60.5 91.2 62.2 88.2 66.8 86.2 82.5 76.2 82.5 73.8 80.2 68.5 74.8 61.0 66.2 52.0 65.8 50.0 66.5 49.0 68.0 49.0 73.5 51.5 79.8 57.8 84.5 65.8 87.2 74.0 92.0 62.5 93.0 58.5 92.8 56.0 85.5 48.5 78.8 44.0 72.8 41.2 71.5 39.2 73.5 38.0 76.2 37.8 81.0 39.5 86.5 43.2 94.5 51.5 96.8 52.8 97.8 51.5 97.8 46.5 95.5 40.2 92.2 38.8 85.5 38.2 82.8 35.5 82.8 34.2 83.8 33.2 87.2 32.8 94.8 36.2 95.8 35.5 95.8 34.8ZM34.5 60.0 35.2 61.8 35.2 66.0 36.8 73.0 36.8 80.8 33.5 90.5 32.5 92.2 31.2 93.0 30.8 92.2 33.2 84.8 34.0 76.2 33.0 63.5 33.2 61.2ZM51.5 56.5 53.8 57.8 57.2 62.8 60.2 75.0 60.0 77.5 59.2 77.0 55.2 67.0 51.0 59.2 50.8 57.0ZM28.5 55.5 26.2 57.8 16.2 61.8 11.0 65.0 8.2 67.5 7.8 67.2 8.2 65.8 11.8 62.2 14.2 60.8 27.2 55.2ZM45.0 50.2 46.2 49.5 48.0 49.8 50.0 50.8 51.2 52.8 50.0 54.5 47.8 54.5 45.0 52.2ZM32.2 47.2 31.8 49.2 27.0 53.2 12.8 59.2 12.0 58.8 18.2 51.5 24.5 46.8 26.5 46.0 30.5 46.0ZM49.5 45.8 52.0 46.5 57.2 50.5 64.8 58.5 71.8 69.5 73.5 74.2 73.0 75.2 72.2 75.0 63.2 60.8 57.5 54.0 49.2 46.5ZM35.5 41.5 32.5 43.0 17.2 44.5 10.2 47.2 9.5 47.0 11.8 45.0 18.0 42.8 29.2 42.0 34.5 41.0ZM52.2 41.0 55.0 39.5 58.5 39.8 62.0 41.2 63.2 42.5 63.8 44.8 62.2 46.2 59.8 46.0 54.0 43.8 52.5 42.2ZM49.8 35.5 50.0 36.8 48.5 39.2 37.8 51.8 32.8 59.0 23.2 78.0 16.8 85.2 16.5 84.2 23.2 75.0 28.0 64.0 31.8 57.2 37.5 49.2ZM42.5 25.5 45.5 26.5 47.5 29.0 48.5 32.0 48.5 35.0 47.0 36.2 45.0 35.0 41.2 28.8 41.2 27.0ZM66.8 23.8 69.8 22.5 73.8 22.8 79.2 24.8 81.8 27.0 81.0 27.2 73.8 24.2 67.0 24.5ZM25.2 13.5 30.0 12.2 35.5 13.0 42.5 15.5 44.8 17.2 42.5 17.2 35.8 14.8 31.8 14.0 26.5 14.5 25.5 14.2ZM46.8 7.0 47.8 6.8 53.0 10.0 56.2 13.5 57.0 16.8 56.0 17.0 53.8 13.0 51.0 10.2 47.0 7.8Z"/></defs></svg>
 <a class="skip" href="#main">本文へ</a>
 <div class="demo-band">デモ版（確認用）</div>
 
 <header class="hd">
   <div class="hd-in">
-    <a class="logo" href="#top">
-      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 20c0-8 6-13 12-13 2-3 8-5 12-1 5-1 10 3 10 9 0 4-4 7-9 7H12C7 22 3 22 3 20z" fill="#2f4a3a"/><circle cx="13" cy="14" r="2" fill="#d9a441"/><circle cx="27" cy="12" r="1.6" fill="#d9a441"/><path d="M19 21h3l1 15h-5z" fill="#6b4a35"/></svg>
-      <span><b>Monkeypod</b><small>Yoga &amp; Pilates Studio</small></span>
-    </a>
+    <a class="logo" href="#top"><img class="lg-full" src="img/logo.webp" width="921" height="127" alt="Yoga &amp; Pilates Studio Monkeypod"><span class="lg-m"><img src="img/mark.webp" width="34" height="34" alt=""><b>Monkeypod</b></span></a>
     <button class="menu-btn" type="button" aria-expanded="false" aria-controls="gnav">メニュー</button>
     <nav class="gnav" id="gnav" aria-label="メインメニュー">
       <ul>
@@ -820,6 +888,7 @@ details.learn li::before{content:"";position:absolute;left:0;top:1em;width:6px;h
       <li><div><b>スタジオへ</b><span>専用駐車場あり。<a href="#access">アクセスの写真</a>を目印に。</span></div></li>
     </ol></div>
     <p class="ok">「体が硬いから…」という方も大丈夫です。運動量の少ないクラスから始めてみてください。</p>
+    <figure class="sroom"><img src="img/52.webp" width="438" height="292" alt="中ほどに木の柱が立つ、床の広いスタジオの部屋" loading="lazy"></figure>
   </div>
 </section>
 
@@ -907,14 +976,6 @@ details.learn li::before{content:"";position:absolute;left:0;top:1em;width:6px;h
 
     <div class="ws">
       <h3>これまでのワークショップ・リトリートの様子</h3>
-      <div class="strip" tabindex="0" role="region" aria-label="ワークショップの写真（横にスクロールできます）">
-        <figure><img src="img/26.webp" width="1000" height="741" alt="ヤシの木が見える芝生で、ヨガマットを広げてヨガをする人たち" loading="lazy"></figure>
-        <figure><img src="img/32.webp" width="750" height="1000" alt="ホテルの建物の前の芝生で行うヨガ" loading="lazy"></figure>
-        <figure><img src="img/45.webp" width="1000" height="741" alt="大きな木の下の芝生で、輪になって座る人たち" loading="lazy"></figure>
-        <figure><img src="img/31.webp" width="1000" height="734" alt="木漏れ日の差す芝生で、輪になってくつろぐ人たち" loading="lazy"></figure>
-        <figure><img src="img/33.webp" width="725" height="1000" alt="広いホールにヨガマットを並べ、ダウンドッグのポーズをとる人たち" loading="lazy"></figure>
-        <figure><img src="img/36.webp" width="1000" height="733" alt="ホールでヨガマットに座り、先生の説明を聞く参加者" loading="lazy"></figure>
-      </div>
       <ul class="ws-names">
         <li>HAWAIIリトリート</li>
         <li>カピオラニ公園ワークショップ in HAWAII</li>
@@ -925,6 +986,42 @@ details.learn li::before{content:"";position:absolute;left:0;top:1em;width:6px;h
         <li>青山ファーマーズマーケットとのコラボワークショップ</li>
         <li>文化フェスタ</li>
         <li>スタジオヨガフェスタ</li>
+      </ul>
+      <div class="filters gfilters" role="group" aria-label="写真を絞り込む">
+        <button type="button" class="fbtn gf" data-g="all" aria-pressed="true">すべて</button>
+        <button type="button" class="fbtn gf" data-g="hawaii" aria-pressed="false">ハワイ</button>
+        <button type="button" class="fbtn gf" data-g="studio" aria-pressed="false">スタジオでのワークショップ</button>
+        <button type="button" class="fbtn gf" data-g="group" aria-pressed="false">みんなで</button>
+      </div>
+      <p id="gcount" aria-live="polite" style="position:absolute;left:-999px"></p>
+      <ul class="gallery" id="gallery">
+<li class="gi" data-cat="hawaii"><button type="button" class="gb" aria-label="写真を大きく見る：ヤシの木が見える芝生で、ヨガマットを広げてヨガをする人たち"><img src="img/26.webp" width="1000" height="741" alt="ヤシの木が見える芝生で、ヨガマットを広げてヨガをする人たち" loading="lazy"></button></li>
+<li class="gi" data-cat="studio"><button type="button" class="gb" aria-label="写真を大きく見る：床にクッションを敷いた部屋で、小さな机を囲んで作業をする参加者"><img src="img/09.webp" width="1000" height="749" alt="床にクッションを敷いた部屋で、小さな机を囲んで作業をする参加者" loading="lazy"></button></li>
+<li class="gi" data-cat="group"><button type="button" class="gb" aria-label="写真を大きく見る：スタジオの壁を背に、大勢で並んだ集合写真"><img src="img/34.webp" width="1000" height="735" alt="スタジオの壁を背に、大勢で並んだ集合写真" loading="lazy"></button></li>
+<li class="gi" data-cat="hawaii"><button type="button" class="gb" aria-label="写真を大きく見る：木漏れ日の差す芝生で、輪になってくつろぐ人たち"><img src="img/31.webp" width="1000" height="734" alt="木漏れ日の差す芝生で、輪になってくつろぐ人たち" loading="lazy"></button></li>
+<li class="gi" data-cat="studio"><button type="button" class="gb" aria-label="写真を大きく見る：スタジオで、数人が立って話し、机に道具が並ぶ様子"><img src="img/11.webp" width="1000" height="749" alt="スタジオで、数人が立って話し、机に道具が並ぶ様子" loading="lazy"></button></li>
+<li class="gi" data-cat="group"><button type="button" class="gb" aria-label="写真を大きく見る：白い壁の前で、ポーズをとる参加者の集合写真"><img src="img/38.webp" width="1000" height="730" alt="白い壁の前で、ポーズをとる参加者の集合写真" loading="lazy"></button></li>
+<li class="gi" data-cat="hawaii"><button type="button" class="gb" aria-label="写真を大きく見る：ホテルの建物の前の芝生で行うヨガ"><img src="img/32.webp" width="750" height="1000" alt="ホテルの建物の前の芝生で行うヨガ" loading="lazy"></button></li>
+<li class="gi" data-cat="studio"><button type="button" class="gb" aria-label="写真を大きく見る：窓辺で、参加者に向けて説明をする講師"><img src="img/12.webp" width="749" height="1000" alt="窓辺で、参加者に向けて説明をする講師" loading="lazy"></button></li>
+<li class="gi" data-cat="group"><button type="button" class="gb" aria-label="写真を大きく見る：スタジオで、手を合わせて集まった参加者"><img src="img/47.webp" width="1000" height="747" alt="スタジオで、手を合わせて集まった参加者" loading="lazy"></button></li>
+<li class="gi" data-cat="hawaii"><button type="button" class="gb" aria-label="写真を大きく見る：大きな木の下の芝生で、輪になって座る人たち"><img src="img/45.webp" width="1000" height="741" alt="大きな木の下の芝生で、輪になって座る人たち" loading="lazy"></button></li>
+<li class="gi" data-cat="studio"><button type="button" class="gb" aria-label="写真を大きく見る：床に座って、机の上の作業に取り組む参加者"><img src="img/14.webp" width="1000" height="749" alt="床に座って、机の上の作業に取り組む参加者" loading="lazy"></button></li>
+<li class="gi" data-cat="group"><button type="button" class="gb" aria-label="写真を大きく見る：前列と後列に分かれ、手を合わせて並んだ集合写真"><img src="img/39.webp" width="1000" height="646" alt="前列と後列に分かれ、手を合わせて並んだ集合写真" loading="lazy"></button></li>
+<li class="gi" data-cat="hawaii"><button type="button" class="gb" aria-label="写真を大きく見る：ダイヤモンドヘッドの記念碑の前に立つ、帽子をかぶった3人"><img src="img/30.webp" width="754" height="1000" alt="ダイヤモンドヘッドの記念碑の前に立つ、帽子をかぶった3人" loading="lazy"></button></li>
+<li class="gi" data-cat="studio"><button type="button" class="gb" aria-label="写真を大きく見る：ギターを弾く人と、床で作業をする参加者"><img src="img/18.webp" width="749" height="1000" alt="ギターを弾く人と、床で作業をする参加者" loading="lazy"></button></li>
+<li class="gi" data-cat="group"><button type="button" class="gb" aria-label="写真を大きく見る：スタジオいっぱいに集まって手を振る参加者"><img src="img/49.webp" width="1000" height="743" alt="スタジオいっぱいに集まって手を振る参加者" loading="lazy"></button></li>
+<li class="gi" data-cat="studio"><button type="button" class="gb" aria-label="写真を大きく見る：白い丸いテーブルで、手を動かして作業をする参加者"><img src="img/19.webp" width="749" height="1000" alt="白い丸いテーブルで、手を動かして作業をする参加者" loading="lazy"></button></li>
+<li class="gi" data-cat="group"><button type="button" class="gb" aria-label="写真を大きく見る：ろうそくや小物を並べた台の前に座る、講師と参加者"><img src="img/40.webp" width="733" height="1000" alt="ろうそくや小物を並べた台の前に座る、講師と参加者" loading="lazy"></button></li>
+<li class="gi" data-cat="hawaii group"><button type="button" class="gb" aria-label="写真を大きく見る：ヤシの木とホテルを背に、芝生に並んで立つ4人"><img src="img/29.webp" width="752" height="1000" alt="ヤシの木とホテルを背に、芝生に並んで立つ4人" loading="lazy"></button></li>
+<li class="gi" data-cat="studio"><button type="button" class="gb" aria-label="写真を大きく見る：木の台を前に、道具を持って作業をする男性"><img src="img/20.webp" width="749" height="1000" alt="木の台を前に、道具を持って作業をする男性" loading="lazy"></button></li>
+<li class="gi" data-cat="group"><button type="button" class="gb" aria-label="写真を大きく見る：ヨガマットの上で肩を寄せて座る6人"><img src="img/43.webp" width="1000" height="653" alt="ヨガマットの上で肩を寄せて座る6人" loading="lazy"></button></li>
+<li class="gi" data-cat="studio"><button type="button" class="gb" aria-label="写真を大きく見る：机の上で、細かな作業をする女性"><img src="img/23.webp" width="749" height="1000" alt="机の上で、細かな作業をする女性" loading="lazy"></button></li>
+<li class="gi" data-cat="group"><button type="button" class="gb" aria-label="写真を大きく見る：公園の木の下で、子どもも一緒に集まった人たち"><img src="img/44.webp" width="755" height="1000" alt="公園の木の下で、子どもも一緒に集まった人たち" loading="lazy"></button></li>
+<li class="gi" data-cat="studio group"><button type="button" class="gb" aria-label="写真を大きく見る：出来上がった作品を手に、並んで立つ4人"><img src="img/24.webp" width="749" height="1000" alt="出来上がった作品を手に、並んで立つ4人" loading="lazy"></button></li>
+<li class="gi" data-cat="group"><button type="button" class="gb" aria-label="写真を大きく見る：青空の下の芝生に並んで集まった参加者"><img src="img/46.webp" width="1000" height="738" alt="青空の下の芝生に並んで集まった参加者" loading="lazy"></button></li>
+<li class="gi" data-cat=""><button type="button" class="gb" aria-label="写真を大きく見る：テーブルを囲んで、食事を楽しむ参加者"><img src="img/27.webp" width="755" height="1000" alt="テーブルを囲んで、食事を楽しむ参加者" loading="lazy"></button></li>
+<li class="gi" data-cat=""><button type="button" class="gb" aria-label="写真を大きく見る：広いホールにヨガマットを並べ、ダウンドッグのポーズをとる人たち"><img src="img/33.webp" width="725" height="1000" alt="広いホールにヨガマットを並べ、ダウンドッグのポーズをとる人たち" loading="lazy"></button></li>
+<li class="gi" data-cat=""><button type="button" class="gb" aria-label="写真を大きく見る：ホールでヨガマットに座り、先生の説明を聞く参加者"><img src="img/36.webp" width="1000" height="733" alt="ホールでヨガマットに座り、先生の説明を聞く参加者" loading="lazy"></button></li>
       </ul>
     </div>
 
@@ -966,7 +1063,7 @@ details.learn li::before{content:"";position:absolute;left:0;top:1em;width:6px;h
 <footer class="ft">
   <div class="wrap">
     <svg class="ft-tree" viewBox="0 0 120 90" aria-hidden="true"><path pathLength="1" style="--n:0" d="M12 44C4 30 18 14 34 20C38 6 62 2 72 14C84 6 106 14 100 32C114 38 108 52 94 50H28C18 52 12 50 12 44Z"/><path pathLength="1" style="--n:1" d="M60 50V82M60 62L44 50M60 58L78 46"/><path class="g" pathLength="1" style="--n:2" d="M36 84H84"/></svg>
-    <b>Yoga &amp; Pilates Studio Monkeypod</b>
+    <b><span class="ft-logo"><img src="img/logo.webp" width="921" height="127" alt="Yoga &amp; Pilates Studio Monkeypod" loading="lazy"></span></b>
     <p>埼玉県久喜市本町3-5-51 ラ・メゾン・ド・トゥロワ1F</p>
     <p>Tel：<a href="tel:09088514768">090-8851-4768</a></p>
     <p>Mail：<a href="mailto:yoga.studio.monkeypod@gmail.com">yoga.studio.monkeypod@gmail.com</a></p>
@@ -975,6 +1072,14 @@ details.learn li::before{content:"";position:absolute;left:0;top:1em;width:6px;h
     <p class="copy">© Yoga &amp; Pilates Studio Monkeypod</p>
   </div>
 </footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="写真の拡大表示" hidden>
+  <div class="lb-bg"></div>
+  <button type="button" class="lb-btn lb-close" aria-label="閉じる">×</button>
+  <button type="button" class="lb-btn lb-prev" aria-label="前の写真">‹</button>
+  <button type="button" class="lb-btn lb-next" aria-label="次の写真">›</button>
+  <figure class="lb-fig"><img src="" alt=""><figcaption class="lb-count" aria-live="polite"></figcaption></figure>
+</div>
 
 <div class="sticky">
   <a class="btn ghost" href="#schedule">スケジュール</a>
@@ -1030,7 +1135,7 @@ mb.addEventListener('click',()=>{const o=gn.classList.toggle('open');mb.setAttri
 $$('a',gn).forEach(a=>a.addEventListener('click',()=>{gn.classList.remove('open');mb.setAttribute('aria-expanded','false')}));
 
 /* 絞り込み */
-const fb=$$('.fbtn');
+const fb=$$('.fbtn:not(.gf)');
 fb.forEach(b=>b.addEventListener('click',()=>{
   fb.forEach(x=>x.setAttribute('aria-pressed',x===b));
   const f=b.dataset.f,cards=$$('.card'),match=c=>f==='all'||c.dataset.level===f;
@@ -1204,7 +1309,7 @@ const vh=()=>innerHeight;
 const PAR=[];const tasks=new Set();
 var io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){io.unobserve(e.target);reveal(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
 
-$('.hero .eyebrow').classList.add('in');
+$('.hero .eyebrow').classList.add('in');$('.hd .logo').classList.add('lg-go');
 /* ---------- 読んだ量の枝 ---------- */
 const prog=document.createElement('div');prog.id='prog';prog.setAttribute('aria-hidden','true');
 prog.innerHTML='<i class="bar"></i><svg class="tip" viewBox="0 0 20 30"><path d="M10 1C18 9 19 21 10 29 1 21 2 9 10 1Z" fill="#4a6c55"/><path d="M10 7V27" stroke="#dfe5d6" stroke-width="1.4"/></svg>';
@@ -1222,20 +1327,20 @@ $$('.sec').forEach((sec,si)=>{
   const L=tmp.getTotalLength?(svg.appendChild(tmp),tmp.getTotalLength()):1200;
   for(let k=0;k<15;k++){
     const t=(k+.6)/15,p=tmp.getPointAtLength?tmp.getPointAtLength(t*L):{x:t*1200,y:22};
-    const up=k%2?1:-1,e=document.createElementNS(NS,'ellipse');
-    e.setAttribute('class','lf');e.setAttribute('cx',p.x.toFixed(1));e.setAttribute('cy',(p.y+up*9).toFixed(1));
-    e.setAttribute('rx','4.6');e.setAttribute('ry','10');
-    e.style.rotate=(up*38)+'deg';
-    e.style.setProperty('--dl',(0.25+t*1.0).toFixed(2)+'s');
-    svg.appendChild(e);
+    const up=k%2?1:-1;
+    const gg=document.createElementNS(NS,'g'),u=document.createElementNS(NS,'use'),rot=up<0?(k%3-1)*28+10:180+(k%3-1)*24;
+    gg.setAttribute('transform','translate('+p.x.toFixed(1)+' '+p.y.toFixed(1)+') rotate('+rot+') scale(.21) translate(-50 -100)');
+    u.setAttribute('href','#mons');u.setAttribute('class','lf');u.style.fill=['#4a6c55','#feb0b1','#4a6c55','#d9a441'][k%4];
+    u.style.setProperty('--dl',(0.25+t*1.0).toFixed(2)+'s');
+    gg.appendChild(u);svg.appendChild(gg);
   }
   svg.removeChild(tmp);
   sec.prepend(svg);io.observe(svg);
   // 背景の大きな葉
   const wrap=$('.wrap',sec);
   if(wrap){
-    const g=document.createElementNS(NS,'svg');g.setAttribute('class','bgleaf');g.setAttribute('viewBox','0 0 200 260');g.setAttribute('aria-hidden','true');
-    g.innerHTML='<path fill="currentColor" d="M100 6C172 62 192 152 100 254 8 152 28 62 100 6Z"/><path fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3" d="M100 30V240M100 90L62 62M100 130L146 96M100 170L58 140"/>';
+    const g=document.createElementNS(NS,'svg');g.setAttribute('class','bgleaf');g.setAttribute('viewBox','0 0 100 100');g.setAttribute('aria-hidden','true');
+    g.innerHTML='<use href="#mons" fill="currentColor"/>';
     sec.insertBefore(g,wrap);PAR.push({el:g,k:.16,rot:true,base:sec.matches(':nth-of-type(even)')?-24:18});
   }
 });
@@ -1248,7 +1353,8 @@ $$('.concept-list li,.cards .card,.person,.price-grid .pbox,.ev-grid .ev,.steps 
   const p=$(sel);if(p)[...p.children].forEach((c,i)=>c.style.setProperty('--i',i))
 });
 $$('.strip figure').forEach((f,i)=>f.style.setProperty('--i',i));
-$$('.about-photos img,.route-photos img').forEach(im=>im.classList.add('blob'));
+$$('.about-photos img,.route-photos img,.sroom img').forEach(im=>im.classList.add('blob'));
+$$('.gi').forEach((g,i)=>g.style.setProperty('--i',i%6));
 $$('.about-photos img,.person img,.route-photos img').forEach(im=>{im.dataset.py='1';PAR.push({el:im,k:.05,clamp:14})});
 $$('details.learn li').forEach((li,i)=>li.style.setProperty('--i',Math.min(i%24,14)));
 
@@ -1264,7 +1370,7 @@ function reveal(el){
   if(el.classList.contains('strip'))setTimeout(()=>el.classList.add('nudged'),600);
   if(el.classList.contains('road')){el.classList.add('go');const m=$('animateMotion',el);if(m&&m.beginElement)setTimeout(()=>m.beginElement(),300)}
 }
-$$('.reveal,.tilt,.about-photos img,.route-photos,.strip,.road,.tabpanel,.ft').forEach(el=>io.observe(el));
+$$('.reveal,.tilt,.about-photos img,.sroom img,.gi,.route-photos,.strip,.road,.tabpanel,.ft').forEach(el=>io.observe(el));
 /* 舞う葉：見えているあいだだけ */
 const leafIO=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('live',e.isIntersecting)));
 $$('.leaves').forEach(l=>leafIO.observe(l));
@@ -1343,6 +1449,122 @@ addEventListener('resize',()=>{layoutVine();req()});
 addEventListener('load',()=>{layoutVine();req()});
 layoutVine();req();
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{layoutVine();req()});
+})();
+</script>
+<script>
+/* ===== ワークショップのギャラリー：絞り込み（FLIP）と拡大表示 ===== */
+(function(){
+const gal=$('#gallery');if(!gal)return;
+const lb=$('#lb'),img=$('.lb-fig img',lb),cnt=$('.lb-count',lb),close=$('.lb-close',lb),prev=$('.lb-prev',lb),next=$('.lb-next',lb);
+let cur=null,last=null,busy=false,tm;
+const vis=()=>$$('.gi:not([hidden])',gal);
+const th=li=>$('img',li);
+const decode=()=>img.decode?img.decode().catch(()=>{}):Promise.resolve();
+
+/* 絞り込み */
+const gf=$$('.gf');
+gf.forEach(b=>b.addEventListener('click',()=>{
+  gf.forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const f=b.dataset.g,items=$$('.gi',gal),match=li=>f==='all'||li.dataset.cat.split(' ').includes(f);
+  $('#gcount').textContent=items.filter(match).length+'枚の写真を表示しています';
+  if(!MO){items.forEach(li=>{li.hidden=!match(li)});return}
+  const first=new Map();items.forEach(li=>{if(!li.hidden)first.set(li,li.getBoundingClientRect())});
+  const leaving=items.filter(li=>!li.hidden&&!match(li)),entering=items.filter(li=>li.hidden&&match(li));
+  items.forEach(li=>li.classList.add('in'));
+  leaving.forEach(li=>li.classList.add('leaving'));
+  setTimeout(()=>{
+    leaving.forEach(li=>{li.hidden=true;li.classList.remove('leaving')});
+    entering.forEach(li=>{li.hidden=false;li.style.transition='none';li.style.opacity='0';li.style.transform='scale(.55)'});
+    items.filter(li=>!li.hidden).forEach(li=>{
+      const o=first.get(li),l=li.getBoundingClientRect();
+      if(o){const dx=o.left-l.left,dy=o.top-l.top;if(dx||dy){li.style.transition='none';li.style.transform='translate('+dx+'px,'+dy+'px)'}}
+    });
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      items.filter(li=>!li.hidden).forEach((li,i)=>{li.style.transition='transform .55s cubic-bezier(.2,.75,.25,1),opacity .45s ease';li.style.transform='';li.style.opacity='';setTimeout(()=>{li.style.transition=''},600)});
+    }));
+  },290);
+}));
+
+/* 拡大表示 */
+function setImg(li){
+  const t=th(li);img.src=t.currentSrc||t.src;img.alt=t.alt;
+  const v=vis();cnt.textContent=(v.indexOf(li)+1)+' / '+v.length;
+  [1,-1].forEach(d=>{const n=v[(v.indexOf(li)+d+v.length)%v.length];if(n){const im=new Image();im.src=th(n).src}});
+}
+function geom(li){
+  const t=th(li).getBoundingClientRect(),f=img.getBoundingClientRect();
+  const s=Math.max(t.width/f.width,t.height/f.height);
+  const dx=t.left+t.width/2-(f.left+f.width/2),dy=t.top+t.height/2-(f.top+f.height/2);
+  const cw=t.width/s,ch=t.height/s;
+  return {tf:'translate('+dx+'px,'+dy+'px) scale('+s+')',clip:'inset('+((f.height-ch)/2)+'px '+((f.width-cw)/2)+'px)'};
+}
+function open(li){
+  last=document.activeElement;cur=li;lb.hidden=false;document.body.classList.add('lb-open');setImg(li);
+  if(!MO){lb.classList.add('on');close.focus();return}
+  img.style.transition='none';img.style.transform='none';img.style.clipPath='none';img.style.opacity='1';lb.classList.remove('on');
+  decode().then(()=>{
+    const g=geom(li);img.style.transform=g.tf;img.style.clipPath=g.clip;void img.offsetWidth;
+    requestAnimationFrame(()=>{
+      img.style.transition='transform .55s cubic-bezier(.2,.75,.25,1),clip-path .55s cubic-bezier(.2,.75,.25,1)';
+      img.style.transform='none';img.style.clipPath='inset(0px 0px)';lb.classList.add('on');
+    });
+  });
+  close.focus({preventScroll:true});
+}
+function shut(){
+  lb.hidden=true;lb.classList.remove('on');document.body.classList.remove('lb-open');
+  img.style.transition='none';img.style.transform='none';img.style.clipPath='none';img.style.opacity='1';
+  if(last&&last.focus)last.focus({preventScroll:true});cur=null;
+}
+function closeLb(){
+  if(lb.hidden)return;
+  if(!MO){shut();return}
+  clearTimeout(tm);
+  let li=cur;
+  if(li&&!li.hidden){
+    const r=th(li).getBoundingClientRect();
+    if(r.bottom<80||r.top>innerHeight-20){li.scrollIntoView({block:'center'});}
+  }
+  lb.classList.remove('on');
+  if(li&&!li.hidden){
+    const g=geom(li);
+    img.style.transition='transform .45s cubic-bezier(.55,0,.75,.2),clip-path .45s cubic-bezier(.55,0,.75,.2)';
+    img.style.transform=g.tf;img.style.clipPath=g.clip;
+  }else{img.style.transition='opacity .3s ease';img.style.opacity='0'}
+  tm=setTimeout(shut,470);
+}
+function nav(dir){
+  const v=vis();if(v.length<2||busy||!cur)return;
+  const li=v[(v.indexOf(cur)+dir+v.length)%v.length];
+  if(!MO){cur=li;setImg(li);return}
+  busy=true;img.style.clipPath='none';
+  img.style.transition='transform .22s ease,opacity .22s ease';img.style.opacity='0';img.style.transform='translateX('+(-44*dir)+'px)';
+  setTimeout(()=>{
+    cur=li;setImg(li);img.style.transition='none';img.style.transform='translateX('+(44*dir)+'px)';
+    decode().then(()=>requestAnimationFrame(()=>{
+      img.style.transition='transform .38s cubic-bezier(.2,.75,.25,1),opacity .3s ease';img.style.opacity='1';img.style.transform='none';
+      setTimeout(()=>{busy=false},400);
+    }));
+  },230);
+}
+gal.addEventListener('click',e=>{const b=e.target.closest('.gb');if(b)open(b.closest('.gi'))});
+close.addEventListener('click',closeLb);
+prev.addEventListener('click',()=>nav(-1));
+next.addEventListener('click',()=>nav(1));
+lb.addEventListener('click',e=>{if(e.target.closest('.lb-btn')||e.target===img)return;closeLb()});
+document.addEventListener('keydown',e=>{
+  if(lb.hidden)return;
+  if(e.key==='Escape'){e.preventDefault();closeLb()}
+  else if(e.key==='ArrowRight'){e.preventDefault();nav(1)}
+  else if(e.key==='ArrowLeft'){e.preventDefault();nav(-1)}
+  else if(e.key==='Tab'){
+    const f=[close,prev,next],i=f.indexOf(document.activeElement);
+    e.preventDefault();f[(i+(e.shiftKey?-1:1)+f.length)%f.length].focus();
+  }
+});
+let sx=null;
+img.addEventListener('pointerdown',e=>{sx=e.clientX});
+addEventListener('pointerup',e=>{if(sx===null)return;const d=e.clientX-sx;sx=null;if(Math.abs(d)>60&&!lb.hidden)nav(d<0?1:-1)});
 })();
 </script>
 </body>
