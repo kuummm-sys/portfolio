@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Yoga &amp; Pilates Studio Monkeypod｜久喜市のヨガ・ピラティススタジオ</title>
+<meta name="description" content="埼玉県久喜市のヨガ・ピラティススタジオ。定員5名の少人数ヨガと、マンツーマンのピラティス。初めての方も、体が硬い方も安心してご参加ください。専用駐車場あり。">
+<meta name="theme-color" content="#2f4a3a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 40%27%3E%3Cpath d=%27M3 20c0-8 6-13 12-13 2-3 8-5 12-1 5-1 10 3 10 9 0 4-4 7-9 7H12C7 22 3 22 3 20z%27 fill=%27%232f4a3a%27/%3E%3Cpath d=%27M19 21h3l1 15h-5z%27 fill=%27%236b4a35%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --leaf:#2f4a3a; --leaf2:#4a6c55; --bark:#6b4a35; --gold:#d9a441; --cream:#f6f1e7; --sage:#dfe5d6; --ink:#23271f;
+  --muted:#566052; --hot:#c0643f; --hot-d:#a9502e; --line:#d5d9c8; --card:#fffdf8;
+  --serif:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--sans);font-size:16px;line-height:1.9;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;line-break:strict;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+ul,ol{list-style:none}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.5;word-break:keep-all;overflow-wrap:anywhere;text-wrap:balance}
+p{text-wrap:pretty}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.sec{padding:76px 0;scroll-margin-top:64px}
+.eyebrow{display:flex;align-items:center;gap:10px;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bark);font-weight:700;margin-bottom:10px}
+.eyebrow::before{content:"";width:26px;height:2px;background:var(--gold);border-radius:2px}
+.sec h2{font-size:clamp(1.6rem,6vw,2.3rem);margin-bottom:22px}
+.lead{max-width:40em}
+.nw{display:inline-block}
+.skip{position:absolute;left:-999px;top:0;background:var(--leaf);color:#fff;padding:10px 16px;z-index:200}
+.skip:focus{left:8px;top:8px}
+
+/* ボタン */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:50px;padding:12px 26px;border-radius:999px;border:2px solid var(--leaf);background:var(--leaf);color:#fff;font:700 1rem/1.3 var(--sans);text-decoration:none;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.btn:hover{background:#243a2d;transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--leaf)}
+.btn.ghost:hover{background:var(--leaf);color:#fff}
+.btn.gold{background:var(--gold);border-color:var(--gold);color:#23271f}
+.btn.gold:hover{background:#e6b552}
+.btn.sm{min-height:48px;padding:10px 20px}
+
+/* デモ帯 */
+.demo-band{background:#23271f;color:#f6f1e7;text-align:center;font-size:.8rem;line-height:1.4;padding:6px 10px;letter-spacing:.12em}
+
+/* ヘッダー */
+.hd{position:sticky;top:0;z-index:100;background:rgba(246,241,231,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.hd-in{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:1180px;margin:0 auto;padding:8px 18px;min-height:60px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:34px;height:34px;flex:none}
+.logo b{display:block;font-family:var(--serif);font-size:1.3rem;line-height:1.1;letter-spacing:.04em;color:var(--leaf)}
+.logo small{display:block;font-size:.68rem;letter-spacing:.08em;color:var(--muted);line-height:1.3}
+.gnav ul{display:flex;flex-wrap:wrap;gap:4px 16px}
+.gnav a{display:inline-flex;align-items:center;min-height:44px;text-decoration:none;font-size:.92rem;font-weight:500;padding:0 4px;border-bottom:2px solid transparent}
+.gnav a:hover{border-color:var(--gold)}
+.hd .btn{display:none}
+.menu-btn{display:none}
+@media(max-width:860px){
+  .gnav{order:3;width:100%}
+  .gnav ul{gap:0 12px}
+  .gnav a{font-size:.85rem}
+  html.js .menu-btn{display:inline-flex;align-items:center;min-height:48px;padding:0 16px;border:2px solid var(--leaf);border-radius:999px;background:transparent;color:var(--leaf);font:700 .9rem var(--sans);cursor:pointer}
+  html.js .gnav{display:none;padding-bottom:8px}
+  html.js .gnav.open{display:block}
+  html.js .gnav ul{flex-direction:column;gap:0}
+  html.js .gnav a{width:100%;font-size:1rem;border-bottom:1px solid var(--line)}
+}
+@media(min-width:861px){.hd .btn{display:inline-flex}.hd-in{flex-wrap:nowrap}}
+
+/* ファーストビュー */
+.hero{position:relative;background:linear-gradient(#dfe5d6 0,#eaeede 200px,var(--cream) 520px);overflow:hidden;padding-bottom:64px}
+.hero{--ch:clamp(130px,17vw,220px)}
+.canopy{position:absolute;left:0;top:0;width:100%;height:var(--ch);display:block;-webkit-mask-image:linear-gradient(#000 82%,transparent);mask-image:linear-gradient(#000 82%,transparent)}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(103deg,transparent 0 14%,rgba(217,164,65,.14) 14% 21%,transparent 21% 44%,rgba(217,164,65,.1) 44% 48%,transparent 48% 70%,rgba(217,164,65,.12) 70% 78%,transparent 78%);-webkit-mask-image:linear-gradient(#000 0,transparent 65%);mask-image:linear-gradient(#000 0,transparent 65%)}
+.hero-in{position:relative;padding-top:calc(var(--ch) - 14px);display:grid;gap:32px}
+.hero .eyebrow{color:var(--leaf)}
+.hero h1{font-size:clamp(1.85rem,7.6vw,2.9rem);letter-spacing:.02em;margin-bottom:18px;color:var(--leaf)}
+.hero p.sub{font-size:1.05rem;max-width:30em;margin-bottom:24px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:26px}
+.facts{display:grid;gap:8px}
+.facts li{display:flex;align-items:center;gap:10px;font-weight:700;font-size:.95rem;line-height:1.5}
+.facts li::before{content:"";flex:none;width:10px;height:10px;border-radius:50% 0 50% 0;background:var(--gold);transform:rotate(-12deg)}
+.hero-photo{position:relative}
+.hero-photo .frame{overflow:hidden;border-radius:120px 120px 20px 20px;box-shadow:0 22px 40px -22px rgba(47,74,58,.55)}
+.hero-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:30% 50%}
+.hero-photo::after{content:"";position:absolute;inset:auto -10px -10px 22px;height:100%;border:2px solid var(--gold);border-radius:120px 120px 20px 20px;z-index:-1;opacity:.7}
+@media(min-width:861px){
+  .hero-in{grid-template-columns:1.05fr .95fr;align-items:center;gap:56px}
+  .hero-photo img{aspect-ratio:1/1.02}.hero-photo .frame{border-radius:200px 200px 24px 24px}
+  .hero-photo::after{border-radius:200px 200px 24px 24px}
+}
+@media(prefers-reduced-motion:no-preference){
+  .sway{animation:sway 7s ease-in-out infinite alternate}
+  .sway.s2{animation-duration:9s;animation-delay:-3s}
+  .sway.s3{animation-duration:8s;animation-delay:-5s}
+}
+@keyframes sway{from{transform:rotate(-1deg)}to{transform:rotate(1deg)}}
+
+/* 「モンキーポッド」って？ */
+.about-grid{display:grid;gap:32px}
+.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+.about-photos img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:90px 90px 14px 14px}
+.about-photos figure:nth-child(2){margin-top:36px}
+.about-text p+p{margin-top:1em}
+.about-text .em{font-family:var(--serif);font-weight:600;font-size:1.15rem;color:var(--leaf);margin-top:1.2em}
+@media(min-width:861px){.about-grid{grid-template-columns:1fr 1fr;align-items:center;gap:72px}.about-photos{order:2}}
+
+/* 考え方 */
+.concept{background:var(--leaf);color:#f6f1e7;position:relative}
+.concept .eyebrow,.reserve .eyebrow{color:#ecc57a}
+.concept h2{color:#fff}
+.concept-list{display:grid;gap:16px;counter-reset:c}
+.concept-list li{counter-increment:c;position:relative;padding:22px 22px 22px 22px;border:1px solid rgba(246,241,231,.25);border-radius:18px;background:rgba(255,255,255,.04)}
+.concept-list h3{font-size:1.15rem;margin-bottom:8px;color:#fff}
+.concept-list p{font-size:.98rem;color:#e7ebdc}
+@media(min-width:861px){.concept-list{grid-template-columns:1fr 1fr;gap:20px}.concept-list li{padding:28px}}
+
+/* クラス */
+.classes{background:var(--cream)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 8px}
+.filter-label{width:100%;font-weight:700;font-size:.95rem;color:var(--leaf)}
+.fbtn{min-height:48px;padding:8px 20px;border-radius:999px;border:2px solid var(--leaf);background:transparent;color:var(--leaf);font:700 .95rem var(--sans);cursor:pointer;transition:background .2s,color .2s}
+.fbtn[aria-pressed="true"]{background:var(--leaf);color:#fff}
+.fbtn:hover{background:var(--sage)}
+.fbtn[aria-pressed="true"]:hover{background:var(--leaf)}
+.cards{display:grid;gap:14px;margin-top:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px 20px 22px;border-top:5px solid var(--leaf2);scroll-margin-top:90px}
+.card[data-temp="hot"]{border-top-color:var(--hot)}
+.card[hidden]{display:none}
+.card h3{font-size:1.2rem;margin-bottom:8px}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:10px;font-size:.85rem}
+.tag{display:inline-flex;align-items:center;min-height:26px;padding:0 10px;border-radius:999px;font-weight:700;line-height:1;white-space:nowrap}
+.tag.hot{background:var(--hot-d);color:#fff}
+.tag.room{background:var(--sage);color:var(--leaf)}
+.tag.lv{background:#f0e6cc;color:#5a4318}
+.tag.who{background:transparent;color:var(--muted);padding:0;font-weight:500}
+.c-desc{font-size:.98rem}
+.bring{margin-top:30px;padding:22px;border-radius:18px;background:var(--sage);scroll-margin-top:90px}
+.bring h3{font-size:1.1rem;margin-bottom:8px}
+.bring ul{display:flex;flex-wrap:wrap;gap:6px 18px;margin-bottom:8px}
+.bring li::before{content:"・"}
+@media(min-width:861px){.cards{grid-template-columns:repeat(3,1fr);gap:18px}}
+
+/* スケジュール */
+.schedule{background:var(--sage)}
+.tabs{display:flex;gap:8px;margin:22px 0 6px;flex-wrap:wrap}
+.tab{min-height:52px;padding:8px 28px;border-radius:14px 14px 0 0;border:2px solid var(--leaf);border-bottom:0;background:transparent;color:var(--leaf);font:700 1.05rem var(--sans);cursor:pointer;margin-bottom:-2px}
+.tab[aria-selected="true"]{background:var(--leaf);color:#fff}
+.tabpanel{border-top:2px solid var(--leaf);padding-top:18px}
+.sched-note{font-weight:700;color:var(--leaf);margin-bottom:14px}
+.grid{display:grid;gap:10px}
+.day{display:grid;grid-template-columns:62px 1fr;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px}
+.day.today{border:2px solid var(--gold);box-shadow:0 0 0 4px rgba(217,164,65,.22)}
+.day-h{display:flex;flex-direction:column;align-items:center;gap:6px}
+.day-h h3{width:46px;height:46px;border-radius:50%;background:var(--leaf);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.25rem}
+.day.today .day-h h3{background:var(--gold);color:#23271f}
+.badge-today{font-size:.72rem;font-weight:700;background:#23271f;color:#fff;border-radius:999px;padding:1px 8px;line-height:1.5}
+.slots{display:grid;gap:8px;align-content:center;min-width:0}
+.slot{display:block;width:100%;text-align:left;min-height:52px;padding:10px 14px;border-radius:12px;border:1.5px solid var(--leaf2);background:#fff;color:var(--ink);font:500 .95rem/1.5 var(--sans);cursor:pointer;transition:background .2s}
+.slot:hover{background:#f3f6ec}
+.slot[aria-expanded="true"]{background:var(--leaf);color:#fff;border-color:var(--leaf)}
+.slot .t{display:block;font-weight:700;font-size:1rem}
+.slot .n{display:block;font-weight:500}
+.slot .m{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:4px;font-size:.85rem}
+.slot .tag{min-height:22px;font-size:.78rem;padding:0 8px}
+.slot[aria-expanded="true"] .tag.room{background:rgba(255,255,255,.2);color:#fff}
+.slot[aria-expanded="true"] .tag.who{color:#e7ebdc}
+.off{font-size:.95rem;color:var(--muted);padding:6px 4px}
+.ptime{background:#fff;border:1.5px solid var(--leaf2);border-radius:12px;padding:10px 14px;font-weight:700;line-height:1.6}
+.ptime span{display:block}
+.detail{margin-top:2px;background:#fff;border:2px solid var(--leaf);border-radius:14px;padding:16px 16px 18px;color:var(--ink)}
+.detail[hidden]{display:none}
+.detail .d-name{font-family:var(--serif);font-weight:600;font-size:1.15rem;margin-bottom:6px}
+.detail p.d{font-size:.96rem;margin:8px 0 14px}
+.detail-slot{margin-top:12px}
+.sched-foot{margin-top:20px;font-size:.98rem}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin-bottom:12px}
+.pcard h3{font-size:1.1rem;margin-bottom:6px}
+.pcard p{font-size:.96rem;margin-bottom:12px}
+.nojs-table{display:none}
+html:not(.js) .nojs-table{display:block}
+html:not(.js) .tabs{display:none}
+.nojs-table table{width:100%;border-collapse:collapse;background:#fff;margin:12px 0 22px;font-size:.95rem}
+.nojs-table th,.nojs-table td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.nojs-table th{background:var(--leaf);color:#fff}
+.nojs-table h3{font-size:1.1rem;margin-top:10px}
+@media(min-width:861px){
+  .grid{grid-template-columns:repeat(var(--cols),1fr);gap:12px}
+  .day{grid-template-columns:1fr;padding:14px 12px 16px;align-content:start}
+  .day-h{flex-direction:row;justify-content:center;gap:10px;height:auto}
+  .slots{align-content:start}
+}
+
+/* 料金 */
+.price{background:var(--cream)}
+.price-grid{display:grid;gap:16px}
+.pbox{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px}
+.pbox h3{font-size:1.15rem;margin-bottom:12px;color:var(--leaf)}
+.prow{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:10px 0;border-top:1px dashed #c9cdb9}
+.prow:first-of-type{border-top:0}
+.prow .l{min-width:0}
+.prow .l small{display:block;font-size:.85rem;color:var(--muted);line-height:1.5}
+.yen{font-weight:700;font-size:1.5rem;white-space:nowrap;color:var(--bark);font-feature-settings:"palt"}
+.yen small{font-size:.9rem;margin-left:2px}
+.price-note{margin-top:22px;padding:16px 20px;border-left:5px solid var(--gold);background:#fbf3df;border-radius:0 12px 12px 0;font-weight:700}
+@media(min-width:861px){.price-grid{grid-template-columns:repeat(3,1fr)}}
+
+/* 予約 */
+.reserve{background:var(--leaf);color:#f6f1e7}
+.reserve .eyebrow{color:#ecc57a}
+.reserve h2{color:#fff}
+.res-grid{display:grid;gap:22px;margin-top:8px}
+.formbox{background:var(--card);color:var(--ink);border-radius:22px;padding:22px}
+.formbox h3{font-size:1.2rem;margin-bottom:4px;color:var(--leaf)}
+.formbox .hint{font-size:.9rem;color:var(--muted);margin-bottom:14px}
+.f{margin-bottom:14px}
+.f label,.f legend{display:block;font-weight:700;font-size:.95rem;margin-bottom:4px}
+.f select,.f input[type=text],.f input[type=date],.f textarea{width:100%;min-height:48px;padding:10px 12px;border:1.5px solid #9aa58f;border-radius:10px;font:400 1rem var(--sans);background:#fff;color:var(--ink)}
+.f textarea{min-height:90px;resize:vertical}
+.f fieldset{border:0}
+.radios{display:flex;gap:10px}
+.radios label{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 18px;border:1.5px solid #9aa58f;border-radius:999px;font-weight:500;cursor:pointer;margin:0;background:#fff}
+.radios input{width:20px;height:20px;accent-color:var(--leaf)}
+.radios label:has(input:checked){background:var(--sage);border-color:var(--leaf)}
+.req{color:var(--hot-d);font-size:.8rem;margin-left:6px}
+.formbox .btn{width:100%}
+.preview{display:none;margin-top:14px;padding:14px;background:#f3f6ec;border-radius:10px;font-size:.88rem;white-space:pre-wrap;word-break:break-all;line-height:1.7}
+.preview.on{display:block}
+.preview b{display:block;margin-bottom:4px;font-family:var(--sans)}
+.mailalt{margin-top:12px;font-size:.92rem}
+.mailalt a{word-break:break-all}
+.nojs-note{display:none}
+html:not(.js) .nojs-note{display:block}
+html:not(.js) .js-only{display:none}
+.contact-side{display:grid;gap:14px;align-content:start}
+.cbox{border:1px solid rgba(246,241,231,.3);border-radius:20px;padding:20px;background:rgba(255,255,255,.05)}
+.cbox h3{font-size:1.1rem;color:#fff;margin-bottom:6px}
+.cbox .tel{display:block;font-family:var(--sans);font-weight:700;font-size:1.7rem;letter-spacing:.04em;color:#fff;text-decoration:none;line-height:1.4}
+.cbox p{font-size:.92rem;color:#e7ebdc;margin:4px 0 10px}
+.cbox .btn{border-color:var(--gold);background:var(--gold);color:#23271f}
+.rules{margin-top:8px}
+.rules h3{font-size:1.05rem;color:#fff;margin-bottom:8px}
+.rules li{position:relative;padding-left:1.2em;font-size:.95rem;margin-bottom:4px;color:#e7ebdc}
+.rules li::before{content:"";position:absolute;left:0;top:.78em;width:7px;height:7px;border-radius:50% 0;background:var(--gold)}
+@media(min-width:861px){.res-grid{grid-template-columns:1.15fr .85fr;gap:36px}.formbox{padding:30px}}
+
+/* はじめての方へ */
+.first{background:var(--cream)}
+.steps{display:grid;gap:14px;counter-reset:s;margin-top:20px}
+.steps li{counter-increment:s;display:grid;grid-template-columns:52px 1fr;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px}
+.steps li::before{content:counter(s);width:46px;height:46px;border-radius:50%;background:var(--leaf);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.3rem}
+.steps b{display:block;font-size:1.05rem}
+.steps span{font-size:.92rem;color:var(--muted)}
+.first .ok{margin-top:22px;font-weight:700;color:var(--leaf)}
+@media(min-width:861px){.steps{grid-template-columns:repeat(3,1fr)}.steps li{grid-template-columns:1fr;text-align:center;justify-items:center;padding:24px;align-content:start;align-items:start}}
+
+/* インストラクター */
+.inst{background:var(--sage)}
+.inst-list{display:grid;gap:36px;margin-top:10px}
+.person{display:grid;gap:18px}
+.person img{width:100%;max-width:300px;aspect-ratio:3/4;object-fit:cover;border-radius:110px 110px 16px 16px}
+.person h3{font-size:1.5rem;letter-spacing:.06em}
+.person h3 small{font-family:var(--sans);font-size:.85rem;margin-left:8px;color:#454e40;letter-spacing:.04em}
+details.learn{margin-top:14px;background:var(--card);border:1px solid var(--line);border-radius:14px}
+details.learn summary{min-height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 18px;font-weight:700;cursor:pointer;list-style:none}
+details.learn summary::-webkit-details-marker{display:none}
+details.learn summary::after{content:"＋";font-size:1.2rem;color:var(--bark)}
+details.learn[open] summary::after{content:"－"}
+details.learn ul{padding:0 18px 16px;font-size:.92rem;line-height:1.7}
+details.learn li{padding:5px 0 5px 1.1em;position:relative;border-top:1px dashed #cfd4bf}
+details.learn li::before{content:"";position:absolute;left:0;top:1em;width:6px;height:6px;border-radius:50% 0;background:var(--gold)}
+@media(min-width:861px){.person{grid-template-columns:300px 1fr;gap:40px;align-items:start}}
+
+/* イベント */
+.events{background:var(--cream)}
+.ev-grid{display:grid;gap:14px;margin:20px 0 34px}
+.ev{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:16px;padding:18px 20px}
+.ev h3{font-size:1.2rem;margin-bottom:6px}
+.ev dl{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;font-size:.96rem}
+.ev dt{font-weight:700;color:var(--bark)}
+.ev a{font-weight:700}
+.ws h3{font-size:1.2rem;margin-bottom:6px}
+.strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 22px 16px;margin:14px -22px 0;scrollbar-width:thin}
+.strip figure{flex:none;width:min(72vw,300px);scroll-snap-align:start}
+.strip img{width:100%;height:220px;object-fit:cover;border-radius:16px}
+.ws-names{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.ws-names li{background:var(--sage);border-radius:999px;padding:4px 14px;font-size:.9rem;line-height:1.6}
+.news{margin-top:28px;padding:16px 20px;border:2px dashed var(--gold);border-radius:14px;font-size:.96rem}
+.news a{font-weight:700;word-break:break-all}
+
+/* アクセス */
+.access{background:var(--sage)}
+.acc-grid{display:grid;gap:28px}
+.route{display:grid;gap:14px}
+.route-photos{display:grid;grid-template-columns:1.5fr 1fr;gap:10px;align-items:center;position:relative}
+.route-photos figure{position:relative}
+.route-photos img{width:100%;border-radius:14px;border:3px solid #fff;box-shadow:0 10px 24px -14px rgba(0,0,0,.5);object-fit:cover}
+.route-photos .a img{aspect-ratio:3/2}
+.route-photos .b img{aspect-ratio:2/3}
+.route-photos figcaption{position:absolute;left:8px;top:8px;background:var(--leaf);color:#fff;font-weight:700;font-size:.8rem;line-height:1;padding:6px 10px;border-radius:999px}
+.route-photos .arrow{position:absolute;left:58%;top:50%;transform:translate(-50%,-50%);width:38px;height:38px;border-radius:50%;background:var(--gold);color:#23271f;display:flex;align-items:center;justify-content:center;z-index:2;font-weight:700}
+.route-note{font-weight:700;color:var(--leaf)}
+.acc-dl{display:grid;gap:14px}
+.acc-dl div{background:var(--card);border-radius:14px;padding:14px 16px;border:1px solid var(--line)}
+.acc-dl dt{font-weight:700;color:var(--bark);font-size:.9rem}
+.acc-dl dd{font-size:.98rem}
+.acc-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+@media(min-width:861px){.acc-grid{grid-template-columns:1fr 1fr;gap:48px;align-items:start}}
+
+/* フッター */
+.ft{background:#1d2a22;color:#e7ebdc;padding:46px 0 40px;font-size:.95rem}
+.ft b{display:block;font-family:var(--serif);font-size:1.3rem;color:#fff;margin-bottom:8px}
+.ft p{margin-bottom:2px}
+.ft a{text-decoration:underline;text-underline-offset:3px}
+.ft .copy{margin-top:20px;font-size:.8rem;color:#aab3a0}
+
+/* 追従バー */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:90;display:none;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(35,39,31,.95)}
+.sticky .btn{flex:1;min-height:50px;padding:10px;font-size:.95rem}
+.sticky .btn.ghost{color:#fff;border-color:#fff}
+.sticky .btn.ghost:hover{background:#fff;color:var(--ink)}
+@media(max-width:860px){.sticky{display:flex}body{padding-bottom:76px}}
+
+/* ふわっと表示 */
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .btn,.fbtn,.slot{transition:none}
+}
+
+/* =====================================================
+   §7 モーション（html.mo = JSあり かつ reduced-motion でない、のときだけ有効）
+   ===================================================== */
+.sec{position:relative;overflow-x:clip}
+.sec>.wrap{position:relative;z-index:1}
+.btn,.fbtn,.slot,.tab{position:relative;overflow:hidden}
+.card{position:relative}
+
+/* 読んだ量の枝 */
+#prog{display:none}
+.mo #prog{display:block;position:fixed;left:0;top:0;width:100%;height:6px;z-index:300;pointer-events:none}
+#prog .bar{display:block;height:3px;background:linear-gradient(90deg,#6b4a35,#5f9a6f);transform-origin:0 50%;transform:scaleX(0);border-radius:0 3px 3px 0}
+#prog .tip{position:absolute;left:0;top:-3px;width:12px;height:17px;will-change:transform}
+
+/* ボタンの光 */
+.rip{position:absolute;left:0;top:0;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(255,229,160,.9),rgba(217,164,65,.5) 45%,rgba(217,164,65,0) 70%);animation:rip .7s ease-out forwards}
+.btn.gold .rip,.slot[aria-expanded="true"] .rip{background:radial-gradient(circle,rgba(255,255,255,.8),rgba(255,255,255,0) 70%)}
+@keyframes rip{from{transform:scale(.4);opacity:1}to{transform:scale(var(--sc,14));opacity:0}}
+
+/* 共通の出現 */
+.mo .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.75,.25,1)}
+.mo .reveal.in{opacity:1;transform:none}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(0)}70%{transform:scale(1.35)}100%{transform:scale(1)}}
+
+/* 見出し：横線が伸びる → 各行がせり上がる */
+.mo .eyebrow::before{transform:scaleX(0);transform-origin:0 50%;transition:transform .7s cubic-bezier(.2,.75,.25,1)}
+.mo .eyebrow.in::before{transform:scaleX(1)}
+.mask{display:block;overflow:hidden;padding-bottom:.2em;margin-bottom:-.2em}
+.mo .mask>.rise{display:block;transform:translateY(108%)}
+.mo h2.in .mask>.rise{transform:none;transition:transform 1s cubic-bezier(.2,.75,.25,1) .15s}
+.bgleaf{position:absolute;right:-30px;top:-14px;width:min(52vw,250px);height:auto;color:var(--leaf);opacity:.07;pointer-events:none;z-index:0;transform:translateY(var(--py,0px)) rotate(var(--rot,18deg))}
+.concept .bgleaf,.reserve .bgleaf{color:#fff;opacity:.07}
+.sec:nth-of-type(even) .bgleaf{right:auto;left:-40px;--rot:-24deg}
+
+/* セクションの境目の枝 */
+.branch{position:absolute;top:-20px;left:50%;width:1200px;height:40px;margin-left:-600px;z-index:3;pointer-events:none;overflow:visible}
+.branch .bl{fill:none;stroke:#6b4a35;stroke-width:2.2;stroke-linecap:round}
+.branch .lf{fill:#4a6c55}
+.branch .lf:nth-of-type(3n){fill:#d9a441}
+.mo .branch .bl{stroke-dasharray:1;stroke-dashoffset:1}
+.mo .branch.in .bl{stroke-dashoffset:0;transition:stroke-dashoffset 1.8s cubic-bezier(.4,.1,.2,1)}
+.mo .branch .lf{transform:scale(0);transform-box:fill-box;transform-origin:50% 100%}
+.mo .branch.in .lf{transform:scale(1);transition:transform .6s cubic-bezier(.3,1.6,.5,1);transition-delay:var(--dl,0s)}
+
+/* 写真：木漏れ日のように広がる */
+.blob{-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3C69 1 91 14 96 36 100 57 90 81 68 92 50 100 26 95 12 77 2 58 6 30 22 14 31 7 40 4 50 3Z'/%3E%3C/svg%3E") center/190% 190% no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 3C69 1 91 14 96 36 100 57 90 81 68 92 50 100 26 95 12 77 2 58 6 30 22 14 31 7 40 4 50 3Z'/%3E%3C/svg%3E") center/190% 190% no-repeat}
+.mo .blob{-webkit-mask-size:0% 0%;mask-size:0% 0%}
+.mo .blob.in,.mo .in .blob{-webkit-mask-size:190% 190%;mask-size:190% 190%;transition:mask-size 1.4s cubic-bezier(.25,.7,.2,1) var(--dl,0s),-webkit-mask-size 1.4s cubic-bezier(.25,.7,.2,1) var(--dl,0s)}
+[data-py]{transform:translateY(var(--py,0px))}
+.mo .person img{clip-path:inset(100% 0 0 0)}
+.mo .person.in img{clip-path:inset(0 0 0 0);transition:clip-path 1.4s cubic-bezier(.2,.75,.25,1) .15s}
+
+/* カード：起き上がる／浮く */
+:is(.card,.pbox,.ev,.concept-list li,.steps li){transition:transform .25s ease,box-shadow .25s ease}
+@media(hover:hover){:is(.card,.pbox,.ev,.concept-list li,.steps li):hover{transform:translateY(-5px);box-shadow:0 18px 30px -18px rgba(35,39,31,.42)}}
+.cards,.concept-list,.price-grid,.ev-grid,.steps,.inst-list{perspective:1000px}
+.mo .tilt{opacity:0;transform:rotateX(8deg) translateY(26px);transform-origin:50% 100%}
+.mo .tilt.in{opacity:1;transform:none;transition:opacity .7s ease calc(var(--i,0)*.09s),transform .85s cubic-bezier(.2,.75,.25,1) calc(var(--i,0)*.09s),box-shadow .25s ease}
+.mo .tilt.in.done{transition:transform .25s ease,box-shadow .25s ease,opacity .2s}
+@media(hover:hover){.mo .tilt.in.done:hover{transform:translateY(-5px);box-shadow:0 18px 30px -18px rgba(35,39,31,.42)}}
+
+/* 考え方：番号は葉の形 */
+.concept-list li::before{content:counter(c);display:flex;align-items:center;justify-content:center;width:46px;height:46px;margin-bottom:12px;font-family:var(--serif);font-size:1.3rem;font-weight:600;color:#23271f;background:var(--gold);border-radius:0 100% 0 100%;line-height:1}
+.mo .concept-list li::before{transform:scale(0) rotate(-70deg)}
+.mo .concept-list li.in::before{transform:none;transition:transform .8s cubic-bezier(.3,1.5,.5,1) calc(var(--i,0)*.09s + .4s)}
+
+/* クラス：★が点く／絞り込み */
+.mo .st{display:inline-block;opacity:.18;transform:scale(.5)}
+.mo .card.in .st{opacity:1;transform:none;transition:opacity .35s ease calc(.5s + var(--k)*.2s),transform .5s cubic-bezier(.3,1.7,.5,1) calc(.5s + var(--k)*.2s)}
+.card.leaving{opacity:0!important;transform:scale(.55)!important;transition:opacity .28s ease,transform .28s ease!important}
+
+/* スケジュール */
+.mo .tabpanel{transition:opacity .16s ease,transform .16s ease}
+.mo .tabpanel.swap-out{opacity:0;transform:translateX(var(--dx,-28px))}
+.mo .tabpanel.swap-in{animation:swapin .45s cubic-bezier(.2,.75,.25,1) both}
+@keyframes swapin{from{opacity:0;transform:translateX(var(--dx,28px))}to{opacity:1;transform:none}}
+.mo .tabpanel .day{opacity:0}
+.mo .tabpanel.in .day{animation:dayin .55s cubic-bezier(.2,.75,.25,1) both;animation-delay:calc(var(--i,0)*.09s)}
+.mo .tabpanel.in .day.today{animation:dayin .55s cubic-bezier(.2,.75,.25,1) calc(var(--i,0)*.09s) both,glow 1.3s ease-in-out calc(var(--i,0)*.09s + .7s) 2}
+@keyframes dayin{from{opacity:0;transform:translateX(-26px)}to{opacity:1;transform:none}}
+@keyframes glow{0%,100%{box-shadow:0 0 0 4px rgba(217,164,65,.22)}50%{box-shadow:0 0 0 12px rgba(217,164,65,.5)}}
+.mo .detail{max-height:700px;overflow:hidden;transition:max-height .4s ease,opacity .3s ease,padding .4s ease,margin .4s ease,border-width .4s ease}
+.mo .detail.shut{max-height:0;opacity:0;padding-top:0;padding-bottom:0;margin-top:0;border-width:0}
+
+/* 料金：光がすっと横切る */
+.pbox{position:relative;overflow:hidden}
+.pbox.sweep::after{content:"";position:absolute;top:0;bottom:0;left:0;width:45%;background:linear-gradient(100deg,transparent,rgba(217,164,65,.38),transparent);transform:translateX(-130%) skewX(-18deg);animation:sweep 1.3s ease-in-out .5s 1 forwards;pointer-events:none}
+@keyframes sweep{to{transform:translateX(330%) skewX(-18deg)}}
+.yen .num{font-variant-numeric:tabular-nums}
+
+/* はじめての方へ：つる */
+.steps-wrap{position:relative}
+.steps li{position:relative}
+.steps li::before{position:relative;z-index:2}
+.vine{position:absolute;z-index:3;pointer-events:none}
+.vine i{display:block;width:100%;height:100%;background:linear-gradient(90deg,#4a6c55,#d9a441);border-radius:3px;transform-origin:0 0}
+.vine.v i{background:linear-gradient(180deg,#4a6c55,#d9a441)}
+.mo .vine i{transform:scaleX(var(--vp,0))}
+.mo .vine.v i{transform:scaleY(var(--vp,0))}
+.mo .steps li::before{transform:scale(0)}
+.mo .steps li.reached::before{transform:scale(1);transition:transform .55s cubic-bezier(.3,1.7,.5,1)}
+
+/* ご予約 */
+.f select,.f input[type=text],.f input[type=date],.f textarea{background-color:#fff;background-image:linear-gradient(var(--gold),var(--gold));background-repeat:no-repeat;background-position:0 100%;background-size:0 3px;transition:background-size .45s cubic-bezier(.2,.75,.25,1),border-color .2s}
+.f select:focus,.f input:focus,.f textarea:focus{background-size:100% 3px;border-color:var(--leaf);outline:none}
+.f select:focus-visible,.f input:focus-visible,.f textarea:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.radios label{position:relative}
+.radios label::after{content:"";width:12px;height:12px;border-radius:0 100%;background:var(--gold);transform:scale(0) rotate(-45deg);transition:transform .45s cubic-bezier(.3,1.8,.5,1)}
+.radios label:has(input:checked)::after{transform:scale(1) rotate(0)}
+.env{display:inline-flex;margin-right:8px}
+.go .env{animation:fly 1s ease-in-out 1}
+@keyframes fly{0%{transform:translateX(0);opacity:1}55%{transform:translateX(150px);opacity:0}56%{transform:translateX(-40px);opacity:0}100%{transform:none;opacity:1}}
+
+/* インストラクター：学んできたこと */
+.mo details.learn[open] li{animation:up .45s both;animation-delay:calc(var(--i,0)*.05s)}
+
+/* ワークショップ */
+.strip figure img{transition:transform .35s ease,box-shadow .35s ease}
+@media(hover:hover){.strip figure:hover img{transform:perspective(700px) rotateY(-5deg) rotateX(2deg) scale(1.03);box-shadow:0 14px 24px -14px rgba(0,0,0,.5)}}
+.mo .strip figure{opacity:0;transform:translateX(30px)}
+.mo .strip.in figure{opacity:1;transform:none;transition:opacity .6s ease calc(var(--i,0)*.08s),transform .7s cubic-bezier(.2,.75,.25,1) calc(var(--i,0)*.08s)}
+.mo .strip.in.nudged figure{animation:nudge 1.3s ease-in-out 1}
+@keyframes nudge{0%,100%{translate:0 0}35%{translate:-52px 0}}
+
+/* アクセス */
+.route-photos .arrow svg{display:block}
+.mo .route-photos .arrow{transform:translate(-50%,-50%) scale(0)}
+.mo .route-photos.in .arrow{transform:translate(-50%,-50%) scale(1);transition:transform .5s cubic-bezier(.3,1.6,.5,1) 1s}
+.mo .route-photos .ar{stroke-dasharray:1;stroke-dashoffset:1}
+.mo .route-photos.in .ar{stroke-dashoffset:0;transition:stroke-dashoffset .6s ease 1.25s}
+.route-photos .b .blob{--dl:1.6s}
+.mo .route-photos figcaption{opacity:0}
+.mo .route-photos.in figcaption{opacity:1;transition:opacity .5s ease .7s}
+.mo .route-photos.in .b figcaption{transition-delay:1.9s}
+.road{display:flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;color:var(--bark)}
+.road svg{flex:1;height:40px;min-width:0}
+.road .wk{opacity:0}
+.road.go .wk{opacity:1}
+
+/* フッター */
+.ft-tree{display:block;width:96px;height:auto;margin-bottom:10px}
+.ft-tree path{fill:none;stroke:#e7ebdc;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ft-tree .g{stroke:#d9a441}
+.mo .ft-tree path{stroke-dasharray:1;stroke-dashoffset:1}
+.mo .ft.in .ft-tree path{stroke-dashoffset:0;transition:stroke-dashoffset 1.6s ease calc(var(--n,0)*.3s)}
+.mo .ft b{opacity:0;transform:translateY(14px)}
+.mo .ft.in b{opacity:1;transform:none;transition:opacity .8s ease 1.5s,transform .8s ease 1.5s}
+
+/* 最初の画面 */
+.hero-photo .frame{position:relative}
+.hero-photo .zoom{will-change:transform}
+.leaves{display:none}
+.mo .leaves{display:block;position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;--fall:640px}
+.mo .leaves i{position:absolute;top:0;left:var(--x);width:var(--s,16px);height:calc(var(--s,16px)*1.5);opacity:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'%3E%3Cpath d='M10 1C18 9 19 21 10 29 1 21 2 9 10 1Z' fill='%234a6c55'/%3E%3Cpath d='M10 7V27' stroke='%23dfe5d6' stroke-width='1.2'/%3E%3C/svg%3E") center/contain no-repeat;animation:fall var(--t,18s) linear var(--dl,0s) infinite;animation-play-state:paused}
+.mo .leaves i:nth-child(even){background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'%3E%3Cpath d='M10 1C18 9 19 21 10 29 1 21 2 9 10 1Z' fill='%23d9a441'/%3E%3Cpath d='M10 7V27' stroke='%23fff3d0' stroke-width='1.2'/%3E%3C/svg%3E")}
+.mo .leaves.live i{animation-play-state:running}
+@keyframes fall{
+  0%{opacity:0;transform:translate(0,-30px) rotate(0)}
+  5%{opacity:.8}
+  28%{transform:translate(36px,calc(var(--fall)*.28)) rotate(55deg)}
+  52%{transform:translate(-22px,calc(var(--fall)*.55)) rotate(-35deg)}
+  76%{opacity:.8;transform:translate(30px,calc(var(--fall)*.88)) rotate(70deg)}
+  84%{opacity:0;transform:translate(34px,var(--fall)) rotate(90deg)}
+  100%{opacity:0;transform:translate(34px,var(--fall)) rotate(90deg)}
+}
+.cue{display:none}
+.mo .cue{display:flex;flex-direction:column;align-items:center;gap:4px;position:absolute;left:50%;bottom:10px;margin-left:-30px;width:60px;font-size:.72rem;letter-spacing:.14em;color:var(--leaf);font-weight:700;z-index:2}
+.cue b{position:relative;display:block;width:2px;height:44px;background:rgba(47,74,58,.25);overflow:hidden;border-radius:2px}
+.cue b::after{content:"";position:absolute;left:-4px;top:0;width:10px;height:15px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 30'%3E%3Cpath d='M10 1C18 9 19 21 10 29 1 21 2 9 10 1Z' fill='%232f4a3a'/%3E%3C/svg%3E") center/contain no-repeat;animation:cue 2.2s ease-in infinite}
+@keyframes cue{from{transform:translateY(-16px)}to{transform:translateY(46px)}}
+
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.14em;margin-bottom:-.14em}
+.mo .hero h1 .ln>span{display:block;animation:lineup 1.05s cubic-bezier(.2,.75,.25,1) both;animation-delay:calc(.1s + var(--n)*.16s)}
+@keyframes lineup{from{transform:translateY(110%)}to{transform:none}}
+.mo .hero p.sub{animation:up .7s .45s both}
+.mo .hero-cta{animation:up .7s .6s both}
+.mo .facts li{animation:up .6s both;animation-delay:calc(.8s + var(--n)*.16s)}
+.mo .facts li::before{animation:pop .55s both;animation-delay:calc(.9s + var(--n)*.16s)}
+.mo .hero-photo{animation:up 1s .3s both}
+.mo .hero-photo .frame img{animation:photorise 1.6s cubic-bezier(.2,.75,.25,1) .4s both}
+@keyframes photorise{from{transform:translateY(105%)}to{transform:none}}
+.mo .hero-photo .zoom{animation:zoom 20s ease-in-out 2s infinite alternate}
+@keyframes zoom{from{transform:scale(1)}to{transform:scale(1.08)}}
+.mo .hero::before{inset:0 -6%;animation:beam 16s ease-in-out infinite alternate}
+@keyframes beam{from{transform:translateX(-4%)}to{transform:translateX(4%)}}
+.mo .tw{animation:tw 4.6s ease-in-out infinite alternate}
+.mo .tw.t2{animation-duration:6.4s;animation-delay:-2s}
+.mo .tw.t3{animation-duration:5.2s;animation-delay:-3.5s}
+@keyframes tw{from{opacity:.12}to{opacity:.95}}
+
+/* モンキーポッドって？の木 */
+.about-tree{display:block;width:100%;max-width:330px;height:auto;margin-top:26px}
+.about-tree path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.about-tree .tr{stroke:#6b4a35;stroke-width:5}
+.about-tree .br{stroke:#6b4a35;stroke-width:3}
+.about-tree .cn{stroke:#2f4a3a;stroke-width:3}
+.about-tree .rt{stroke:#6b4a35;stroke-width:3}
+.about-tree .dots circle{fill:#d9a441}
+.mo .about-tree .draw{stroke-dasharray:1;stroke-dashoffset:var(--o,1)}
+.mo .about-tree .dots{opacity:var(--dp,0)}
+@media(min-width:861px){.about-text{position:relative}}
+
+@media(prefers-reduced-motion:reduce){.rip,.go .env{animation:none}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');if(!matchMedia('(prefers-reduced-motion:reduce)').matches)document.documentElement.classList.add('mo')</script>
+<a class="skip" href="#main">本文へ</a>
+<div class="demo-band">デモ版（確認用）</div>
+
+<header class="hd">
+  <div class="hd-in">
+    <a class="logo" href="#top">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><path d="M3 20c0-8 6-13 12-13 2-3 8-5 12-1 5-1 10 3 10 9 0 4-4 7-9 7H12C7 22 3 22 3 20z" fill="#2f4a3a"/><circle cx="13" cy="14" r="2" fill="#d9a441"/><circle cx="27" cy="12" r="1.6" fill="#d9a441"/><path d="M19 21h3l1 15h-5z" fill="#6b4a35"/></svg>
+      <span><b>Monkeypod</b><small>Yoga &amp; Pilates Studio</small></span>
+    </a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="gnav">メニュー</button>
+    <nav class="gnav" id="gnav" aria-label="メインメニュー">
+      <ul>
+        <li><a href="#about">スタジオについて</a></li>
+        <li><a href="#classes">クラス</a></li>
+        <li><a href="#schedule">スケジュール</a></li>
+        <li><a href="#price">料金</a></li>
+        <li><a href="#reserve">予約</a></li>
+        <li><a href="#access">アクセス</a></li>
+      </ul>
+    </nav>
+    <a class="btn sm" href="#reserve">予約・お問い合わせ</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <svg class="canopy" viewBox="0 0 1440 300" preserveAspectRatio="xMidYMin slice" aria-hidden="true" focusable="false"><g fill="#6c8a70" opacity="0.85"><g class="sway s1" style="transform-origin:240px 0"><circle cx="-44" cy="151" r="73"/><circle cx="12" cy="178" r="64"/><circle cx="73" cy="176" r="53"/><circle cx="144" cy="145" r="55"/><circle cx="206" cy="198" r="56"/><circle cx="263" cy="184" r="82"/><circle cx="334" cy="168" r="83"/><circle cx="383" cy="200" r="61"/><circle cx="447" cy="148" r="62"/></g><g class="sway s2" style="transform-origin:720px 0"><circle cx="526" cy="153" r="71"/><circle cx="583" cy="166" r="70"/><circle cx="632" cy="144" r="59"/><circle cx="708" cy="170" r="62"/><circle cx="768" cy="172" r="62"/><circle cx="835" cy="189" r="60"/><circle cx="892" cy="177" r="80"/><circle cx="958" cy="160" r="83"/></g><g class="sway s3" style="transform-origin:1200px 0"><circle cx="1005" cy="169" r="76"/><circle cx="1068" cy="174" r="53"/><circle cx="1142" cy="194" r="70"/><circle cx="1209" cy="162" r="74"/><circle cx="1264" cy="181" r="67"/><circle cx="1332" cy="206" r="67"/><circle cx="1390" cy="144" r="74"/><circle cx="1452" cy="210" r="78"/></g></g><g fill="#4a6c55" opacity="1"><g class="sway s1" style="transform-origin:240px 0"><circle cx="-45" cy="126" r="70"/><circle cx="5" cy="130" r="55"/><circle cx="63" cy="108" r="73"/><circle cx="119" cy="119" r="62"/><circle cx="193" cy="109" r="63"/><circle cx="241" cy="154" r="75"/><circle cx="305" cy="120" r="62"/><circle cx="349" cy="154" r="79"/><circle cx="400" cy="115" r="57"/><circle cx="458" cy="132" r="68"/></g><g class="sway s2" style="transform-origin:720px 0"><circle cx="514" cy="105" r="63"/><circle cx="573" cy="136" r="79"/><circle cx="637" cy="133" r="69"/><circle cx="692" cy="108" r="77"/><circle cx="751" cy="153" r="74"/><circle cx="797" cy="127" r="53"/><circle cx="859" cy="108" r="52"/><circle cx="905" cy="114" r="60"/><circle cx="957" cy="105" r="55"/></g><g class="sway s3" style="transform-origin:1200px 0"><circle cx="1014" cy="125" r="51"/><circle cx="1089" cy="139" r="54"/><circle cx="1130" cy="124" r="61"/><circle cx="1183" cy="152" r="80"/><circle cx="1247" cy="132" r="53"/><circle cx="1294" cy="124" r="58"/><circle cx="1368" cy="114" r="51"/><circle cx="1427" cy="134" r="54"/><circle cx="1473" cy="106" r="66"/></g></g><g fill="#2f4a3a" opacity="1"><g class="sway s1" style="transform-origin:240px 0"><circle cx="-29" cy="109" r="65"/><circle cx="4" cy="87" r="51"/><circle cx="67" cy="94" r="68"/><circle cx="106" cy="80" r="69"/><circle cx="172" cy="108" r="69"/><circle cx="218" cy="103" r="52"/><circle cx="260" cy="86" r="47"/><circle cx="299" cy="83" r="53"/><circle cx="365" cy="113" r="59"/><circle cx="420" cy="114" r="73"/><circle cx="457" cy="80" r="52"/></g><g class="sway s2" style="transform-origin:720px 0"><circle cx="503" cy="79" r="63"/><circle cx="570" cy="108" r="59"/><circle cx="614" cy="106" r="48"/><circle cx="664" cy="111" r="68"/><circle cx="716" cy="92" r="51"/><circle cx="767" cy="85" r="68"/><circle cx="821" cy="88" r="57"/><circle cx="871" cy="103" r="51"/><circle cx="901" cy="77" r="71"/></g><g class="sway s3" style="transform-origin:1200px 0"><circle cx="967" cy="77" r="69"/><circle cx="1022" cy="100" r="56"/><circle cx="1061" cy="76" r="46"/><circle cx="1121" cy="99" r="61"/><circle cx="1170" cy="90" r="70"/><circle cx="1218" cy="79" r="53"/><circle cx="1255" cy="81" r="62"/><circle cx="1304" cy="89" r="50"/><circle cx="1370" cy="86" r="59"/><circle cx="1412" cy="111" r="58"/><circle cx="1470" cy="93" r="61"/></g></g><rect x="0" y="0" width="1440" height="96" fill="#2f4a3a"/><g fill="#3b5d48"><ellipse cx="754" cy="122" rx="6" ry="15" transform="rotate(-5 754 122)"/><ellipse cx="264" cy="120" rx="6" ry="15" transform="rotate(24 264 120)"/><ellipse cx="248" cy="160" rx="6" ry="15" transform="rotate(18 248 160)"/><ellipse cx="801" cy="148" rx="6" ry="15" transform="rotate(1 801 148)"/><ellipse cx="800" cy="187" rx="6" ry="15" transform="rotate(-32 800 187)"/><ellipse cx="807" cy="141" rx="6" ry="15" transform="rotate(-18 807 141)"/><ellipse cx="1112" cy="163" rx="6" ry="15" transform="rotate(5 1112 163)"/><ellipse cx="1094" cy="198" rx="6" ry="15" transform="rotate(-5 1094 198)"/><ellipse cx="882" cy="163" rx="6" ry="15" transform="rotate(1 882 163)"/><ellipse cx="998" cy="158" rx="6" ry="15" transform="rotate(3 998 158)"/><ellipse cx="688" cy="200" rx="6" ry="15" transform="rotate(16 688 200)"/><ellipse cx="1262" cy="200" rx="6" ry="15" transform="rotate(-19 1262 200)"/><ellipse cx="806" cy="200" rx="6" ry="15" transform="rotate(27 806 200)"/><ellipse cx="197" cy="130" rx="6" ry="15" transform="rotate(-5 197 130)"/><ellipse cx="104" cy="140" rx="6" ry="15" transform="rotate(-34 104 140)"/><ellipse cx="964" cy="187" rx="6" ry="15" transform="rotate(32 964 187)"/><ellipse cx="222" cy="181" rx="6" ry="15" transform="rotate(13 222 181)"/><ellipse cx="206" cy="195" rx="6" ry="15" transform="rotate(37 206 195)"/><ellipse cx="316" cy="201" rx="6" ry="15" transform="rotate(-8 316 201)"/><ellipse cx="702" cy="204" rx="6" ry="15" transform="rotate(27 702 204)"/><ellipse cx="233" cy="157" rx="6" ry="15" transform="rotate(1 233 157)"/><ellipse cx="488" cy="137" rx="6" ry="15" transform="rotate(-15 488 137)"/><ellipse cx="1040" cy="122" rx="6" ry="15" transform="rotate(4 1040 122)"/><ellipse cx="634" cy="122" rx="6" ry="15" transform="rotate(-13 634 122)"/><ellipse cx="898" cy="164" rx="6" ry="15" transform="rotate(-35 898 164)"/><ellipse cx="1419" cy="187" rx="6" ry="15" transform="rotate(38 1419 187)"/><ellipse cx="151" cy="143" rx="6" ry="15" transform="rotate(-37 151 143)"/><ellipse cx="1122" cy="143" rx="6" ry="15" transform="rotate(-30 1122 143)"/><ellipse cx="608" cy="197" rx="6" ry="15" transform="rotate(26 608 197)"/><ellipse cx="372" cy="133" rx="6" ry="15" transform="rotate(34 372 133)"/><ellipse cx="822" cy="180" rx="6" ry="15" transform="rotate(-33 822 180)"/><ellipse cx="83" cy="178" rx="6" ry="15" transform="rotate(-6 83 178)"/><ellipse cx="104" cy="200" rx="6" ry="15" transform="rotate(11 104 200)"/><ellipse cx="1154" cy="127" rx="6" ry="15" transform="rotate(28 1154 127)"/><ellipse cx="96" cy="193" rx="6" ry="15" transform="rotate(-4 96 193)"/><ellipse cx="488" cy="167" rx="6" ry="15" transform="rotate(34 488 167)"/><ellipse cx="386" cy="131" rx="6" ry="15" transform="rotate(2 386 131)"/><ellipse cx="343" cy="129" rx="6" ry="15" transform="rotate(-27 343 129)"/><ellipse cx="73" cy="137" rx="6" ry="15" transform="rotate(-15 73 137)"/><ellipse cx="439" cy="185" rx="6" ry="15" transform="rotate(-17 439 185)"/><ellipse cx="720" cy="135" rx="6" ry="15" transform="rotate(-12 720 135)"/><ellipse cx="26" cy="141" rx="6" ry="15" transform="rotate(-39 26 141)"/><ellipse cx="1056" cy="167" rx="6" ry="15" transform="rotate(-25 1056 167)"/><ellipse cx="684" cy="199" rx="6" ry="15" transform="rotate(-31 684 199)"/><ellipse cx="1179" cy="157" rx="6" ry="15" transform="rotate(-0 1179 157)"/><ellipse cx="1202" cy="153" rx="6" ry="15" transform="rotate(1 1202 153)"/></g><g class="tw t1" fill="#d9a441" opacity=".55"><circle cx="983" cy="148" r="4.7"/><circle cx="202" cy="38" r="6.7"/><circle cx="415" cy="59" r="4.5"/><circle cx="786" cy="59" r="7.8"/><circle cx="301" cy="91" r="3.0"/><circle cx="346" cy="100" r="5.6"/><circle cx="1399" cy="48" r="6.6"/><circle cx="1157" cy="47" r="5.6"/><circle cx="976" cy="113" r="4.1"/></g><g class="tw t2" fill="#d9a441" opacity=".55"><circle cx="1185" cy="115" r="6.2"/><circle cx="378" cy="50" r="3.4"/><circle cx="663" cy="49" r="5.2"/><circle cx="453" cy="73" r="3.0"/><circle cx="390" cy="41" r="5.0"/><circle cx="1071" cy="109" r="6.6"/><circle cx="921" cy="35" r="7.2"/><circle cx="726" cy="130" r="7.0"/><circle cx="64" cy="46" r="4.8"/></g><g class="tw t3" fill="#d9a441" opacity=".55"><circle cx="587" cy="72" r="3.3"/><circle cx="1198" cy="134" r="6.4"/><circle cx="389" cy="145" r="7.9"/><circle cx="554" cy="87" r="5.5"/><circle cx="78" cy="33" r="4.5"/><circle cx="1251" cy="77" r="4.6"/><circle cx="1269" cy="105" r="6.7"/><circle cx="1177" cy="100" r="7.5"/></g></svg>
+<div class="leaves" aria-hidden="true"><i style="--x:52%;--s:16px;--t:19s;--dl:-2s"></i><i style="--x:66%;--s:13px;--t:23s;--dl:-9s"></i><i style="--x:80%;--s:18px;--t:21s;--dl:-14s"></i><i style="--x:92%;--s:14px;--t:25s;--dl:-5s"></i></div>
+  <div class="wrap hero-in">
+    <div class="hero-text">
+      <p class="eyebrow">埼玉県久喜市・2007年オープン</p>
+      <h1><span class="ln"><span style="--n:0">大きな木の下で、</span></span><span class="ln"><span style="--n:1">ゆっくり、</span></span><span class="ln"><span style="--n:2">自分の体と向き合う。</span></span></h1>
+      <p class="sub">少人数のヨガと、マンツーマンのピラティス。初めての方も、体が硬い方も、どうぞ安心していらしてください。</p>
+      <div class="hero-cta">
+        <a class="btn" href="#schedule">今週のスケジュールを見る</a>
+        <a class="btn ghost" href="#reserve">予約・お問い合わせ</a>
+      </div>
+      <ul class="facts">
+        <li style="--n:0">ヨガは1クラス5名まで</li>
+        <li style="--n:1">1レッスン2,500円・月謝なし</li>
+        <li style="--n:2">専用駐車場あり</li>
+      </ul>
+    </div>
+    <div class="hero-photo">
+      <figure class="frame"><div class="zoom"><img src="img/01.webp" width="1000" height="750" alt="大きな窓から光が入る、ピラティスの器具が並ぶ部屋"></div></figure>
+    </div>
+  </div>
+  <div class="cue" aria-hidden="true">スクロール<b></b></div>
+</section>
+
+<section class="sec about" id="about">
+  <div class="leaves" style="--fall:560px" aria-hidden="true"><i style="--x:6%;--s:15px;--t:20s;--dl:-4s"></i><i style="--x:44%;--s:13px;--t:24s;--dl:-12s"></i><i style="--x:72%;--s:17px;--t:22s;--dl:-8s"></i><i style="--x:90%;--s:14px;--t:26s;--dl:-16s"></i></div>
+  <div class="wrap about-grid">
+    <div class="about-text reveal">
+      <p class="eyebrow">About</p>
+      <h2>「モンキーポッド」って？</h2>
+      <p>「この木なんの木 気になる木」のCMでおなじみの、ハワイにある大きな木の名前です。</p>
+      <p>モンキーポッドのように深く長く根を張り、大きく枝葉を広げて、たくさんの木陰をつくりたい。その木陰で、多くの方がのんびりくつろげるような、心やすらぐ空間を味わっていただけたらと思っています。</p>
+      <p class="em">安心していらしてください。</p>
+      <svg class="about-tree" viewBox="0 0 360 300" role="img" aria-label="大きく枝を広げ、深く根を張るモンキーポッドの木の線画">
+        <path class="tr draw" data-s="0" data-e=".26" pathLength="1" d="M180 212C177 180 183 150 180 118"/>
+        <path class="br draw" data-s=".2" data-e=".5" pathLength="1" d="M180 142C140 134 108 124 70 114M180 128C220 118 256 108 296 100M180 154C162 148 144 152 122 142M180 120C186 104 192 92 202 80"/>
+        <path class="cn draw" data-s=".42" data-e=".82" pathLength="1" d="M40 112C28 72 70 42 100 54C112 22 162 12 186 32C216 8 266 22 272 54C312 46 338 86 322 114M64 100C70 84 90 76 108 84M150 58C170 48 196 52 206 66M236 70C256 62 282 68 290 88"/>
+        <g class="dots"><circle cx="92" cy="74" r="4"/><circle cx="150" cy="40" r="3.5"/><circle cx="214" cy="46" r="4"/><circle cx="268" cy="78" r="3.5"/><circle cx="306" cy="98" r="3"/><circle cx="60" cy="98" r="3"/></g>
+        <path class="rt draw" data-s=".8" data-e="1" pathLength="1" d="M180 212C170 236 150 256 118 270M180 212C186 242 202 262 238 274M180 212C180 240 176 262 170 288M148 254C138 262 128 276 116 284M214 252C226 258 238 268 250 284"/>
+      </svg>
+    </div>
+    <div class="about-photos reveal">
+      <figure><img src="img/02.webp" width="750" height="1000" alt="木の床と白い壁の、広々としたスタジオの中" loading="lazy"></figure>
+      <figure><img src="img/03.webp" width="749" height="1000" alt="ヨガマットに横になって行うレッスンの様子" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<section class="sec concept" id="concept">
+  <div class="wrap">
+    <p class="eyebrow">Concept</p>
+    <h2>自分で、自分を整えられるように</h2>
+    <ul class="concept-list">
+      <li class="reveal"><h3>体の「自立」を目指すスタジオ</h3><p>病院や整体に頼りきるのではなく、自分で自分の体を整えられるように。そのための体の使い方を、ヨガとピラティスで身につけていきます。</p></li>
+      <li class="reveal"><h3>整体・ヨガ・ピラティスを、ひとつに</h3><p>整える（整体）、正しく動かす（ピラティス・ヨガ）、運動指導の知識。綿本ヨーガスタジオ本部講師としての経験、井本整体で学んだ人体力学、武田淳也先生から学んだピラティス、健康運動指導士としての知識をもとにレッスンをしています。</p></li>
+      <li class="reveal"><h3>「健康寿命プラス10歳」を目標に</h3><p>年齢を重ねても、自分の足で、自分らしく動ける体でいるために。長く続けられるペースで通っていただけるスタジオでありたいと考えています。</p></li>
+      <li class="reveal"><h3>年会費なし・月謝なし</h3><p>来られるときに、1回ずつ。気軽にいつでもご参加いただけます。</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec classes" id="classes">
+  <div class="wrap">
+    <p class="eyebrow">Class</p>
+    <h2>クラス紹介</h2>
+    <p class="lead">基本はホットヨガで、クラスによって常温のものもあります。同じクラスを続けても、いろいろなクラスを組み合わせても大丈夫です。どのクラスも、初めての方からヨガを教えている方まで参加できます。</p>
+
+    <div class="filters" role="group" aria-label="運動量で選ぶ">
+      <span class="filter-label" id="flabel">運動量で選ぶ</span>
+      <button type="button" class="fbtn" data-f="all" aria-pressed="true">すべて</button>
+      <button type="button" class="fbtn" data-f="1" aria-pressed="false">ゆったり ★</button>
+      <button type="button" class="fbtn" data-f="2" aria-pressed="false">ほどよく ★★</button>
+      <button type="button" class="fbtn" data-f="3" aria-pressed="false">しっかり ★★★</button>
+    </div>
+    <p id="fcount" aria-live="polite" style="position:absolute;left:-999px"></p>
+
+    <div class="cards" id="cards">
+      <article class="card" id="c-raja" data-class="raja" data-level="1" data-temp="room" data-teacher="MIEKO">
+        <h3>ラージャヨガ</h3>
+        <div class="meta"><span class="tag lv">運動量 ★</span><span class="tag room">常温</span><span class="tag who">担当 MIEKO</span></div>
+        <p class="c-desc">「ラージャ」は王様の意味。綿本昇師から伝わるラージャヨガの準備運動から始め、ポーズを一つずつ丁寧に行って、体の感覚を細やかにしていくクラスです。</p>
+      </article>
+      <article class="card" id="c-in" data-class="in" data-level="1" data-temp="hot" data-teacher="MIEKO">
+        <h3>インヨガ</h3>
+        <div class="meta"><span class="tag lv">運動量 ★</span><span class="tag hot">ホット</span><span class="tag who">担当 MIEKO</span></div>
+        <p class="c-desc">一つのポーズを3分ほど保ち、体の奥まで、じっくり向き合います。その月に負担のかかりやすい経絡に着目したポーズを行います。</p>
+      </article>
+      <article class="card" id="c-yogatis" data-class="yogatis" data-level="2" data-temp="hot" data-teacher="MIEKO">
+        <h3>ヨガティス</h3>
+        <div class="meta"><span class="tag lv">運動量 ★★</span><span class="tag hot">ホット</span><span class="tag who">担当 MIEKO</span></div>
+        <p class="c-desc">ヨガとピラティスを合わせたクラス。体幹を使いながら、ヨガのポーズをとっていきます。</p>
+      </article>
+      <article class="card" id="c-vinyasa" data-class="vinyasa" data-level="3" data-temp="room" data-teacher="YUKI">
+        <h3>スローヴィンヤサ</h3>
+        <div class="meta"><span class="tag lv">運動量 ★★★</span><span class="tag room">常温</span><span class="tag who">担当 YUKI</span></div>
+        <p class="c-desc">ゆっくりとした呼吸に合わせて、ポーズをつないでいきます。常温なので呼吸に集中しやすく、初めての方も参加しやすいクラスです。</p>
+      </article>
+      <article class="card" id="c-flow" data-class="flow" data-level="1" data-temp="hot" data-teacher="MIEKO">
+        <h3>スローフローヨガ</h3>
+        <div class="meta"><span class="tag lv">運動量 ★</span><span class="tag hot">ホット</span><span class="tag who">担当 MIEKO</span></div>
+        <p class="c-desc">呼吸とともに、止まることなく、心地よく流れるように動いていくクラス。体の中の流れ、気持ちの流れがひとつになっていく時間を味わってください。</p>
+      </article>
+      <article class="card" id="c-bodycare" data-class="bodycare" data-level="3" data-temp="hot" data-teacher="MIEKO">
+        <h3>ボディケアヨガ</h3>
+        <div class="meta"><span class="tag lv">運動量 ★★★</span><span class="tag hot">ホット</span><span class="tag who">担当 MIEKO</span></div>
+        <p class="c-desc">整体の知識をヨガのポーズに取り入れ、自分で体を整えていくクラス。肩や腰が気になる方にもおすすめです。</p>
+      </article>
+      <article class="card" id="c-pilates" data-class="pilates" data-level="0" data-temp="" data-teacher="">
+        <h3>ピラティス（マンツーマン）</h3>
+        <div class="meta"><span class="tag room">完全予約制</span></div>
+        <p class="c-desc">一人ひとりの体の状態を見ながら、マンツーマンで行うピラティスです。完全予約制。</p>
+      </article>
+    </div>
+
+    <div class="bring" id="items">
+      <h3>持ち物</h3>
+      <ul><li>動きやすい服装</li><li>汗拭きタオル</li><li>飲み物</li><li>バスタオルまたはヨガラグ（ヨガマットの上に敷きます）</li></ul>
+      <p>ヨガマットは無料でお貸しします。</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec schedule" id="schedule">
+  <div class="wrap">
+    <p class="eyebrow">Schedule</p>
+    <h2>スケジュール</h2>
+
+    <div class="tabs" role="tablist" aria-label="ヨガとピラティスの切り替え">
+      <button class="tab" role="tab" id="tab-yoga" aria-controls="panel" aria-selected="true" data-k="yoga" type="button">ヨガ</button>
+      <button class="tab" role="tab" id="tab-pilates" aria-controls="panel" aria-selected="false" tabindex="-1" data-k="pilates" type="button">ピラティス</button>
+    </div>
+    <div class="tabpanel" id="panel" role="tabpanel" aria-labelledby="tab-yoga" aria-live="polite"></div>
+
+    <div class="nojs-table">
+      <h3>ヨガ（定員5名・先着順）</h3>
+      <table>
+        <thead><tr><th scope="col">曜日</th><th scope="col">時間</th><th scope="col">クラス</th><th scope="col">担当</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">月</th><td>10:00〜11:30</td><td><a href="#c-raja">ラージャヨガ</a>（常温）</td><td>MIEKO</td></tr>
+          <tr><th scope="row">月</th><td>19:30〜21:00</td><td><a href="#c-in">インヨガ</a></td><td>MIEKO</td></tr>
+          <tr><th scope="row">火</th><td>19:30〜21:00</td><td><a href="#c-yogatis">ヨガティス</a></td><td>MIEKO</td></tr>
+          <tr><th scope="row">水</th><td colspan="3">ピラティスの日（ヨガはお休み）</td></tr>
+          <tr><th scope="row">木</th><td>10:00〜11:30</td><td><a href="#c-vinyasa">スローヴィンヤサ</a>（常温）</td><td>YUKI</td></tr>
+          <tr><th scope="row">木</th><td>19:30〜21:00</td><td><a href="#c-flow">スローフローヨガ</a></td><td>MIEKO</td></tr>
+          <tr><th scope="row">金</th><td>19:30〜21:00</td><td><a href="#c-bodycare">ボディケアヨガ</a></td><td>MIEKO</td></tr>
+        </tbody>
+      </table>
+      <h3>ピラティス（マンツーマン・完全予約制）</h3>
+      <table>
+        <thead><tr><th scope="col">曜日</th><th scope="col">時間</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">月</th><td>13:30〜16:00</td></tr>
+          <tr><th scope="row">火</th><td>13:30〜16:00</td></tr>
+          <tr><th scope="row">水</th><td>9:00〜（終日）</td></tr>
+          <tr><th scope="row">木</th><td>14:00〜16:00</td></tr>
+          <tr><th scope="row">金</th><td>第1・第3週 10:00〜、第2・第4週 13:30〜（16:00まで）</td></tr>
+          <tr><th scope="row">土</th><td>9:00〜12:00</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="sched-foot">ご予約はメール・お電話で受け付けています。各クラスの「このクラスを予約する」から、予約のメールを作れます。</p>
+  </div>
+</section>
+
+<section class="sec price" id="price">
+  <div class="wrap">
+    <p class="eyebrow">Price</p>
+    <h2>料金</h2>
+    <div class="price-grid">
+      <div class="pbox reveal">
+        <h3>ヨガ</h3>
+        <div class="prow"><div class="l">1レッスン</div><div class="yen">2,500<small>円</small></div></div>
+      </div>
+      <div class="pbox reveal">
+        <h3>ピラティス</h3>
+        <div class="prow"><div class="l">30分 アセスメント</div><div class="yen">5,000<small>円</small></div></div>
+        <div class="prow"><div class="l">60分 トータルケア</div><div class="yen">9,000<small>円</small></div></div>
+      </div>
+      <div class="pbox reveal">
+        <h3>回数券</h3>
+        <div class="prow"><div class="l">30分×5枚<small>1回あたり4,800円</small></div><div class="yen">24,000<small>円</small></div></div>
+        <div class="prow"><div class="l">90分×5枚</div><div class="yen">44,000<small>円</small></div></div>
+      </div>
+    </div>
+    <p class="price-note">年会費・月謝はありません。来られるときに、1回ずつお支払いください。</p>
+  </div>
+</section>
+
+<section class="sec reserve" id="reserve">
+  <div class="wrap">
+    <p class="eyebrow">Reserve</p>
+    <h2>ご予約・お問い合わせ</h2>
+    <div class="res-grid">
+      <div class="formbox">
+        <h3>予約のメールを作る</h3>
+        <p class="hint">入力すると、件名と本文の入ったメールが開きます。送信はご自身で行ってください。</p>
+        <p class="nojs-note">JavaScriptが使えない環境です。右のメールアドレスか、お電話でご連絡ください。</p>
+        <form id="rform" class="js-only" novalidate>
+          <div class="f"><label for="f-class">クラス<span class="req">必須</span></label>
+            <select id="f-class" required>
+              <option value="">選んでください</option>
+              <optgroup label="ピラティス・そのほか">
+                <option value="pilates">ピラティス（マンツーマン）</option>
+                <option value="other">そのほかのお問い合わせ</option>
+              </optgroup>
+            </select></div>
+          <div class="f"><label for="f-date">希望の日</label><input type="date" id="f-date"></div>
+          <div class="f"><label for="f-name">お名前<span class="req">必須</span></label><input type="text" id="f-name" autocomplete="name" required></div>
+          <div class="f"><fieldset><legend>初めてのご参加ですか？</legend>
+            <div class="radios"><label><input type="radio" name="first" value="はい" checked>はい</label><label><input type="radio" name="first" value="いいえ">いいえ</label></div></fieldset></div>
+          <div class="f"><label for="f-msg">ひとこと（任意）</label><textarea id="f-msg"></textarea></div>
+          <p id="ferr" role="alert" style="color:var(--hot-d);font-weight:700;margin-bottom:10px"></p>
+          <button class="btn" type="submit"><span class="env" aria-hidden="true"><svg viewBox="0 0 24 18" width="22" height="16"><rect x="1.5" y="1.5" width="21" height="15" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M2 3l10 8 10-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>予約のメールを作る</button>
+        </form>
+        <div class="preview" id="preview" aria-live="polite"></div>
+        <p class="mailalt">メールが開かないときは、<a href="mailto:yoga.studio.monkeypod@gmail.com">yoga.studio.monkeypod@gmail.com</a> へ直接お送りください。</p>
+      </div>
+      <div class="contact-side">
+        <div class="cbox">
+          <h3>お電話</h3>
+          <a class="tel" href="tel:09088514768">090-8851-4768</a>
+          <p>レッスン中はお電話に出られないことがあります。</p>
+        </div>
+        <div class="cbox">
+          <h3>公式LINE</h3>
+          <a class="btn sm" href="https://lin.ee/IQZadiU" target="_blank" rel="noopener">LINEで友だちになる</a>
+        </div>
+        <div class="rules">
+          <h3>ご予約の決まり</h3>
+          <ul>
+            <li>ヨガは各クラス定員5名、先着順です。</li>
+            <li>ピラティスはマンツーマンの完全予約制です。</li>
+            <li>キャンセル料はかかりません。キャンセル待ちの方がいらっしゃることがあるので、レッスン開始の3時間前までにご連絡ください。</li>
+            <li>メールのお返事が遅れることがあります。お返事がないときは、お手数ですがもう一度ご連絡ください。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec first" id="first">
+  <div class="wrap">
+    <p class="eyebrow">First time</p>
+    <h2>はじめての方へ</h2>
+    <div class="steps-wrap"><div class="vine" aria-hidden="true"><i></i></div>
+    <ol class="steps">
+      <li><div><b>メールかお電話で予約する</b></div></li>
+      <li><div><b>持ち物を用意する</b><span><a href="#items">持ち物を見る</a></span></div></li>
+      <li><div><b>スタジオへ</b><span>専用駐車場あり。<a href="#access">アクセスの写真</a>を目印に。</span></div></li>
+    </ol></div>
+    <p class="ok">「体が硬いから…」という方も大丈夫です。運動量の少ないクラスから始めてみてください。</p>
+  </div>
+</section>
+
+<section class="sec inst" id="inst">
+  <div class="wrap">
+    <p class="eyebrow">Instructor</p>
+    <h2>インストラクター</h2>
+    <div class="inst-list">
+      <article class="person reveal">
+        <img src="img/07.webp" width="749" height="1000" alt="あぐらで座り、手を膝に置くMIEKO" loading="lazy">
+        <div>
+          <h3>MIEKO<small>主宰</small></h3>
+          <p>ヨガを学び、整体を学び、体のことを学んできました。ヨガ指導者として、整体師として、体の働きのすばらしさ、人間のすばらしさを、たくさんの方に知っていただきたいと思っています。スタジオで、楽しい時間、自分のための時間を過ごし、心も体もリセットしましょう。知れば知るほど、自分ってすばらしいですよ。</p>
+          <details class="learn"><summary>学んできたこと</summary>
+            <ul>
+              <li>日本ヨーガ瞑想協会ヨーガ指導者トレーニング(綿本彰) 修了</li>
+              <li>リストラティブヨガ指導者トレーニング(ジュディスラサター) 修了</li>
+              <li>アーユルヴェーダヨガ指導者トレーニング(西川真知子) 修了</li>
+              <li>アーユルヴェーダ・チベット体操指導者トレーニング(西川真知子) 修了</li>
+              <li>サンタモニカパワーヨガ指導者トレーニング(ブライアンケスト) 修了</li>
+              <li>陰ヨガ指導者トレーニング(ベーシック/経絡、ヴィクターチャン) 修了</li>
+              <li>骨盤調整ヨガ指導者トレーニング(高橋由紀) 修了</li>
+              <li>タイヨガ基礎トレーニング(ヨーナスベステリング) 修了</li>
+              <li>アジャストメント指導者トレーニング(マシューコーヘン) 修了</li>
+              <li>ハート・オブ・ヨガ指導者トレーニング(マークウィットウェル) 修了</li>
+              <li>Dr. Kataria School of Laughter Yoga 認定ラフターヨガリーダー</li>
+              <li>井本整体(初等・中等・高等・プロ基礎) 全課程修了</li>
+              <li>フランクリンメソッド Level1(エリック フランクリン) 修了</li>
+              <li>フェイシャルヨガ(高津 文美子) 修了</li>
+              <li>人体力学・井本整体・体操指導者</li>
+              <li>アスリートヨガ(ケン・ハラクマ)</li>
+              <li>かんたんストレッチヨガ(ケン・ハラクマ)</li>
+              <li>笑いヨガ指導者</li>
+              <li>健康管理カウンセラー</li>
+              <li>ヨガニドラ指導者</li>
+              <li>健康運動実践指導者</li>
+              <li>健康運動指導師</li>
+              <li>Motor Control®︎:Beyond Pilates®︎指導者養成コース終了</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+      <article class="person reveal">
+        <img src="img/08.webp" width="750" height="1000" alt="畳の部屋であぐらで座り、静かに目を閉じるYUKI" loading="lazy">
+        <div>
+          <h3>YUKI</h3>
+          <p>「体が硬いから…」とヨガをためらっている方、運動量の少ないクラスから始めてみませんか。先生方はみんなやさしく、初めての方も安心して受けていただけます。家事やお仕事でお疲れの方、男性の方にもおすすめです。たまには自分の「心と体」と向き合い、いたわってあげましょう。</p>
+          <details class="learn"><summary>学んできたこと</summary>
+            <ul>
+              <li>かんたんストレッチヨガ</li>
+              <li>日本ヨーガ瞑想協会ヨーガ指導者トレーニング(綿本彰) 修了</li>
+              <li>メディカルアロマ講師資格取得</li>
+              <li>気血循環療法の基礎手技取得</li>
+            </ul>
+          </details>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec events" id="events">
+  <div class="wrap">
+    <p class="eyebrow">Outside the studio</p>
+    <h2>スタジオの外でのヨガ</h2>
+    <div class="ev-grid">
+      <article class="ev reveal">
+        <h3>お寺ヨガ</h3>
+        <dl>
+          <dt>場所</dt><dd>西願寺（浄土真宗本願寺派・久喜市）</dd>
+          <dt>日時</dt><dd>毎月第2・第4金曜日 10:00〜／毎月第4日曜日 8:00〜</dd>
+          <dt>料金</dt><dd>1,000円</dd>
+          <dt>申込</dt><dd>お申し込みは西願寺さんへ <a href="tel:0480241555">0480-24-1555</a></dd>
+        </dl>
+      </article>
+      <article class="ev reveal">
+        <h3>健康ヨガ</h3>
+        <dl>
+          <dt>場所</dt><dd>埼玉県県民活動総合センター</dd>
+          <dt>日時</dt><dd>毎週火曜日 10:00〜</dd>
+          <dt>定員</dt><dd>10名・チケット制</dd>
+        </dl>
+      </article>
+    </div>
+
+    <div class="ws">
+      <h3>これまでのワークショップ・リトリートの様子</h3>
+      <div class="strip" tabindex="0" role="region" aria-label="ワークショップの写真（横にスクロールできます）">
+        <figure><img src="img/26.webp" width="1000" height="741" alt="ヤシの木が見える芝生で、ヨガマットを広げてヨガをする人たち" loading="lazy"></figure>
+        <figure><img src="img/32.webp" width="750" height="1000" alt="ホテルの建物の前の芝生で行うヨガ" loading="lazy"></figure>
+        <figure><img src="img/45.webp" width="1000" height="741" alt="大きな木の下の芝生で、輪になって座る人たち" loading="lazy"></figure>
+        <figure><img src="img/31.webp" width="1000" height="734" alt="木漏れ日の差す芝生で、輪になってくつろぐ人たち" loading="lazy"></figure>
+        <figure><img src="img/33.webp" width="725" height="1000" alt="広いホールにヨガマットを並べ、ダウンドッグのポーズをとる人たち" loading="lazy"></figure>
+        <figure><img src="img/36.webp" width="1000" height="733" alt="ホールでヨガマットに座り、先生の説明を聞く参加者" loading="lazy"></figure>
+      </div>
+      <ul class="ws-names">
+        <li>HAWAIIリトリート</li>
+        <li>カピオラニ公園ワークショップ in HAWAII</li>
+        <li>皇居前広場 青空ワークショップ</li>
+        <li>ケン・ハラクマ TT＆WS</li>
+        <li>フェイシャルヨガワークショップ</li>
+        <li>和製クリスタルボウルの響き（三輪福ワークショップ）</li>
+        <li>青山ファーマーズマーケットとのコラボワークショップ</li>
+        <li>文化フェスタ</li>
+        <li>スタジオヨガフェスタ</li>
+      </ul>
+    </div>
+
+    <p class="news">日本成人病予防協会の健康管理能力検定のホームページに掲載されました。<br><a href="https://kentei.healthcare/voice/" target="_blank" rel="noopener">https://kentei.healthcare/voice/</a></p>
+  </div>
+</section>
+
+<section class="sec access" id="access">
+  <div class="wrap acc-grid">
+    <div class="route-wrap">
+      <p class="eyebrow">Access</p>
+      <h2>アクセス</h2>
+      <div class="route">
+        <div class="route-photos">
+          <figure class="a"><img src="img/50.webp" width="438" height="292" alt="スタジオのある建物の外観。2階建ての建物が並んでいる" loading="lazy"><figcaption>1 建物の外観</figcaption></figure>
+          <span class="arrow" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path class="ar" pathLength="1" d="M3 12H20M13 5L20 12L13 19" fill="none" stroke="#23271f" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <figure class="b"><img src="img/51.webp" width="292" height="438" alt="入口の扉と、横に置かれた看板" loading="lazy"><figcaption>2 入口と看板</figcaption></figure>
+        </div>
+        <div class="road" aria-hidden="true"><span>久喜駅</span><svg viewBox="0 0 300 40"><path d="M6 24C70 4 130 40 190 22S270 14 294 22" fill="none" stroke="#6b4a35" stroke-width="3" stroke-dasharray="1 9" stroke-linecap="round"/><circle class="wk" r="6" fill="#d9a441" stroke="#fff" stroke-width="2"><animateMotion dur="3.4s" begin="indefinite" fill="freeze" path="M6 24C70 4 130 40 190 22S270 14 294 22"/></circle></svg><span>スタジオ</span></div>
+        <p class="route-note">建物が少し分かりにくいので、写真を目印にしてください。迷ったら、お気軽にお電話ください。</p>
+      </div>
+    </div>
+    <div>
+      <dl class="acc-dl">
+        <div><dt>住所</dt><dd>埼玉県久喜市本町3-5-51 ラ・メゾン・ド・トゥロワ1F</dd></div>
+        <div><dt>電車</dt><dd>JR宇都宮線・東武伊勢崎線「久喜駅」西口から徒歩15分。市役所・文化会館の方へ向かってください。</dd></div>
+        <div><dt>お車</dt><dd>市役所通りの「市役所入口（北）」交差点を南へ約100m。レストラン「ポティロン」と「ひらのや酒店」の間の道を西へ約50m、進行方向の左側の建物の1階です。</dd></div>
+        <div><dt>駐車場</dt><dd>建物の南側の砂利の駐車場は、すべてスタジオ専用です。お好きな場所に停めてください。</dd></div>
+      </dl>
+      <div class="acc-btns">
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%9F%BC%E7%8E%89%E7%9C%8C%E4%B9%85%E5%96%9C%E5%B8%82%E6%9C%AC%E7%94%BA3-5-51" target="_blank" rel="noopener">Googleマップで開く</a>
+        <a class="btn ghost" href="tel:09088514768">電話する</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <svg class="ft-tree" viewBox="0 0 120 90" aria-hidden="true"><path pathLength="1" style="--n:0" d="M12 44C4 30 18 14 34 20C38 6 62 2 72 14C84 6 106 14 100 32C114 38 108 52 94 50H28C18 52 12 50 12 44Z"/><path pathLength="1" style="--n:1" d="M60 50V82M60 62L44 50M60 58L78 46"/><path class="g" pathLength="1" style="--n:2" d="M36 84H84"/></svg>
+    <b>Yoga &amp; Pilates Studio Monkeypod</b>
+    <p>埼玉県久喜市本町3-5-51 ラ・メゾン・ド・トゥロワ1F</p>
+    <p>Tel：<a href="tel:09088514768">090-8851-4768</a></p>
+    <p>Mail：<a href="mailto:yoga.studio.monkeypod@gmail.com">yoga.studio.monkeypod@gmail.com</a></p>
+    <p>Instagram：<a href="https://instagram.com/yoga.studio.monkeypod" target="_blank" rel="noopener">@yoga.studio.monkeypod</a></p>
+    <p>公式LINE：<a href="https://lin.ee/IQZadiU" target="_blank" rel="noopener">https://lin.ee/IQZadiU</a></p>
+    <p class="copy">© Yoga &amp; Pilates Studio Monkeypod</p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a class="btn ghost" href="#schedule">スケジュール</a>
+  <a class="btn gold" href="#reserve">予約する</a>
+</div>
+
+<script>
+/* ===== スケジュールのデータ（ここだけ直せば表示が変わる）=====
+   d: 曜日（0=日 … 6=土）／ slots: [開始, 終了, クラスID]。クラスの説明・運動量・ホット/常温・担当は「クラス紹介」のカードから読む */
+const SCHEDULE={
+  yoga:[
+    {d:1,slots:[['10:00','11:30','raja'],['19:30','21:00','in']]},
+    {d:2,slots:[['19:30','21:00','yogatis']]},
+    {d:3,off:'ピラティスの日（ヨガはお休み）'},
+    {d:4,slots:[['10:00','11:30','vinyasa'],['19:30','21:00','flow']]},
+    {d:5,slots:[['19:30','21:00','bodycare']]}
+  ],
+  pilates:[
+    {d:1,t:['13:30〜16:00']},
+    {d:2,t:['13:30〜16:00']},
+    {d:3,t:['9:00〜（終日）']},
+    {d:4,t:['14:00〜16:00']},
+    {d:5,t:['第1・第3週 10:00〜','第2・第4週 13:30〜（16:00まで）']},
+    {d:6,t:['9:00〜12:00']}
+  ]
+};
+const NOTE={yoga:'定員5名・先着順',pilates:'マンツーマン・完全予約制'};
+const DAYS=['日','月','火','水','木','金','土'];
+const LV={1:'ゆったり',2:'ほどよく',3:'しっかり'};
+const MO=document.documentElement.classList.contains('mo');
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* クラス情報はカードから読む */
+const INFO={};
+$$('[data-class]').forEach(el=>{INFO[el.dataset.class]={id:el.dataset.class,name:$('h3',el).textContent.trim(),level:+el.dataset.level,temp:el.dataset.temp,teacher:el.dataset.teacher,desc:$('.c-desc',el).textContent.trim()}});
+
+/* 今日（日本時間）*/
+function tokyo(){
+  const p=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+  const [y,m,d]=p.split('-').map(Number);
+  const dt=new Date(Date.UTC(y,m-1,d));
+  return {ymd:p,day:dt.getUTCDay(),y,m,d};
+}
+const TODAY=tokyo();
+function nextDate(dow){ // 明日以降で最初のその曜日
+  for(let k=1;k<=7;k++){const dt=new Date(Date.UTC(TODAY.y,TODAY.m-1,TODAY.d+k));if(dt.getUTCDay()===dow)return dt.toISOString().slice(0,10)}
+}
+
+/* メニュー */
+const mb=$('.menu-btn'),gn=$('#gnav');
+mb.addEventListener('click',()=>{const o=gn.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+$$('a',gn).forEach(a=>a.addEventListener('click',()=>{gn.classList.remove('open');mb.setAttribute('aria-expanded','false')}));
+
+/* 絞り込み */
+const fb=$$('.fbtn');
+fb.forEach(b=>b.addEventListener('click',()=>{
+  fb.forEach(x=>x.setAttribute('aria-pressed',x===b));
+  const f=b.dataset.f,cards=$$('.card'),match=c=>f==='all'||c.dataset.level===f;
+  $('#fcount').textContent=cards.filter(match).length+'件のクラスを表示しています';
+  if(!MO){cards.forEach(c=>{c.hidden=!match(c)});return}
+  const first=new Map();cards.forEach(c=>{if(!c.hidden)first.set(c,c.getBoundingClientRect())});
+  const leaving=cards.filter(c=>!c.hidden&&!match(c)),entering=cards.filter(c=>c.hidden&&match(c));
+  cards.forEach(c=>c.classList.add('in','done'));
+  leaving.forEach(c=>c.classList.add('leaving'));
+  setTimeout(()=>{
+    leaving.forEach(c=>{c.hidden=true;c.classList.remove('leaving')});
+    entering.forEach(c=>{c.hidden=false;c.style.transition='none';c.style.opacity='0';c.style.transform='scale(.55)'});
+    cards.filter(c=>!c.hidden).forEach(c=>{
+      const o=first.get(c),l=c.getBoundingClientRect();
+      if(o){const dx=o.left-l.left,dy=o.top-l.top;if(dx||dy){c.style.transition='none';c.style.transform='translate('+dx+'px,'+dy+'px)'}}
+    });
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      cards.filter(c=>!c.hidden).forEach(c=>{c.style.transition='transform .5s cubic-bezier(.2,.75,.25,1),opacity .4s ease';c.style.transform='';c.style.opacity='';setTimeout(()=>{c.style.transition=''},560)});
+    }));
+  },290);
+}));
+
+/* スケジュール表示 */
+const panel=$('#panel');
+const detail=document.createElement('div');detail.className='detail';detail.hidden=true;detail.id='detail';
+const mq=matchMedia('(min-width:861px)');
+let kind='yoga',openBtn=null;
+function tempTag(i){return i.temp==='hot'?'<span class="tag hot">ホット</span>':i.temp==='room'?'<span class="tag room">常温</span>':''}
+function render(){
+  clearTimeout(closeT);detail.hidden=true;detail.classList.remove('shut');openBtn=null;
+  const rows=SCHEDULE[kind];
+  panel.setAttribute('aria-labelledby','tab-'+kind);
+  let h='<p class="sched-note">'+esc(NOTE[kind])+'</p>';
+  if(kind==='pilates'){
+    const p=INFO.pilates;
+    h+='<div class="pcard"><h3>'+esc(p.name)+'</h3><p>'+esc(p.desc)+'</p><button type="button" class="btn sm" data-res="pilates">このクラスを予約する</button></div>';
+  }
+  h+='<div class="grid" style="--cols:'+rows.length+'">';
+  rows.forEach((r,ri)=>{
+    const t=r.d===TODAY.day;
+    h+='<section class="day'+(t?' today':'')+'" style="--i:'+ri+'" aria-label="'+DAYS[r.d]+'曜日"><div class="day-h"><h3>'+DAYS[r.d]+'</h3>'+(t?'<span class="badge-today">今日</span>':'')+'</div><div class="slots">';
+    if(r.off)h+='<p class="off">'+esc(r.off)+'</p>';
+    if(r.slots)r.slots.forEach(s=>{const i=INFO[s[2]];
+      h+='<button type="button" class="slot" aria-expanded="false" data-id="'+s[2]+'" data-day="'+r.d+'" data-time="'+s[0]+'〜'+s[1]+'"><span class="t">'+s[0]+'〜'+s[1]+'</span><span class="n">'+esc(i.name)+'</span><span class="m">'+tempTag(i)+'<span class="tag who">'+esc(i.teacher)+'</span></span></button>'});
+    if(r.t)h+='<div class="ptime">'+r.t.map(x=>'<span>'+esc(x)+'</span>').join('')+'</div>';
+    h+='</div></section>';
+  });
+  h+='</div><div class="detail-slot"></div>';
+  panel.innerHTML=h;
+}
+let closeT;
+function closeDetail(instant){
+  clearTimeout(closeT);
+  if(openBtn){openBtn.setAttribute('aria-expanded','false');openBtn=null}
+  if(MO&&!instant&&!detail.hidden){detail.classList.add('shut');closeT=setTimeout(()=>{detail.hidden=true},360)}else detail.hidden=true;
+}
+panel.addEventListener('click',e=>{
+  const rb=e.target.closest('[data-res]');
+  if(rb){if(!rb.closest('#detail'))reserve(rb.dataset.res);return}
+  const b=e.target.closest('.slot');if(!b)return;
+  if(openBtn===b){closeDetail();return}
+  closeDetail(true);
+  const i=INFO[b.dataset.id];
+  detail.innerHTML='<p class="d-name">'+esc(i.name)+'</p><div class="meta"><span class="tag lv">運動量 '+'★'.repeat(i.level)+'</span>'+tempTag(i)+'<span class="tag who">担当 '+esc(i.teacher)+'</span></div><p class="d">'+esc(i.desc)+'</p><button type="button" class="btn sm" data-res="'+b.dataset.id+'" data-day="'+b.dataset.day+'" data-time="'+b.dataset.time+'">このクラスを予約する</button>';
+  if(mq.matches)$('.detail-slot',panel).appendChild(detail);else b.after(detail);
+  detail.hidden=false;
+  if(MO){detail.classList.add('shut');void detail.offsetHeight;detail.classList.remove('shut')}
+  b.setAttribute('aria-expanded','true');openBtn=b;
+  detail.id='detail';b.setAttribute('aria-controls','detail');
+});
+detail.addEventListener('click',e=>{
+  const rb=e.target.closest('[data-res]');
+  if(rb)reserve(rb.dataset.res,rb.dataset.day,rb.dataset.time);
+});
+$$('.tab').forEach(t=>{
+  t.addEventListener('click',()=>sel(t));
+  t.addEventListener('keydown',e=>{
+    if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;
+    const ts=$$('.tab');const n=ts[(ts.indexOf(t)+(e.key==='ArrowRight'?1:-1)+ts.length)%ts.length];n.focus();sel(n);
+  });
+});
+function sel(t){
+  $$('.tab').forEach(x=>{x.setAttribute('aria-selected',x===t);x.tabIndex=x===t?0:-1});
+  const prev=kind;kind=t.dataset.k;
+  if(!MO||prev===kind){render();return}
+  const dir=kind==='pilates'?1:-1;
+  panel.style.setProperty('--dx',(-28*dir)+'px');
+  panel.classList.remove('swap-in');panel.classList.add('swap-out');
+  setTimeout(()=>{render();panel.style.setProperty('--dx',(28*dir)+'px');panel.classList.remove('swap-out');panel.classList.add('swap-in');setTimeout(()=>panel.classList.remove('swap-in'),500)},170);
+}
+
+/* 予約フォーム */
+const fc=$('#f-class');
+(function(){
+  const g=document.createElement('optgroup');g.label='ヨガ（定員5名・先着順）';
+  SCHEDULE.yoga.forEach(r=>(r.slots||[]).forEach(s=>{
+    const o=document.createElement('option');o.value=s[2]+'|'+r.d+'|'+s[0]+'〜'+s[1];
+    o.textContent=DAYS[r.d]+' '+s[0]+'〜'+s[1]+'　'+INFO[s[2]].name;g.appendChild(o);
+  }));
+  fc.insertBefore(g,fc.children[1]);
+  const d=$('#f-date');d.min=TODAY.ymd;
+})();
+function reserve(id,day,time){
+  let v=id;
+  if(id==='pilates'||id==='other')v=id;
+  else v=[...fc.options].find(o=>o.value===id+'|'+day+'|'+time)?.value||'';
+  fc.value=v;
+  if(day!==undefined&&day!==''&&id!=='pilates')$('#f-date').value=nextDate(+day);
+  $('#reserve').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'});
+  setTimeout(()=>$('#f-name').focus({preventScroll:true}),400);
+}
+function fmtDate(v){if(!v)return '（未定）';const [y,m,d]=v.split('-').map(Number);const w=DAYS[new Date(Date.UTC(y,m-1,d)).getUTCDay()];return y+'年'+m+'月'+d+'日（'+w+'）'}
+$('#rform').addEventListener('submit',e=>{
+  e.preventDefault();
+  const err=$('#ferr');err.textContent='';
+  const name=$('#f-name').value.trim();
+  if(!fc.value){err.textContent='クラスを選んでください。';fc.focus();return}
+  if(!name){err.textContent='お名前を入力してください。';$('#f-name').focus();return}
+  const opt=fc.selectedOptions[0].textContent;
+  const other=fc.value==='other';
+  const first=$('input[name=first]:checked').value;
+  const subject=(other?'【お問い合わせ】':'【予約希望】')+opt.replace(/　/g,' ');
+  const body=[
+    'Yoga & Pilates Studio Monkeypod ご担当者さま','',
+    other?'お問い合わせです。':'ご予約の希望です。','',
+    'クラス：'+opt.replace(/　/g,' '),
+    '希望の日：'+fmtDate($('#f-date').value),
+    'お名前：'+name,
+    '初めてのご参加：'+first,
+    'ひとこと：'+($('#f-msg').value.trim()||'（なし）'),'',
+    'どうぞよろしくお願いいたします。'
+  ].join('\r\n');
+  const pv=$('#preview');
+  pv.innerHTML='<b>作成したメール（宛先：yoga.studio.monkeypod@gmail.com）</b>件名：'+esc(subject)+'\n\n'+esc(body.replace(/\r\n/g,'\n'));
+  pv.classList.add('on');
+  if(MO){const sb=$('#rform button[type=submit]');sb.classList.remove('go');void sb.offsetWidth;sb.classList.add('go')}
+  location.href='mailto:yoga.studio.monkeypod@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
+});
+
+render();
+
+</script>
+<script>
+/* ===== §7 モーション =====
+   html.mo（JSあり・reduced-motion でない）のときだけ動く。スクロール連動の処理は requestAnimationFrame 1か所（frame）。
+   画面に入ったときの動きは IntersectionObserver。外部ライブラリなし。 */
+(function(){
+const root=document.documentElement;
+const MO=root.classList.contains('mo');
+const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
+
+/* ボタンの光（押した位置から広がる）。reduced-motion でも「光」だけ出さない */
+if(MO)document.addEventListener('pointerdown',e=>{
+  const b=e.target.closest('.btn,.fbtn,.slot,.tab');if(!b)return;
+  const r=b.getBoundingClientRect(),s=document.createElement('span');
+  s.className='rip';s.style.left=(e.clientX-r.left)+'px';s.style.top=(e.clientY-r.top)+'px';
+  s.style.setProperty('--sc',Math.max(r.width,r.height)*2.4/20);
+  b.appendChild(s);setTimeout(()=>s.remove(),750);
+});
+
+/* 運動量の★を1つずつ点けられる形に（動きを使わないときも見た目は同じ） */
+$$('.tag.lv').forEach(t=>{
+  const m=t.textContent.match(/^(.*?)(★+)/);if(!m)return;
+  t.innerHTML=m[1]+[...m[2]].map((s,k)=>'<span class="st" style="--k:'+k+'">★</span>').join('');
+});
+
+if(!MO)return;
+
+const NS='http://www.w3.org/2000/svg';
+const vh=()=>innerHeight;
+const PAR=[];const tasks=new Set();
+var io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){io.unobserve(e.target);reveal(e.target)}}),{threshold:.12,rootMargin:'0px 0px -6% 0px'});
+
+$('.hero .eyebrow').classList.add('in');
+/* ---------- 読んだ量の枝 ---------- */
+const prog=document.createElement('div');prog.id='prog';prog.setAttribute('aria-hidden','true');
+prog.innerHTML='<i class="bar"></i><svg class="tip" viewBox="0 0 20 30"><path d="M10 1C18 9 19 21 10 29 1 21 2 9 10 1Z" fill="#4a6c55"/><path d="M10 7V27" stroke="#dfe5d6" stroke-width="1.4"/></svg>';
+document.body.prepend(prog);
+const bar=$('.bar',prog),tip=$('.tip',prog);
+
+/* ---------- 見出し・境目の枝・背景の葉 ---------- */
+$$('.sec').forEach((sec,si)=>{
+  // 境目の枝
+  const svg=document.createElementNS(NS,'svg');svg.setAttribute('class','branch');svg.setAttribute('viewBox','0 0 1200 40');svg.setAttribute('aria-hidden','true');
+  const d='M0 22C150 8 250 36 400 20S650 6 800 22S1050 34 1200 18';
+  const path=document.createElementNS(NS,'path');path.setAttribute('d',d);path.setAttribute('class','bl');path.setAttribute('pathLength','1');
+  svg.appendChild(path);
+  const tmp=document.createElementNS(NS,'path');tmp.setAttribute('d',d);
+  const L=tmp.getTotalLength?(svg.appendChild(tmp),tmp.getTotalLength()):1200;
+  for(let k=0;k<15;k++){
+    const t=(k+.6)/15,p=tmp.getPointAtLength?tmp.getPointAtLength(t*L):{x:t*1200,y:22};
+    const up=k%2?1:-1,e=document.createElementNS(NS,'ellipse');
+    e.setAttribute('class','lf');e.setAttribute('cx',p.x.toFixed(1));e.setAttribute('cy',(p.y+up*9).toFixed(1));
+    e.setAttribute('rx','4.6');e.setAttribute('ry','10');
+    e.style.rotate=(up*38)+'deg';
+    e.style.setProperty('--dl',(0.25+t*1.0).toFixed(2)+'s');
+    svg.appendChild(e);
+  }
+  svg.removeChild(tmp);
+  sec.prepend(svg);io.observe(svg);
+  // 背景の大きな葉
+  const wrap=$('.wrap',sec);
+  if(wrap){
+    const g=document.createElementNS(NS,'svg');g.setAttribute('class','bgleaf');g.setAttribute('viewBox','0 0 200 260');g.setAttribute('aria-hidden','true');
+    g.innerHTML='<path fill="currentColor" d="M100 6C172 62 192 152 100 254 8 152 28 62 100 6Z"/><path fill="none" stroke="#fff" stroke-opacity=".5" stroke-width="3" d="M100 30V240M100 90L62 62M100 130L146 96M100 170L58 140"/>';
+    sec.insertBefore(g,wrap);PAR.push({el:g,k:.16,rot:true,base:sec.matches(':nth-of-type(even)')?-24:18});
+  }
+});
+/* 見出しの行（マスク） */
+$$('.sec h2').forEach(h=>{h.innerHTML='<span class="mask"><span class="rise">'+h.innerHTML+'</span></span>';io.observe(h)});
+
+/* ---------- 出現の仕掛け ---------- */
+$$('.concept-list li,.cards .card,.person,.price-grid .pbox,.ev-grid .ev,.steps li').forEach(el=>{el.classList.remove('reveal');el.classList.add('tilt')});
+['.concept-list','.cards','.inst-list','.price-grid','.ev-grid','.steps'].forEach(sel=>{
+  const p=$(sel);if(p)[...p.children].forEach((c,i)=>c.style.setProperty('--i',i))
+});
+$$('.strip figure').forEach((f,i)=>f.style.setProperty('--i',i));
+$$('.about-photos img,.route-photos img').forEach(im=>im.classList.add('blob'));
+$$('.about-photos img,.person img,.route-photos img').forEach(im=>{im.dataset.py='1';PAR.push({el:im,k:.05,clamp:14})});
+$$('details.learn li').forEach((li,i)=>li.style.setProperty('--i',Math.min(i%24,14)));
+
+/* 画面に入ったときだけ */
+function reveal(el){
+  el.classList.add('in');
+  if(el.matches('h2')){const p=el.previousElementSibling;if(p&&p.classList.contains('eyebrow'))p.classList.add('in')}
+  if(el.classList.contains('tilt'))setTimeout(()=>el.classList.add('done'),1800+(+el.style.getPropertyValue('--i')||0)*90);
+  if(el.classList.contains('pbox')){
+    $$('.num',el).forEach(n=>countUp(n,+n.dataset.v));
+    if(el.parentElement.children[2]===el)el.classList.add('sweep');
+  }
+  if(el.classList.contains('strip'))setTimeout(()=>el.classList.add('nudged'),600);
+  if(el.classList.contains('road')){el.classList.add('go');const m=$('animateMotion',el);if(m&&m.beginElement)setTimeout(()=>m.beginElement(),300)}
+}
+$$('.reveal,.tilt,.about-photos img,.route-photos,.strip,.road,.tabpanel,.ft').forEach(el=>io.observe(el));
+/* 舞う葉：見えているあいだだけ */
+const leafIO=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle('live',e.isIntersecting)));
+$$('.leaves').forEach(l=>leafIO.observe(l));
+
+/* ---------- 料金の数え上がり ---------- */
+$$('.yen').forEach(y=>{
+  const t=y.firstChild;if(!t||t.nodeType!==3)return;
+  const v=+t.textContent.replace(/,/g,'');const s=document.createElement('span');s.className='num';s.dataset.v=v;s.textContent='0';
+  y.replaceChild(s,t);
+});
+function countUp(el,v){
+  const t0=performance.now();
+  tasks.add(t=>{const k=clamp((t-t0)/800);el.textContent=Math.round(v*(1-Math.pow(1-k,3))).toLocaleString('en-US');return k<1});
+  req();
+}
+
+/* ---------- スクロール連動（rAF 1か所） ---------- */
+const tree=$('.about-tree');
+const wrapV=$('.steps-wrap'),vine=$('.vine'),stepLis=$$('.steps li');
+let vineFr=[];
+function layoutVine(){
+  if(!vine)return;const ol=$('.steps');
+  const horiz=getComputedStyle(ol).gridTemplateColumns.split(' ').length>1;
+  const c=li=>horiz?{x:li.offsetLeft+li.offsetWidth/2,y:li.offsetTop+24+23}:{x:li.offsetLeft+18+23,y:li.offsetTop+li.offsetHeight/2};
+  const a=c(stepLis[0]),z=c(stepLis[stepLis.length-1]);
+  vine.classList.toggle('v',!horiz);
+  const len=horiz?z.x-a.x:z.y-a.y;
+  const holes=stepLis.map(li=>{const cc=c(li),m=(horiz?cc.x-a.x:cc.y-a.y);return [m-27,m+27]});
+  let g='linear-gradient('+(horiz?'to right':'to bottom')+',#000 0px';
+  holes.forEach(h=>{g+=',#000 '+Math.max(0,h[0])+'px,transparent '+Math.max(0,h[0])+'px,transparent '+h[1]+'px,#000 '+h[1]+'px'});
+  g+=')';
+  if(horiz){vine.style.cssText='left:'+a.x+'px;top:'+(a.y-1.5)+'px;width:'+(z.x-a.x)+'px;height:3px';vineFr=stepLis.map(li=>(c(li).x-a.x)/(z.x-a.x))}
+  else{vine.style.cssText='left:'+(a.x-1.5)+'px;top:'+a.y+'px;width:3px;height:'+(z.y-a.y)+'px';vineFr=stepLis.map(li=>(c(li).y-a.y)/(z.y-a.y))}
+  vine.style.webkitMaskImage=vine.style.maskImage=g;
+}
+let queued=false;
+function req(){if(!queued){queued=true;requestAnimationFrame(frame)}}
+function frame(t){
+  queued=false;
+  const H=vh(),sy=scrollY,max=Math.max(1,document.documentElement.scrollHeight-H);
+  // 読んだ量
+  const p=clamp(sy/max);
+  bar.style.transform='scaleX('+p+')';
+  tip.style.transform='translateX('+(p*(innerWidth-12))+'px)';
+  // 視差・背景の葉（読んでから書く）
+  const reads=PAR.map(o=>{const r=o.el.getBoundingClientRect();return r.bottom<-160||r.top>H+160?null:(H/2-(r.top+r.height/2))});
+  PAR.forEach((o,i)=>{const d=reads[i];if(d===null)return;
+    let v=o.rot?d*o.k:-d*o.k; if(o.clamp)v=clamp(v,-o.clamp,o.clamp);
+    o.el.style.setProperty('--py',v.toFixed(1)+'px');
+    if(o.rot)o.el.style.setProperty('--rot',(o.base+d*.02).toFixed(1)+'deg');
+  });
+  // 木が描かれる
+  if(tree){
+    const r=tree.getBoundingClientRect();
+    if(r.bottom>-50&&r.top<H){
+      const tp=clamp((H*.92-r.top)/(H*.55));
+      $$('.draw',tree).forEach(d=>{const s=+d.dataset.s,e=+d.dataset.e;d.style.setProperty('--o',(1-clamp((tp-s)/(e-s))).toFixed(3))});
+      tree.style.setProperty('--dp',clamp((tp-.72)/.18).toFixed(2));
+      tree.querySelector('.dots').style.opacity=clamp((tp-.72)/.18).toFixed(2);
+    }
+  }
+  // つる
+  if(vine&&vineFr.length){
+    const r=wrapV.getBoundingClientRect();
+    if(r.bottom>-50&&r.top<H){
+      const vp=clamp((H*.78-r.top)/(r.height*.85));
+      vine.style.setProperty('--vp',vp.toFixed(3));
+      stepLis.forEach((li,i)=>li.classList.toggle('reached',vp>=vineFr[i]-.02));
+    }
+  }
+  for(const fn of [...tasks]){if(fn(t)===false)tasks.delete(fn)}
+  if(tasks.size)req();
+}
+addEventListener('scroll',req,{passive:true});
+addEventListener('resize',()=>{layoutVine();req()});
+addEventListener('load',()=>{layoutVine();req()});
+layoutVine();req();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{layoutVine();req()});
+})();
+</script>
+</body>
+</html>
