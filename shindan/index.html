@@ -8,9 +8,9 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://arpeda.jp/shindan/">
 <link rel="stylesheet" href="/assets/css/arpeggio.css?v=20261014a">
-<link rel="stylesheet" href="./shindan.css">
+<link rel="stylesheet" href="./shindan.css?v=20261120b">
 <script src="/assets/js/arpeggio.js?v=20261002e" defer></script>
-<script src="./shindan.js" type="module"></script>
+<script src="./shindan.js?v=20261120b" type="module"></script>
 </head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -60,14 +60,28 @@
     <div class="scan-meter" aria-hidden="true"></div>
   </section>
   <section id="result" hidden aria-label="診断結果">
-    <div class="result-heading">
-      <h1 id="summary" tabindex="-1"></h1>
-      <p id="praise" hidden></p>
+    <header class="result-heading" id="result-heading">
+      <h1 id="summary" tabindex="-1">診断結果</h1>
       <p id="scan-meta"></p>
-    </div>
+      <div class="result-overview">
+        <div class="result-score">
+          <p><strong id="score-value"></strong><span id="score-label">項目がOK</span></p>
+          <p id="score-note">確かめられた項目のみ集計</p>
+        </div>
+        <dl class="result-totals">
+          <div><dt>見直し</dt><dd id="review-count"></dd></div>
+          <div><dt>未確認</dt><dd id="unknown-count"></dd></div>
+        </dl>
+      </div>
+      <nav class="result-map" aria-labelledby="result-map-title">
+        <h2 id="result-map-title">8項目の一覧</h2>
+        <ul id="result-tiles"></ul>
+      </nav>
+      <p id="praise" hidden></p>
+    </header>
     <p id="psi-notice" class="scan-notice" hidden></p>
     <p id="robots-notice" class="scan-notice" hidden>このホームページは、自動での読み取りを断る設定になっているため、スマホでの見やすさと表示の速さだけを確かめました。</p>
-    <ol id="checks" class="result-checks"></ol>
+    <div id="checks" class="result-groups"></div>
     <p id="free-note" class="scan-notice" hidden></p>
     <section id="guidance" class="scan-guidance" hidden></section>
     <div class="result-actions">
