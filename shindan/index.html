@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ホームページ健康診断（無料）｜Arpeda（アルペダ）</title>
+<meta name="description" content="お店のホームページの URL を入れるだけで、スマホでの見やすさや、電話・予約へのたどり着きやすさなど8つの点を自動で確かめます。登録は不要です。">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://arpeda.jp/shindan/">
+<link rel="stylesheet" href="/assets/css/arpeggio.css?v=20261014a">
+<link rel="stylesheet" href="./shindan.css">
+<script src="/assets/js/arpeggio.js?v=20261002e" defer></script>
+<script src="./shindan.js" type="module"></script>
+</head>
+<body>
+<a class="skip" href="#main">本文へ移動</a>
+<header class="site-header">
+  <div class="wrap">
+    <a href="/" class="brand" aria-label="Arpeda ホーム">
+      <svg class="brand-mark" viewBox="4 4 100 92" aria-hidden="true"><path class="p1" d="M49 12 L10 90 L31 90 Z" fill="currentColor"/><path class="p2" d="M53 12 L96 90 L74 90 Z" fill="#2b59d1"/><rect class="p3" x="30" y="60" width="42" height="11" fill="currentColor"/></svg>
+      <span class="brand-word">Arpeda</span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><i></i><span>メニュー</span></button>
+    <nav class="nav" id="site-nav" aria-label="メインメニュー">
+      <a href="/services/">サービス</a>
+      <a href="/works/">サンプル</a>
+      <a href="/blog/">ブログ</a>
+      <a href="/about/">Arpedaについて</a>
+      <a href="/contact/" class="btn btn-primary">相談する</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="wrap scan-main" data-endpoint="https://arpeda-web.sakura.ne.jp/shindan/">
+  <section id="entry" aria-labelledby="entry-title">
+    <div class="scan-hero">
+      <div>
+        <p class="scan-label">ホームページ健康診断</p>
+        <h1 id="entry-title">あなたの<wbr>ホームページ、<wbr>お客さまを<wbr>逃していませんか？</h1>
+        <p class="scan-intro">URL を入れるだけ。スマホでの見やすさや、電話・予約へのたどり着きやすさなど、8つの点を自動で確かめます。</p>
+      </div>
+      <form id="scan-form" class="scan-form" method="post" novalidate>
+        <label for="scan-url">ホームページのアドレス（URL）</label>
+        <input id="scan-url" type="url" placeholder="https://example.com" maxlength="2048" autocomplete="off" spellcheck="false" required>
+        <button class="btn btn-primary" type="submit" disabled>無料で診断する</button>
+        <p class="scan-error" id="scan-error" role="alert" hidden></p>
+        <ul class="scan-notes"><li>登録はいりません。</li><li>見るのはトップページだけです。入れたアドレスは保存しません。</li><li>ご自分のお店（または、ご自分が任されている）ホームページで使ってください。</li></ul>
+      </form>
+    </div>
+    <section class="scan-details" aria-label="見る8つの点">
+      <h2>見る8つの点</h2>
+      <ol><li>スマホで見やすいか</li><li>表示の速さ</li><li>安全なつなぎ方になっているか</li><li>電話・予約にすぐたどり着けるか</li><li>営業時間と場所が書いてあるか</li><li>検索結果での見え方</li><li>LINE などで送ったときの見え方</li><li>情報の新しさ</li></ol>
+    </section>
+    <section class="scan-faq" aria-labelledby="faq-title">
+      <h2 id="faq-title">よくある質問</h2>
+      <details><summary>お金はかかりますか？</summary><p>かかりません。診断の結果を見たあとに、何かを申し込む必要もありません。</p></details><details><summary>何を見ているのですか？</summary><p>入れていただいたアドレスのトップページを1回だけ読み、Google の「PageSpeed Insights」でスマホでの表示を測ります。ほかのページや、ログインが必要なページは見ません。</p></details><details><summary>結果は正確ですか？</summary><p>機械で決まった点だけを確かめるので、お店に合っているかどうかまでは分かりません。トップページ以外に書いてあることも、見つけられないことがあります。目安としてお使いください。</p></details><details><summary>Jimdo や Wix のサイトでも使えますか？</summary><p>使えます。</p></details>
+    </section>
+  </section>
+  <section id="progress" class="scan-progress" hidden>
+    <p id="progress-text" role="status" aria-live="polite"></p>
+    <div class="scan-meter" aria-hidden="true"></div>
+  </section>
+  <section id="result" hidden aria-label="診断結果">
+    <div class="result-heading">
+      <h1 id="summary" tabindex="-1"></h1>
+      <p id="praise" hidden></p>
+      <p id="scan-meta"></p>
+    </div>
+    <p id="psi-notice" class="scan-notice" hidden></p>
+    <p id="robots-notice" class="scan-notice" hidden>このホームページは、自動での読み取りを断る設定になっているため、スマホでの見やすさと表示の速さだけを確かめました。</p>
+    <ol id="checks" class="result-checks"></ol>
+    <p id="free-note" class="scan-notice" hidden></p>
+    <section id="guidance" class="scan-guidance" hidden></section>
+    <div class="result-actions">
+      <button class="btn btn-ghost" id="print" type="button">結果を印刷する</button>
+      <button class="btn btn-ghost" id="reset" type="button">もう一度試す</button>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="fin" aria-hidden="true"></div>
+    <div class="foot">
+      <div>
+        <a href="/" class="brand" aria-label="Arpeda ホーム"><svg class="brand-mark" viewBox="4 4 100 92" aria-hidden="true"><path d="M49 12 L10 90 L31 90 Z" fill="currentColor"/><path d="M53 12 L96 90 L74 90 Z" fill="#2b59d1"/><rect x="30" y="60" width="42" height="11" fill="currentColor"/></svg><span class="brand-word">Arpeda</span></a>
+        <p class="foot-desc">一音ずつ、組み上げる。<br>LP・ホームページ・ライティング。</p>
+      </div>
+      <div>
+        <nav class="foot-nav" aria-label="フッターメニュー">
+          <a href="/services/">サービス</a><a href="/works/">サンプル</a><a href="/blog/">ブログ</a><a href="/about/">Arpedaについて</a><a href="/contact/">お問い合わせ</a>
+        </nav>
+        <nav class="foot-nav foot-ind" aria-label="業種別のホームページ制作"><span>業種別のホームページ制作</span><a href="/lp/seitai/">整体院・もみほぐし</a><a href="/lp/nail-eyelash/">ネイル・まつげサロン</a><a href="/lp/yoga-pilates/">ヨガ・ピラティス</a><a href="/lp/hair-salon/">美容室</a><a href="/lp/esthe/">エステサロン</a><a href="/lp/pet-grooming/">トリミング・ペット</a><a href="/lp/kojin-kyoshitsu/">個人教室</a><a href="/lp/shokunin/">電気工事・水道・板金</a></nav>
+        <dl>
+          <dt>屋号</dt><dd>Arpeda（アルペダ）</dd>
+          <dt>事業者</dt><dd>久米 優佑</dd>
+          <dt>連絡先</dt><dd><span class="mailslot" data-u="hello" data-d="arpeda.jp">hello&#8203;(at)&#8203;arpeda.jp</span></dd>
+        </dl>
+      </div>
+    </div>
+    <div class="foot-bottom"><span>&copy; <span id="y">2026</span> Arpeda</span><span>Web制作 / AI活用支援</span></div>
+  </div>
+</footer>
+</body>
+</html>
