@@ -1337,7 +1337,7 @@ html:not(.js) .sl-count{display:none}
       </article>
     </div>
 
-    <p class="news">日本成人病予防協会の健康管理能力検定のホームページに掲載されました。<br><a href="https://kentei.healthcare/voice/" target="_blank" rel="noopener">https://kentei.healthcare/voice/</a></p>
+    <p class="news">日本成人病予防協会の健康管理能力検定のホームページに掲載されました。</p>
   </div>
 </section>
 
@@ -1429,6 +1429,7 @@ function nextDate(dow){ // 明日以降で最初のその曜日
 const mb=$('.menu-btn'),gn=$('#gnav');
 mb.addEventListener('click',()=>{const o=gn.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
 $$('a',gn).forEach(a=>a.addEventListener('click',()=>{gn.classList.remove('open');mb.setAttribute('aria-expanded','false')}));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&gn.classList.contains('open')){gn.classList.remove('open');mb.setAttribute('aria-expanded','false');mb.focus()}});
 
 /* 絞り込み */
 const fb=$$('.fbtn:not(.gf)');
@@ -1533,7 +1534,10 @@ const fc=$('#f-class');
   }));
   fc.insertBefore(g,fc.children[1]);
   const d=$('#f-date');d.min=TODAY.ymd;
+  fc.addEventListener('change',()=>{const w=classDay();if(w!==null&&(!d.value||dayOf(d.value)!==w))d.value=nextDate(w)});
 })();
+function classDay(){const p=fc.value.split('|');return p.length===3?+p[1]:null}
+function dayOf(v){const [y,m,d]=v.split('-').map(Number);return new Date(Date.UTC(y,m-1,d)).getUTCDay()}
 function reserve(id,day,time){
   let v=id;
   if(id==='pilates'||id==='other')v=id;
@@ -1550,6 +1554,8 @@ $('#rform').addEventListener('submit',e=>{
   const name=$('#f-name').value.trim();
   if(!fc.value){err.textContent='クラスを選んでください。';fc.focus();return}
   if(!name){err.textContent='お名前を入力してください。';$('#f-name').focus();return}
+  const cd=classDay(),dv=$('#f-date').value;
+  if(cd!==null&&dv&&dayOf(dv)!==cd){err.textContent='選んだクラスは'+DAYS[cd]+'曜日です。希望の日を'+DAYS[cd]+'曜日にしてください。';$('#f-date').focus();return}
   const opt=fc.selectedOptions[0].textContent;
   const other=fc.value==='other';
   const first=$('input[name=first]:checked').value;
