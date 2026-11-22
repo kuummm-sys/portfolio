@@ -915,6 +915,26 @@ html:not(.js) .sl-count{display:none}
   .ft{padding:22px 0 18px}
 }
 @media (max-width:560px){.minicta{display:grid;grid-template-columns:1fr;gap:10px}.minicta .btn{width:100%;justify-content:center;white-space:nowrap}}
+
+/* ===== §12 インストラクター：写真を大きく、学んできたことは下に横いっぱい（11-22） ===== */
+@media(min-width:861px){
+  .inst .person{grid-template-columns:minmax(0,46%) 1fr;grid-template-rows:1fr auto auto 1fr auto;column-gap:52px;row-gap:0;padding:34px 40px 36px}
+  .inst .person .pbody{display:contents}
+  .inst .pphoto{grid-column:1;grid-row:1/5}
+  .inst .person h3{grid-column:2;grid-row:2}
+  .inst .person .pmsg{grid-column:2;grid-row:3;margin:0}
+  .inst .person .learn{grid-column:1/-1;grid-row:5;margin-top:30px;padding:22px 28px 24px;border:0;border-radius:18px;background:var(--cream)}
+  .inst .person:nth-child(even){grid-template-columns:1fr minmax(0,46%)}
+  .inst .person:nth-child(even) .pphoto{grid-column:2;order:0}
+  .inst .person:nth-child(even) h3,.inst .person:nth-child(even) .pmsg{grid-column:1}
+  .inst .person img{aspect-ratio:4/5}
+  .inst .ll{grid-template-columns:repeat(3,minmax(0,1fr));column-gap:28px}
+  .inst .person:nth-child(even) .ll{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .inst .learn-h{font-size:1rem;margin-bottom:4px}
+}
+@media(min-width:861px) and (max-width:1100px){
+  .inst .ll{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
 </style>
 </head>
 <body>
