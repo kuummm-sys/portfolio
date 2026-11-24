@@ -1,0 +1,69 @@
+.legal-page .page-head {
+  padding-bottom: clamp(28px, 5vw, 64px);
+}
+.legal-page .page-title {
+  font-size: clamp(29px, 5.3vw, 64px);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.legal-page .crumb {
+  flex-wrap: wrap;
+}
+.legal-copy {
+  max-width: 52rem;
+  padding: clamp(24px, 5vw, 56px) 0 clamp(64px, 10vw, 120px);
+  border-top: 1px solid var(--line);
+  overflow-wrap: anywhere;
+}
+.legal-copy h2 {
+  margin: clamp(32px, 5vw, 56px) 0 .8em;
+  color: var(--blue-d);
+  font: 500 clamp(21px, 3.5vw, 29px)/1.5 var(--jp-serif);
+}
+.legal-copy p,
+.legal-copy ul,
+.legal-copy ol {
+  margin: 0 0 1em;
+}
+.legal-copy ul,
+.legal-copy ol {
+  padding-inline-start: 1.55em;
+}
+.legal-copy li + li {
+  margin-top: .45em;
+}
+.legal-copy li > ul {
+  margin: .45em 0 0;
+}
+.legal-copy table {
+  width: 100%;
+  border-collapse: collapse;
+  border-block: 1px solid var(--line);
+  margin: 0 0 1.3em;
+}
+.legal-copy :is(th, td) {
+  padding: .7em clamp(.5em, 2vw, 1em);
+  border-bottom: 1px solid var(--line);
+  text-align: start;
+  vertical-align: top;
+}
+.legal-copy thead th {
+  background: var(--blue);
+  color: #fff;
+}
+.legal-copy :is(thead th:first-child, th[scope="row"]) {
+  width: 32%;
+}
+.legal-copy th[scope="row"] {
+  background: rgba(43, 89, 209, .055);
+}
+.legal-copy a {
+  color: var(--blue-d);
+  text-decoration: underline;
+  text-underline-offset: .18em;
+}
+
+/* 表は縦に長いので、スクロールの判定ではなく読み込みのときに静かに入れる */
+@keyframes legal-in{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.motion .legal-copy table{animation:legal-in 1s var(--ease,cubic-bezier(.2,.7,.2,1)) .25s both}
+@media (prefers-reduced-motion: reduce){.legal-copy table{animation:none}}
