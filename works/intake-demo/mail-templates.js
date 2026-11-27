@@ -13,5 +13,17 @@ export default {
     "confirmed": {
         "subject": "体験レッスンの日程が確定しました（{id}）",
         "body": "{name} 様\n\n日時：{date}\n場所：{place}\n持ち物：筆記用具と汚れてもよい服装\n\n日程の変更・キャンセルは {contact} までご連絡ください。\n{shop}"
+    },
+    "dayBefore": {
+        "subject": "明日のご予約のお知らせ（{id}）",
+        "body": "{name} 様\n\n明日のご予約のお知らせです。\n日時：{date}\n受付番号：{id}\n\n{cancel}{shop}"
+    },
+    "cancelled": {
+        "subject": "キャンセルを承りました（{id}）",
+        "body": "{name} 様\n\n次のご予約のキャンセルを承りました。\n日時：{date}\n受付番号：{id}\n\nまたのご利用をお待ちしております。\n{shop}"
+    },
+    "staffCancelled": {
+        "subject": "キャンセルがありました（{id}）",
+        "body": "{name} 様がご予約をキャンセルしました。\n日時：{date}\n受付番号：{id}\n\n{admin_url}"
     }
 };

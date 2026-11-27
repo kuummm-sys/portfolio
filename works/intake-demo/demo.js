@@ -23,7 +23,7 @@ const lesson = {
 };
 
 const quote = {
-  title: '見積もり相談', shop: 'みずき住まい相談室', prefix: 'Q',
+  title: '見積もり相談', shop: 'みずき住まい相談室', prefix: 'Q', photos: 3,
   fields: [
     { key: 'message', label: '相談内容', type: 'textarea', example: '玄関の収納を増やしたいです。今ある棚を活かせるか相談したいです。', max: 2000 },
     { key: 'area', label: '地域（市区町村）', example: '架空市 西町', max: 100 },
@@ -41,7 +41,7 @@ const quote = {
 
 const cases = { lesson, quote };
 const state = Object.fromEntries(Object.keys(cases).map(key => [key, {
-  records: [], receipt: null, selected: null, draft: {}, noticeSeen: null, proposalView: null,
+  records: [], receipt: null, selected: null, draft: {}, noticeSeen: null, proposalView: null, reminderView: null, draftPhotos: [],
 }]));
 let kind = 'lesson';
 let role = 'applicant';
@@ -55,6 +55,21 @@ const envelope = '<svg aria-hidden="true" viewBox="0 0 24 18" width="20" height=
 const escape = value => String(value).replace(/[&<>"']/g, char => ({
   '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
 })[char]);
+
+// 見本の写真（架空）。申込者が選んだ写真はこの画面の中だけで表示し、どこにも送らない。
+const samplePhoto = (body, label) => ({
+  src: 'data:image/svg+xml,' + encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">${body}</svg>`),
+  alt: label,
+});
+const samplePhotos = [
+  samplePhoto('<rect width="400" height="300" fill="#e9e1d4"/><rect y="230" width="400" height="70" fill="#b98a5a"/>'
+    + '<rect x="60" y="70" width="150" height="160" fill="#f6f1e8" stroke="#8a6a48" stroke-width="6"/>'
+    + '<path d="M66 122h138M66 174h138" stroke="#8a6a48" stroke-width="5"/><rect x="250" y="40" width="90" height="190" fill="#d7c8b2" stroke="#8a6a48" stroke-width="4"/>'
+    + '<circle cx="322" cy="140" r="5" fill="#8a6a48"/>', '見本の写真：玄関の今の棚'),
+  samplePhoto('<rect width="400" height="300" fill="#efe8dc"/><rect x="40" y="40" width="320" height="220" fill="#f8f4ec" stroke="#8a6a48" stroke-width="8"/>'
+    + '<path d="M44 115h312M44 190h312" stroke="#8a6a48" stroke-width="7"/><rect x="70" y="70" width="60" height="42" rx="4" fill="#7b9ac8"/>'
+    + '<rect x="150" y="80" width="80" height="32" rx="4" fill="#c97f5d"/><rect x="250" y="140" width="70" height="47" rx="4" fill="#8bb08a"/>', '見本の写真：棚の中'),
+];
 
 function display(field, value) {
   if (field.type !== 'datetime-local') return value;
@@ -83,7 +98,22 @@ function fieldsHtml(config, draft) {
         ? `<textarea name="${key}" required maxlength="${max}" rows="4">${escape(value)}</textarea>`
         : `<input name="${key}" type="${type}" required ${type === 'datetime-local' ? 'max="9999-12-31T23:59"' : `maxlength="${max}"`} value="${escape(value)}">`;
     return `<label class="${type === 'textarea' ? 'wide' : ''}">${label}${control}</label>`;
-  }).join('');
+  }).join('') + (config.photos ? photoFieldHtml(config) : '');
+}
+
+function photoFieldHtml(config) {
+  return `<div class="wide photo-field"><label>写真（任意）<input type="file" name="photos" accept="image/*" multiple data-photos></label>
+    <p class="hint">直したい場所の写真を${config.photos}枚まで付けられます。このデモでは、選んだ写真はどこにも送られません。</p>
+    <p class="photo-note" role="status">${photoNote(current().draftPhotos)}</p>
+    <ul class="photo-preview">${photoListHtml(current().draftPhotos)}</ul></div>`;
+}
+
+function photoNote(photos) {
+  return photos.length ? `写真を${photos.length}枚付けています。` : '';
+}
+
+function photoListHtml(photos) {
+  return photos.map(photo => `<li><img src="${escape(photo.src)}" alt="${escape(photo.alt)}"></li>`).join('');
 }
 
 function mail(title, to, subject, body, { open = false, footer = '', notice = false, fresh = false } = {}) {
@@ -95,12 +125,14 @@ function mail(title, to, subject, body, { open = false, footer = '', notice = fa
 }
 
 function statusHtml(record, changed = false) {
-  const state = record.status === '未対応' ? 'pending' : record.status === '確定' ? 'confirmed' : 'proposed';
+  const state = record.status === '未対応' ? 'pending' : record.status === '確定' ? 'confirmed'
+    : record.status === 'キャンセル' ? 'cancelled' : 'proposed';
   return `<span class="status${changed ? ' status-updated' : ''}" data-state="${state}">${record.status}</span>`;
 }
 
 function summary(config, record) {
-  return config.fields.map(field => [field.label, display(field, record.values[field.key])]);
+  const rows = config.fields.map(field => [field.label, display(field, record.values[field.key])]);
+  return record.photos?.length ? [...rows, ['写真', `${record.photos.length}枚`]] : rows;
 }
 
 function receiptBody(template, config, record) {
@@ -119,10 +151,11 @@ function receiptHtml(config, record) {
 }
 
 function applicantHtml(config, data) {
+  if (data.reminderView) return reminderHtml(data.reminderView);
   if (data.proposalView) return proposalHtml(data.proposalView);
   if (data.receipt) return receiptHtml(config, data.receipt);
   return `<h3 id="panel-title">${config.title}の申し込み</h3>
-    <p class="hint">すべて必須です。実在する個人情報は入力せず、見本の情報でお試しください。</p>
+    <p class="hint">${config.photos ? '写真のほかはすべて必須です' : 'すべて必須です'}。実在する個人情報は入力せず、見本の情報でお試しください。</p>
     <form id="application" novalidate>
       <div class="actions"><button type="button" data-fill>見本を入力</button></div>
       <div class="fields">${fieldsHtml(config, data.draft)}</div>
@@ -166,6 +199,49 @@ function proposalHtml({ record, view, pending }) {
     <div class="actions"><button data-back-to-form>申込画面に戻る</button></div>`;
 }
 
+function reminderHtml({ record, view }) {
+  const date = dateLabel(record.confirmedAt);
+  if (view === 'confirm') {
+    return `<section class="reply-card" aria-labelledby="panel-title">
+      <p class="hint">申込者のキャンセル画面（メールのボタンを押した先）</p>
+      <h3 id="panel-title">予約のキャンセル</h3>
+      <div class="booking-card"><p>体験レッスンのお申し込み</p><p><strong>${escape(date)}</strong></p></div>
+      <p>このご予約をキャンセルします。よろしければ下のボタンを押してください。</p>
+      <div class="actions"><button class="primary" data-cancel-submit>キャンセルする</button><button data-reminder-mail>お知らせに戻る</button></div>
+    </section>`;
+  }
+  if (view === 'used') {
+    return `<section class="reply-card" aria-labelledby="panel-title">
+      <p class="hint">申込者のキャンセル画面</p>
+      <h3 id="panel-title">このリンクは使えません</h3>
+      <p>すでにキャンセル済みか、予約の内容が変わっています。お店に直接ご連絡ください。</p>
+      <div class="actions"><button class="primary" data-go-staff>担当者への知らせを見る</button><button data-back-to-form>申込画面に戻る</button></div>
+    </section>`;
+  }
+  if (view === 'result') {
+    return `<section class="reply-card" aria-labelledby="panel-title">
+      <p class="hint">申込者のキャンセル画面</p>
+      <h3 id="panel-title">キャンセルしました</h3>
+      <p>${escape(date)}のご予約をキャンセルしました。確認のメールをお送りします。</p>
+    </section>
+    ${mail('キャンセルの確認メールの見本', record.values.email, record.cancel.ack.subject, record.cancel.ack.body, { open: true })}
+    <div class="actions"><button class="primary" data-go-staff>担当者への知らせを見る</button><button data-reminder-mail>お知らせに戻る</button><button data-back-to-form>申込画面に戻る</button></div>`;
+  }
+  const { subject, body } = dayBeforeMail(record);
+  return `<h3 id="panel-title">前日の朝に届くお知らせ</h3>
+    <p class="hint">予約の前日の朝、申込者に自動で届くメールの見本です。ボタンは押せます。</p>
+    ${mail('前日のお知らせの見本', record.values.email, subject, body, {
+      open: true, footer: '<div class="reply-choices"><button class="primary" data-cancel-open>予約をキャンセルする</button></div>',
+    })}
+    <div class="actions"><button data-go-staff>担当者の画面に戻る</button></div>`;
+}
+
+function photosHtml(record) {
+  if (!record.photos?.length) return '';
+  return `<section class="photos-block" aria-label="写真"><h4>写真</h4><ul class="photo-preview">${photoListHtml(record.photos)}</ul>
+    <p class="hint">担当者だけが見られます。受付を削除すると写真も消えます。</p></section>`;
+}
+
 function detailHtml(config, record, changed) {
   const { proposal } = record;
   if (record.status === '提案中') {
@@ -179,13 +255,22 @@ function detailHtml(config, record, changed) {
   const replyNotice = proposal?.notice
     ? mail('担当者への回答通知の見本', 'desk@example.test', proposal.notice.subject, proposal.notice.body, { open: true })
     : '';
+  if (record.status === 'キャンセル') {
+    return `<section class="detail" aria-labelledby="record-title"><h3 id="record-title">${record.id} の対応</h3>
+      <p>${statusHtml(record, changed)}</p>
+      ${mail('担当者へのキャンセルの知らせ', 'desk@example.test', record.cancel.notice.subject, record.cancel.notice.body, { open: true, notice: true })}
+      ${mail('申込者へのキャンセルの確認メール', record.values.email, record.cancel.ack.subject, record.cancel.ack.body)}</section>`;
+  }
   if (record.response) {
     const { subject, body } = record.response;
+    const reminder = record.status === '確定' && record.confirmedAt
+      ? `<div class="reminder-cta"><p class="hint">予約の前日の朝、申込者にお知らせが自動で届きます。キャンセルのボタン付きです。</p>
+        <div class="actions"><button class="primary" data-reminder>前日のお知らせを見る</button></div></div>` : '';
     return `<section class="detail" aria-labelledby="record-title"><h3 id="record-title">${record.id} の対応</h3>
-      <p>${statusHtml(record, changed)}</p>${replyNotice}${mail(record.status === '確定' ? '確定メールの見本' : '案内メールの見本', record.values.email, subject, body, { open: true })}</section>`;
+      <p>${statusHtml(record, changed)}</p>${replyNotice}${mail(record.status === '確定' ? '確定メールの見本' : '案内メールの見本', record.values.email, subject, body, { open: true })}${reminder}${photosHtml(record)}</section>`;
   }
   return `<section class="detail" aria-labelledby="record-title"><h3 id="record-title">${record.id} の対応</h3>
-    ${replyNotice}<dl>${summary(config, record).map(([label, value]) => `<dt>${label}</dt><dd>${escape(value)}</dd>`).join('')}</dl>
+    ${replyNotice}<dl>${summary(config, record).map(([label, value]) => `<dt>${label}</dt><dd>${escape(value)}</dd>`).join('')}</dl>${photosHtml(record)}
     <div class="actions">${config.actions.map((action, index) => `<button data-action="${index}"${index === 0 ? ' class="primary"' : ''}>${action.label}</button>`).join('')}</div>
     <div id="action-form"></div></section>`;
 }
@@ -218,7 +303,8 @@ function render(motion = '', direction = 1) {
   document.querySelector('#roles').innerHTML =
     `<button data-role="applicant" aria-pressed="${role === 'applicant'}">申込者</button><button data-role="staff" aria-pressed="${role === 'staff'}">担当者</button>`;
   document.querySelector('#guide').textContent = role === 'applicant'
-    ? (current().proposalView ? '提案メールのボタンから日程を回答できます。' : '申し込むと受付番号と自動返信が表示されます。')
+    ? (current().reminderView ? 'お知らせのボタンから、申込者が自分でキャンセルできます。'
+      : current().proposalView ? '提案メールのボタンから日程を回答できます。' : '申し込むと受付番号と自動返信が表示されます。')
     : '通知から申込を開き、次の対応を選んでください。';
   const config = cases[kind];
   panel.dataset.motion = motion;
@@ -234,7 +320,7 @@ function saveDraft() {
 function switchRole(next) {
   saveDraft();
   const motion = next === role ? '' : next === 'staff'
-    ? (current().proposalView?.view === 'result' ? 'reply-staff' : 'staff')
+    ? (current().proposalView?.view === 'result' || current().reminderView?.view === 'result' ? 'reply-staff' : 'staff')
     : 'switch';
   role = next;
   render(motion, next === 'staff' ? 1 : -1);
@@ -276,8 +362,9 @@ function submitApplication(form) {
   }
   const record = {
     id: `${config.prefix}-${String(data.records.length + 1).padStart(3, '0')}`,
-    values, status: '未対応', response: null,
+    values, status: '未対応', response: null, photos: config.photos ? data.draftPhotos : [],
   };
+  data.draftPhotos = [];
   data.records.push(record);
   data.receipt = record;
   data.selected = null;
@@ -304,6 +391,45 @@ function confirmationMail(record, date) {
   return demoMail(templates.confirmed, record, { date: dateLabel(date), place: `${record.values.room}（${place}）` });
 }
 
+function cancelDeadline(date) {
+  const day = new Date(date.slice(0, 10) + 'T12:00:00Z');
+  day.setUTCDate(day.getUTCDate() - 1);
+  return dateLabel(day.toISOString().slice(0, 10) + 'T18:00');
+}
+
+function dayBeforeMail(record) {
+  return demoMail(templates.dayBefore, record, {
+    date: dateLabel(record.confirmedAt),
+    cancel: `ご都合が悪くなったときは、下のボタンからキャンセルできます（${cancelDeadline(record.confirmedAt)}まで）。\n\n`,
+  });
+}
+
+function openReminder() {
+  const data = current();
+  const record = data.records.find(item => item.id === data.selected);
+  if (!record?.confirmedAt) return;
+  data.proposalView = null;
+  data.reminderView = { record, view: record.status === '確定' ? 'mail' : 'used' };
+  switchRole('applicant');
+}
+
+function submitCancel() {
+  const view = current().reminderView;
+  const record = view?.record;
+  if (role !== 'applicant' || view?.view !== 'confirm' || !record) return;
+  if (record.status !== '確定') {
+    view.view = 'used';
+  } else {
+    const vars = { date: dateLabel(record.confirmedAt), admin_url: '受付の詳細は下の一覧から確認できます。' };
+    record.cancel = { ack: demoMail(templates.cancelled, record, vars), notice: demoMail(templates.staffCancelled, record, vars) };
+    record.status = 'キャンセル';
+    current().selected = record.id;
+    view.view = 'result';
+  }
+  render('reply');
+  activate('#panel-title');
+}
+
 function respond(record, action, extra = '') {
   if (!record || record.status !== '未対応') return;
   const config = cases[kind];
@@ -314,6 +440,7 @@ function respond(record, action, extra = '') {
       body: `${record.values.name} さま\n\n${action.message(display(action, extra))}\n\n${config.shop}`,
     };
   record.status = action.status;
+  if (action.dateKey) record.confirmedAt = record.values[action.dateKey];
   render('respond');
   activate('#record-title');
 }
@@ -380,6 +507,7 @@ function submitReply() {
     });
     record.status = date ? '確定' : '未対応';
     record.response = date ? confirmationMail(record, date) : null;
+    if (date) record.confirmedAt = date;
     view.view = 'result';
   }
   render('reply');
@@ -426,10 +554,28 @@ document.addEventListener('click', event => {
     const data = current();
     const record = role === 'staff' ? data.records.find(item => item.id === data.selected) : data.proposalView?.record;
     if (!record?.proposal) return;
+    data.reminderView = null;
     data.proposalView = { record, view: 'mail' };
     switchRole('applicant');
+  } else if ('reminder' in dataset) {
+    openReminder();
+  } else if ('cancelOpen' in dataset) {
+    const view = current().reminderView;
+    if (!view) return;
+    view.view = view.record.status === '確定' ? 'confirm' : 'used';
+    render('reply');
+    activate('#panel-title');
+  } else if ('cancelSubmit' in dataset) {
+    submitCancel();
+  } else if ('reminderMail' in dataset) {
+    const view = current().reminderView;
+    if (!view) return;
+    view.view = 'mail';
+    render('reply');
+    activate('#panel-title');
   } else if ('backToForm' in dataset) {
     current().proposalView = null;
+    current().reminderView = null;
     render('switch');
     activate('#panel-title, #receipt');
   } else if ('answer' in dataset) {
@@ -438,11 +584,17 @@ document.addEventListener('click', event => {
     submitReply();
   } else if ('new' in dataset) {
     current().receipt = null;
+    current().draftPhotos = [];
     render('new');
     activate('#panel-title');
   } else if ('fill' in dataset) {
     const form = document.querySelector('#application');
     for (const field of cases[kind].fields) form.elements[field.key].value = field.example;
+    if (cases[kind].photos) {
+      current().draftPhotos = samplePhotos.slice();
+      form.querySelector('.photo-preview').innerHTML = photoListHtml(current().draftPhotos);
+      form.querySelector('.photo-note').textContent = '見本の写真を2枚付けました。';
+    }
     form.querySelector('[role="alert"]').textContent = '';
     form.querySelector('[aria-invalid]')?.removeAttribute('aria-invalid');
   } else if (dataset.open) {
@@ -475,6 +627,19 @@ document.addEventListener('click', event => {
       <div><button class="primary" type="submit">${action.button}</button></div></form>`;
     document.querySelector('#response [name="extra"]').focus();
   }
+});
+
+document.addEventListener('change', event => {
+  const input = event.target.closest('input[data-photos]');
+  if (!input) return;
+  const limit = cases[kind].photos;
+  const files = [...input.files].filter(file => file.type.startsWith('image/'));
+  const form = input.closest('form');
+  form.querySelector('[role="alert"]').textContent = files.length > limit ? `写真は${limit}枚までです。最初の${limit}枚を付けました。` : '';
+  for (const photo of current().draftPhotos) if (photo.src.startsWith('blob:')) URL.revokeObjectURL(photo.src);
+  current().draftPhotos = files.slice(0, limit).map((file, index) => ({ src: URL.createObjectURL(file), alt: `選んだ写真${index + 1}` }));
+  form.querySelector('.photo-preview').innerHTML = photoListHtml(current().draftPhotos);
+  form.querySelector('.photo-note').textContent = photoNote(current().draftPhotos);
 });
 
 document.addEventListener('submit', event => {

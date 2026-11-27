@@ -282,3 +282,30 @@
 @media (prefers-reduced-motion: reduce) {
   .intake-main *, .intake-main *::before, .intake-main *::after { animation: none !important; }
 }
+
+/* 部品の場面（前日のお知らせ・キャンセル・写真） */
+.intake-main .status[data-state="cancelled"] { background: #ecebe9; color: #4a4744; }
+.photo-field { display: grid; gap: .35rem; }
+.photo-field input[type="file"] { min-height: 48px; padding: 9px 12px; }
+.photo-field .hint { margin: 0; }
+.photo-preview { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 120px), 1fr)); gap: .55rem; margin: .2rem 0 0; padding: 0; }
+.photo-preview:empty { display: none; }
+.photo-preview img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border: 1px solid var(--intake-rule); border-radius: 6px; background: #fff; }
+.photos-block { padding-top: .8rem; border-top: 1px dashed var(--intake-rule); }
+.photos-block h4 { font-size: 16px; margin-bottom: .4rem; }
+.booking-card { padding: .8rem 1rem; border: 1px solid var(--intake-rule); background: var(--intake-tint); color: var(--intake-blue-ink); }
+.booking-card p + p { margin-top: .2rem; }
+.reminder-cta { padding: .9rem 1rem; border-inline-start: 3px solid var(--blue); background: var(--intake-tint); }
+.reminder-cta .actions { margin-top: .5rem; }
+
+@keyframes intake-pop { from { opacity: 0; transform: scale(.88); } }
+@media (prefers-reduced-motion: no-preference) {
+  .photo-preview li { animation: intake-pop .32s var(--ease) both; }
+  .photo-preview li:nth-child(2) { animation-delay: .08s; }
+  .photo-preview li:nth-child(3) { animation-delay: .16s; }
+  .panel[data-motion="respond"] .reminder-cta { animation: intake-in .36s .2s var(--ease) both; }
+  .panel[data-motion="reply"] .mail { animation: intake-deposit .38s .12s var(--ease) both; }
+  .panel[data-motion="reply-staff"] .detail .mail.notice { animation: intake-deposit .35s var(--ease) both; }
+}
+.photo-note { margin: 0; color: var(--intake-blue-ink); font-size: 14px; font-weight: 700; }
+.photo-note:empty { display: none; }
