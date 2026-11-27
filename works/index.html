@@ -24,18 +24,11 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Shippori+Mincho+B1:wght@500&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap">
-<link rel="stylesheet" href="/assets/css/arpeggio.css?v=20261014a">
+<link rel="stylesheet" href="/assets/css/arpeggio.css?v=20261127a">
 <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')}catch(e){}</script>
 <style>
 .client-voice{margin-top:48px}.client-voice h3{font-family:var(--jp-serif);font-size:clamp(19px,2vw,24px);font-weight:500;margin-bottom:16px}.client-voice figure{margin:0;max-width:44em;padding:24px 28px;border:1px solid var(--line);border-radius:12px;background:var(--paper-2)}.client-voice blockquote{margin:0;line-height:2}.client-voice figcaption{margin-top:12px;color:var(--graphite);font-size:14px}.works-heading{display:block;margin-bottom:32px}.works-heading h2{font-family:var(--jp-serif);font-size:clamp(25px,3.3vw,42px);font-weight:500;line-height:1.5;margin-bottom:16px}.works-heading p{color:var(--graphite);max-width:48em}.works-carousel{padding-top:32px}.works-carousel .car-slide{flex-basis:clamp(280px,44vw,560px);opacity:1}.works-carousel .car-meta{display:flex;flex-direction:column;gap:8px;margin-top:28px}.works-carousel .car-open{align-self:flex-start;margin-top:8px}.device-pair,.device-single{position:relative;aspect-ratio:1 / .9025;padding:0}.device-pc{width:95%}.device-single{display:flex;justify-content:center;align-items:center}.device-single .device-sp{position:relative;right:auto;bottom:auto;width:38%;max-width:100%}.device-pc{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper-2)}.browser-bar{height:20px;display:flex;gap:5px;align-items:center;padding:0 10px;background:#ebe9e5}.browser-bar i{width:6px;height:6px;border-radius:50%;background:var(--line)}.device-pc picture{display:block;aspect-ratio:4/3;overflow:hidden}.device-pc img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}.device-sp{position:absolute;width:29%;right:0;bottom:0;border:5px solid #242424;border-radius:24px;overflow:hidden;background:#242424;box-shadow:0 12px 24px #0003}.device-sp picture{display:block;aspect-ratio:390/844;overflow:hidden}.device-sp img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}.works-carousel .car-track:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}@media(max-width:760px){.works-carousel .car-slide{flex-basis:84vw}.works-carousel .car-btns{display:flex}.works-carousel .car-ui{grid-template-columns:1fr auto auto;gap:16px}.works-carousel .car-btn{width:40px;height:40px}.device-sp{border-width:4px;border-radius:20px}.works-heading{margin-bottom:24px}}
 
-.works-intake .car-link{display:grid;grid-template-columns:minmax(0,520px) minmax(0,1fr);gap:clamp(20px,6vw,82px);align-items:center}
-.works-intake .car-meta{margin-block:0}
-.works-intake .car-meta h3{font-family:var(--jp-serif);font-size:clamp(22px,3.1vw,35px);line-height:1.4}
-.works-intake .car-meta p{color:var(--graphite);max-width:32em}
-.works-intake .device-pair{transition:transform .3s var(--ease)}
-@media(hover:hover) and (prefers-reduced-motion:no-preference){.works-intake .car-link:hover .device-pair{transform:translateY(-4px)}}
-@media(max-width:760px){.works-intake .car-link{grid-template-columns:minmax(0,1fr)}}
 </style></head>
 <body>
 <a class="skip" href="#main">本文へ移動</a>
@@ -62,7 +55,7 @@
   <div class="wrap">
     <nav class="crumb" aria-label="現在地"><a href="/">トップ</a><span aria-hidden="true">/</span><span>サンプル</span></nav>
     <h1 class="page-title"><span class="staff" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span>サンプル</h1>
-    <p class="page-lead">Arpeda が制作したお客さまのサイト、自社で運営しているサイト、制作の見本です。左右にスワイプして、気になるものを開いてみてください。予約や問い合わせの受付も試せます。</p>
+    <p class="page-lead">Arpeda が制作したお客さまのサイト、自社で運営しているサイト、制作の見本です。左右にスワイプして、気になるものを開いてみてください。予約の受付や欠席連絡など、動く仕組みもその場で試せます。</p>
   </div>
 </section>
 <section class="section works-carousel" id="client-sites"><div class="wrap works-heading"><h2 id="client-sites-title">お客さまのサイト</h2><p>Arpeda が制作し、公開しているお客さまのサイトです。日程や料金などは、お客さまがご自身で更新できます。</p></div><div class="car" role="region" aria-roledescription="カルーセル" aria-labelledby="client-sites-title">
@@ -76,34 +69,26 @@
 </div>
 <div class="wrap client-voice"><h3>お客さまの声</h3><figure><blockquote><p>とても見やすく、イメージ通りの仕上がりになりました。予約サイトへもわかりやすくなり、とても満足しています。後から自分で編集できる点もいいですね。</p></blockquote><figcaption>あかり習字教室　小出さま</figcaption></figure></div></section>
 
+<section class="section systems" id="systems">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>動く仕組みの見本</h2>
+      <p>ホームページに組み込める、予約・連絡・事務作業の仕組みです。架空の教室とお店で、その場で操作して試せます。</p>
+    </div>
+    <ul class="sys-grid">
+      <li class="reveal" style="--i:0"><a class="sys-card" href="/works/intake-demo/"><div class="sys-shot"><span class="sys-tag">その場で試せます</span><picture><source type="image/webp" srcset="/assets/img/works/sys-intake-480.webp 480w, /assets/img/works/sys-intake-800.webp 800w, /assets/img/works/sys-intake-1200.webp 1200w" sizes="(max-width:600px) 92vw, (max-width:900px) 46vw, 400px"><img src="/assets/img/works/sys-intake-800.jpg" srcset="/assets/img/works/sys-intake-480.jpg 480w, /assets/img/works/sys-intake-800.jpg 800w, /assets/img/works/sys-intake-1200.jpg 1200w" sizes="(max-width:600px) 92vw, (max-width:900px) 46vw, 400px" width="800" height="600" alt="担当者の受付画面。通知メールと対応状況の一覧" loading="lazy" decoding="async"></picture></div><span class="car-cat">教室・お店の受付</span><h3>予約・問い合わせの受付</h3><p>申し込みから返信、前日のお知らせ、申込者のキャンセル、写真付きの相談まで。</p><span class="car-open">受付を試す</span></a></li>
+      <li class="reveal" style="--i:1"><a class="sys-card" href="/works/furikae-demo/"><div class="sys-shot"><span class="sys-tag">その場で試せます</span><picture><source type="image/webp" srcset="/assets/img/works/sys-furikae-480.webp 480w, /assets/img/works/sys-furikae-800.webp 800w, /assets/img/works/sys-furikae-1200.webp 1200w" sizes="(max-width:600px) 92vw, (max-width:900px) 46vw, 400px"><img src="/assets/img/works/sys-furikae-800.jpg" srcset="/assets/img/works/sys-furikae-480.jpg 480w, /assets/img/works/sys-furikae-800.jpg 800w, /assets/img/works/sys-furikae-1200.jpg 1200w" sizes="(max-width:600px) 92vw, (max-width:900px) 46vw, 400px" width="800" height="600" alt="先生の画面。週ごとの出席表と空き席" loading="lazy" decoding="async"></picture></div><span class="car-cat">教室の欠席連絡</span><h3>欠席連絡と振替</h3><p>保護者は「休む」を押すだけ。空いているレッスンがメールで届き、出席表も書き換わります。</p><span class="car-open">振替を試す</span></a></li>
+      <li class="reveal" style="--i:2"><a class="sys-card" href="/services/ai/1gyomu/"><div class="sys-shot"><span class="sys-tag">流れを見られます</span><picture><source type="image/webp" srcset="/assets/img/works/sys-1gyomu-480.webp 480w, /assets/img/works/sys-1gyomu-800.webp 800w, /assets/img/works/sys-1gyomu-1200.webp 1200w" sizes="(max-width:600px) 92vw, (max-width:900px) 46vw, 400px"><img src="/assets/img/works/sys-1gyomu-800.jpg" srcset="/assets/img/works/sys-1gyomu-480.jpg 480w, /assets/img/works/sys-1gyomu-800.jpg 800w, /assets/img/works/sys-1gyomu-1200.jpg 1200w" sizes="(max-width:600px) 92vw, (max-width:900px) 46vw, 400px" width="800" height="600" alt="ばらばらの作業、AIが下書き、人が確認、完成の4段階の図" loading="lazy" decoding="async"></picture></div><span class="car-cat">事務作業</span><h3>1業務のAI化</h3><p>店舗ごとにばらばらの売上ファイルを1つの表にそろえるなど、AIで下書きして人が確かめる流れ。</p><span class="car-open">流れを見る</span></a></li>
+    </ul>
+  </div>
+</section>
+
 <section class="section works-carousel" id="self-sites"><div class="wrap works-heading"><h2 id="self-sites-title">自社で運営しているサイト</h2><p>Arpeda が作り、いまも更新を続けています。</p></div><div class="car" role="region" aria-roledescription="カルーセル" aria-labelledby="self-sites-title">
 <ul class="car-track" tabindex="0" aria-label="自社で運営しているサイト。左右の矢印キーで送れます">
 <li class="car-slide" aria-roledescription="スライド" aria-label="1 / 1：ホームページ＋集客ページ ノイトル（録音の雑音処理）"><a class="car-link" href="https://noitoru.com/" target="_blank" rel="noopener"><div class="device-pair"><div class="device-pc"><div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i></div><picture><source type="image/webp" srcset="/assets/img/works/pc/self-noitoru-640.webp 640w, /assets/img/works/pc/self-noitoru-1280.webp 1280w" sizes="(max-width:760px) 84vw, 560px"><img src="/assets/img/works/pc/self-noitoru-640.jpg" srcset="/assets/img/works/pc/self-noitoru-640.jpg 640w, /assets/img/works/pc/self-noitoru-1280.jpg 1280w" sizes="(max-width:760px) 84vw, 560px" width="1280" height="960" alt="ノイトル（録音の雑音処理）のPC画面" loading="eager" decoding="async" draggable="false"></picture></div><div class="device-sp"><picture><source type="image/webp" srcset="/assets/img/works/sp/self-noitoru-390.webp 390w, /assets/img/works/sp/self-noitoru-780.webp 780w" sizes="(max-width:760px) 25vw, 168px"><img src="/assets/img/works/sp/self-noitoru-390.jpg" srcset="/assets/img/works/sp/self-noitoru-390.jpg 390w, /assets/img/works/sp/self-noitoru-780.jpg 780w" sizes="(max-width:760px) 25vw, 168px" width="780" height="1688" alt="ノイトル（録音の雑音処理）のスマホ画面" loading="eager" decoding="async" draggable="false"></picture></div></div>
 <div class="car-meta"><span class="car-cat">ホームページ＋集客ページ</span><h3>ノイトル（録音の雑音処理）</h3><p>料金の目安がその場で計算でき、お問い合わせまでつながるサイト。悩み別の案内ページ11本と、録音のコツの記事も載せています。</p><span class="car-open">サイトを開く</span></div></a></li>
 </ul>
 </div></section>
-
-<section class="section works-carousel works-intake" aria-labelledby="intake-demo-title">
-  <div class="wrap">
-    <div class="works-heading"><h2 id="intake-demo-title">業務の見本</h2></div>
-    <a class="car-link" href="/works/intake-demo/">
-      <div class="device-pair">
-        <div class="device-pc">
-          <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i></div>
-          <picture><img src="/assets/img/works/pc/intake-demo.webp" width="1280" height="960" alt="PCで見る担当者の受付画面と対応状況" loading="lazy" decoding="async"></picture>
-        </div>
-        <div class="device-sp">
-          <picture><img src="/assets/img/works/sp/intake-demo.webp" width="390" height="844" alt="スマホで見る受付番号と自動返信" loading="lazy" decoding="async"></picture>
-        </div>
-      </div>
-      <div class="car-meta">
-        <h3>予約・問い合わせ受付デモ</h3>
-        <p>体験レッスンの予約と見積もり相談を、申込者と担当者の両方の立場で試せます。</p>
-        <span class="car-open">受付の流れを試す</span>
-      </div>
-    </a>
-  </div>
-</section>
 
 <section class="section works-carousel" id="sample-sites"><div class="wrap works-heading"><h2 id="sample-sites-title">制作の見本</h2><p>すべて架空のお店・会社です。</p></div><div class="car" role="region" aria-roledescription="カルーセル" aria-labelledby="sample-sites-title">
 <ul class="car-track" tabindex="0" aria-label="制作の見本。左右の矢印キーで送れます">
